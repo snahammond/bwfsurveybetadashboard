@@ -7,9 +7,10 @@ const defaultUser = {
   avatarUrl: 'https://js.devexpress.com/Demos/WidgetsGallery/JSDemos/images/employees/06.png'
 };
 
+
 @Injectable()
 export class AuthService {
-  private _user = defaultUser;
+  private _user = null;
   get loggedIn(): boolean {
     return !!this._user;
   }
