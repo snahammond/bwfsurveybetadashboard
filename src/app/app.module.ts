@@ -8,6 +8,12 @@ import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
 
+import Amplify from 'aws-amplify';
+import awsconfig from '../aws-exports';
+
+/* Configure Amplify resources */
+Amplify.configure(awsconfig);
+
 @NgModule({
   declarations: [
     AppComponent
@@ -20,7 +26,7 @@ import { AppRoutingModule } from './app-routing.module';
     FooterModule,
     LoginFormModule,
     UnauthenticatedContentModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [AuthService, ScreenService, AppInfoService],
   bootstrap: [AppComponent]

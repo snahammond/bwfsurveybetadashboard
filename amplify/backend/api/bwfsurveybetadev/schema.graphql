@@ -1,0 +1,314 @@
+enum AnswerType {
+  TEXTVALUE
+  ENUMVALUE
+  ENUMMULTIPLEVALUE
+  ENUMWITHNONEVALUE
+  ENUMDROPDOWNVALUE
+  NUMBERVALUE
+  DATEVALUE
+}
+
+
+
+type InitialSurvey @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Country: String!
+Community: String!
+SurveyId: Int!
+date: AWSDate
+HeadHouseholdName: String!
+HeadHouseholdPhoneNumber: String!
+HeadHouseholdSex: String!
+HeadHouseholdMaritalStatus: String!
+HeadHouseholdAge: Int!
+HeadHouseholdOccupation: String!
+HeadHouseholdEducation: String!
+PersonBeingInterviewed: String!
+TotalNoPeopleHousehold: Int!
+NoHouseholdMale0_1Year: Int!
+NoHouseholdFemale0_1Year: Int!
+NoHouseholdMale1_5Year: Int!
+NoHouseholdFemale1_5Year: Int!
+NoHouseholdMale5_12Year: Int!
+NoHouseholdFemale5_12Year: Int!
+NoHouseholdMale13_17Year: Int!
+NoHouseholdFemale13_17Year: Int!
+NoHouseholdMale18_Year: Int!
+NoHouseholdFemale18_Year: Int!
+ReasonNoSchoolChildren5_17Year: String!
+MainSourceDrinkingWater: String!
+MainSourceOtherPurposeWater: String!
+TimeToWaterSourceGetReturn: Int!
+HouseholdFrequencyAtWaterSource: String!
+UsualHouseholdWaterFetcher: String!
+ContainerCarryWater: String!
+WaterTreatmentBeforeDrinking: String!
+MainReasonNoWaterTreatmentBeforeDrinking: String!
+WaterTreatmentMethod: String!
+HowLongUsingWaterTreatment: String!
+FrequencyWaterTreatment: String!
+WaterStorageAtHome: String!
+WaterStorageContainerHaveLid: String!
+TakingWaterFromStorage: String!
+RubbishDisposal: String!
+HouseholdDefecationMethod: String!
+WasteDisposalYoungestChild: String!
+WashedHandsIn24Hours: String!
+WhenWashedHandsIn24Hours: String!
+WhatUsedToWashYourHands: String!
+CommonIllnessAffectingAllChildrenInHousehold: String!
+NoChildrenWithVomitingOrDiarrheaIn14days: Int!
+NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek: Int!
+NoChildrenWithVomitingOrDiarrheaIn7days: Int!
+DidSickChildrenGoToHospital: String!
+DidSickChildrenGoToHospitalYes: String!
+SickChildrenBreastfeeding: String!
+OutcomeMostRecentVomiting_DiarrheaAtHospital: String!
+NoDaysNoWorkBecauseOfOwnIllness: Int!
+NoDaysNoWorkBecauseOfIllnessFamilyMembers: Int!
+MoneySpentMedicalTreatmentLast4weeks: Int!
+HealthChangeInAYear: String!
+HealthChangeFamilyInAYear: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+ChildrenDiedAfterBeingBornAlive: String!
+CausesOfChildrenDeath: String!
+}
+
+
+
+
+type FollowUpSurvey @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Country: String!
+Community: String!
+SurveyId: Int!
+date: AWSDate
+HeadHouseholdName: String!
+MainSourceDrinkingWater: String!
+PersonBeingInterviewed: String!
+WaterTreatmentBeforeDrinking: String!
+MainReasonNoWaterTreatmentBeforeDrinking: String!
+WaterTreatmentMethod: String!
+HowLongUsingWaterTreatment: String!
+FrequencyWaterTreatment: String!
+WaterStorageAtHome: String!
+WaterStorageContainerHaveLid: String!
+TakingWaterFromStorage: String!
+WashedHandsIn24Hours: String!
+WhenWashedHandsIn24Hours: String!
+WhatUsedToWashYourHands: String!
+CommonIllnessAffectingAllChildrenInHousehold: String!
+NoChildrenWithVomitingOrDiarrheaIn14days: Int!
+NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek: Int!
+NoChildrenWithVomitingOrDiarrheaIn7days: Int!
+DidSickChildrenGoToHospital: String!
+DidSickChildrenGoToHospitalYes: String!
+SickChildrenBreastfeeding: String!
+OutcomeMostRecentVomiting_DiarrheaAtHospital: String!
+NoDaysNoWorkBecauseOfOwnIllness: Int!
+NoDaysNoWorkBecauseOfIllnessFamilyMembers: Int!
+MoneySpentMedicalTreatmentLast4weeks: Int!
+HealthChangeInAYear: String!
+HealthChangeFamilyInAYear: String!
+BenefitSWP: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+
+type HealthCheckSurvey @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Country: String!
+Community: String!
+SurveyId: Int!
+date: AWSDate
+HeadHouseholdName: String!
+PersonBeingInterviewed: String!
+WasteDisposalYoungestChild: String!
+WashedHandsIn24Hours: String!
+WhenWashedHandsIn24Hours: String!
+WhatUsedToWashYourHands: String!
+NoChildrenWithVomitingOrDiarrheaIn14days: Int!
+NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek: Int!
+NoChildrenWithVomitingOrDiarrheaIn7days: Int!
+DidSickChildrenGoToHospital: String!
+DidSickChildrenGoToHospitalYes: String!
+SickChildrenBreastfeeding: String!
+OutcomeMostRecentVomiting_DiarrheaAtHospital: String!
+NoDaysNoWorkBecauseOfOwnIllness: Int!
+NoDaysNoWorkBecauseOfIllnessFamilyMembers: Int!
+MoneySpentMedicalTreatmentLast4weeks: Int!
+WaterTreatment24Hours: String!
+MainReasonNoWaterTreatment24Hour: String!
+WaterTreatment24HourMethod: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type SWEMonthlySummary @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+date: AWSDate
+SWEPosition: String!
+NoWaterSampleTaken: Int!
+NoSurveysCompleted: Int!
+NoHealthCheck: Int!
+NoLsn1Taught: Int!
+NoPersonsTaughtLesson1: Int!
+NoLsn2Taught: Int!
+NoPersonsTaughtLesson2: Int!
+NoLsn3Taught: Int!
+NoPersonsTaughtLesson3: Int!
+NoLsn4Taught: Int!
+NoPersonsTaughtLesson4: Int!
+NoPersonsTaught: Int!
+NoHouseholdReceivingChlorineSupplies: Int!
+NoLiquidChlorineDistributed: Int!
+NoChlorineTabletsDistributed: Int!
+NoWaterStorageContainersDistributed: Int!
+NoSchoolVisits: Int!
+NoPublicServiceMessagesAired: Int!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type HouseholdWaterTest @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+date: AWSDate
+Country: String!
+Community: String!
+HeadHouseholdName: String!
+ColilertDateTested: AWSDate!
+ColilertDateRead: AWSDate!
+ColilertTestResult: String!
+PetrifilmDateTested: AWSDate!
+PetrifilmDateRead: AWSDate!
+PetrifilmTestResult: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type CommunityWaterTest @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+date: AWSDate
+Country: String!
+Community: String!
+CommunityWaterLocation: String!
+ColilertDateTested: AWSDate!
+ColilertDateRead: AWSDate!
+ColilertTestResult: String!
+PetrifilmDateTested: AWSDate!
+PetrifilmDateRead: AWSDate!
+PetrifilmTestResult: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type CommunityWater @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+date: AWSDate
+Country: String!
+Community: String!
+CommunityWaterLocation: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type ConfigDefinitions @model @auth(rules: [{ allow: public,provider: apiKey }]){
+	id: ID!
+	type: String!
+	name: String!
+    value: String!
+    desc: String!
+    childname: String!
+    childvalue: String!
+    childdesc: String!
+    parentname: String!
+    parentvalue: String!
+    parentdesc: String!
+}
+
+
+type BWFSURVEYTOTALS @model @auth(rules: [{ allow: public,provider: apiKey }]){
+	surveyName: String!
+	total: Int!
+}
+
+type VolunteerHouseholdWaterTest @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Namevol: String!
+date: AWSDate
+Country: String!
+Community: String!
+HeadHouseholdName: String!
+HouseholdLocation: String!
+ColilertDateTested: AWSDate!
+ColilertDateRead: AWSDate!
+ColilertTestResult: String!
+PetrifilmDateTested: AWSDate!
+PetrifilmDateRead: AWSDate!
+PetrifilmTestResult: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type VolunteerHousehold @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Namevol: String!
+date: AWSDate
+Country: String!
+Community: String!
+HeadHouseholdName: String!
+HouseholdLocation: String!
+Completed: Int!
+Lat: String!
+Lng: String!
+}
+
+type Volunteer @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Namevol: String!
+}
+
+
+type VolunteerMonthlySummary @model @auth(rules: [{ allow: public,provider: apiKey }]){
+id: ID!
+Namebwe: String!
+Namevol: String!
+date: AWSDate
+NoWaterSampleTaken: Int!
+NoLsn1TaughtAsPrimaryInstr: Int!
+NoLsn1TaughtAssistingSWE: Int!
+NoPersonsTaughtLesson1ByVol: Int!
+NoLsn2TaughtAsPrimaryInstr: Int!
+NoLsn2TaughtAssistingSWE: Int!
+NoPersonsTaughtLesson2ByVol: Int!
+NoLsn3TaughtAsPrimaryInstr: Int!
+NoLsn3TaughtAssistingSWE: Int!
+NoPersonsTaughtLesson3ByVol: Int!
+NoLsn4TaughtAsPrimaryInstr: Int!
+NoLsn4TaughtAssistingSWE: Int!
+NoPersonsTaughtLesson4ByVol: Int!
+NoPersonsTaughtByVol: Int!
+Completed: Int!
+Lat: String!
+Lng: String!
+}

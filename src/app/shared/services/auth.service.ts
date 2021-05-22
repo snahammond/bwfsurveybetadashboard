@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 
+import { Auth } from 'aws-amplify';
+
+
 const defaultPath = '/';
 const defaultUser = {
   email: 'sandra@example.com',
@@ -27,15 +30,18 @@ export class AuthService {
     try {
       // Send request
       console.log(email, password);
-      this._user = { ...defaultUser, email };
+      const user = await Auth.signIn(email, password);      
+      
+      this._user = { ...user, email };
       this.router.navigate([this._lastAuthenticatedPath]);
-
+      
       return {
         isOk: true,
         data: this._user
       };
     }
-    catch {
+    catch (error){
+      console.log('error signing up:', error);
       return {
         isOk: false,
         message: "Authentication failed"
@@ -112,8 +118,14 @@ export class AuthService {
   }
 
   async logOut() {
-    this._user = null;
-    this.router.navigate(['/login-form']);
+    try {
+      await Auth.signOut({ global: true });
+      this._user = null;
+      this.router.navigate(['/login-form']);
+    } catch (error) {
+        console.log('error signing out: ', error);
+    }
+    
   }
 }
 
