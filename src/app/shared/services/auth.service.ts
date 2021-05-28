@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router, ActivatedRouteSnapshot } from '@angular/router';
 
 import { Auth } from 'aws-amplify';
+import { CookieService } from 'ngx-cookie-service';
 
 
 const defaultPath = '/';
@@ -15,6 +16,10 @@ const defaultUser = {
 export class AuthService {
   private _user = null;
   get loggedIn(): boolean {
+    let user_data: string = this.cookieService.get('user');
+    if(user_data){           
+      this._user = JSON.parse(user_data);      
+    }   
     return !!this._user;
   }
 
@@ -23,16 +28,15 @@ export class AuthService {
     this._lastAuthenticatedPath = value;
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,private cookieService: CookieService) { }
 
   async logIn(email: string, password: string) {
 
     try {
-      // Send request
-      console.log(email, password);
-      const user = await Auth.signIn(email, password);      
-      
-      this._user = { ...user, email };
+      // Send request      
+      const user = await Auth.signIn(email, password);    
+      this.cookieService.set( 'user', JSON.stringify(user.attributes),30 );
+      this._user = { ...user.attributes, email };
       this.router.navigate([this._lastAuthenticatedPath]);
       
       return {
@@ -134,7 +138,7 @@ export class AuthGuardService implements CanActivate {
   constructor(private router: Router, private authService: AuthService) { }
 
   canActivate(route: ActivatedRouteSnapshot): boolean {
-    const isLoggedIn = this.authService.loggedIn;
+    const isLoggedIn = this.authService.loggedIn;    
     const isAuthForm = [
       'login-form',
       'reset-password',

@@ -18,7 +18,7 @@ export class UserPanelComponent {
   menuMode: string;
 
   @Input()
-  user: { email: string, attributes: {given_name: string,family_name: string} };
+  user: { email: string, given_name: string,family_name: string };
 
   constructor() {}
 }
