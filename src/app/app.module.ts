@@ -7,6 +7,7 @@ import { FooterModule, LoginFormModule } from './shared/components';
 import { AuthService, ScreenService, AppInfoService } from './shared/services';
 import { UnauthenticatedContentModule } from './unauthenticated-content';
 import { AppRoutingModule } from './app-routing.module';
+import { CookieService } from 'ngx-cookie-service';
 
 import Amplify from 'aws-amplify';
 import awsconfig from '../aws-exports';
@@ -28,7 +29,7 @@ Amplify.configure(awsconfig);
     UnauthenticatedContentModule,
     AppRoutingModule,
   ],
-  providers: [AuthService, ScreenService, AppInfoService],
+  providers: [AuthService, ScreenService, AppInfoService,CookieService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
