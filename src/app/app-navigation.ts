@@ -26,11 +26,11 @@ export const navigation = [
       },
       {
         text: 'Household Water Test Volunteers',
-        path: '/householdwatertestvol'
+        path: '/household-water-test-volunteers'
       },
       {
         text: 'Health Survey',
-        path: '/healthsurvey'
+        path: '/health-survey'
       },
       {
         text: 'Monthly Activity',

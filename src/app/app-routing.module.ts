@@ -10,6 +10,8 @@ import { InitialSurveyComponent } from './pages/initial-survey/initial-survey.co
 import { FollowUpSurveyComponent } from './pages/follow-up-survey/follow-up-survey.component';
 import { CommunityWaterTestComponent } from './pages/community-water-test/community-water-test.component';
 import { HouseholdWaterTestSweComponent } from './pages/household-water-test-swe/household-water-test-swe.component';
+import { HouseholdWaterTestVolunteersComponent } from './pages/household-water-test-volunteers/household-water-test-volunteers.component';
+import { HealthSurveyComponent } from './pages/health-survey/health-survey.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,16 @@ const routes: Routes = [
   {
     path: 'household-water-test-swe',
     component: HouseholdWaterTestSweComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'household-water-test-volunteers',
+    component: HouseholdWaterTestVolunteersComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'health-survey',
+    component: HealthSurveyComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -77,6 +89,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent, HouseholdWaterTestVolunteersComponent, HealthSurveyComponent]
 })
 export class AppRoutingModule { }
