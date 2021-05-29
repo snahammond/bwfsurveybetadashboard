@@ -22,7 +22,7 @@ export const navigation = [
       },
       {
         text: 'Household Water Test SWE',
-        path: '/householdwatertestswe'
+        path: '/household-water-test-swe'
       },
       {
         text: 'Household Water Test Volunteers',

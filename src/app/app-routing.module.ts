@@ -9,6 +9,7 @@ import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { InitialSurveyComponent } from './pages/initial-survey/initial-survey.component';
 import { FollowUpSurveyComponent } from './pages/follow-up-survey/follow-up-survey.component';
 import { CommunityWaterTestComponent } from './pages/community-water-test/community-water-test.component';
+import { HouseholdWaterTestSweComponent } from './pages/household-water-test-swe/household-water-test-swe.component';
 
 const routes: Routes = [
   {
@@ -24,6 +25,11 @@ const routes: Routes = [
   {
     path: 'community-water-test',
     component: CommunityWaterTestComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'household-water-test-swe',
+    component: HouseholdWaterTestSweComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -71,6 +77,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent]
 })
 export class AppRoutingModule { }
