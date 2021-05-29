@@ -12,6 +12,7 @@ import { CommunityWaterTestComponent } from './pages/community-water-test/commun
 import { HouseholdWaterTestSweComponent } from './pages/household-water-test-swe/household-water-test-swe.component';
 import { HouseholdWaterTestVolunteersComponent } from './pages/household-water-test-volunteers/household-water-test-volunteers.component';
 import { HealthSurveyComponent } from './pages/health-survey/health-survey.component';
+import { MonthlyActivityComponent } from './pages/monthly-activity/monthly-activity.component';
 
 const routes: Routes = [
   {
@@ -42,6 +43,11 @@ const routes: Routes = [
   {
     path: 'health-survey',
     component: HealthSurveyComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'monthly-activity',
+    component: MonthlyActivityComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -89,6 +95,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent, HouseholdWaterTestVolunteersComponent, HealthSurveyComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent, HouseholdWaterTestVolunteersComponent, HealthSurveyComponent, MonthlyActivityComponent]
 })
 export class AppRoutingModule { }

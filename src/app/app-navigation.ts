@@ -34,7 +34,7 @@ export const navigation = [
       },
       {
         text: 'Monthly Activity',
-        path: '/monthlyactivity'
+        path: '/monthly-activity'
       }
     ]
   },
