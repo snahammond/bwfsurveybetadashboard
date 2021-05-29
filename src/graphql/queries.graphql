@@ -1,0 +1,1447 @@
+# this is an auto generated file. This will be overwritten
+query SyncInitialSurveys(
+  $filter: ModelInitialSurveyFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncInitialSurveys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Country
+      Community
+      SurveyId
+      date
+      HeadHouseholdName
+      HeadHouseholdPhoneNumber
+      HeadHouseholdSex
+      HeadHouseholdMaritalStatus
+      HeadHouseholdAge
+      HeadHouseholdOccupation
+      HeadHouseholdEducation
+      PersonBeingInterviewed
+      TotalNoPeopleHousehold
+      NoHouseholdMale0_1Year
+      NoHouseholdFemale0_1Year
+      NoHouseholdMale1_5Year
+      NoHouseholdFemale1_5Year
+      NoHouseholdMale5_12Year
+      NoHouseholdFemale5_12Year
+      NoHouseholdMale13_17Year
+      NoHouseholdFemale13_17Year
+      NoHouseholdMale18_Year
+      NoHouseholdFemale18_Year
+      ReasonNoSchoolChildren5_17Year
+      MainSourceDrinkingWater
+      MainSourceOtherPurposeWater
+      TimeToWaterSourceGetReturn
+      HouseholdFrequencyAtWaterSource
+      UsualHouseholdWaterFetcher
+      ContainerCarryWater
+      WaterTreatmentBeforeDrinking
+      MainReasonNoWaterTreatmentBeforeDrinking
+      WaterTreatmentMethod
+      HowLongUsingWaterTreatment
+      FrequencyWaterTreatment
+      WaterStorageAtHome
+      WaterStorageContainerHaveLid
+      TakingWaterFromStorage
+      RubbishDisposal
+      HouseholdDefecationMethod
+      WasteDisposalYoungestChild
+      WashedHandsIn24Hours
+      WhenWashedHandsIn24Hours
+      WhatUsedToWashYourHands
+      CommonIllnessAffectingAllChildrenInHousehold
+      NoChildrenWithVomitingOrDiarrheaIn14days
+      NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+      NoChildrenWithVomitingOrDiarrheaIn7days
+      DidSickChildrenGoToHospital
+      DidSickChildrenGoToHospitalYes
+      SickChildrenBreastfeeding
+      OutcomeMostRecentVomiting_DiarrheaAtHospital
+      NoDaysNoWorkBecauseOfOwnIllness
+      NoDaysNoWorkBecauseOfIllnessFamilyMembers
+      MoneySpentMedicalTreatmentLast4weeks
+      HealthChangeInAYear
+      HealthChangeFamilyInAYear
+      Completed
+      Lat
+      Lng
+      ChildrenDiedAfterBeingBornAlive
+      CausesOfChildrenDeath
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetInitialSurvey($id: ID!) {
+  getInitialSurvey(id: $id) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListInitialSurveys(
+  $filter: ModelInitialSurveyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listInitialSurveys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      Namebwe
+      Country
+      Community
+      SurveyId
+      date
+      HeadHouseholdName
+      HeadHouseholdPhoneNumber
+      HeadHouseholdSex
+      HeadHouseholdMaritalStatus
+      HeadHouseholdAge
+      HeadHouseholdOccupation
+      HeadHouseholdEducation
+      PersonBeingInterviewed
+      TotalNoPeopleHousehold
+      NoHouseholdMale0_1Year
+      NoHouseholdFemale0_1Year
+      NoHouseholdMale1_5Year
+      NoHouseholdFemale1_5Year
+      NoHouseholdMale5_12Year
+      NoHouseholdFemale5_12Year
+      NoHouseholdMale13_17Year
+      NoHouseholdFemale13_17Year
+      NoHouseholdMale18_Year
+      NoHouseholdFemale18_Year
+      ReasonNoSchoolChildren5_17Year
+      MainSourceDrinkingWater
+      MainSourceOtherPurposeWater
+      TimeToWaterSourceGetReturn
+      HouseholdFrequencyAtWaterSource
+      UsualHouseholdWaterFetcher
+      ContainerCarryWater
+      WaterTreatmentBeforeDrinking
+      MainReasonNoWaterTreatmentBeforeDrinking
+      WaterTreatmentMethod
+      HowLongUsingWaterTreatment
+      FrequencyWaterTreatment
+      WaterStorageAtHome
+      WaterStorageContainerHaveLid
+      TakingWaterFromStorage
+      RubbishDisposal
+      HouseholdDefecationMethod
+      WasteDisposalYoungestChild
+      WashedHandsIn24Hours
+      WhenWashedHandsIn24Hours
+      WhatUsedToWashYourHands
+      CommonIllnessAffectingAllChildrenInHousehold
+      NoChildrenWithVomitingOrDiarrheaIn14days
+      NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+      NoChildrenWithVomitingOrDiarrheaIn7days
+      DidSickChildrenGoToHospital
+      DidSickChildrenGoToHospitalYes
+      SickChildrenBreastfeeding
+      OutcomeMostRecentVomiting_DiarrheaAtHospital
+      NoDaysNoWorkBecauseOfOwnIllness
+      NoDaysNoWorkBecauseOfIllnessFamilyMembers
+      MoneySpentMedicalTreatmentLast4weeks
+      HealthChangeInAYear
+      HealthChangeFamilyInAYear
+      Completed
+      Lat
+      Lng
+      ChildrenDiedAfterBeingBornAlive
+      CausesOfChildrenDeath
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncFollowUpSurveys(
+  $filter: ModelFollowUpSurveyFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncFollowUpSurveys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Country
+      Community
+      SurveyId
+      date
+      HeadHouseholdName
+      MainSourceDrinkingWater
+      PersonBeingInterviewed
+      WaterTreatmentBeforeDrinking
+      MainReasonNoWaterTreatmentBeforeDrinking
+      WaterTreatmentMethod
+      HowLongUsingWaterTreatment
+      FrequencyWaterTreatment
+      WaterStorageAtHome
+      WaterStorageContainerHaveLid
+      TakingWaterFromStorage
+      WashedHandsIn24Hours
+      WhenWashedHandsIn24Hours
+      WhatUsedToWashYourHands
+      CommonIllnessAffectingAllChildrenInHousehold
+      NoChildrenWithVomitingOrDiarrheaIn14days
+      NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+      NoChildrenWithVomitingOrDiarrheaIn7days
+      DidSickChildrenGoToHospital
+      DidSickChildrenGoToHospitalYes
+      SickChildrenBreastfeeding
+      OutcomeMostRecentVomiting_DiarrheaAtHospital
+      NoDaysNoWorkBecauseOfOwnIllness
+      NoDaysNoWorkBecauseOfIllnessFamilyMembers
+      MoneySpentMedicalTreatmentLast4weeks
+      HealthChangeInAYear
+      HealthChangeFamilyInAYear
+      BenefitSWP
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetFollowUpSurvey($id: ID!) {
+  getFollowUpSurvey(id: $id) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListFollowUpSurveys(
+  $filter: ModelFollowUpSurveyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFollowUpSurveys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      Namebwe
+      Country
+      Community
+      SurveyId
+      date
+      HeadHouseholdName
+      MainSourceDrinkingWater
+      PersonBeingInterviewed
+      WaterTreatmentBeforeDrinking
+      MainReasonNoWaterTreatmentBeforeDrinking
+      WaterTreatmentMethod
+      HowLongUsingWaterTreatment
+      FrequencyWaterTreatment
+      WaterStorageAtHome
+      WaterStorageContainerHaveLid
+      TakingWaterFromStorage
+      WashedHandsIn24Hours
+      WhenWashedHandsIn24Hours
+      WhatUsedToWashYourHands
+      CommonIllnessAffectingAllChildrenInHousehold
+      NoChildrenWithVomitingOrDiarrheaIn14days
+      NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+      NoChildrenWithVomitingOrDiarrheaIn7days
+      DidSickChildrenGoToHospital
+      DidSickChildrenGoToHospitalYes
+      SickChildrenBreastfeeding
+      OutcomeMostRecentVomiting_DiarrheaAtHospital
+      NoDaysNoWorkBecauseOfOwnIllness
+      NoDaysNoWorkBecauseOfIllnessFamilyMembers
+      MoneySpentMedicalTreatmentLast4weeks
+      HealthChangeInAYear
+      HealthChangeFamilyInAYear
+      BenefitSWP
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncHealthCheckSurveys(
+  $filter: ModelHealthCheckSurveyFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncHealthCheckSurveys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Country
+      Community
+      SurveyId
+      date
+      HeadHouseholdName
+      PersonBeingInterviewed
+      WasteDisposalYoungestChild
+      WashedHandsIn24Hours
+      WhenWashedHandsIn24Hours
+      WhatUsedToWashYourHands
+      NoChildrenWithVomitingOrDiarrheaIn14days
+      NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+      NoChildrenWithVomitingOrDiarrheaIn7days
+      DidSickChildrenGoToHospital
+      DidSickChildrenGoToHospitalYes
+      SickChildrenBreastfeeding
+      OutcomeMostRecentVomiting_DiarrheaAtHospital
+      NoDaysNoWorkBecauseOfOwnIllness
+      NoDaysNoWorkBecauseOfIllnessFamilyMembers
+      MoneySpentMedicalTreatmentLast4weeks
+      WaterTreatment24Hours
+      MainReasonNoWaterTreatment24Hour
+      WaterTreatment24HourMethod
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetHealthCheckSurvey($id: ID!) {
+  getHealthCheckSurvey(id: $id) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListHealthCheckSurveys(
+  $filter: ModelHealthCheckSurveyFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHealthCheckSurveys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      Country
+      Community
+      SurveyId
+      date
+      HeadHouseholdName
+      PersonBeingInterviewed
+      WasteDisposalYoungestChild
+      WashedHandsIn24Hours
+      WhenWashedHandsIn24Hours
+      WhatUsedToWashYourHands
+      NoChildrenWithVomitingOrDiarrheaIn14days
+      NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+      NoChildrenWithVomitingOrDiarrheaIn7days
+      DidSickChildrenGoToHospital
+      DidSickChildrenGoToHospitalYes
+      SickChildrenBreastfeeding
+      OutcomeMostRecentVomiting_DiarrheaAtHospital
+      NoDaysNoWorkBecauseOfOwnIllness
+      NoDaysNoWorkBecauseOfIllnessFamilyMembers
+      MoneySpentMedicalTreatmentLast4weeks
+      WaterTreatment24Hours
+      MainReasonNoWaterTreatment24Hour
+      WaterTreatment24HourMethod
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncSweMonthlySummaries(
+  $filter: ModelSWEMonthlySummaryFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncSWEMonthlySummaries(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      SWEPosition
+      NoWaterSampleTaken
+      NoSurveysCompleted
+      NoHealthCheck
+      NoLsn1Taught
+      NoPersonsTaughtLesson1
+      NoLsn2Taught
+      NoPersonsTaughtLesson2
+      NoLsn3Taught
+      NoPersonsTaughtLesson3
+      NoLsn4Taught
+      NoPersonsTaughtLesson4
+      NoPersonsTaught
+      NoHouseholdReceivingChlorineSupplies
+      NoLiquidChlorineDistributed
+      NoChlorineTabletsDistributed
+      NoWaterStorageContainersDistributed
+      NoSchoolVisits
+      NoPublicServiceMessagesAired
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetSweMonthlySummary($id: ID!) {
+  getSWEMonthlySummary(id: $id) {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListSweMonthlySummarys(
+  $filter: ModelSWEMonthlySummaryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSWEMonthlySummarys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      SWEPosition
+      NoWaterSampleTaken
+      NoSurveysCompleted
+      NoHealthCheck
+      NoLsn1Taught
+      NoPersonsTaughtLesson1
+      NoLsn2Taught
+      NoPersonsTaughtLesson2
+      NoLsn3Taught
+      NoPersonsTaughtLesson3
+      NoLsn4Taught
+      NoPersonsTaughtLesson4
+      NoPersonsTaught
+      NoHouseholdReceivingChlorineSupplies
+      NoLiquidChlorineDistributed
+      NoChlorineTabletsDistributed
+      NoWaterStorageContainersDistributed
+      NoSchoolVisits
+      NoPublicServiceMessagesAired
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncHouseholdWaterTests(
+  $filter: ModelHouseholdWaterTestFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncHouseholdWaterTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      Country
+      Community
+      HeadHouseholdName
+      ColilertDateTested
+      ColilertDateRead
+      ColilertTestResult
+      PetrifilmDateTested
+      PetrifilmDateRead
+      PetrifilmTestResult
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetHouseholdWaterTest($id: ID!) {
+  getHouseholdWaterTest(id: $id) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListHouseholdWaterTests(
+  $filter: ModelHouseholdWaterTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHouseholdWaterTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      Country
+      Community
+      HeadHouseholdName
+      ColilertDateTested
+      ColilertDateRead
+      ColilertTestResult
+      PetrifilmDateTested
+      PetrifilmDateRead
+      PetrifilmTestResult
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncCommunityWaterTests(
+  $filter: ModelCommunityWaterTestFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncCommunityWaterTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      Country
+      Community
+      CommunityWaterLocation
+      ColilertDateTested
+      ColilertDateRead
+      ColilertTestResult
+      PetrifilmDateTested
+      PetrifilmDateRead
+      PetrifilmTestResult
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetCommunityWaterTest($id: ID!) {
+  getCommunityWaterTest(id: $id) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListCommunityWaterTests(
+  $filter: ModelCommunityWaterTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCommunityWaterTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      Country
+      Community
+      CommunityWaterLocation
+      ColilertDateTested
+      ColilertDateRead
+      ColilertTestResult
+      PetrifilmDateTested
+      PetrifilmDateRead
+      PetrifilmTestResult
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncCommunityWaters(
+  $filter: ModelCommunityWaterFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncCommunityWaters(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      Country
+      Community
+      CommunityWaterLocation
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetCommunityWater($id: ID!) {
+  getCommunityWater(id: $id) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListCommunityWaters(
+  $filter: ModelCommunityWaterFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCommunityWaters(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      Namebwe
+      date
+      Country
+      Community
+      CommunityWaterLocation
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncConfigDefinitions(
+  $filter: ModelConfigDefinitionsFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncConfigDefinitions(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      type
+      name
+      value
+      desc
+      childname
+      childvalue
+      childdesc
+      parentname
+      parentvalue
+      parentdesc
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetConfigDefinitions($id: ID!) {
+  getConfigDefinitions(id: $id) {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListConfigDefinitionss(
+  $filter: ModelConfigDefinitionsFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listConfigDefinitionss(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      type
+      name
+      value
+      desc
+      childname
+      childvalue
+      childdesc
+      parentname
+      parentvalue
+      parentdesc
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncBwfsurveytotals(
+  $filter: ModelBWFSURVEYTOTALSFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncBWFSURVEYTOTALS(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      surveyName
+      total
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetBwfsurveytotals($id: ID!) {
+  getBWFSURVEYTOTALS(id: $id) {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListBwfsurveytotalSs(
+  $filter: ModelBWFSURVEYTOTALSFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listBWFSURVEYTOTALSs(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      surveyName
+      total
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncVolunteerHouseholdWaterTests(
+  $filter: ModelVolunteerHouseholdWaterTestFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncVolunteerHouseholdWaterTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      Country
+      Community
+      HeadHouseholdName
+      HouseholdLocation
+      ColilertDateTested
+      ColilertDateRead
+      ColilertTestResult
+      PetrifilmDateTested
+      PetrifilmDateRead
+      PetrifilmTestResult
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetVolunteerHouseholdWaterTest($id: ID!) {
+  getVolunteerHouseholdWaterTest(id: $id) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListVolunteerHouseholdWaterTests(
+  $filter: ModelVolunteerHouseholdWaterTestFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteerHouseholdWaterTests(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      Country
+      Community
+      HeadHouseholdName
+      HouseholdLocation
+      ColilertDateTested
+      ColilertDateRead
+      ColilertTestResult
+      PetrifilmDateTested
+      PetrifilmDateRead
+      PetrifilmTestResult
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncVolunteerHouseholds(
+  $filter: ModelVolunteerHouseholdFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncVolunteerHouseholds(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      Country
+      Community
+      HeadHouseholdName
+      HouseholdLocation
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetVolunteerHousehold($id: ID!) {
+  getVolunteerHousehold(id: $id) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListVolunteerHouseholds(
+  $filter: ModelVolunteerHouseholdFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteerHouseholds(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      Country
+      Community
+      HeadHouseholdName
+      HouseholdLocation
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncVolunteers(
+  $filter: ModelVolunteerFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncVolunteers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetVolunteer($id: ID!) {
+  getVolunteer(id: $id) {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListVolunteers(
+  $filter: ModelVolunteerFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      Namebwe
+      Namevol
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncVolunteerMonthlySummaries(
+  $filter: ModelVolunteerMonthlySummaryFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncVolunteerMonthlySummaries(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      NoWaterSampleTaken
+      NoLsn1TaughtAsPrimaryInstr
+      NoLsn1TaughtAssistingSWE
+      NoPersonsTaughtLesson1ByVol
+      NoLsn2TaughtAsPrimaryInstr
+      NoLsn2TaughtAssistingSWE
+      NoPersonsTaughtLesson2ByVol
+      NoLsn3TaughtAsPrimaryInstr
+      NoLsn3TaughtAssistingSWE
+      NoPersonsTaughtLesson3ByVol
+      NoLsn4TaughtAsPrimaryInstr
+      NoLsn4TaughtAssistingSWE
+      NoPersonsTaughtLesson4ByVol
+      NoPersonsTaughtByVol
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetVolunteerMonthlySummary($id: ID!) {
+  getVolunteerMonthlySummary(id: $id) {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListVolunteerMonthlySummarys(
+  $filter: ModelVolunteerMonthlySummaryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteerMonthlySummarys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      NoWaterSampleTaken
+      NoLsn1TaughtAsPrimaryInstr
+      NoLsn1TaughtAssistingSWE
+      NoPersonsTaughtLesson1ByVol
+      NoLsn2TaughtAsPrimaryInstr
+      NoLsn2TaughtAssistingSWE
+      NoPersonsTaughtLesson2ByVol
+      NoLsn3TaughtAsPrimaryInstr
+      NoLsn3TaughtAssistingSWE
+      NoPersonsTaughtLesson3ByVol
+      NoLsn4TaughtAsPrimaryInstr
+      NoLsn4TaughtAssistingSWE
+      NoPersonsTaughtLesson4ByVol
+      NoPersonsTaughtByVol
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}

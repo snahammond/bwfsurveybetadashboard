@@ -1,0 +1,1129 @@
+# this is an auto generated file. This will be overwritten
+subscription OnCreateInitialSurvey {
+  onCreateInitialSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateInitialSurvey {
+  onUpdateInitialSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteInitialSurvey {
+  onDeleteInitialSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateFollowUpSurvey {
+  onCreateFollowUpSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateFollowUpSurvey {
+  onUpdateFollowUpSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteFollowUpSurvey {
+  onDeleteFollowUpSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateHealthCheckSurvey {
+  onCreateHealthCheckSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateHealthCheckSurvey {
+  onUpdateHealthCheckSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteHealthCheckSurvey {
+  onDeleteHealthCheckSurvey {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSweMonthlySummary {
+  onCreateSWEMonthlySummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSweMonthlySummary {
+  onUpdateSWEMonthlySummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSweMonthlySummary {
+  onDeleteSWEMonthlySummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateHouseholdWaterTest {
+  onCreateHouseholdWaterTest {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateHouseholdWaterTest {
+  onUpdateHouseholdWaterTest {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteHouseholdWaterTest {
+  onDeleteHouseholdWaterTest {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateCommunityWaterTest {
+  onCreateCommunityWaterTest {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCommunityWaterTest {
+  onUpdateCommunityWaterTest {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCommunityWaterTest {
+  onDeleteCommunityWaterTest {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateCommunityWater {
+  onCreateCommunityWater {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateCommunityWater {
+  onUpdateCommunityWater {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteCommunityWater {
+  onDeleteCommunityWater {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateConfigDefinitions {
+  onCreateConfigDefinitions {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateConfigDefinitions {
+  onUpdateConfigDefinitions {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteConfigDefinitions {
+  onDeleteConfigDefinitions {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateBwfsurveytotals {
+  onCreateBWFSURVEYTOTALS {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateBwfsurveytotals {
+  onUpdateBWFSURVEYTOTALS {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteBwfsurveytotals {
+  onDeleteBWFSURVEYTOTALS {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateVolunteerHouseholdWaterTest {
+  onCreateVolunteerHouseholdWaterTest {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateVolunteerHouseholdWaterTest {
+  onUpdateVolunteerHouseholdWaterTest {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteVolunteerHouseholdWaterTest {
+  onDeleteVolunteerHouseholdWaterTest {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateVolunteerHousehold {
+  onCreateVolunteerHousehold {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateVolunteerHousehold {
+  onUpdateVolunteerHousehold {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteVolunteerHousehold {
+  onDeleteVolunteerHousehold {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateVolunteer {
+  onCreateVolunteer {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateVolunteer {
+  onUpdateVolunteer {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteVolunteer {
+  onDeleteVolunteer {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateVolunteerMonthlySummary {
+  onCreateVolunteerMonthlySummary {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateVolunteerMonthlySummary {
+  onUpdateVolunteerMonthlySummary {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteVolunteerMonthlySummary {
+  onDeleteVolunteerMonthlySummary {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}

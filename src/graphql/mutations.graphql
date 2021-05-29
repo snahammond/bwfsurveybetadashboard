@@ -1,0 +1,1246 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateInitialSurvey(
+  $input: CreateInitialSurveyInput!
+  $condition: ModelInitialSurveyConditionInput
+) {
+  createInitialSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateInitialSurvey(
+  $input: UpdateInitialSurveyInput!
+  $condition: ModelInitialSurveyConditionInput
+) {
+  updateInitialSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteInitialSurvey(
+  $input: DeleteInitialSurveyInput!
+  $condition: ModelInitialSurveyConditionInput
+) {
+  deleteInitialSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    HeadHouseholdSex
+    HeadHouseholdMaritalStatus
+    HeadHouseholdAge
+    HeadHouseholdOccupation
+    HeadHouseholdEducation
+    PersonBeingInterviewed
+    TotalNoPeopleHousehold
+    NoHouseholdMale0_1Year
+    NoHouseholdFemale0_1Year
+    NoHouseholdMale1_5Year
+    NoHouseholdFemale1_5Year
+    NoHouseholdMale5_12Year
+    NoHouseholdFemale5_12Year
+    NoHouseholdMale13_17Year
+    NoHouseholdFemale13_17Year
+    NoHouseholdMale18_Year
+    NoHouseholdFemale18_Year
+    ReasonNoSchoolChildren5_17Year
+    MainSourceDrinkingWater
+    MainSourceOtherPurposeWater
+    TimeToWaterSourceGetReturn
+    HouseholdFrequencyAtWaterSource
+    UsualHouseholdWaterFetcher
+    ContainerCarryWater
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    RubbishDisposal
+    HouseholdDefecationMethod
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    Completed
+    Lat
+    Lng
+    ChildrenDiedAfterBeingBornAlive
+    CausesOfChildrenDeath
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateFollowUpSurvey(
+  $input: CreateFollowUpSurveyInput!
+  $condition: ModelFollowUpSurveyConditionInput
+) {
+  createFollowUpSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateFollowUpSurvey(
+  $input: UpdateFollowUpSurveyInput!
+  $condition: ModelFollowUpSurveyConditionInput
+) {
+  updateFollowUpSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteFollowUpSurvey(
+  $input: DeleteFollowUpSurveyInput!
+  $condition: ModelFollowUpSurveyConditionInput
+) {
+  deleteFollowUpSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    MainSourceDrinkingWater
+    PersonBeingInterviewed
+    WaterTreatmentBeforeDrinking
+    MainReasonNoWaterTreatmentBeforeDrinking
+    WaterTreatmentMethod
+    HowLongUsingWaterTreatment
+    FrequencyWaterTreatment
+    WaterStorageAtHome
+    WaterStorageContainerHaveLid
+    TakingWaterFromStorage
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    CommonIllnessAffectingAllChildrenInHousehold
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    HealthChangeInAYear
+    HealthChangeFamilyInAYear
+    BenefitSWP
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateHealthCheckSurvey(
+  $input: CreateHealthCheckSurveyInput!
+  $condition: ModelHealthCheckSurveyConditionInput
+) {
+  createHealthCheckSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateHealthCheckSurvey(
+  $input: UpdateHealthCheckSurveyInput!
+  $condition: ModelHealthCheckSurveyConditionInput
+) {
+  updateHealthCheckSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteHealthCheckSurvey(
+  $input: DeleteHealthCheckSurveyInput!
+  $condition: ModelHealthCheckSurveyConditionInput
+) {
+  deleteHealthCheckSurvey(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Country
+    Community
+    SurveyId
+    date
+    HeadHouseholdName
+    PersonBeingInterviewed
+    WasteDisposalYoungestChild
+    WashedHandsIn24Hours
+    WhenWashedHandsIn24Hours
+    WhatUsedToWashYourHands
+    NoChildrenWithVomitingOrDiarrheaIn14days
+    NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek
+    NoChildrenWithVomitingOrDiarrheaIn7days
+    DidSickChildrenGoToHospital
+    DidSickChildrenGoToHospitalYes
+    SickChildrenBreastfeeding
+    OutcomeMostRecentVomiting_DiarrheaAtHospital
+    NoDaysNoWorkBecauseOfOwnIllness
+    NoDaysNoWorkBecauseOfIllnessFamilyMembers
+    MoneySpentMedicalTreatmentLast4weeks
+    WaterTreatment24Hours
+    MainReasonNoWaterTreatment24Hour
+    WaterTreatment24HourMethod
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateSweMonthlySummary(
+  $input: CreateSWEMonthlySummaryInput!
+  $condition: ModelSWEMonthlySummaryConditionInput
+) {
+  createSWEMonthlySummary(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateSweMonthlySummary(
+  $input: UpdateSWEMonthlySummaryInput!
+  $condition: ModelSWEMonthlySummaryConditionInput
+) {
+  updateSWEMonthlySummary(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteSweMonthlySummary(
+  $input: DeleteSWEMonthlySummaryInput!
+  $condition: ModelSWEMonthlySummaryConditionInput
+) {
+  deleteSWEMonthlySummary(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoLsn1Taught
+    NoPersonsTaughtLesson1
+    NoLsn2Taught
+    NoPersonsTaughtLesson2
+    NoLsn3Taught
+    NoPersonsTaughtLesson3
+    NoLsn4Taught
+    NoPersonsTaughtLesson4
+    NoPersonsTaught
+    NoHouseholdReceivingChlorineSupplies
+    NoLiquidChlorineDistributed
+    NoChlorineTabletsDistributed
+    NoWaterStorageContainersDistributed
+    NoSchoolVisits
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateHouseholdWaterTest(
+  $input: CreateHouseholdWaterTestInput!
+  $condition: ModelHouseholdWaterTestConditionInput
+) {
+  createHouseholdWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateHouseholdWaterTest(
+  $input: UpdateHouseholdWaterTestInput!
+  $condition: ModelHouseholdWaterTestConditionInput
+) {
+  updateHouseholdWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteHouseholdWaterTest(
+  $input: DeleteHouseholdWaterTestInput!
+  $condition: ModelHouseholdWaterTestConditionInput
+) {
+  deleteHouseholdWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    HeadHouseholdName
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateCommunityWaterTest(
+  $input: CreateCommunityWaterTestInput!
+  $condition: ModelCommunityWaterTestConditionInput
+) {
+  createCommunityWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCommunityWaterTest(
+  $input: UpdateCommunityWaterTestInput!
+  $condition: ModelCommunityWaterTestConditionInput
+) {
+  updateCommunityWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCommunityWaterTest(
+  $input: DeleteCommunityWaterTestInput!
+  $condition: ModelCommunityWaterTestConditionInput
+) {
+  deleteCommunityWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateCommunityWater(
+  $input: CreateCommunityWaterInput!
+  $condition: ModelCommunityWaterConditionInput
+) {
+  createCommunityWater(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateCommunityWater(
+  $input: UpdateCommunityWaterInput!
+  $condition: ModelCommunityWaterConditionInput
+) {
+  updateCommunityWater(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteCommunityWater(
+  $input: DeleteCommunityWaterInput!
+  $condition: ModelCommunityWaterConditionInput
+) {
+  deleteCommunityWater(input: $input, condition: $condition) {
+    id
+    Namebwe
+    date
+    Country
+    Community
+    CommunityWaterLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateConfigDefinitions(
+  $input: CreateConfigDefinitionsInput!
+  $condition: ModelConfigDefinitionsConditionInput
+) {
+  createConfigDefinitions(input: $input, condition: $condition) {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateConfigDefinitions(
+  $input: UpdateConfigDefinitionsInput!
+  $condition: ModelConfigDefinitionsConditionInput
+) {
+  updateConfigDefinitions(input: $input, condition: $condition) {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteConfigDefinitions(
+  $input: DeleteConfigDefinitionsInput!
+  $condition: ModelConfigDefinitionsConditionInput
+) {
+  deleteConfigDefinitions(input: $input, condition: $condition) {
+    id
+    type
+    name
+    value
+    desc
+    childname
+    childvalue
+    childdesc
+    parentname
+    parentvalue
+    parentdesc
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateBwfsurveytotals(
+  $input: CreateBWFSURVEYTOTALSInput!
+  $condition: ModelBWFSURVEYTOTALSConditionInput
+) {
+  createBWFSURVEYTOTALS(input: $input, condition: $condition) {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateBwfsurveytotals(
+  $input: UpdateBWFSURVEYTOTALSInput!
+  $condition: ModelBWFSURVEYTOTALSConditionInput
+) {
+  updateBWFSURVEYTOTALS(input: $input, condition: $condition) {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteBwfsurveytotals(
+  $input: DeleteBWFSURVEYTOTALSInput!
+  $condition: ModelBWFSURVEYTOTALSConditionInput
+) {
+  deleteBWFSURVEYTOTALS(input: $input, condition: $condition) {
+    id
+    surveyName
+    total
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateVolunteerHouseholdWaterTest(
+  $input: CreateVolunteerHouseholdWaterTestInput!
+  $condition: ModelVolunteerHouseholdWaterTestConditionInput
+) {
+  createVolunteerHouseholdWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateVolunteerHouseholdWaterTest(
+  $input: UpdateVolunteerHouseholdWaterTestInput!
+  $condition: ModelVolunteerHouseholdWaterTestConditionInput
+) {
+  updateVolunteerHouseholdWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteVolunteerHouseholdWaterTest(
+  $input: DeleteVolunteerHouseholdWaterTestInput!
+  $condition: ModelVolunteerHouseholdWaterTestConditionInput
+) {
+  deleteVolunteerHouseholdWaterTest(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    ColilertDateTested
+    ColilertDateRead
+    ColilertTestResult
+    PetrifilmDateTested
+    PetrifilmDateRead
+    PetrifilmTestResult
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateVolunteerHousehold(
+  $input: CreateVolunteerHouseholdInput!
+  $condition: ModelVolunteerHouseholdConditionInput
+) {
+  createVolunteerHousehold(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateVolunteerHousehold(
+  $input: UpdateVolunteerHouseholdInput!
+  $condition: ModelVolunteerHouseholdConditionInput
+) {
+  updateVolunteerHousehold(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteVolunteerHousehold(
+  $input: DeleteVolunteerHouseholdInput!
+  $condition: ModelVolunteerHouseholdConditionInput
+) {
+  deleteVolunteerHousehold(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    Country
+    Community
+    HeadHouseholdName
+    HouseholdLocation
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateVolunteer(
+  $input: CreateVolunteerInput!
+  $condition: ModelVolunteerConditionInput
+) {
+  createVolunteer(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateVolunteer(
+  $input: UpdateVolunteerInput!
+  $condition: ModelVolunteerConditionInput
+) {
+  updateVolunteer(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteVolunteer(
+  $input: DeleteVolunteerInput!
+  $condition: ModelVolunteerConditionInput
+) {
+  deleteVolunteer(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation CreateVolunteerMonthlySummary(
+  $input: CreateVolunteerMonthlySummaryInput!
+  $condition: ModelVolunteerMonthlySummaryConditionInput
+) {
+  createVolunteerMonthlySummary(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateVolunteerMonthlySummary(
+  $input: UpdateVolunteerMonthlySummaryInput!
+  $condition: ModelVolunteerMonthlySummaryConditionInput
+) {
+  updateVolunteerMonthlySummary(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteVolunteerMonthlySummary(
+  $input: DeleteVolunteerMonthlySummaryInput!
+  $condition: ModelVolunteerMonthlySummaryConditionInput
+) {
+  deleteVolunteerMonthlySummary(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    NoLsn1TaughtAsPrimaryInstr
+    NoLsn1TaughtAssistingSWE
+    NoPersonsTaughtLesson1ByVol
+    NoLsn2TaughtAsPrimaryInstr
+    NoLsn2TaughtAssistingSWE
+    NoPersonsTaughtLesson2ByVol
+    NoLsn3TaughtAsPrimaryInstr
+    NoLsn3TaughtAssistingSWE
+    NoPersonsTaughtLesson3ByVol
+    NoLsn4TaughtAsPrimaryInstr
+    NoLsn4TaughtAssistingSWE
+    NoPersonsTaughtLesson4ByVol
+    NoPersonsTaughtByVol
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
