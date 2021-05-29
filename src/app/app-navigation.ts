@@ -18,7 +18,7 @@ export const navigation = [
       },
       {
         text: 'Community Water Test',
-        path: '/commwater'
+        path: '/community-water-test'
       },
       {
         text: 'Household Water Test SWE',
