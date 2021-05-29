@@ -14,7 +14,7 @@ export const navigation = [
       },
       {
         text: 'Follow-up Survey',
-        path: '/tasks'
+        path: '/follow-up-survey'
       },
       {
         text: 'Community Water Test',

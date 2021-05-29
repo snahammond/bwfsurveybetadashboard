@@ -7,11 +7,17 @@ import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
 import { DxDataGridModule, DxFormModule } from 'devextreme-angular';
 import { InitialSurveyComponent } from './pages/initial-survey/initial-survey.component';
+import { FollowUpSurveyComponent } from './pages/follow-up-survey/follow-up-survey.component';
 
 const routes: Routes = [
   {
     path: 'initial-survey',
     component: InitialSurveyComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'follow-up-survey',
+    component: FollowUpSurveyComponent,
     canActivate: [ AuthGuardService ]
   },
   {
@@ -59,6 +65,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent]
 })
 export class AppRoutingModule { }
