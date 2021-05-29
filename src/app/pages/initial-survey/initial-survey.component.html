@@ -1,1 +1,102 @@
-<p>initial-survey reports to be implemented!</p>
+<dx-data-grid id="gridContainer"
+    [dataSource]="dataSource"
+    [remoteOperations]="false"
+    [allowColumnReordering]="true"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    [columnAutoWidth]="true">
+
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[10, 25, 50, 100]"
+    ></dxo-pager>
+
+    <dxo-group-panel
+        [visible]="true"
+    ></dxo-group-panel>
+    <dxo-grouping
+        [autoExpandAll]="false"
+    ></dxo-grouping>
+
+    <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-selection        
+        mode="multiple"
+    ></dxo-selection>
+
+    <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="InitialSurvey"></dxo-export>
+    
+    <dxo-search-panel
+        [visible]="true"
+        [highlightCaseSensitive]="true"
+    ></dxo-search-panel>    
+    
+
+    <dxi-column dataField="id" dataType="string" ></dxi-column>
+    <dxi-column dataField="Namebwe" dataType="string"></dxi-column>
+    <dxi-column dataField="Country" dataType="string"></dxi-column>
+    <dxi-column dataField="Community" dataType="string"></dxi-column>
+    <dxi-column dataField="SurveyId" dataType="string" ></dxi-column>
+    <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>
+    <dxi-column dataField="HeadHouseholdName" dataType="string"></dxi-column>
+    <dxi-column dataField="HeadHouseholdPhoneNumber" dataType="string"></dxi-column>
+    <dxi-column dataField="HeadHouseholdSex" dataType="string"></dxi-column>
+    <dxi-column dataField="HeadHouseholdMaritalStatus" dataType="string" ></dxi-column>
+    <dxi-column dataField="HeadHouseholdAge" dataType="number"></dxi-column>
+    <dxi-column dataField="HeadHouseholdOccupation" dataType="string"></dxi-column>
+    <dxi-column dataField="HeadHouseholdEducation" dataType="string"></dxi-column>
+    <dxi-column dataField="PersonBeingInterviewed" dataType="string"></dxi-column>
+    <dxi-column dataField="TotalNoPeopleHousehold" dataType="number" ></dxi-column>
+    <dxi-column dataField="NoHouseholdMale0_1Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdFemale0_1Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdMale1_5Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdFemale1_5Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdMale5_12Year" dataType="number" ></dxi-column>
+    <dxi-column dataField="NoHouseholdFemale5_12Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdMale13_17Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdFemale13_17Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdMale18_Year" dataType="number"></dxi-column>
+    <dxi-column dataField="NoHouseholdFemale18_Year" dataType="number" ></dxi-column>
+    <dxi-column dataField="ReasonNoSchoolChildren5_17Year" dataType="string"></dxi-column>
+    <dxi-column dataField="MainSourceDrinkingWater" dataType="string"></dxi-column>
+    <dxi-column dataField="MainSourceOtherPurposeWater" dataType="string"></dxi-column>
+    <dxi-column dataField="TimeToWaterSourceGetReturn" dataType="number"></dxi-column>
+    <dxi-column dataField="HouseholdFrequencyAtWaterSource" dataType="string" ></dxi-column>
+    <dxi-column dataField="UsualHouseholdWaterFetcher" dataType="string"></dxi-column>
+    <dxi-column dataField="ContainerCarryWater" dataType="string"></dxi-column>
+    <dxi-column dataField="WaterTreatmentBeforeDrinking" dataType="string"></dxi-column>
+    <dxi-column dataField="MainReasonNoWaterTreatmentBeforeDrinking" dataType="string"></dxi-column>
+    <dxi-column dataField="WaterTreatmentMethod" dataType="string" ></dxi-column>
+    <dxi-column dataField="HowLongUsingWaterTreatment" dataType="string"></dxi-column>
+    <dxi-column dataField="FrequencyWaterTreatment" dataType="string"></dxi-column>
+    <dxi-column dataField="WaterStorageAtHome" dataType="string"></dxi-column>
+    <dxi-column dataField="WaterStorageContainerHaveLid" dataType="string"></dxi-column>
+    <dxi-column dataField="TakingWaterFromStorage" dataType="string" ></dxi-column>
+    <dxi-column dataField="RubbishDisposal" dataType="string"></dxi-column>
+    <dxi-column dataField="HouseholdDefecationMethod" dataType="string"></dxi-column>
+    <dxi-column dataField="WasteDisposalYoungestChild" dataType="string"></dxi-column>
+    <dxi-column dataField="WashedHandsIn24Hours" dataType="string"></dxi-column>
+    <dxi-column dataField="WhenWashedHandsIn24Hours" dataType="string" ></dxi-column>
+    <dxi-column dataField="WhatUsedToWashYourHands" dataType="string"></dxi-column>
+    <dxi-column dataField="CommonIllnessAffectingAllChildrenInHousehold" dataType="string"></dxi-column>
+    <dxi-column dataField="NoChildrenWithVomitingOrDiarrheaIn14days" dataType="number"></dxi-column>
+    <dxi-column dataField="NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek" dataType="number"></dxi-column>
+    <dxi-column dataField="NoChildrenWithVomitingOrDiarrheaIn7days" dataType="number" ></dxi-column>
+    <dxi-column dataField="DidSickChildrenGoToHospital" dataType="string"></dxi-column>
+    <dxi-column dataField="DidSickChildrenGoToHospitalYes" dataType="string"></dxi-column>
+    <dxi-column dataField="SickChildrenBreastfeeding" dataType="string"></dxi-column>
+    <dxi-column dataField="OutcomeMostRecentVomiting_DiarrheaAtHospital" dataType="string"></dxi-column>
+    <dxi-column dataField="NoDaysNoWorkBecauseOfOwnIllness" dataType="number" ></dxi-column>
+    <dxi-column dataField="NoDaysNoWorkBecauseOfIllnessFamilyMembers" dataType="number"></dxi-column>
+    <dxi-column dataField="MoneySpentMedicalTreatmentLast4weeks" dataType="number"></dxi-column>
+    <dxi-column dataField="HealthChangeInAYear" dataType="string"></dxi-column>
+    <dxi-column dataField="HealthChangeFamilyInAYear" dataType="string"></dxi-column>
+    <dxi-column dataField="ChildrenDiedAfterBeingBornAlive" dataType="string"></dxi-column>
+    <dxi-column dataField="CausesOfChildrenDeath" dataType="number" ></dxi-column>
+    <dxi-column dataField="Completed" dataType="number" ></dxi-column>
+    <dxi-column dataField="Lat" dataType="string"></dxi-column>
+    <dxi-column dataField="Lng" dataType="string"></dxi-column>
+    
+</dx-data-grid>
+
