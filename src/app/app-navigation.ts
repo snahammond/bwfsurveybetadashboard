@@ -10,7 +10,7 @@ export const navigation = [
     items: [
       {
         text: 'Initial Survey',
-        path: '/profile'
+        path: '/initial-survey'
       },
       {
         text: 'Follow-up Survey',
