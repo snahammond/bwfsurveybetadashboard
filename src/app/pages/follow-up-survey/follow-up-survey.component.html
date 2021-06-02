@@ -1,1 +1,80 @@
-<p>follow-up-survey reports to be implemented!</p>
+<h2 class="content-block">Follow up Survey</h2>
+<dx-data-grid id="gridContainer"
+    class="dx-card wide-card"
+    [dataSource]="followupSurveys"
+    [remoteOperations]="false"
+    [allowColumnReordering]="true"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    [columnAutoWidth]="true"
+    [allowColumnResizing]="true"
+    [showColumnLines]="true">
+
+    <dxo-paging [pageSize]="5"></dxo-paging>
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[5,10, 25, 50, 100]"
+    ></dxo-pager>
+
+    <dxo-group-panel
+        [visible]="true"
+    ></dxo-group-panel>
+    <dxo-grouping
+        [autoExpandAll]="false"
+    ></dxo-grouping>
+
+    <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-selection        
+        mode="multiple"
+    ></dxo-selection>
+
+    <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="InitialSurvey"></dxo-export>
+    
+    <dxo-search-panel
+        [visible]="true"
+        [highlightCaseSensitive]="true"
+    ></dxo-search-panel>    
+    
+
+    <dxi-column dataField="id" dataType="string" ></dxi-column>
+    <dxi-column dataField="Namebwe" dataType="string" caption="Email BWE"></dxi-column>
+    <dxi-column dataField="Country" dataType="string"></dxi-column>
+    <dxi-column dataField="Community" dataType="string"></dxi-column>
+    <dxi-column dataField="SurveyId" dataType="string" ></dxi-column>
+    <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>
+    <dxi-column dataField="HeadHouseholdName" dataType="string"></dxi-column>
+    <dxi-column dataField="PersonBeingInterviewed" dataType="string" [calculateDisplayValue]="getPersonBeingInterviewedDescription"></dxi-column>
+    <dxi-column dataField="MainSourceDrinkingWater" dataType="string" [calculateDisplayValue]="getMainSourceDrinkingWaterDescription" caption="What is the main source of drinking water for members of your household?"></dxi-column>
+    <dxi-column dataField="WaterTreatmentBeforeDrinking" dataType="string" [calculateDisplayValue]="getWaterTreatmentBeforeDrinkingDescription" caption="Do you treat your water in any way to make it safer to drink?"></dxi-column>
+    <dxi-column dataField="MainReasonNoWaterTreatmentBeforeDrinking" dataType="string" [calculateDisplayValue]="getMainReasonNoWaterTreatmentBeforeDrinkingDescription" caption="If you do not treat your water, what is/are the main reason(s) you do not treat your water for drinking?"></dxi-column>
+    <dxi-column dataField="WaterTreatmentMethod" dataType="string" [calculateDisplayValue]="getWaterTreatmentMethodDescription" caption="If you treat your drinking water, what do you usually do to make it safer to drink?"></dxi-column>
+    <dxi-column dataField="HowLongUsingWaterTreatment" dataType="string" [calculateDisplayValue]="getHowLongUsingWaterTreatmentDescription" caption="If you treat your water, how long have you been using these methods?"></dxi-column>
+    <dxi-column dataField="FrequencyWaterTreatment" dataType="string" [calculateDisplayValue]="getFrequencyWaterTreatmentDescription" caption="How often do you treat your water to make it safe?"></dxi-column>
+    <dxi-column dataField="WaterStorageAtHome" dataType="string" [calculateDisplayValue]="getWaterStorageAtHomeDescription" caption="Where do you store the water you drink in the home?"></dxi-column>
+    <dxi-column dataField="WaterStorageContainerHaveLid" dataType="string" [calculateDisplayValue]="getWaterStorageContainerHaveLidDescription" caption="Does your household water storage container have a lid to keep the water clean?"></dxi-column>
+    <dxi-column dataField="TakingWaterFromStorage" dataType="string" [calculateDisplayValue]="getTakingWaterFromStorageDescription" caption="How do members of your household take water from the home storage container?"></dxi-column>
+    <dxi-column dataField="WashedHandsIn24Hours" dataType="string" [calculateDisplayValue]="getWashedHandsIn24HoursDescription" caption="In the past 24 hours, have you personally washed your hands?"></dxi-column>
+    <dxi-column dataField="WhenWashedHandsIn24Hours" dataType="string" [calculateDisplayValue]="getWhenWashedHandsIn24HoursDescription" caption="In the past 24 hours, when did you wash your hands?"></dxi-column>
+    <dxi-column dataField="WhatUsedToWashYourHands" dataType="string" [calculateDisplayValue]="getWhatUsedToWashYourHandsDescription" caption="What do you use to wash your hands?"></dxi-column>
+    <dxi-column dataField="CommonIllnessAffectingAllChildrenInHousehold" dataType="string" [calculateDisplayValue]="getCommonIllnessAffectingAllChildrenInHouseholdDescription" caption="What are the three most common illnesses affecting all children in this household?"></dxi-column>
+    <dxi-column dataField="NoChildrenWithVomitingOrDiarrheaIn14days" dataType="number" caption="In the last two weeks (14 days), how many school-age children in your household experienced vomiting and/or diarrhea? (number of children)"></dxi-column>
+    <dxi-column dataField="NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek" dataType="number" caption="In the last two weeks, how many total school days have school-age children in this household missed due to illness? (No. of days)"></dxi-column>
+    <dxi-column dataField="NoChildrenWithVomitingOrDiarrheaIn7days" dataType="number" caption="In the last week (7 days), how many children under 5 years old in your household had vomiting and/or diarrhea?"></dxi-column>
+    <dxi-column dataField="DidSickChildrenGoToHospital" dataType="string" [calculateDisplayValue]="getDidSickChildrenGoToHospitalDescription" caption="Did the child(ren) who had vomiting and/or diarrhea go to hospital?"></dxi-column>
+    <dxi-column dataField="DidSickChildrenGoToHospitalYes" dataType="string" [calculateDisplayValue]="getDidSickChildrenGoToHospitalYesDescription" caption="Medications given to the child(ren) who had vomiting and/or diarrhea"></dxi-column>
+    <dxi-column dataField="SickChildrenBreastfeeding" dataType="string" [calculateDisplayValue]="getSickChildrenBreastfeedingDescription" caption="Is the young child(ren) [&lt; 5 years] who was ill breastfeeding?"></dxi-column>
+    <dxi-column dataField="OutcomeMostRecentVomiting_DiarrheaAtHospital" dataType="string" [calculateDisplayValue]="getOutcomeMostRecentVomiting_DiarrheaAtHospitalDescription" caption="What was the outcome of your child(ren)&#8217;s most recent vomiting/diarrhea at the hospital?"></dxi-column>
+    <dxi-column dataField="NoDaysNoWorkBecauseOfOwnIllness" dataType="number" caption="In the last two weeks, how many days have you personally been unable to do work due to your own stomach pain/diarrhea illness?"></dxi-column>
+    <dxi-column dataField="NoDaysNoWorkBecauseOfIllnessFamilyMembers" dataType="number" caption="In the last two weeks, how many total days have other members of your family been unable to do work due to stomach pain/diarrhea illness?"></dxi-column>
+    <dxi-column dataField="MoneySpentMedicalTreatmentLast4weeks" dataType="number" caption="How much money was spent by members of this household for medical treatment for these illnesses in the last four (4) weeks? (in local currency)"></dxi-column>
+    <dxi-column dataField="HealthChangeInAYear" dataType="string"  [calculateDisplayValue]="getHealthChangeInAYearDescription" caption="Since this time last year, how has your own health changed?"></dxi-column>
+    <dxi-column dataField="HealthChangeFamilyInAYear" dataType="string" [calculateDisplayValue]="getHealthChangeFamilyInAYearDescription" caption="Since this time last year, how has the overall health of your family changed?"></dxi-column>
+    <dxi-column dataField="BenefitSWP" dataType="string" [calculateDisplayValue]="getBenefitSWPDescription" caption="What level of benefit has taking part in the safe water education program been to you and your household"></dxi-column>
+    <dxi-column dataField="Completed" dataType="number" ></dxi-column>
+    <dxi-column dataField="Lat" dataType="string" caption="Latitude"></dxi-column>
+    <dxi-column dataField="Lng" dataType="string" caption="Longitude"></dxi-column>    
+
+            
+    
+</dx-data-grid>

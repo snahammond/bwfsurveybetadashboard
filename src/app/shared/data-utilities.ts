@@ -1,7 +1,6 @@
 import { APIService } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 
-var initialSurveys: any = [];
 
 export async function getInitialSurvey(api: APIService):Promise<any>{
     let initialSurveys: any = [];
@@ -24,6 +23,29 @@ export async function loadInitialSurveys(nextToken: any,api: APIService):Promise
       promiseInitialSurveys = api.ListInitialSurveys(null,null,null);
     }
     return promiseInitialSurveys;    
+}
+
+export async function getFollowupSurvey(api: APIService):Promise<any>{
+    let followupSurveys: any = [];
+    let promiseFollowupSurveysDone = await loadFollowupSurveys(null,api);
+    followupSurveys.push(...promiseFollowupSurveysDone.items);    
+    
+    while(promiseFollowupSurveysDone.nextToken){ 
+        promiseFollowupSurveysDone = await loadFollowupSurveys(promiseFollowupSurveysDone.nextToken,api);
+        followupSurveys.push(...promiseFollowupSurveysDone.items);
+    }
+
+    return <any>(followupSurveys);
+}
+
+export async function loadFollowupSurveys(nextToken: any,api: APIService):Promise<any>{    
+    let promiseFollowupSurveys: any;
+    if(nextToken){
+        promiseFollowupSurveys = api.ListFollowUpSurveys(null,null,nextToken);
+    }else{
+        promiseFollowupSurveys = api.ListFollowUpSurveys(null,null,null);
+    }
+    return promiseFollowupSurveys;    
 }
 
 export function getHeadHouseholdSexDescription(rowData){
@@ -1304,3 +1326,30 @@ export function getCausesOfChildrenDeathDescription(rowData){
  return result;
 }
 
+
+export function getBenefitSWPDescription(rowData){
+    var result:string = "";
+    switch(rowData.BenefitSWP) { 
+      case "GREATBENEFIT": { 
+        result = "Great benefit"; 
+        break; 
+      } 
+      case "GOODSIZEBENEFIT": { 
+        result = "Good-size benefit";  
+        break; 
+      } 
+      case "SMALLBENEFIT": { 
+        result = "Small benefit";  
+        break; 
+      } 
+      case "NOBENEFIT": { 
+        result = "No benefit";  
+        break; 
+      } 
+      default: { 
+         result = ""; 
+         break; 
+      }  
+   } 
+   return result;
+  }
