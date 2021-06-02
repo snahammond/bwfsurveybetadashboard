@@ -124,6 +124,7 @@ export class AuthService {
   async logOut() {
     try {
       await Auth.signOut({ global: true });
+      this.cookieService.set( 'user', null );
       this._user = null;
       this.router.navigate(['/login-form']);
     } catch (error) {
