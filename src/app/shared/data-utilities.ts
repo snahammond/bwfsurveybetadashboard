@@ -48,6 +48,29 @@ export async function loadFollowupSurveys(nextToken: any,api: APIService):Promis
     return promiseFollowupSurveys;    
 }
 
+export async function getCommunityWaterTest(api: APIService):Promise<any>{
+    let communityWaterTests: any = [];
+    let promiseCommunityWaterTestDone = await loadCommunityWaterTests(null,api);
+    communityWaterTests.push(...promiseCommunityWaterTestDone.items);    
+    
+    while(promiseCommunityWaterTestDone.nextToken){ 
+        promiseCommunityWaterTestDone = await loadFollowupSurveys(promiseCommunityWaterTestDone.nextToken,api);
+        communityWaterTests.push(...promiseCommunityWaterTestDone.items);
+    }
+
+    return <any>(communityWaterTests);
+}
+
+export async function loadCommunityWaterTests(nextToken: any,api: APIService):Promise<any>{    
+    let promiseCommunityWaterTests: any;
+    if(nextToken){
+        promiseCommunityWaterTests = api.ListCommunityWaterTests(null,null,nextToken);
+    }else{
+        promiseCommunityWaterTests = api.ListCommunityWaterTests(null,null,null);
+    }
+    return promiseCommunityWaterTests;    
+}
+
 export function getHeadHouseholdSexDescription(rowData){
     var result:string = "";
     switch(rowData.HeadHouseholdSex) { 
@@ -1326,6 +1349,28 @@ export function getCausesOfChildrenDeathDescription(rowData){
  return result;
 }
 
+export function getColilertTestResultDescription(rowData){
+    var result:string = "";
+    switch(rowData.ColilertTestResult) { 
+      case "CLEAR": { 
+        result = "Clear"; 
+        break; 
+      } 
+      case "YELLOW": { 
+        result = "Yellow";  
+        break; 
+      } 
+      case "FLUORESCESBLUE": { 
+        result = "Fluoresces blue";  
+        break; 
+      } 
+      default: { 
+         result = ""; 
+         break; 
+      }  
+   } 
+   return result;
+}
 
 export function getBenefitSWPDescription(rowData){
     var result:string = "";
@@ -1353,3 +1398,26 @@ export function getBenefitSWPDescription(rowData){
    } 
    return result;
   }
+  export function getPetrifilmTestResultDescription(rowData){
+    var result:string = "";
+    switch(rowData.PetrifilmTestResult) { 
+      case "NONE": { 
+        result = "None"; 
+        break; 
+      } 
+      case "0_10BLUECOLONIES": { 
+        result = "0 - 10 blue colonies";  
+        break; 
+      } 
+      case "MORETHAN10BLUECOLONIES": { 
+        result = "More than 10 blue colonies";  
+        break; 
+      } 
+      default: { 
+         result = ""; 
+         break; 
+      }  
+   } 
+   return result;
+}
+
