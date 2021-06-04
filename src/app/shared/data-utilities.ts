@@ -1466,7 +1466,7 @@ export function getBenefitSWPDescription(rowData){
       }  
    } 
    return result;
-  }
+}
 
   export function getPetrifilmTestResultDescription(rowData){
     var result:string = "";
@@ -1491,3 +1491,121 @@ export function getBenefitSWPDescription(rowData){
    return result;
 }
 
+export function getWaterTreatment24HoursDescription(rowData){
+    var result:string = "";
+    switch(rowData.WaterTreatment24Hours) { 
+      case "YES": { 
+        result = "Yes"; 
+        break; 
+      } 
+      case "NO": { 
+        result = "No";  
+        break; 
+      } 
+      case "NOTAPPLICABLE": { 
+        result = "Not applicable";  
+        break; 
+      } 
+      default: { 
+         result = ""; 
+         break; 
+      } 
+   } 
+   return result;
+}
+
+export function getMainReasonNoWaterTreatment24HourDescription(rowData){
+    var result:string = "";
+  
+    var resultBuilder = new StringBuilder();    
+    var allSelectedMainReasonNoWaterTreatment24Hour:string[] = rowData.MainReasonNoWaterTreatment24Hour.split(",");
+    
+    allSelectedMainReasonNoWaterTreatment24Hour.forEach(element => {
+      switch(element) { 
+        case "WATERISCONSIDEREDSAFE": { 
+          resultBuilder.Append("Water is considered safe,"); 
+          break; 
+        } 
+        case "TREATMENTPRODUCTSARENOTAVAILABLE": { 
+          resultBuilder.Append("Treatment products are not availablea,");  
+          break; 
+        } 
+        case "FIREWOODISSCARCEFORBOILING": { 
+          resultBuilder.Append("Firewood is scarce for boiling,"); 
+          break; 
+        } 
+        case "TOOEXPENSIVETOTREATWATER": { 
+          resultBuilder.Append("Too expensive to treat water,");  
+          break; 
+        }
+        case "TAKESTOOMUCHTIME": { 
+          resultBuilder.Append("Takes too much time,"); 
+          break; 
+        } 
+        case "LAZINESS": { 
+          resultBuilder.Append("Laziness,");  
+          break; 
+        } 
+        case "DONTKNOW": { 
+          resultBuilder.Append("Don't know,");  
+          break; 
+        } 
+        case "NOTAPPLICABLE": { 
+          resultBuilder.Append("Not applicable,"); 
+          break; 
+        }      
+        default: { 
+          resultBuilder.Append(""); 
+           break; 
+        } 
+     }
+    });
+  
+    result = resultBuilder.ToString();
+     
+   return result;
+  }
+
+  
+  export function getWaterTreatment24HourMethodDescription(rowData){
+    var result:string = "";
+    switch(rowData.WaterTreatment24HourMethod) { 
+      case "LETSTANDANDSETTLESTRAINTHRUACLOTHANDBOIL": { 
+        result = "Let stand and settle, strain thru a cloth and Boil"; 
+        break; 
+      } 
+      case "LETSTANDANDSETTLESTRAINTHRUACLOTHANDADDLIQUIDBLEACHCHLORINE": { 
+        result = "Let stand and settle, strain thru a cloth and Add liquid bleach/chlorine";  
+        break; 
+      } 
+      case "LETSTANDANDSETTLEANDSTRAINTHRUACLOTHONLY": { 
+        result = "Let stand and settle and strain thru a cloth only";  
+        break; 
+      }
+      case "BOIL": { 
+        result = "Boil";  
+        break; 
+      }
+      case "ADDLIQUIDBLEACHCHLORINE": { 
+        result = "Add liquid bleach/chlorine"; 
+        break; 
+      }       
+      case "USECHLORINETABLETS": { 
+        result = "Use chlorine tablets";  
+        break; 
+      }
+      case "USEAWATERFILTER": { 
+        result = "Use a water filter";  
+        break; 
+      }  
+      case "NOTAPPLICABLE": { 
+        result = "Not applicable";  
+        break; 
+      } 
+      default: { 
+         result = ""; 
+         break; 
+      } 
+   } 
+   return result;
+}

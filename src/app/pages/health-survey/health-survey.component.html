@@ -62,9 +62,9 @@
     <dxi-column dataField="NoDaysNoWorkBecauseOfIllnessFamilyMembers" dataType="number" caption="In the last two weeks, how many total days have other members of your family been unable to do work due to stomach pain/diarrhea illness?"></dxi-column>
     <dxi-column dataField="MoneySpentMedicalTreatmentLast4weeks" dataType="number" caption="How much money was spent by members of this household for medical treatment for these illnesses in the last four (4) weeks? (in local currency)"></dxi-column>
     
-    <dxi-column dataField="WaterTreatment24Hours" dataType="string" ></dxi-column>
-    <dxi-column dataField="MainReasonNoWaterTreatment24Hour" dataType="string" ></dxi-column>
-    <dxi-column dataField="WaterTreatment24HourMethod" dataType="string" ></dxi-column>
+    <dxi-column dataField="WaterTreatment24Hours" dataType="string" caption="During the last 24 hours, did you or someone in your household treat the family drinking water?" [calculateDisplayValue]="getWaterTreatment24HoursDescription"></dxi-column>
+    <dxi-column dataField="MainReasonNoWaterTreatment24Hour" dataType="string" caption="If the family drinking water was not treated, what is the main reason?" [calculateDisplayValue]="getMainReasonNoWaterTreatment24HourDescription"></dxi-column>
+    <dxi-column dataField="WaterTreatment24HourMethod" dataType="string" caption="If the household drinking water was treated, what was done to make it safer to drink?" [calculateDisplayValue]="getWaterTreatment24HourMethodDescription"></dxi-column>
     
 
     <dxi-column dataField="Completed" dataType="number" ></dxi-column>
