@@ -117,6 +117,29 @@ export async function loadHouseholdWaterTestsVol(nextToken: any,api: APIService)
     return promiseHouseholdWaterTestsVol;    
 }
 
+export async function getHealthSurveys(api: APIService):Promise<any>{
+    let healthSurveys: any = [];
+    let promiseHealthSurveysDone = await loadHealthSurveys(null,api);
+    healthSurveys.push(...promiseHealthSurveysDone.items);    
+    
+    while(promiseHealthSurveysDone.nextToken){ 
+        promiseHealthSurveysDone = await loadHealthSurveys(promiseHealthSurveysDone.nextToken,api);
+        healthSurveys.push(...promiseHealthSurveysDone.items);
+    }
+
+    return <any>(healthSurveys);
+}
+
+export async function loadHealthSurveys(nextToken: any,api: APIService):Promise<any>{    
+    let promiseHealthSurveys: any;
+    if(nextToken){
+        promiseHealthSurveys = api.ListHealthCheckSurveys(null,null,nextToken);
+    }else{
+        promiseHealthSurveys = api.ListHealthCheckSurveys(null,null,null);
+    }
+    return promiseHealthSurveys;    
+}
+
 export function getHeadHouseholdSexDescription(rowData){
     var result:string = "";
     switch(rowData.HeadHouseholdSex) { 
