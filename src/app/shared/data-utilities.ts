@@ -71,6 +71,29 @@ export async function loadCommunityWaterTests(nextToken: any,api: APIService):Pr
     return promiseCommunityWaterTests;    
 }
 
+export async function getHouseholdWaterTestSWE(api: APIService):Promise<any>{
+    let householdWaterTestsSWE: any = [];
+    let promiseHouseholdWaterTestsSWEDone = await loadHouseholdWaterTestsSWE(null,api);
+    householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);    
+    
+    while(promiseHouseholdWaterTestsSWEDone.nextToken){ 
+        promiseHouseholdWaterTestsSWEDone = await loadHouseholdWaterTestsSWE(promiseHouseholdWaterTestsSWEDone.nextToken,api);
+        householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);
+    }
+
+    return <any>(householdWaterTestsSWE);
+}
+
+export async function loadHouseholdWaterTestsSWE(nextToken: any,api: APIService):Promise<any>{    
+    let promiseHouseholdWaterTestsSWE: any;
+    if(nextToken){
+        promiseHouseholdWaterTestsSWE = api.ListHouseholdWaterTests(null,null,nextToken);
+    }else{
+        promiseHouseholdWaterTestsSWE = api.ListHouseholdWaterTests(null,null,null);
+    }
+    return promiseHouseholdWaterTestsSWE;    
+}
+
 export function getHeadHouseholdSexDescription(rowData){
     var result:string = "";
     switch(rowData.HeadHouseholdSex) { 
