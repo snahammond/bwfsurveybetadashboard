@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { getColilertTestResultDescription, getHouseholdWaterTestsVol, getPetrifilmTestResultDescription } from 'src/app/shared/data-utilities';
+import { APIService } from 'src/app/shared/services/api.service';
 
 @Component({
   selector: 'app-household-water-test-volunteers',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HouseholdWaterTestVolunteersComponent implements OnInit {
 
-  constructor() { }
+  householdWaterTestsVol: any = [];
+
+  constructor(private api: APIService) { }
 
   ngOnInit(): void {
+    getHouseholdWaterTestsVol(this.api)
+      .then((hoouseholdWaterTestsVolFromUtils)=>{     
+        this.householdWaterTestsVol = hoouseholdWaterTestsVolFromUtils;
+        console.log("done loading householdWaterTestsVol "+ this.householdWaterTestsVol.length);            
+      })
+      .catch(e=>{
+          console.log("error could not load householdWaterTestsVol", e);
+      }); 
   }
 
+  getColilertTestResultDescription(rowData){       
+    return getColilertTestResultDescription(rowData);
+  }
+
+  getPetrifilmTestResultDescription(rowData){
+    return getPetrifilmTestResultDescription(rowData);
+  }
 }

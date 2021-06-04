@@ -94,6 +94,29 @@ export async function loadHouseholdWaterTestsSWE(nextToken: any,api: APIService)
     return promiseHouseholdWaterTestsSWE;    
 }
 
+export async function getHouseholdWaterTestsVol(api: APIService):Promise<any>{
+    let householdWaterTestsVol: any = [];
+    let promiseHouseholdWaterTestsVolDone = await loadHouseholdWaterTestsVol(null,api);
+    householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);    
+    
+    while(promiseHouseholdWaterTestsVolDone.nextToken){ 
+        promiseHouseholdWaterTestsVolDone = await loadHouseholdWaterTestsVol(promiseHouseholdWaterTestsVolDone.nextToken,api);
+        householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);
+    }
+
+    return <any>(householdWaterTestsVol);
+}
+
+export async function loadHouseholdWaterTestsVol(nextToken: any,api: APIService):Promise<any>{    
+    let promiseHouseholdWaterTestsVol: any;
+    if(nextToken){
+        promiseHouseholdWaterTestsVol = api.ListVolunteerHouseholdWaterTests(null,null,nextToken);
+    }else{
+        promiseHouseholdWaterTestsVol = api.ListVolunteerHouseholdWaterTests(null,null,null);
+    }
+    return promiseHouseholdWaterTestsVol;    
+}
+
 export function getHeadHouseholdSexDescription(rowData){
     var result:string = "";
     switch(rowData.HeadHouseholdSex) { 
@@ -1421,6 +1444,7 @@ export function getBenefitSWPDescription(rowData){
    } 
    return result;
   }
+
   export function getPetrifilmTestResultDescription(rowData){
     var result:string = "";
     switch(rowData.PetrifilmTestResult) { 
