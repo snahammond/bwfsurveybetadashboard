@@ -1,1 +1,66 @@
-<p>monthly-activity reports to be implemented!</p>
+<h2 class="content-block">SWE Monthly Activity Report</h2>
+<dx-data-grid id="gridContainer"
+    class="dx-card wide-card"
+    [dataSource]="monthlyActivitiesSWE"
+    [remoteOperations]="false"
+    [allowColumnReordering]="true"
+    [rowAlternationEnabled]="true"
+    [showBorders]="true"
+    [columnAutoWidth]="true"
+    [allowColumnResizing]="true"
+    [showColumnLines]="true">
+
+    <dxo-paging [pageSize]="5"></dxo-paging>
+    <dxo-pager
+        [showPageSizeSelector]="true"
+        [allowedPageSizes]="[5,10, 25, 50, 100]"
+    ></dxo-pager>
+
+    <dxo-group-panel
+        [visible]="true"
+    ></dxo-group-panel>
+    <dxo-grouping
+        [autoExpandAll]="false"
+    ></dxo-grouping>
+
+    <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+    <dxo-filter-row [visible]="true"></dxo-filter-row>
+    <dxo-selection        
+        mode="multiple"
+    ></dxo-selection>
+
+    <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="monthlyActivitySWEReport"></dxo-export>
+    
+    <dxo-search-panel
+        [visible]="true"
+        [highlightCaseSensitive]="true"
+    ></dxo-search-panel>    
+
+    <dxi-column dataField="id" dataType="string" ></dxi-column>
+    <dxi-column dataField="Namebwe" dataType="string" caption="Email BWE"></dxi-column>
+    <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>
+    <dxi-column dataField="NoWaterSampleTaken" dataType="number" caption="Number of water samples taken"></dxi-column>
+    <dxi-column dataField="NoSurveysCompleted" dataType="number" caption="Number of surveys completed"></dxi-column>
+    <dxi-column dataField="NoHealthCheck" dataType="number" caption="Number of Health check interviews/phone calls made this month"></dxi-column>
+    <dxi-column dataField="NoLsn1Taught" dataType="number" caption="Number of lesson 1 (Is My Water Safe) taught this month"></dxi-column>
+    <dxi-column dataField="NoPersonsTaughtLesson1" dataType="number" caption="How many total persons were taught Lesson #1?"></dxi-column>
+    <dxi-column dataField="NoLsn2Taught" dataType="number" caption="Number of lesson 2 (Testing and Treating Water) taught this month"></dxi-column>
+    <dxi-column dataField="NoPersonsTaughtLesson2" dataType="number" caption="How many total persons were taught Lesson #2?"></dxi-column>
+    <dxi-column dataField="NoLsn3Taught" dataType="number" caption="Number of lesson 3 (Washing Hands) taught this month"></dxi-column>
+    <dxi-column dataField="NoPersonsTaughtLesson3" dataType="number" caption="How many total persons were taught Lesson #3"></dxi-column>
+    <dxi-column dataField="NoLsn4Taught" dataType="number" caption="Number of lesson 4 (Benefits of Safe Water) taught this month"></dxi-column>
+    <dxi-column dataField="NoPersonsTaughtLesson4" dataType="number" caption="How many total persons were taught Lesson #4"></dxi-column>
+    <dxi-column dataField="NoPersonsTaught" dataType="number" caption="Total number of persons taught"></dxi-column>    
+    <dxi-column dataField="NoHouseholdReceivingChlorineSupplies" dataType="number" caption="Number of households receiving chlorine supplies this month"></dxi-column>
+    <dxi-column dataField="NoLiquidChlorineDistributed" dataType="number" caption="How many liquid chlorine vials were distributed this month?"></dxi-column>
+    <dxi-column dataField="NoChlorineTabletsDistributed" dataType="number" caption="How many chlorine tablets were distributed this month?"></dxi-column>
+    <dxi-column dataField="NoWaterStorageContainersDistributed" dataType="number" caption="How many water storage containers were distributed to households/schools this month?"></dxi-column>
+    <dxi-column dataField="NoSchoolVisits" dataType="number" caption="Number of school visits made to initiate/strengthen safe water education this month?"></dxi-column>
+    <dxi-column dataField="NoPublicServiceMessagesAired" dataType="number" caption="Number of Public Service Messages aired to villages this month?"></dxi-column>
+    <dxi-column dataField="Completed" dataType="number" ></dxi-column>
+    <dxi-column dataField="Lat" dataType="string" caption="Latitude"></dxi-column>
+    <dxi-column dataField="Lng" dataType="string" caption="Longitude"></dxi-column>
+
+
+</dx-data-grid>
+

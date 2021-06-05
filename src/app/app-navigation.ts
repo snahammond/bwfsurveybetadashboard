@@ -33,8 +33,12 @@ export const navigation = [
         path: '/health-survey'
       },
       {
-        text: 'Monthly Activity',
+        text: 'Monthly Activity SWE',
         path: '/monthly-activity'
+      },
+      {
+        text: 'Monthly Activity Volunteers',
+        path: '/monthly-activity-vol'
       }
     ]
   },

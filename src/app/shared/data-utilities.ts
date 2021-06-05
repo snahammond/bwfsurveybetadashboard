@@ -140,6 +140,52 @@ export async function loadHealthSurveys(nextToken: any,api: APIService):Promise<
     return promiseHealthSurveys;    
 }
 
+export async function getSWEMonthlyActivities(api: APIService):Promise<any>{
+    let SWEMonthlyActivities: any = [];
+    let promiseSWEMonthlyActivitiesDone = await loadSWEMonthlyActivities(null,api);
+    SWEMonthlyActivities.push(...promiseSWEMonthlyActivitiesDone.items);    
+    
+    while(promiseSWEMonthlyActivitiesDone.nextToken){ 
+        promiseSWEMonthlyActivitiesDone = await loadSWEMonthlyActivities(promiseSWEMonthlyActivitiesDone.nextToken,api);
+        SWEMonthlyActivities.push(...promiseSWEMonthlyActivitiesDone.items);
+    }
+
+    return <any>(SWEMonthlyActivities);
+}
+
+export async function loadSWEMonthlyActivities(nextToken: any,api: APIService):Promise<any>{    
+    let promiseSWEMonthlyActivities: any;
+    if(nextToken){
+        promiseSWEMonthlyActivities = api.ListSweMonthlySummarys(null,null,nextToken);
+    }else{
+        promiseSWEMonthlyActivities = api.ListSweMonthlySummarys(null,null,null);
+    }
+    return promiseSWEMonthlyActivities;    
+}
+
+export async function getVolMonthlyActivities(api: APIService):Promise<any>{
+    let VolMonthlyActivities: any = [];
+    let promiseVolMonthlyActivitiesDone = await loadVolMonthlyActivities(null,api);
+    VolMonthlyActivities.push(...promiseVolMonthlyActivitiesDone.items);    
+    
+    while(promiseVolMonthlyActivitiesDone.nextToken){ 
+        promiseVolMonthlyActivitiesDone = await loadVolMonthlyActivities(promiseVolMonthlyActivitiesDone.nextToken,api);
+        VolMonthlyActivities.push(...promiseVolMonthlyActivitiesDone.items);
+    }
+
+    return <any>(VolMonthlyActivities);
+}
+
+export async function loadVolMonthlyActivities(nextToken: any,api: APIService):Promise<any>{    
+    let promiseVolMonthlyActivities: any;
+    if(nextToken){
+        promiseVolMonthlyActivities = api.ListVolunteerMonthlySummarys(null,null,nextToken);
+    }else{
+        promiseVolMonthlyActivities = api.ListVolunteerMonthlySummarys(null,null,null);
+    }
+    return promiseVolMonthlyActivities;    
+}
+
 export function getHeadHouseholdSexDescription(rowData){
     var result:string = "";
     switch(rowData.HeadHouseholdSex) { 
@@ -1564,8 +1610,7 @@ export function getMainReasonNoWaterTreatment24HourDescription(rowData){
     result = resultBuilder.ToString();
      
    return result;
-  }
-
+}
   
   export function getWaterTreatment24HourMethodDescription(rowData){
     var result:string = "";
