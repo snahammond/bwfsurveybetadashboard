@@ -866,7 +866,7 @@ export function getTakingWaterFromStorageDescription(rowData){
       break; 
     } 
     case "VARIETYWAYSUSED": { 
-      result = "A variety of ways are used for taking water from the storage container by household member"; 
+      result = "Several ways are used for taking water from the storage container"; 
       break; 
     } 
     case "CLEANCUPFORPOURINGSTOREDWATERINTOOTHERCONTAINER": { 
@@ -1612,7 +1612,7 @@ export function getMainReasonNoWaterTreatment24HourDescription(rowData){
    return result;
 }
   
-  export function getWaterTreatment24HourMethodDescription(rowData){
+export function getWaterTreatment24HourMethodDescription(rowData){
     var result:string = "";
     switch(rowData.WaterTreatment24HourMethod) { 
       case "LETSTANDANDSETTLESTRAINTHRUACLOTHANDBOIL": { 
@@ -1653,4 +1653,117 @@ export function getMainReasonNoWaterTreatment24HourDescription(rowData){
       } 
    } 
    return result;
+}
+
+export function getLastTimeTreatedHouseholdWaterWithChlorine(rowData){
+  var result:string = "";
+  switch(rowData.LastTimeTreatedHouseholdWaterWithChlorine) { 
+    case "0_3DAYSAGO": { 
+      result = "0-3 days ago"; 
+      break; 
+    } 
+    case "4_7DAYSAGO": { 
+      result = "4-7 days ago";  
+      break; 
+    } 
+    case "8_14DAYSAGO": { 
+      result = "8-14 days ago";  
+      break; 
+    }
+    case "MORETHAN14DAYSAGO": { 
+      result = "More than 15 days ago";  
+      break; 
+    }
+    case "DONOTUSECHLORINETOTREATWATER": { 
+      result = "Do not use chlorine to treat water"; 
+      break; 
+    }       
+    case "DONTKNOW": { 
+      result = "Don’t know";  
+      break; 
+    }
+     
+    default: { 
+       result = ""; 
+       break; 
+    } 
+ } 
+ return result;
+}
+
+export function getWhereDidYouGetChlorineToTreatHouseholdWater(rowData){
+  var result:string = "";
+  switch(rowData.WhereDidYouGetChlorineToTreatHouseholdWater) { 
+    case "RECEIVEDFREEFROMLOCALORGANIZATION": { 
+      result = "Received free from local organization"; 
+      break; 
+    } 
+    case "RECEIVEDATLOWCOSTFROMLOCALORGANIZATION": { 
+      result = "Received at low cost from local organization";  
+      break; 
+    } 
+    case "PURCHASEDHOUSEHOLDCHLORINEBLEACHFROMMARKET": { 
+      result = "Purchased household chlorine bleach from market";  
+      break; 
+    }
+    case "PURCHASEDCHLORINEFROMLOCALVENDOR": { 
+      result = "Purchased chlorine (liquid or tablets) from local vendor";  
+      break; 
+    }
+    case "SOMEOTHERSOURCE": { 
+      result = "Some other source"; 
+      break; 
+    }    
+    case "DIDNOTUSECHLORINETOTREATHOUSEHOLDWATER": { 
+      result = "Did not use chlorine to treat household water"; 
+      break; 
+    }    
+    case "DONTKNOW": { 
+      result = "Don’t know";  
+      break; 
+    }
+     
+    default: { 
+       result = ""; 
+       break; 
+    } 
+ } 
+ return result;
+}
+
+
+export function getHowDifficultToObtainChlorine(rowData){
+  var result:string = "";
+  switch(rowData.HowDifficultToObtainChlorine) { 
+    case "CHLORINEISREADILYAVAILABLEANDDOESNTCOSTMUCH": { 
+      result = "Chlorine is readily available and doesn’t cost much"; 
+      break; 
+    } 
+    case "CHLORINEISAVAILABLEBUTCOSTLYTOBUY": { 
+      result = "Chlorine is available locally, but is costly to buy";  
+      break; 
+    } 
+    case "CHLORINEISHARDTOFINDORUNAVAILABLELOCALLY": { 
+      result = "Chlorine is hard to find or is unavailable locally";  
+      break; 
+    }
+    case "CHLORINEISNOTAVAILABLELOCALLY": { 
+      result = "Chlorine is not available locally";  
+      break; 
+    }
+    case "DONOTUSECHLORINETOTREATWATER": { 
+      result = "Do not use chlorine to treat water"; 
+      break; 
+    } 
+    case "DONTKNOW": { 
+      result = "Don’t know";  
+      break; 
+    }
+     
+    default: { 
+       result = ""; 
+       break; 
+    } 
+ } 
+ return result;
 }

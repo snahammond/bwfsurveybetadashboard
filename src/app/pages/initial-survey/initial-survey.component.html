@@ -75,11 +75,10 @@
     <dxi-column dataField="MainReasonNoWaterTreatmentBeforeDrinking" dataType="string" [calculateDisplayValue]="getMainReasonNoWaterTreatmentBeforeDrinkingDescription" caption="If you do not treat your water, what is/are the main reason(s) you do not treat your water for drinking?"></dxi-column>
     <dxi-column dataField="WaterTreatmentMethod" dataType="string" [calculateDisplayValue]="getWaterTreatmentMethodDescription" caption="If you treat your drinking water, what do you usually do to make it safer to drink?"></dxi-column>
     <dxi-column dataField="FrequencyWaterTreatment" dataType="string" [calculateDisplayValue]="getFrequencyWaterTreatmentDescription" caption="How often do you treat your water to make it safe?"></dxi-column>
-    <dxi-column dataField="LastTimeTreatedHouseholdWaterWithChlorine" dataType="string" [calculateDisplayValue]="" caption="When was the last time you treated your household drinking water with chlorine?"></dxi-column>
-    <dxi-column dataField="WhereDidYouGetChlorineToTreatHouseholdWater" dataType="string" [calculateDisplayValue]="" caption="Where did you get the chlorine to treat your household water?"></dxi-column>
+    <dxi-column dataField="LastTimeTreatedHouseholdWaterWithChlorine" dataType="string" [calculateDisplayValue]="getLastTimeTreatedHouseholdWaterWithChlorine" caption="When was the last time you treated your household drinking water with chlorine?"></dxi-column>
+    <dxi-column dataField="WhereDidYouGetChlorineToTreatHouseholdWater" dataType="string" [calculateDisplayValue]="getWhereDidYouGetChlorineToTreatHouseholdWater" caption="Where did you get the chlorine to treat your household water?"></dxi-column>
     <dxi-column dataField="AmountSpendPerWeekForChlorineToTreatWater" dataType="number" caption="How much do you spend per week for chlorine to treat your water?" ></dxi-column>
-    <dxi-column dataField="HowDifficultToObtainChlorine" dataType="string" [calculateDisplayValue]="" caption="How difficult is it for you to obtain chlorine to treat your water?"></dxi-column>
-    
+    <dxi-column dataField="HowDifficultToObtainChlorine" dataType="string" [calculateDisplayValue]="getHowDifficultToObtainChlorine" caption="How difficult is it for you to obtain chlorine to treat your water?"></dxi-column>
     <dxi-column dataField="TakingWaterFromStorage" dataType="string" [calculateDisplayValue]="getTakingWaterFromStorageDescription" caption="How do members of your household take water from the home storage container?"></dxi-column>
     <dxi-column dataField="RubbishDisposal" dataType="string" [calculateDisplayValue]="getRubbishDisposalDescription" caption="Where does this household dispose of rubbish or trash?"></dxi-column>
     <dxi-column dataField="HouseholdDefecationMethod" dataType="string" [calculateDisplayValue]="getHouseholdDefecationMethodDescription" caption="Where do those in your household usually go to defecate?"></dxi-column>
