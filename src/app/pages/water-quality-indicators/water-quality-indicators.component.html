@@ -1,0 +1,46 @@
+<h2 class="content-block">Water Quality indicators</h2>
+<div class="form">    
+    <div class="dx-fieldset">
+        <div class="dx-fieldset-header">Parameter Settings</div>  
+        <div class="dx-field">
+            <div class="dx-field-label">Country and Community</div>
+            <div class="dx-field-value">
+                <dx-drop-down-box
+                        [(value)]="gridBoxValue"
+                        valueExpr="ID"
+                        displayExpr="Community"
+                        placeholder="Select a value..."
+                        [showClearButton]="true"
+                        [dataSource]="gridDataSource"
+                        onValueChanged="CountryAndCommunityValueChanged"
+                >
+    
+                    <div *dxTemplate="let data of 'content'">
+                        <dx-data-grid
+                                [dataSource]="gridDataSource"
+                                [columns]="['Country', 'Community']"
+                                [selection]="{ mode: 'multiple' }"
+                                [hoverStateEnabled]="true"
+                                [paging]="{ enabled: true, pageSize: 10 }"
+                                [scrolling]="{ mode: 'virtual' }"
+                                [height]="345"
+                                keyExpr="ID"
+                                [(selectedRowKeys)]="gridBoxValue"
+                        >
+                        </dx-data-grid>
+                    </div>
+                </dx-drop-down-box>
+            </div>
+            <div>
+                <dx-button
+                    stylingMode="contained"
+                    text="Contained"
+                    type="default"
+                    [width]="120"
+                    (onClick)="click($event)">
+                </dx-button>
+            </div>
+        </div>      
+    </div>
+    
+</div>

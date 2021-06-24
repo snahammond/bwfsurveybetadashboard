@@ -45,10 +45,11 @@ export type CreateInitialSurveyInput = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -112,10 +113,11 @@ export type ModelInitialSurveyConditionInput = {
   WaterTreatmentBeforeDrinking?: ModelStringInput | null;
   MainReasonNoWaterTreatmentBeforeDrinking?: ModelStringInput | null;
   WaterTreatmentMethod?: ModelStringInput | null;
-  HowLongUsingWaterTreatment?: ModelStringInput | null;
   FrequencyWaterTreatment?: ModelStringInput | null;
-  WaterStorageAtHome?: ModelStringInput | null;
-  WaterStorageContainerHaveLid?: ModelStringInput | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: ModelStringInput | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: ModelStringInput | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: ModelIntInput | null;
+  HowDifficultToObtainChlorine?: ModelStringInput | null;
   TakingWaterFromStorage?: ModelStringInput | null;
   RubbishDisposal?: ModelStringInput | null;
   HouseholdDefecationMethod?: ModelStringInput | null;
@@ -233,10 +235,11 @@ export type UpdateInitialSurveyInput = {
   WaterTreatmentBeforeDrinking?: string | null;
   MainReasonNoWaterTreatmentBeforeDrinking?: string | null;
   WaterTreatmentMethod?: string | null;
-  HowLongUsingWaterTreatment?: string | null;
   FrequencyWaterTreatment?: string | null;
-  WaterStorageAtHome?: string | null;
-  WaterStorageContainerHaveLid?: string | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: string | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: string | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: number | null;
+  HowDifficultToObtainChlorine?: string | null;
   TakingWaterFromStorage?: string | null;
   RubbishDisposal?: string | null;
   HouseholdDefecationMethod?: string | null;
@@ -278,17 +281,16 @@ export type CreateFollowUpSurveyInput = {
   SurveyId: number;
   date?: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -318,17 +320,16 @@ export type ModelFollowUpSurveyConditionInput = {
   SurveyId?: ModelIntInput | null;
   date?: ModelStringInput | null;
   HeadHouseholdName?: ModelStringInput | null;
-  MainSourceDrinkingWater?: ModelStringInput | null;
   PersonBeingInterviewed?: ModelStringInput | null;
   WaterTreatmentBeforeDrinking?: ModelStringInput | null;
   MainReasonNoWaterTreatmentBeforeDrinking?: ModelStringInput | null;
   WaterTreatmentMethod?: ModelStringInput | null;
-  HowLongUsingWaterTreatment?: ModelStringInput | null;
   FrequencyWaterTreatment?: ModelStringInput | null;
-  WaterStorageAtHome?: ModelStringInput | null;
-  WaterStorageContainerHaveLid?: ModelStringInput | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: ModelStringInput | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: ModelStringInput | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: ModelIntInput | null;
+  HowDifficultToObtainChlorine?: ModelStringInput | null;
   TakingWaterFromStorage?: ModelStringInput | null;
-  WashedHandsIn24Hours?: ModelStringInput | null;
   WhenWashedHandsIn24Hours?: ModelStringInput | null;
   WhatUsedToWashYourHands?: ModelStringInput | null;
   CommonIllnessAffectingAllChildrenInHousehold?: ModelStringInput | null;
@@ -361,17 +362,16 @@ export type UpdateFollowUpSurveyInput = {
   SurveyId?: number | null;
   date?: string | null;
   HeadHouseholdName?: string | null;
-  MainSourceDrinkingWater?: string | null;
   PersonBeingInterviewed?: string | null;
   WaterTreatmentBeforeDrinking?: string | null;
   MainReasonNoWaterTreatmentBeforeDrinking?: string | null;
   WaterTreatmentMethod?: string | null;
-  HowLongUsingWaterTreatment?: string | null;
   FrequencyWaterTreatment?: string | null;
-  WaterStorageAtHome?: string | null;
-  WaterStorageContainerHaveLid?: string | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: string | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: string | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: number | null;
+  HowDifficultToObtainChlorine?: string | null;
   TakingWaterFromStorage?: string | null;
-  WashedHandsIn24Hours?: string | null;
   WhenWashedHandsIn24Hours?: string | null;
   WhatUsedToWashYourHands?: string | null;
   CommonIllnessAffectingAllChildrenInHousehold?: string | null;
@@ -408,6 +408,10 @@ export type CreateHealthCheckSurveyInput = {
   date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -422,9 +426,6 @@ export type CreateHealthCheckSurveyInput = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -439,6 +440,10 @@ export type ModelHealthCheckSurveyConditionInput = {
   date?: ModelStringInput | null;
   HeadHouseholdName?: ModelStringInput | null;
   PersonBeingInterviewed?: ModelStringInput | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: ModelStringInput | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: ModelStringInput | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: ModelIntInput | null;
+  HowDifficultToObtainChlorine?: ModelStringInput | null;
   WasteDisposalYoungestChild?: ModelStringInput | null;
   WashedHandsIn24Hours?: ModelStringInput | null;
   WhenWashedHandsIn24Hours?: ModelStringInput | null;
@@ -453,9 +458,6 @@ export type ModelHealthCheckSurveyConditionInput = {
   NoDaysNoWorkBecauseOfOwnIllness?: ModelIntInput | null;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers?: ModelIntInput | null;
   MoneySpentMedicalTreatmentLast4weeks?: ModelIntInput | null;
-  WaterTreatment24Hours?: ModelStringInput | null;
-  MainReasonNoWaterTreatment24Hour?: ModelStringInput | null;
-  WaterTreatment24HourMethod?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -473,6 +475,10 @@ export type UpdateHealthCheckSurveyInput = {
   date?: string | null;
   HeadHouseholdName?: string | null;
   PersonBeingInterviewed?: string | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: string | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: string | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: number | null;
+  HowDifficultToObtainChlorine?: string | null;
   WasteDisposalYoungestChild?: string | null;
   WashedHandsIn24Hours?: string | null;
   WhenWashedHandsIn24Hours?: string | null;
@@ -487,9 +493,6 @@ export type UpdateHealthCheckSurveyInput = {
   NoDaysNoWorkBecauseOfOwnIllness?: number | null;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers?: number | null;
   MoneySpentMedicalTreatmentLast4weeks?: number | null;
-  WaterTreatment24Hours?: string | null;
-  MainReasonNoWaterTreatment24Hour?: string | null;
-  WaterTreatment24HourMethod?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -1106,10 +1109,11 @@ export type ModelInitialSurveyFilterInput = {
   WaterTreatmentBeforeDrinking?: ModelStringInput | null;
   MainReasonNoWaterTreatmentBeforeDrinking?: ModelStringInput | null;
   WaterTreatmentMethod?: ModelStringInput | null;
-  HowLongUsingWaterTreatment?: ModelStringInput | null;
   FrequencyWaterTreatment?: ModelStringInput | null;
-  WaterStorageAtHome?: ModelStringInput | null;
-  WaterStorageContainerHaveLid?: ModelStringInput | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: ModelStringInput | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: ModelStringInput | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: ModelIntInput | null;
+  HowDifficultToObtainChlorine?: ModelStringInput | null;
   TakingWaterFromStorage?: ModelStringInput | null;
   RubbishDisposal?: ModelStringInput | null;
   HouseholdDefecationMethod?: ModelStringInput | null;
@@ -1164,17 +1168,16 @@ export type ModelFollowUpSurveyFilterInput = {
   SurveyId?: ModelIntInput | null;
   date?: ModelStringInput | null;
   HeadHouseholdName?: ModelStringInput | null;
-  MainSourceDrinkingWater?: ModelStringInput | null;
   PersonBeingInterviewed?: ModelStringInput | null;
   WaterTreatmentBeforeDrinking?: ModelStringInput | null;
   MainReasonNoWaterTreatmentBeforeDrinking?: ModelStringInput | null;
   WaterTreatmentMethod?: ModelStringInput | null;
-  HowLongUsingWaterTreatment?: ModelStringInput | null;
   FrequencyWaterTreatment?: ModelStringInput | null;
-  WaterStorageAtHome?: ModelStringInput | null;
-  WaterStorageContainerHaveLid?: ModelStringInput | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: ModelStringInput | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: ModelStringInput | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: ModelIntInput | null;
+  HowDifficultToObtainChlorine?: ModelStringInput | null;
   TakingWaterFromStorage?: ModelStringInput | null;
-  WashedHandsIn24Hours?: ModelStringInput | null;
   WhenWashedHandsIn24Hours?: ModelStringInput | null;
   WhatUsedToWashYourHands?: ModelStringInput | null;
   CommonIllnessAffectingAllChildrenInHousehold?: ModelStringInput | null;
@@ -1208,6 +1211,10 @@ export type ModelHealthCheckSurveyFilterInput = {
   date?: ModelStringInput | null;
   HeadHouseholdName?: ModelStringInput | null;
   PersonBeingInterviewed?: ModelStringInput | null;
+  LastTimeTreatedHouseholdWaterWithChlorine?: ModelStringInput | null;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: ModelStringInput | null;
+  AmountSpendPerWeekForChlorineToTreatWater?: ModelIntInput | null;
+  HowDifficultToObtainChlorine?: ModelStringInput | null;
   WasteDisposalYoungestChild?: ModelStringInput | null;
   WashedHandsIn24Hours?: ModelStringInput | null;
   WhenWashedHandsIn24Hours?: ModelStringInput | null;
@@ -1222,9 +1229,6 @@ export type ModelHealthCheckSurveyFilterInput = {
   NoDaysNoWorkBecauseOfOwnIllness?: ModelIntInput | null;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers?: ModelIntInput | null;
   MoneySpentMedicalTreatmentLast4weeks?: ModelIntInput | null;
-  WaterTreatment24Hours?: ModelStringInput | null;
-  MainReasonNoWaterTreatment24Hour?: ModelStringInput | null;
-  WaterTreatment24HourMethod?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -1459,10 +1463,11 @@ export type CreateInitialSurveyMutation = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -1532,10 +1537,11 @@ export type UpdateInitialSurveyMutation = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -1605,10 +1611,11 @@ export type DeleteInitialSurveyMutation = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -1650,17 +1657,16 @@ export type CreateFollowUpSurveyMutation = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -1696,17 +1702,16 @@ export type UpdateFollowUpSurveyMutation = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -1742,17 +1747,16 @@ export type DeleteFollowUpSurveyMutation = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -1789,6 +1793,10 @@ export type CreateHealthCheckSurveyMutation = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -1803,9 +1811,6 @@ export type CreateHealthCheckSurveyMutation = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -1826,6 +1831,10 @@ export type UpdateHealthCheckSurveyMutation = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -1840,9 +1849,6 @@ export type UpdateHealthCheckSurveyMutation = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -1863,6 +1869,10 @@ export type DeleteHealthCheckSurveyMutation = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -1877,9 +1887,6 @@ export type DeleteHealthCheckSurveyMutation = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2589,10 +2596,11 @@ export type SyncInitialSurveysQuery = {
     WaterTreatmentBeforeDrinking: string;
     MainReasonNoWaterTreatmentBeforeDrinking: string;
     WaterTreatmentMethod: string;
-    HowLongUsingWaterTreatment: string;
     FrequencyWaterTreatment: string;
-    WaterStorageAtHome: string;
-    WaterStorageContainerHaveLid: string;
+    LastTimeTreatedHouseholdWaterWithChlorine: string;
+    WhereDidYouGetChlorineToTreatHouseholdWater: string;
+    AmountSpendPerWeekForChlorineToTreatWater: number;
+    HowDifficultToObtainChlorine: string;
     TakingWaterFromStorage: string;
     RubbishDisposal: string;
     HouseholdDefecationMethod: string;
@@ -2665,10 +2673,11 @@ export type GetInitialSurveyQuery = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -2740,10 +2749,11 @@ export type ListInitialSurveysQuery = {
     WaterTreatmentBeforeDrinking: string;
     MainReasonNoWaterTreatmentBeforeDrinking: string;
     WaterTreatmentMethod: string;
-    HowLongUsingWaterTreatment: string;
     FrequencyWaterTreatment: string;
-    WaterStorageAtHome: string;
-    WaterStorageContainerHaveLid: string;
+    LastTimeTreatedHouseholdWaterWithChlorine: string;
+    WhereDidYouGetChlorineToTreatHouseholdWater: string;
+    AmountSpendPerWeekForChlorineToTreatWater: number;
+    HowDifficultToObtainChlorine: string;
     TakingWaterFromStorage: string;
     RubbishDisposal: string;
     HouseholdDefecationMethod: string;
@@ -2790,17 +2800,16 @@ export type SyncFollowUpSurveysQuery = {
     SurveyId: number;
     date: string | null;
     HeadHouseholdName: string;
-    MainSourceDrinkingWater: string;
     PersonBeingInterviewed: string;
     WaterTreatmentBeforeDrinking: string;
     MainReasonNoWaterTreatmentBeforeDrinking: string;
     WaterTreatmentMethod: string;
-    HowLongUsingWaterTreatment: string;
     FrequencyWaterTreatment: string;
-    WaterStorageAtHome: string;
-    WaterStorageContainerHaveLid: string;
+    LastTimeTreatedHouseholdWaterWithChlorine: string;
+    WhereDidYouGetChlorineToTreatHouseholdWater: string;
+    AmountSpendPerWeekForChlorineToTreatWater: number;
+    HowDifficultToObtainChlorine: string;
     TakingWaterFromStorage: string;
-    WashedHandsIn24Hours: string;
     WhenWashedHandsIn24Hours: string;
     WhatUsedToWashYourHands: string;
     CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -2839,17 +2848,16 @@ export type GetFollowUpSurveyQuery = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -2887,17 +2895,16 @@ export type ListFollowUpSurveysQuery = {
     SurveyId: number;
     date: string | null;
     HeadHouseholdName: string;
-    MainSourceDrinkingWater: string;
     PersonBeingInterviewed: string;
     WaterTreatmentBeforeDrinking: string;
     MainReasonNoWaterTreatmentBeforeDrinking: string;
     WaterTreatmentMethod: string;
-    HowLongUsingWaterTreatment: string;
     FrequencyWaterTreatment: string;
-    WaterStorageAtHome: string;
-    WaterStorageContainerHaveLid: string;
+    LastTimeTreatedHouseholdWaterWithChlorine: string;
+    WhereDidYouGetChlorineToTreatHouseholdWater: string;
+    AmountSpendPerWeekForChlorineToTreatWater: number;
+    HowDifficultToObtainChlorine: string;
     TakingWaterFromStorage: string;
-    WashedHandsIn24Hours: string;
     WhenWashedHandsIn24Hours: string;
     WhatUsedToWashYourHands: string;
     CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -2939,6 +2946,10 @@ export type SyncHealthCheckSurveysQuery = {
     date: string | null;
     HeadHouseholdName: string;
     PersonBeingInterviewed: string;
+    LastTimeTreatedHouseholdWaterWithChlorine: string;
+    WhereDidYouGetChlorineToTreatHouseholdWater: string;
+    AmountSpendPerWeekForChlorineToTreatWater: number;
+    HowDifficultToObtainChlorine: string;
     WasteDisposalYoungestChild: string;
     WashedHandsIn24Hours: string;
     WhenWashedHandsIn24Hours: string;
@@ -2953,9 +2964,6 @@ export type SyncHealthCheckSurveysQuery = {
     NoDaysNoWorkBecauseOfOwnIllness: number;
     NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
     MoneySpentMedicalTreatmentLast4weeks: number;
-    WaterTreatment24Hours: string;
-    MainReasonNoWaterTreatment24Hour: string;
-    WaterTreatment24HourMethod: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -2979,6 +2987,10 @@ export type GetHealthCheckSurveyQuery = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -2993,9 +3005,6 @@ export type GetHealthCheckSurveyQuery = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -3018,6 +3027,10 @@ export type ListHealthCheckSurveysQuery = {
     date: string | null;
     HeadHouseholdName: string;
     PersonBeingInterviewed: string;
+    LastTimeTreatedHouseholdWaterWithChlorine: string;
+    WhereDidYouGetChlorineToTreatHouseholdWater: string;
+    AmountSpendPerWeekForChlorineToTreatWater: number;
+    HowDifficultToObtainChlorine: string;
     WasteDisposalYoungestChild: string;
     WashedHandsIn24Hours: string;
     WhenWashedHandsIn24Hours: string;
@@ -3032,9 +3045,6 @@ export type ListHealthCheckSurveysQuery = {
     NoDaysNoWorkBecauseOfOwnIllness: number;
     NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
     MoneySpentMedicalTreatmentLast4weeks: number;
-    WaterTreatment24Hours: string;
-    MainReasonNoWaterTreatment24Hour: string;
-    WaterTreatment24HourMethod: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -3845,10 +3855,11 @@ export type OnCreateInitialSurveySubscription = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -3918,10 +3929,11 @@ export type OnUpdateInitialSurveySubscription = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -3991,10 +4003,11 @@ export type OnDeleteInitialSurveySubscription = {
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
   RubbishDisposal: string;
   HouseholdDefecationMethod: string;
@@ -4036,17 +4049,16 @@ export type OnCreateFollowUpSurveySubscription = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -4082,17 +4094,16 @@ export type OnUpdateFollowUpSurveySubscription = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -4128,17 +4139,16 @@ export type OnDeleteFollowUpSurveySubscription = {
   SurveyId: number;
   date: string | null;
   HeadHouseholdName: string;
-  MainSourceDrinkingWater: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
   MainReasonNoWaterTreatmentBeforeDrinking: string;
   WaterTreatmentMethod: string;
-  HowLongUsingWaterTreatment: string;
   FrequencyWaterTreatment: string;
-  WaterStorageAtHome: string;
-  WaterStorageContainerHaveLid: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   TakingWaterFromStorage: string;
-  WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
   WhatUsedToWashYourHands: string;
   CommonIllnessAffectingAllChildrenInHousehold: string;
@@ -4175,6 +4185,10 @@ export type OnCreateHealthCheckSurveySubscription = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -4189,9 +4203,6 @@ export type OnCreateHealthCheckSurveySubscription = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4212,6 +4223,10 @@ export type OnUpdateHealthCheckSurveySubscription = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -4226,9 +4241,6 @@ export type OnUpdateHealthCheckSurveySubscription = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4249,6 +4261,10 @@ export type OnDeleteHealthCheckSurveySubscription = {
   date: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
+  LastTimeTreatedHouseholdWaterWithChlorine: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater: string;
+  AmountSpendPerWeekForChlorineToTreatWater: number;
+  HowDifficultToObtainChlorine: string;
   WasteDisposalYoungestChild: string;
   WashedHandsIn24Hours: string;
   WhenWashedHandsIn24Hours: string;
@@ -4263,9 +4279,6 @@ export type OnDeleteHealthCheckSurveySubscription = {
   NoDaysNoWorkBecauseOfOwnIllness: number;
   NoDaysNoWorkBecauseOfIllnessFamilyMembers: number;
   MoneySpentMedicalTreatmentLast4weeks: number;
-  WaterTreatment24Hours: string;
-  MainReasonNoWaterTreatment24Hour: string;
-  WaterTreatment24HourMethod: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4982,10 +4995,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -5071,10 +5085,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -5160,10 +5175,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -5221,17 +5237,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -5283,17 +5298,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -5345,17 +5359,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -5408,6 +5421,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -5422,9 +5439,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng
@@ -5463,6 +5477,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -5477,9 +5495,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng
@@ -5518,6 +5533,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -5532,9 +5551,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng
@@ -6786,10 +6802,11 @@ export class APIService {
             WaterTreatmentBeforeDrinking
             MainReasonNoWaterTreatmentBeforeDrinking
             WaterTreatmentMethod
-            HowLongUsingWaterTreatment
             FrequencyWaterTreatment
-            WaterStorageAtHome
-            WaterStorageContainerHaveLid
+            LastTimeTreatedHouseholdWaterWithChlorine
+            WhereDidYouGetChlorineToTreatHouseholdWater
+            AmountSpendPerWeekForChlorineToTreatWater
+            HowDifficultToObtainChlorine
             TakingWaterFromStorage
             RubbishDisposal
             HouseholdDefecationMethod
@@ -6882,10 +6899,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -6971,10 +6989,11 @@ export class APIService {
             WaterTreatmentBeforeDrinking
             MainReasonNoWaterTreatmentBeforeDrinking
             WaterTreatmentMethod
-            HowLongUsingWaterTreatment
             FrequencyWaterTreatment
-            WaterStorageAtHome
-            WaterStorageContainerHaveLid
+            LastTimeTreatedHouseholdWaterWithChlorine
+            WhereDidYouGetChlorineToTreatHouseholdWater
+            AmountSpendPerWeekForChlorineToTreatWater
+            HowDifficultToObtainChlorine
             TakingWaterFromStorage
             RubbishDisposal
             HouseholdDefecationMethod
@@ -7043,17 +7062,16 @@ export class APIService {
             SurveyId
             date
             HeadHouseholdName
-            MainSourceDrinkingWater
             PersonBeingInterviewed
             WaterTreatmentBeforeDrinking
             MainReasonNoWaterTreatmentBeforeDrinking
             WaterTreatmentMethod
-            HowLongUsingWaterTreatment
             FrequencyWaterTreatment
-            WaterStorageAtHome
-            WaterStorageContainerHaveLid
+            LastTimeTreatedHouseholdWaterWithChlorine
+            WhereDidYouGetChlorineToTreatHouseholdWater
+            AmountSpendPerWeekForChlorineToTreatWater
+            HowDifficultToObtainChlorine
             TakingWaterFromStorage
-            WashedHandsIn24Hours
             WhenWashedHandsIn24Hours
             WhatUsedToWashYourHands
             CommonIllnessAffectingAllChildrenInHousehold
@@ -7112,17 +7130,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -7174,17 +7191,16 @@ export class APIService {
             SurveyId
             date
             HeadHouseholdName
-            MainSourceDrinkingWater
             PersonBeingInterviewed
             WaterTreatmentBeforeDrinking
             MainReasonNoWaterTreatmentBeforeDrinking
             WaterTreatmentMethod
-            HowLongUsingWaterTreatment
             FrequencyWaterTreatment
-            WaterStorageAtHome
-            WaterStorageContainerHaveLid
+            LastTimeTreatedHouseholdWaterWithChlorine
+            WhereDidYouGetChlorineToTreatHouseholdWater
+            AmountSpendPerWeekForChlorineToTreatWater
+            HowDifficultToObtainChlorine
             TakingWaterFromStorage
-            WashedHandsIn24Hours
             WhenWashedHandsIn24Hours
             WhatUsedToWashYourHands
             CommonIllnessAffectingAllChildrenInHousehold
@@ -7248,6 +7264,10 @@ export class APIService {
             date
             HeadHouseholdName
             PersonBeingInterviewed
+            LastTimeTreatedHouseholdWaterWithChlorine
+            WhereDidYouGetChlorineToTreatHouseholdWater
+            AmountSpendPerWeekForChlorineToTreatWater
+            HowDifficultToObtainChlorine
             WasteDisposalYoungestChild
             WashedHandsIn24Hours
             WhenWashedHandsIn24Hours
@@ -7262,9 +7282,6 @@ export class APIService {
             NoDaysNoWorkBecauseOfOwnIllness
             NoDaysNoWorkBecauseOfIllnessFamilyMembers
             MoneySpentMedicalTreatmentLast4weeks
-            WaterTreatment24Hours
-            MainReasonNoWaterTreatment24Hour
-            WaterTreatment24HourMethod
             Completed
             Lat
             Lng
@@ -7308,6 +7325,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -7322,9 +7343,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng
@@ -7361,6 +7379,10 @@ export class APIService {
             date
             HeadHouseholdName
             PersonBeingInterviewed
+            LastTimeTreatedHouseholdWaterWithChlorine
+            WhereDidYouGetChlorineToTreatHouseholdWater
+            AmountSpendPerWeekForChlorineToTreatWater
+            HowDifficultToObtainChlorine
             WasteDisposalYoungestChild
             WashedHandsIn24Hours
             WhenWashedHandsIn24Hours
@@ -7375,9 +7397,6 @@ export class APIService {
             NoDaysNoWorkBecauseOfOwnIllness
             NoDaysNoWorkBecauseOfIllnessFamilyMembers
             MoneySpentMedicalTreatmentLast4weeks
-            WaterTreatment24Hours
-            MainReasonNoWaterTreatment24Hour
-            WaterTreatment24HourMethod
             Completed
             Lat
             Lng
@@ -8784,10 +8803,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -8865,10 +8885,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -8946,10 +8967,11 @@ export class APIService {
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
           RubbishDisposal
           HouseholdDefecationMethod
@@ -8999,17 +9021,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -9053,17 +9074,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -9107,17 +9127,16 @@ export class APIService {
           SurveyId
           date
           HeadHouseholdName
-          MainSourceDrinkingWater
           PersonBeingInterviewed
           WaterTreatmentBeforeDrinking
           MainReasonNoWaterTreatmentBeforeDrinking
           WaterTreatmentMethod
-          HowLongUsingWaterTreatment
           FrequencyWaterTreatment
-          WaterStorageAtHome
-          WaterStorageContainerHaveLid
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           TakingWaterFromStorage
-          WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
           WhatUsedToWashYourHands
           CommonIllnessAffectingAllChildrenInHousehold
@@ -9162,6 +9181,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -9176,9 +9199,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng
@@ -9207,6 +9227,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -9221,9 +9245,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng
@@ -9252,6 +9273,10 @@ export class APIService {
           date
           HeadHouseholdName
           PersonBeingInterviewed
+          LastTimeTreatedHouseholdWaterWithChlorine
+          WhereDidYouGetChlorineToTreatHouseholdWater
+          AmountSpendPerWeekForChlorineToTreatWater
+          HowDifficultToObtainChlorine
           WasteDisposalYoungestChild
           WashedHandsIn24Hours
           WhenWashedHandsIn24Hours
@@ -9266,9 +9291,6 @@ export class APIService {
           NoDaysNoWorkBecauseOfOwnIllness
           NoDaysNoWorkBecauseOfIllnessFamilyMembers
           MoneySpentMedicalTreatmentLast4weeks
-          WaterTreatment24Hours
-          MainReasonNoWaterTreatment24Hour
-          WaterTreatment24HourMethod
           Completed
           Lat
           Lng

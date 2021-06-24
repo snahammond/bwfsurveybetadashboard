@@ -51,7 +51,6 @@
     <dxi-column dataField="HeadHouseholdOccupation" dataType="string" [calculateDisplayValue]="getHeadHouseholdOccupationDescription"></dxi-column>
     <dxi-column dataField="HeadHouseholdEducation" dataType="string" [calculateDisplayValue]="getHeadHouseholdEducationDescription"></dxi-column>
     <dxi-column dataField="PersonBeingInterviewed" dataType="string" [calculateDisplayValue]="getPersonBeingInterviewedDescription"></dxi-column>
-    <dxi-column dataField="TotalNoPeopleHousehold" dataType="number" caption="Total number of People in Household" ></dxi-column>
     <dxi-column dataField="NoHouseholdMale0_1Year" dataType="number" caption="Number of Household Male Members 0-1 Year"></dxi-column>
     <dxi-column dataField="NoHouseholdFemale0_1Year" dataType="number" caption="Number of Household Female Members 0-1 Year"></dxi-column>
     <dxi-column dataField="NoHouseholdMale1_5Year" dataType="number" caption="Number of Household Male Members 1-5 Years"></dxi-column>
@@ -62,6 +61,9 @@
     <dxi-column dataField="NoHouseholdFemale13_17Year" dataType="number" caption="Number of Household Female Members 13-17 Years"></dxi-column>
     <dxi-column dataField="NoHouseholdMale18_Year" dataType="number" caption="Number of Household Male Members 18+ Years"></dxi-column>
     <dxi-column dataField="NoHouseholdFemale18_Year" dataType="number" caption="Number of Household Female Members 18+ Years"></dxi-column>
+    <dxi-column dataField="TotalNoPeopleHousehold" dataType="number" caption="Total number of People in Household" ></dxi-column>
+    <dxi-column dataField="ChildrenDiedAfterBeingBornAlive" dataType="string" [calculateDisplayValue]="getChildrenDiedAfterBeingBornAliveDescription" caption="Number of children ever born into your household who have died after being born alive."></dxi-column>
+    <dxi-column dataField="CausesOfChildrenDeath" dataType="string" [calculateDisplayValue]="getCausesOfChildrenDeathDescription" caption="What was/were the cause(s) of the child(ren) death(s)?"></dxi-column>
     <dxi-column dataField="ReasonNoSchoolChildren5_17Year" dataType="string" [calculateDisplayValue]="getReasonNoSchoolChildren5_17YearDescription" caption="If any children 5-17 years are not in school, why not?"></dxi-column>
     <dxi-column dataField="MainSourceDrinkingWater" dataType="string" [calculateDisplayValue]="getMainSourceDrinkingWaterDescription" caption="What is the main source of drinking water for members of your household?"></dxi-column>
     <dxi-column dataField="MainSourceOtherPurposeWater" dataType="string" [calculateDisplayValue]="getMainSourceOtherPurposeWaterDescription" caption="What is the main source of water used by your household for other purposes&#8212;cooking/bathing/handwashing?"></dxi-column>
@@ -72,10 +74,12 @@
     <dxi-column dataField="WaterTreatmentBeforeDrinking" dataType="string" [calculateDisplayValue]="getWaterTreatmentBeforeDrinkingDescription" caption="Do you treat your water in any way to make it safer to drink?"></dxi-column>
     <dxi-column dataField="MainReasonNoWaterTreatmentBeforeDrinking" dataType="string" [calculateDisplayValue]="getMainReasonNoWaterTreatmentBeforeDrinkingDescription" caption="If you do not treat your water, what is/are the main reason(s) you do not treat your water for drinking?"></dxi-column>
     <dxi-column dataField="WaterTreatmentMethod" dataType="string" [calculateDisplayValue]="getWaterTreatmentMethodDescription" caption="If you treat your drinking water, what do you usually do to make it safer to drink?"></dxi-column>
-    <dxi-column dataField="HowLongUsingWaterTreatment" dataType="string" [calculateDisplayValue]="getHowLongUsingWaterTreatmentDescription" caption="If you treat your water, how long have you been using these methods?"></dxi-column>
     <dxi-column dataField="FrequencyWaterTreatment" dataType="string" [calculateDisplayValue]="getFrequencyWaterTreatmentDescription" caption="How often do you treat your water to make it safe?"></dxi-column>
-    <dxi-column dataField="WaterStorageAtHome" dataType="string" [calculateDisplayValue]="getWaterStorageAtHomeDescription" caption="Where do you store the water you drink in the home?"></dxi-column>
-    <dxi-column dataField="WaterStorageContainerHaveLid" dataType="string" [calculateDisplayValue]="getWaterStorageContainerHaveLidDescription" caption="Does your household water storage container have a lid to keep the water clean?"></dxi-column>
+    <dxi-column dataField="LastTimeTreatedHouseholdWaterWithChlorine" dataType="string" [calculateDisplayValue]="" caption="When was the last time you treated your household drinking water with chlorine?"></dxi-column>
+    <dxi-column dataField="WhereDidYouGetChlorineToTreatHouseholdWater" dataType="string" [calculateDisplayValue]="" caption="Where did you get the chlorine to treat your household water?"></dxi-column>
+    <dxi-column dataField="AmountSpendPerWeekForChlorineToTreatWater" dataType="number" caption="How much do you spend per week for chlorine to treat your water?" ></dxi-column>
+    <dxi-column dataField="HowDifficultToObtainChlorine" dataType="string" [calculateDisplayValue]="" caption="How difficult is it for you to obtain chlorine to treat your water?"></dxi-column>
+    
     <dxi-column dataField="TakingWaterFromStorage" dataType="string" [calculateDisplayValue]="getTakingWaterFromStorageDescription" caption="How do members of your household take water from the home storage container?"></dxi-column>
     <dxi-column dataField="RubbishDisposal" dataType="string" [calculateDisplayValue]="getRubbishDisposalDescription" caption="Where does this household dispose of rubbish or trash?"></dxi-column>
     <dxi-column dataField="HouseholdDefecationMethod" dataType="string" [calculateDisplayValue]="getHouseholdDefecationMethodDescription" caption="Where do those in your household usually go to defecate?"></dxi-column>
@@ -96,8 +100,6 @@
     <dxi-column dataField="MoneySpentMedicalTreatmentLast4weeks" dataType="number" caption="How much money was spent by members of this household for medical treatment for these illnesses in the last four (4) weeks? (in local currency)"></dxi-column>
     <dxi-column dataField="HealthChangeInAYear" dataType="string"  [calculateDisplayValue]="getHealthChangeInAYearDescription" caption="Since this time last year, how has your own health changed?"></dxi-column>
     <dxi-column dataField="HealthChangeFamilyInAYear" dataType="string" [calculateDisplayValue]="getHealthChangeFamilyInAYearDescription" caption="Since this time last year, how has the overall health of your family changed?"></dxi-column>
-    <dxi-column dataField="ChildrenDiedAfterBeingBornAlive" dataType="string" [calculateDisplayValue]="getChildrenDiedAfterBeingBornAliveDescription" caption="Number of children ever born into your household who have died after being born alive."></dxi-column>
-    <dxi-column dataField="CausesOfChildrenDeath" dataType="string" [calculateDisplayValue]="getCausesOfChildrenDeathDescription" caption="What was/were the cause(s) of the child(ren) death(s)?"></dxi-column>
     <dxi-column dataField="Completed" dataType="number" ></dxi-column>
     <dxi-column dataField="Lat" dataType="string" caption="Latitude"></dxi-column>
     <dxi-column dataField="Lng" dataType="string" caption="Longitude"></dxi-column>

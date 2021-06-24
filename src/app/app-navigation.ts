@@ -48,7 +48,7 @@ export const navigation = [
     items: [
       {
         text: 'Water Quality Indicator',
-        path: '/tasks'
+        path: '/water-quality-indicators'
       },
       {
         text: 'Behavioral Compliance Indicators',
