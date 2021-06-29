@@ -1731,7 +1731,6 @@ export function getWhereDidYouGetChlorineToTreatHouseholdWater(rowData){
  return result;
 }
 
-
 export function getHowDifficultToObtainChlorine(rowData){
   var result:string = "";
   switch(rowData.HowDifficultToObtainChlorine) { 
