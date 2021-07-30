@@ -1,23 +1,25 @@
 <h2 class="content-block">Water Quality indicators</h2>
 <div class="form">    
     <div class="dx-fieldset">
-        <div class="dx-fieldset-header">Parameter Settings</div>  
+        <div class="dx-fieldset-header">
+            Parameter Settings            
+        </div>  
         <div class="dx-field">
             <div class="dx-field-label">Country and Community</div>
             <div class="dx-field-value">
                 <dx-drop-down-box
-                        [(value)]="gridBoxValue"
+                        [(value)]="gridIdCountryCommValue"
                         valueExpr="ID"
                         displayExpr="Community"
-                        placeholder="Select a value..."
+                        placeholder="Select community..."
                         [showClearButton]="true"
-                        [dataSource]="gridDataSource"
+                        [dataSource]="gridCountryCommDataSource"
                         onValueChanged="CountryAndCommunityValueChanged"
                 >
     
                     <div *dxTemplate="let data of 'content'">
                         <dx-data-grid
-                                [dataSource]="gridDataSource"
+                                [dataSource]="gridCountryCommDataSource"
                                 [columns]="['Country', 'Community']"
                                 [selection]="{ mode: 'multiple' }"
                                 [hoverStateEnabled]="true"
@@ -25,22 +27,43 @@
                                 [scrolling]="{ mode: 'virtual' }"
                                 [height]="345"
                                 keyExpr="ID"
-                                [(selectedRowKeys)]="gridBoxValue"
+                                [(selectedRowKeys)]="gridIdCountryCommValue"
                         >
                         </dx-data-grid>
                     </div>
                 </dx-drop-down-box>
             </div>
-            <div>
-                <dx-button
-                    stylingMode="contained"
-                    text="Contained"
-                    type="default"
-                    [width]="120"
-                    (onClick)="click($event)">
-                </dx-button>
+        </div>   
+        <div class="dx-field">
+            <div class="dx-field-label">Date range</div>
+            <div class="dx-field-value"> 
+                <dx-range-selector 
+                    id="range-selector"
+                    [value]="[defaultSelectedStartValue, defaultSelectedEndValue]"
+                    (onValueChanged)="onDateParamValueChanged($event)">
+                    <dxo-margin [top]="50"></dxo-margin>
+                    <dxo-scale
+                        [startValue]="startValue"
+                        [endValue]="endValue"
+                        minorTickInterval="month"
+                        tickInterval="month"
+                        minRange="month"
+                        maxRange="year">
+                        <dxo-minor-tick [visible]="false"></dxo-minor-tick>
+                    </dxo-scale>
+                    
+            </dx-range-selector>              
             </div>
-        </div>      
+        </div> 
+        <div class="dx-field">
+            <dx-button
+                stylingMode="contained"
+                text="Generate Report"
+                type="default"
+                [width]="120"
+                (onClick)="click($event)">
+            </dx-button>
+        </div>    
     </div>
     
 </div>

@@ -1,4 +1,4 @@
-import { APIService } from "./services/api.service";
+import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 
 
@@ -54,7 +54,7 @@ export async function getCommunityWaterTest(api: APIService):Promise<any>{
     communityWaterTests.push(...promiseCommunityWaterTestDone.items);    
     
     while(promiseCommunityWaterTestDone.nextToken){ 
-        promiseCommunityWaterTestDone = await loadFollowupSurveys(promiseCommunityWaterTestDone.nextToken,api);
+        promiseCommunityWaterTestDone = await loadCommunityWaterTests(promiseCommunityWaterTestDone.nextToken,api);
         communityWaterTests.push(...promiseCommunityWaterTestDone.items);
     }
 
@@ -1765,4 +1765,68 @@ export function getHowDifficultToObtainChlorine(rowData){
     } 
  } 
  return result;
+}
+
+
+
+export async function getCountriesAndCommunities(api: APIService):Promise<any>{
+  let countriesAndCommunities: any = [];
+  let promiseCountriesAndCommunitiesDone = await loadCountriesAndCommunities(null,api);
+  countriesAndCommunities.push(...promiseCountriesAndCommunitiesDone.items);    
+  
+  while(promiseCountriesAndCommunitiesDone.nextToken){ 
+    promiseCountriesAndCommunitiesDone = await loadCountriesAndCommunities(promiseCountriesAndCommunitiesDone.nextToken,api);
+      countriesAndCommunities.push(...promiseCountriesAndCommunitiesDone.items);
+  }
+
+  return <any>(countriesAndCommunities);
+}
+
+export async function loadCountriesAndCommunities(nextToken: any,api: APIService):Promise<any>{    
+  let promiseCountriesAndCommunities: any;
+  let filterCountriesAndCommunities: ModelConfigDefinitionsFilterInput = {
+    type: {eq:"C"}
+  };
+  
+  if(nextToken){
+    promiseCountriesAndCommunities = api.ListConfigDefinitionss(filterCountriesAndCommunities,null,nextToken);
+  }else{
+    promiseCountriesAndCommunities = api.ListConfigDefinitionss(filterCountriesAndCommunities,null,null);
+  }
+  return promiseCountriesAndCommunities;    
+}
+
+export async function getCommunityWaterTestWithCommFilter(api: APIService, communities: any):Promise<any>{
+  let communityWaterTests: any = [];
+  let promiseCommunityWaterTestDone = await loadCommunityWaterTestsWithCommFilter(null,communities,api);
+  communityWaterTests.push(...promiseCommunityWaterTestDone.items);    
+  
+  while(promiseCommunityWaterTestDone.nextToken){ 
+      promiseCommunityWaterTestDone = await loadCommunityWaterTestsWithCommFilter(promiseCommunityWaterTestDone.nextToken,communities,api);
+      communityWaterTests.push(...promiseCommunityWaterTestDone.items);
+  }
+
+  return <any>(communityWaterTests);
+}
+
+export async function loadCommunityWaterTestsWithCommFilter(nextToken: any,communities: any,api: APIService):Promise<any>{    
+  let promiseCommunityWaterTests: any;
+  console.log(communities);
+  let filterComm: ModelCommunityWaterTestFilterInput = {};
+  let filterCommOr: Array<ModelCommunityWaterTestFilterInput> = [];
+  communities.forEach(comm => {
+    console.log(comm);    
+    let eachCommFilter: ModelCommunityWaterTestFilterInput = {};
+    let modelEachCommFilter: ModelStringInput = {};
+    modelEachCommFilter.eq = comm;
+    eachCommFilter.Community = modelEachCommFilter; 
+    filterCommOr.push(eachCommFilter);
+  });
+  filterComm.or = filterCommOr;
+  if(nextToken){      
+      promiseCommunityWaterTests = api.ListCommunityWaterTests(filterComm,null,nextToken);
+  }else{
+      promiseCommunityWaterTests = api.ListCommunityWaterTests(filterComm,null,null);
+  }
+  return promiseCommunityWaterTests;    
 }

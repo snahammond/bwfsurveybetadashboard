@@ -5,7 +5,7 @@ import { AuthGuardService } from './shared/services';
 import { HomeComponent } from './pages/home/home.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { TasksComponent } from './pages/tasks/tasks.component';
-import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxFormModule } from 'devextreme-angular';
+import { DxButtonModule, DxDataGridModule, DxDropDownBoxModule, DxFormModule, DxRangeSelectorModule } from 'devextreme-angular';
 import { InitialSurveyComponent } from './pages/initial-survey/initial-survey.component';
 import { FollowUpSurveyComponent } from './pages/follow-up-survey/follow-up-survey.component';
 import { CommunityWaterTestComponent } from './pages/community-water-test/community-water-test.component';
@@ -104,7 +104,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule,DxDropDownBoxModule,DxButtonModule],
+  imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule,DxDropDownBoxModule,DxButtonModule,DxRangeSelectorModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
   declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent, HouseholdWaterTestVolunteersComponent, HealthSurveyComponent, MonthlyActivityComponent, MonthlyActivityVolComponent, WaterQualityIndicatorsComponent]
