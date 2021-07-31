@@ -27,6 +27,7 @@ export class WaterQualityIndicatorsComponent implements OnInit {
 
   filteredCommWaterTest: any = [];
   groupedFilterCommWaterTest: any= {};
+  waterIndicatorReportFromFilteredCommWaterTest: any = [];
 
   click = function(e){   
     
@@ -69,6 +70,23 @@ export class WaterQualityIndicatorsComponent implements OnInit {
           console.log(this.groupedFilterCommWaterTest);
 
           //make CommunityWaterLocation report data
+          //get month1, month3, month6, month9, month12
+          let month1: Date = new Date(this.selectedUserStartDateValue.toDateString());
+          let month3: Date = new Date(this.selectedUserStartDateValue.toDateString());
+          month3.setMonth(month1.getMonth()+2);
+          let month6 = new Date(this.selectedUserStartDateValue.toDateString());
+          month6.setMonth(month1.getMonth()+5);
+          let month9 = new Date(this.selectedUserStartDateValue.toDateString());
+          month9.setMonth(month1.getMonth()+8);
+          let month12 = new Date(this.selectedUserStartDateValue.toDateString());         
+          month12.setMonth(month1.getMonth()+11);
+          console.log("month1 "+month1);
+          console.log("month3 "+month3);
+          console.log("month6 "+month6);
+          console.log("month9 "+month9);
+          console.log("month12 "+month12);
+
+          this.waterIndicatorReportFromFilteredCommWaterTest=[];
           for (let key of Object.keys(this.groupedFilterCommWaterTest)) {
             //this is the name of the community water test location
             console.log("Name "+key);
@@ -76,12 +94,6 @@ export class WaterQualityIndicatorsComponent implements OnInit {
 
             //this is an array of all water test for the community location
             let groupedFilteredCommWaterTests = this.groupedFilterCommWaterTest[key];            
-            //get month1, month3, month6, month9, month12
-            let month1 = this.selectedUserStartDateValue;
-            let month3 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+2);
-            let month6 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+5);
-            let month9 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+8);
-            let month12 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+11);
             
             //search for the first month
             let month1CommunityWaterTest = {};            
@@ -133,9 +145,14 @@ export class WaterQualityIndicatorsComponent implements OnInit {
               PetrifilmScoreMonth1: convertPetrifilmTestResult(month1CommunityWaterTest),
               PetrifilmScoreMonth6: convertPetrifilmTestResult(month6CommunityWaterTest),              
               PetrifilmScoreMonth12: convertPetrifilmTestResult(month12CommunityWaterTest),
+              AverageCombinedScoreMonth1: convertColilertTestResult(month1CommunityWaterTest) + convertPetrifilmTestResult(month1CommunityWaterTest),
+              AverageCombinedScoreMonth6: convertColilertTestResult(month6CommunityWaterTest) + convertPetrifilmTestResult(month6CommunityWaterTest),
+              AverageCombinedScoreMonth12: convertColilertTestResult(month12CommunityWaterTest) + convertPetrifilmTestResult(month12CommunityWaterTest),
             };
+            this.waterIndicatorReportFromFilteredCommWaterTest.push(aWaterIndicatorReport);
             
           }
+          console.log(this.waterIndicatorReportFromFilteredCommWaterTest)
          
           
         })

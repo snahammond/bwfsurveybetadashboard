@@ -1843,6 +1843,11 @@ export type WaterIndicatorReport = {
   PetrifilmScoreMonth6: number;
   PetrifilmScoreMonth9?: number;
   PetrifilmScoreMonth12: number;
+  AverageCombinedScoreMonth1: number;
+  AverageCombinedScoreMonth3?: number;
+  AverageCombinedScoreMonth6: number;
+  AverageCombinedScoreMonth9?: number;
+  AverageCombinedScoreMonth12: number;
 };
 
 export function convertColilertTestResult(aFilteredcommWaterTest){
@@ -1875,15 +1880,15 @@ export function convertPetrifilmTestResult(aFilteredcommWaterTest){
   let result:number = -1;
   if(aFilteredcommWaterTest.PetrifilmTestResult){
     switch(aFilteredcommWaterTest.PetrifilmTestResult) { 
-      case "CLEAR": { 
+      case "NONE": { 
         result = 0; 
         break; 
       } 
-      case "YELLOW": { 
+      case "0_10BLUECOLONIES": { 
         result = 1;  
         break; 
       } 
-      case "FLUORESCESBLUE": { 
+      case "MORETHAN10BLUECOLONIES": { 
         result = 2;  
         break; 
       } 
