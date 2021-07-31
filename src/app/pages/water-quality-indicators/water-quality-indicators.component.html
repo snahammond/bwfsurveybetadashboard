@@ -76,15 +76,15 @@
     </div>
     
     <dx-data-grid id="gridContainer"
-    class="dx-card wide-card"
-    [dataSource]="waterIndicatorReportFromFilteredCommWaterTest"
-    [remoteOperations]="false"
-    [allowColumnReordering]="true"
-    [rowAlternationEnabled]="true"
-    [showBorders]="true"
-    [columnAutoWidth]="true"
-    [allowColumnResizing]="true"
-    [showColumnLines]="true">
+        class="dx-card wide-card"
+        [dataSource]="waterIndicatorReportFromFilteredCommWaterTest"
+        [remoteOperations]="false"
+        [allowColumnReordering]="true"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        [allowColumnResizing]="true"
+        [showColumnLines]="true">
 
         <dxo-paging [pageSize]="5"></dxo-paging>
         <dxo-pager
@@ -113,21 +113,82 @@
         ></dxo-search-panel> 
 
         <dxi-column dataField="Name" dataType="string" caption="Community Water Sources"></dxi-column>
-        <dxi-column dataField="ColilertScoreMonth1" dataType="number" ></dxi-column>
-        <dxi-column dataField="ColilertScoreMonth3" dataType="number" ></dxi-column>
-        <dxi-column dataField="ColilertScoreMonth6" dataType="number" ></dxi-column>
-        <dxi-column dataField="ColilertScoreMonth9" dataType="number" ></dxi-column>
-        <dxi-column dataField="ColilertScoreMonth12" dataType="number" ></dxi-column>
-        <dxi-column dataField="PetrifilmScoreMonth1" dataType="number" ></dxi-column>
-        <dxi-column dataField="PetrifilmScoreMonth3" dataType="number" ></dxi-column>
-        <dxi-column dataField="PetrifilmScoreMonth6" dataType="number" ></dxi-column>
-        <dxi-column dataField="PetrifilmScoreMonth9" dataType="number" ></dxi-column>
-        <dxi-column dataField="PetrifilmScoreMonth12" dataType="number" ></dxi-column>
-        <dxi-column dataField="AverageCombinedScoreMonth1" dataType="number" ></dxi-column>
-        <dxi-column dataField="AverageCombinedScoreMonth3" dataType="number" ></dxi-column>
-        <dxi-column dataField="AverageCombinedScoreMonth6" dataType="number" ></dxi-column>
-        <dxi-column dataField="AverageCombinedScoreMonth9" dataType="number" ></dxi-column>
-        <dxi-column dataField="AverageCombinedScoreMonth12" dataType="number" ></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth1" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth1"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth3" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth3"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth6" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth6"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth9" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth9"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth12" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth12"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth1" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth1"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth3" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth3"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth6" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth6"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth9" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth9"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth12" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth12"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth1" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth1"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth3" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth3"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth6" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth6"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth9" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth9"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth12" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth12"></dxi-column>
+
+    </dx-data-grid>
+
+
+    <div style="margin:20px;font-size: 18px;">
+        Household Water Test Records 
+    </div>
+    <dx-data-grid id="gridContainer"
+        class="dx-card wide-card"
+        [dataSource]="waterIndicatorReportFromFilteredHouseholdWaterTest"
+        [remoteOperations]="false"
+        [allowColumnReordering]="true"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        [allowColumnResizing]="true"
+        [showColumnLines]="true">
+
+        <dxo-paging [pageSize]="5"></dxo-paging>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[5,10, 25, 50, 100]"
+        ></dxo-pager>
+
+        <dxo-group-panel
+            [visible]="true"
+        ></dxo-group-panel>
+        <dxo-grouping
+            [autoExpandAll]="false"
+        ></dxo-grouping>
+
+        <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-selection        
+            mode="multiple"
+        ></dxo-selection>
+
+        <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="CommunityWaterTest"></dxo-export>
+        
+        <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+        ></dxo-search-panel> 
+
+        <dxi-column dataField="Name" dataType="string" caption="Household Water Test sources"></dxi-column>
+        
+        <dxi-column dataField="ColilertScoreMonth1" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth1"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth3" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth3"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth6" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth6"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth9" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth9"></dxi-column>
+        <dxi-column dataField="ColilertScoreMonth12" dataType="number" [calculateDisplayValue]="doNotShowNegativeColilertScoreMonth12"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth1" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth1"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth3" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth3"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth6" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth6"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth9" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth9"></dxi-column>
+        <dxi-column dataField="PetrifilmScoreMonth12" dataType="number" [calculateDisplayValue]="doNotShowNegativePetrifilmScoreMonth12"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth1" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth1"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth3" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth3"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth6" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth6"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth9" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth9"></dxi-column>
+        <dxi-column dataField="AverageCombinedScoreMonth12" dataType="number" [calculateDisplayValue]="doNotShowNegativeAverageCombinedScoreMonth12"></dxi-column>
 
     </dx-data-grid>
 </div> 

@@ -1811,11 +1811,10 @@ export async function getCommunityWaterTestWithCommFilter(api: APIService, commu
 
 export async function loadCommunityWaterTestsWithCommFilter(nextToken: any,communities: any,api: APIService):Promise<any>{    
   let promiseCommunityWaterTests: any;
-  console.log(communities);
+  
   let filterComm: ModelCommunityWaterTestFilterInput = {};
   let filterCommOr: Array<ModelCommunityWaterTestFilterInput> = [];
   communities.forEach(comm => {
-    console.log(comm);    
     let eachCommFilter: ModelCommunityWaterTestFilterInput = {};
     let modelEachCommFilter: ModelStringInput = {};
     modelEachCommFilter.eq = comm;
@@ -1829,6 +1828,83 @@ export async function loadCommunityWaterTestsWithCommFilter(nextToken: any,commu
       promiseCommunityWaterTests = api.ListCommunityWaterTests(filterComm,null,null);
   }
   return promiseCommunityWaterTests;    
+}
+
+export async function getHouseholdWaterTestWithCommFilter(api: APIService, communities: any):Promise<any>{
+  let householdWaterTests: any = [];
+  let promiseHouseholdWaterTestDone = await loadHouseholdWaterTestsWithCommFilter(null,communities,api);
+  householdWaterTests.push(...promiseHouseholdWaterTestDone.items);    
+  
+  while(promiseHouseholdWaterTestDone.nextToken){ 
+    promiseHouseholdWaterTestDone = await loadHouseholdWaterTestsWithCommFilter(promiseHouseholdWaterTestDone.nextToken,communities,api);
+      householdWaterTests.push(...promiseHouseholdWaterTestDone.items);
+  }
+
+  return <any>(householdWaterTests);
+}
+
+export async function loadHouseholdWaterTestsWithCommFilter(nextToken: any,communities: any,api: APIService):Promise<any>{    
+  let promiseHouseholdWaterTests: any;
+  let filterComm: ModelCommunityWaterTestFilterInput = {};
+  let filterCommOr: Array<ModelCommunityWaterTestFilterInput> = [];
+  communities.forEach(comm => {
+    let eachCommFilter: ModelCommunityWaterTestFilterInput = {};
+    let modelEachCommFilter: ModelStringInput = {};
+    modelEachCommFilter.eq = comm;
+    eachCommFilter.Community = modelEachCommFilter; 
+    filterCommOr.push(eachCommFilter);
+  });
+  filterComm.or = filterCommOr;
+  if(nextToken){      
+    promiseHouseholdWaterTests = api.ListHouseholdWaterTests(filterComm,null,nextToken);
+  }else{
+    promiseHouseholdWaterTests = api.ListHouseholdWaterTests(filterComm,null,null);
+  }
+  return promiseHouseholdWaterTests;    
+}
+
+export async function getVolunteerHouseholdWaterTestWithCommFilter(api: APIService, communities: any):Promise<any>{
+  let volunteerHouseholdWaterTests: any = [];
+  let promiseVolunteerHouseholdWaterTestDone = await loadVolunteerHouseholdWaterTestsWithCommFilter(null,communities,api);
+  volunteerHouseholdWaterTests.push(...promiseVolunteerHouseholdWaterTestDone.items);    
+  
+  while(promiseVolunteerHouseholdWaterTestDone.nextToken){ 
+    promiseVolunteerHouseholdWaterTestDone = await loadVolunteerHouseholdWaterTestsWithCommFilter(promiseVolunteerHouseholdWaterTestDone.nextToken,communities,api);
+    volunteerHouseholdWaterTests.push(...promiseVolunteerHouseholdWaterTestDone.items);
+  }
+
+  return <any>(volunteerHouseholdWaterTests);
+}
+
+export async function loadVolunteerHouseholdWaterTestsWithCommFilter(nextToken: any,communities: any,api: APIService):Promise<any>{    
+  let promiseVolunteerHouseholdWaterTests: any;
+  let filterComm: ModelCommunityWaterTestFilterInput = {};
+  let filterCommOr: Array<ModelCommunityWaterTestFilterInput> = [];
+  communities.forEach(comm => {
+    let eachCommFilter: ModelCommunityWaterTestFilterInput = {};
+    let modelEachCommFilter: ModelStringInput = {};
+    modelEachCommFilter.eq = comm;
+    eachCommFilter.Community = modelEachCommFilter; 
+    filterCommOr.push(eachCommFilter);
+  });
+  filterComm.or = filterCommOr;
+  if(nextToken){      
+    promiseVolunteerHouseholdWaterTests = api.ListVolunteerHouseholdWaterTests(filterComm,null,nextToken);
+  }else{
+    promiseVolunteerHouseholdWaterTests = api.ListVolunteerHouseholdWaterTests(filterComm,null,null);
+  }
+  return promiseVolunteerHouseholdWaterTests;    
+}
+
+export async function getSWEAndVolunteerHouseholdWaterTestWithCommFilter(api: APIService, communities: any):Promise<any>{
+  let sweAndVolunteerhouseholdWaterTests: any = [];
+  let promiseHouseholdWaterTestDone = await getHouseholdWaterTestWithCommFilter(api,communities);  
+  sweAndVolunteerhouseholdWaterTests.push(...promiseHouseholdWaterTestDone);    
+  
+  let promiseVolunteerHouseholdWaterTestDone = await getVolunteerHouseholdWaterTestWithCommFilter(api,communities);  
+  sweAndVolunteerhouseholdWaterTests.push(...promiseVolunteerHouseholdWaterTestDone);
+
+  return <any>(sweAndVolunteerhouseholdWaterTests);
 }
 
 export type WaterIndicatorReport = {

@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DxFormComponent } from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
-import { convertColilertTestResult, convertPetrifilmTestResult, getCommunityWaterTestWithCommFilter, getCountriesAndCommunities, WaterIndicatorReport } from 'src/app/shared/data-utilities';
+import { convertColilertTestResult, convertPetrifilmTestResult, getCommunityWaterTestWithCommFilter, getCountriesAndCommunities, getSWEAndVolunteerHouseholdWaterTestWithCommFilter, WaterIndicatorReport } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 import { WaterQualityFilter } from 'src/app/shared/WaterQualityFilter';
 
@@ -26,11 +26,15 @@ export class WaterQualityIndicatorsComponent implements OnInit {
   selectedUserEndDateValue = null;
 
   filteredCommWaterTest: any = [];
-  groupedFilterCommWaterTest: any= {};
+  groupedFilterCommWaterTest: any = {};
   waterIndicatorReportFromFilteredCommWaterTest: any = [];
 
-  click = function(e){   
-    
+  filteredHouseholdWaterTest: any = [];
+  groupedFilterHouseholdWaterTest: any = {};
+  waterIndicatorReportFromFilteredHouseholdWaterTest: any = [];
+
+
+  click = function(e){
 
     //get the community name of the ids into an array 
     var selectCommunityNames: any= [];  
@@ -44,10 +48,19 @@ export class WaterQualityIndicatorsComponent implements OnInit {
     if(selectCommunityNames.length>0){
       //get filtered as empty
       this.filteredCommWaterTest = [];
+      this.filteredHouseholdWaterTest = [];
 
-      console.log(selectCommunityNames);
-      console.log(this.selectedUserStartDateValue);
-      console.log(this.selectedUserEndDateValue);
+      //get month1, month3, month6, month9, month12
+      let month1: Date = new Date(this.selectedUserStartDateValue.toDateString());
+      let month3: Date = new Date(this.selectedUserStartDateValue.toDateString());
+      month3.setMonth(month1.getMonth()+2);
+      let month6 = new Date(this.selectedUserStartDateValue.toDateString());
+      month6.setMonth(month1.getMonth()+5);
+      let month9 = new Date(this.selectedUserStartDateValue.toDateString());
+      month9.setMonth(month1.getMonth()+8);
+      let month12 = new Date(this.selectedUserStartDateValue.toDateString());         
+      month12.setMonth(month1.getMonth()+11);
+
       //get all the community water test for all the communities selected    
       getCommunityWaterTestWithCommFilter(this.api,selectCommunityNames)
         .then((communityWaterTestWithCommFIlter)=>{     
@@ -57,8 +70,7 @@ export class WaterQualityIndicatorsComponent implements OnInit {
               if(commWaterTestDate>=this.selectedUserStartDateValue && commWaterTestDate < this.selectedUserEndDateValue){
                 this.filteredCommWaterTest.push(commWaterTest);
               }                   
-          });
-          console.log(this.filteredCommWaterTest);
+          });          
 
           //group by CommunityWaterLocation name
           this.filteredCommWaterTest.forEach(aFilteredcommWaterTest => {            
@@ -66,30 +78,12 @@ export class WaterQualityIndicatorsComponent implements OnInit {
               this.groupedFilterCommWaterTest[aFilteredcommWaterTest.CommunityWaterLocation] = [];
             }
             this.groupedFilterCommWaterTest[aFilteredcommWaterTest.CommunityWaterLocation].push(aFilteredcommWaterTest);
-          });
-          console.log(this.groupedFilterCommWaterTest);
+          });          
 
           //make CommunityWaterLocation report data
-          //get month1, month3, month6, month9, month12
-          let month1: Date = new Date(this.selectedUserStartDateValue.toDateString());
-          let month3: Date = new Date(this.selectedUserStartDateValue.toDateString());
-          month3.setMonth(month1.getMonth()+2);
-          let month6 = new Date(this.selectedUserStartDateValue.toDateString());
-          month6.setMonth(month1.getMonth()+5);
-          let month9 = new Date(this.selectedUserStartDateValue.toDateString());
-          month9.setMonth(month1.getMonth()+8);
-          let month12 = new Date(this.selectedUserStartDateValue.toDateString());         
-          month12.setMonth(month1.getMonth()+11);
-          console.log("month1 "+month1);
-          console.log("month3 "+month3);
-          console.log("month6 "+month6);
-          console.log("month9 "+month9);
-          console.log("month12 "+month12);
-
           this.waterIndicatorReportFromFilteredCommWaterTest=[];
           for (let key of Object.keys(this.groupedFilterCommWaterTest)) {
-            //this is the name of the community water test location
-            console.log("Name "+key);
+            //this is the name of the community water test location            
             let communityWaterTestLocation = key;
 
             //this is an array of all water test for the community location
@@ -151,14 +145,116 @@ export class WaterQualityIndicatorsComponent implements OnInit {
             };
             this.waterIndicatorReportFromFilteredCommWaterTest.push(aWaterIndicatorReport);
             
-          }
-          console.log(this.waterIndicatorReportFromFilteredCommWaterTest)
+          }         
          
           
         })
         .catch(e=>{
-            console.log("error could not load communityWaterTestWithCommFilter", e);
+            console.log("error could not load getCommunityWaterTestWithCommFilter", e);
         }); 
+
+      //get all household(volunteers/SWEs) water for all the communities selected
+      getSWEAndVolunteerHouseholdWaterTestWithCommFilter(this.api,selectCommunityNames)
+        .then((sweAndVolunteerhouseholdWaterTests)=>{ 
+          console.log(sweAndVolunteerhouseholdWaterTests);
+          //filter with selected start and end dates
+          sweAndVolunteerhouseholdWaterTests.forEach(householdWaterTest => {          
+            let householdWaterTestDate: Date = new Date(householdWaterTest.date);  
+            if(householdWaterTestDate>=this.selectedUserStartDateValue && householdWaterTestDate < this.selectedUserEndDateValue){
+              this.filteredHouseholdWaterTest.push(householdWaterTest);
+            }                   
+          });
+          console.log(this.filteredHouseholdWaterTest);
+
+          //group by HeadHouseholdName 
+          this.filteredHouseholdWaterTest.forEach(aFilteredHouseholdWaterTest => {            
+            if (!this.groupedFilterHouseholdWaterTest.hasOwnProperty(aFilteredHouseholdWaterTest.HeadHouseholdName)) {              
+              this.groupedFilterHouseholdWaterTest[aFilteredHouseholdWaterTest.HeadHouseholdName] = [];
+            }
+            this.groupedFilterHouseholdWaterTest[aFilteredHouseholdWaterTest.HeadHouseholdName].push(aFilteredHouseholdWaterTest);
+          });  
+          console.log(this.groupedFilterHouseholdWaterTest);
+
+          //make HeadHouseholdName report data          
+          this.waterIndicatorReportFromFilteredHouseholdWaterTest=[];
+          for (let key of Object.keys(this.groupedFilterHouseholdWaterTest)) {
+            //this is the name of the household water test             
+            let householdWaterTestName = key;
+
+            //this is an array of all water test for the community location
+            let groupedFilteredHouseholdWaterTests = this.groupedFilterHouseholdWaterTest[key];            
+            
+            //search for the first month
+            let month1HouseholdWaterTest = {};            
+            groupedFilteredHouseholdWaterTests.forEach(householdWaterTest => {
+              let householdWaterTestDate: Date = new Date(householdWaterTest.date);
+              if(householdWaterTestDate>=month1&&householdWaterTestDate<month3){
+                month1HouseholdWaterTest = householdWaterTest;
+              }
+            });
+
+            let month3HouseholdWaterTest = {};            
+            groupedFilteredHouseholdWaterTests.forEach(householdWaterTest => {
+              let householdWaterTestDate: Date = new Date(householdWaterTest.date);
+              if(householdWaterTestDate>=month3&&householdWaterTestDate<month6){
+                month3HouseholdWaterTest = householdWaterTest;
+              }
+            });
+
+            let month6HouseholdWaterTest = {};            
+            groupedFilteredHouseholdWaterTests.forEach(householdWaterTest => {
+              let householdWaterTestDate: Date = new Date(householdWaterTest.date);
+              if(householdWaterTestDate>=month6&&householdWaterTestDate<month9){
+                month6HouseholdWaterTest = householdWaterTest;
+              }
+            });
+
+            let month9HouseholdWaterTest = {};            
+            groupedFilteredHouseholdWaterTests.forEach(householdWaterTest => {
+              let householdWaterTestDate: Date = new Date(householdWaterTest.date);
+              if(householdWaterTestDate>=month9&&householdWaterTestDate<month12){
+                month9HouseholdWaterTest = householdWaterTest;
+              }
+            });
+
+            let month12HouseholdWaterTest = {};            
+            groupedFilteredHouseholdWaterTests.forEach(householdWaterTest => {
+              let householdWaterTestDate: Date = new Date(householdWaterTest.date);
+              if(householdWaterTestDate>=month12&&householdWaterTestDate<this.selectedUserEndDateValue){
+                month12HouseholdWaterTest = householdWaterTest;
+              }
+            });
+            
+            //create water quality indicator structure
+            let aWaterIndicatorReport: WaterIndicatorReport = {
+              Name: householdWaterTestName,
+              ColilertScoreMonth1: convertColilertTestResult(month1HouseholdWaterTest), 
+              ColilertScoreMonth3: convertColilertTestResult(month3HouseholdWaterTest),              
+              ColilertScoreMonth6: convertColilertTestResult(month6HouseholdWaterTest), 
+              ColilertScoreMonth9: convertColilertTestResult(month9HouseholdWaterTest),
+              ColilertScoreMonth12: convertColilertTestResult(month12HouseholdWaterTest),
+              PetrifilmScoreMonth1: convertPetrifilmTestResult(month1HouseholdWaterTest),
+              PetrifilmScoreMonth3: convertPetrifilmTestResult(month3HouseholdWaterTest),
+              PetrifilmScoreMonth6: convertPetrifilmTestResult(month6HouseholdWaterTest),  
+              PetrifilmScoreMonth9: convertPetrifilmTestResult(month9HouseholdWaterTest),
+              PetrifilmScoreMonth12: convertPetrifilmTestResult(month12HouseholdWaterTest),
+              AverageCombinedScoreMonth1: convertColilertTestResult(month1HouseholdWaterTest) + convertPetrifilmTestResult(month1HouseholdWaterTest),
+              AverageCombinedScoreMonth3: convertColilertTestResult(month3HouseholdWaterTest) + convertPetrifilmTestResult(month3HouseholdWaterTest),             
+              AverageCombinedScoreMonth6: convertColilertTestResult(month6HouseholdWaterTest) + convertPetrifilmTestResult(month6HouseholdWaterTest),
+              AverageCombinedScoreMonth9: convertColilertTestResult(month9HouseholdWaterTest) + convertPetrifilmTestResult(month9HouseholdWaterTest),
+              AverageCombinedScoreMonth12: convertColilertTestResult(month12HouseholdWaterTest) + convertPetrifilmTestResult(month12HouseholdWaterTest),
+            };
+            this.waterIndicatorReportFromFilteredHouseholdWaterTest.push(aWaterIndicatorReport);            
+          }  
+          console.log(this.waterIndicatorReportFromFilteredHouseholdWaterTest);
+
+        })
+        .catch(e=>{
+            console.log("error could not load getSWEAndVolunteerHouseholdWaterTestWithCommFilter", e);
+        }); 
+
+    }else{
+      console.log("please select a community")
     }
     
     
@@ -195,9 +291,129 @@ export class WaterQualityIndicatorsComponent implements OnInit {
           })
           .catch(e=>{
             console.log("error could not load gridDataSource", e);
-          });
-    
+          });    
   }
+
+  doNotShowNegativeColilertScoreMonth1(rowData){  
+    let result: any = rowData.ColilertScoreMonth1
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeColilertScoreMonth3(rowData){  
+    let result: any = rowData.ColilertScoreMonth3
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeColilertScoreMonth6(rowData){  
+    let result: any = rowData.ColilertScoreMonth6
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeColilertScoreMonth9(rowData){  
+    let result: any = rowData.ColilertScoreMonth9
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeColilertScoreMonth12(rowData){  
+    let result: any = rowData.ColilertScoreMonth12
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativePetrifilmScoreMonth1(rowData){  
+    let result: any = rowData.PetrifilmScoreMonth1
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativePetrifilmScoreMonth3(rowData){  
+    let result: any = rowData.PetrifilmScoreMonth3
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativePetrifilmScoreMonth6(rowData){  
+    let result: any = rowData.PetrifilmScoreMonth6
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativePetrifilmScoreMonth9(rowData){  
+    let result: any = rowData.PetrifilmScoreMonth9
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativePetrifilmScoreMonth12(rowData){  
+    let result: any = rowData.PetrifilmScoreMonth12
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeAverageCombinedScoreMonth1(rowData){  
+    let result: any = rowData.AverageCombinedScoreMonth1
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeAverageCombinedScoreMonth3(rowData){  
+    let result: any = rowData.AverageCombinedScoreMonth3
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeAverageCombinedScoreMonth6(rowData){  
+    let result: any = rowData.AverageCombinedScoreMonth6
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeAverageCombinedScoreMonth9(rowData){  
+    let result: any = rowData.AverageCombinedScoreMonth9
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
+  doNotShowNegativeAverageCombinedScoreMonth12(rowData){  
+    let result: any = rowData.AverageCombinedScoreMonth12
+    if(result<0){
+      result = "";
+    }   
+    return result;
+  }
+
 
   
 
