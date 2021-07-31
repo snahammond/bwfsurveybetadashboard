@@ -1830,3 +1830,69 @@ export async function loadCommunityWaterTestsWithCommFilter(nextToken: any,commu
   }
   return promiseCommunityWaterTests;    
 }
+
+export type WaterIndicatorReport = {
+  Name: string;
+  ColilertScoreMonth1: number;
+  ColilertScoreMonth3?: number;
+  ColilertScoreMonth6: number;
+  ColilertScoreMonth9?: number;
+  ColilertScoreMonth12: number;
+  PetrifilmScoreMonth1: number;
+  PetrifilmScoreMonth3?: number;
+  PetrifilmScoreMonth6: number;
+  PetrifilmScoreMonth9?: number;
+  PetrifilmScoreMonth12: number;
+};
+
+export function convertColilertTestResult(aFilteredcommWaterTest){
+  let result:number = -1;
+  if(aFilteredcommWaterTest.ColilertTestResult){
+    switch(aFilteredcommWaterTest.ColilertTestResult) { 
+      case "CLEAR": { 
+        result = 0; 
+        break; 
+      } 
+      case "YELLOW": { 
+        result = 1;  
+        break; 
+      } 
+      case "FLUORESCESBLUE": { 
+        result = 2;  
+        break; 
+      } 
+      default: { 
+         result = -1; 
+         break; 
+      }  
+   }
+  }
+   
+ return result;
+}
+
+export function convertPetrifilmTestResult(aFilteredcommWaterTest){
+  let result:number = -1;
+  if(aFilteredcommWaterTest.PetrifilmTestResult){
+    switch(aFilteredcommWaterTest.PetrifilmTestResult) { 
+      case "CLEAR": { 
+        result = 0; 
+        break; 
+      } 
+      case "YELLOW": { 
+        result = 1;  
+        break; 
+      } 
+      case "FLUORESCESBLUE": { 
+        result = 2;  
+        break; 
+      } 
+      default: { 
+         result = -1; 
+         break; 
+      }  
+   }
+  }
+   
+ return result;
+}

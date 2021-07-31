@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DxFormComponent } from 'devextreme-angular';
 import notify from 'devextreme/ui/notify';
-import { getCommunityWaterTestWithCommFilter, getCountriesAndCommunities } from 'src/app/shared/data-utilities';
+import { convertColilertTestResult, convertPetrifilmTestResult, getCommunityWaterTestWithCommFilter, getCountriesAndCommunities, WaterIndicatorReport } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 import { WaterQualityFilter } from 'src/app/shared/WaterQualityFilter';
 
@@ -26,10 +26,10 @@ export class WaterQualityIndicatorsComponent implements OnInit {
   selectedUserEndDateValue = null;
 
   filteredCommWaterTest: any = [];
+  groupedFilterCommWaterTest: any= {};
 
   click = function(e){   
-    //get filtered as empty
-    this.filteredCommWaterTest = [];
+    
 
     //get the community name of the ids into an array 
     var selectCommunityNames: any= [];  
@@ -39,25 +39,111 @@ export class WaterQualityIndicatorsComponent implements OnInit {
         selectCommunityNames.push(countryComm.Community);
       });
     });
-    console.log(selectCommunityNames);
-    console.log(this.selectedUserStartDateValue);
-    console.log(this.selectedUserEndDateValue);
-    //get all the community water test for all the communities selected    
-    getCommunityWaterTestWithCommFilter(this.api,selectCommunityNames)
-      .then((communityWaterTestWithCommFIlter)=>{     
-        //filter with selected start and end dates
-        communityWaterTestWithCommFIlter.forEach(commWaterTest => {          
-            let commWaterTestDate: Date = new Date(commWaterTest.date);  
-            if(commWaterTestDate>=this.selectedUserStartDateValue && commWaterTestDate < this.selectedUserEndDateValue){
-              this.filteredCommWaterTest.push(commWaterTest);
-            }                   
-        });
-        console.log(this.filteredCommWaterTest);
-        //create water quality indicator structure
-      })
-      .catch(e=>{
-          console.log("error could not load communityWaterTestWithCommFIlter", e);
-      }); 
+
+    if(selectCommunityNames.length>0){
+      //get filtered as empty
+      this.filteredCommWaterTest = [];
+
+      console.log(selectCommunityNames);
+      console.log(this.selectedUserStartDateValue);
+      console.log(this.selectedUserEndDateValue);
+      //get all the community water test for all the communities selected    
+      getCommunityWaterTestWithCommFilter(this.api,selectCommunityNames)
+        .then((communityWaterTestWithCommFIlter)=>{     
+          //filter with selected start and end dates
+          communityWaterTestWithCommFIlter.forEach(commWaterTest => {          
+              let commWaterTestDate: Date = new Date(commWaterTest.date);  
+              if(commWaterTestDate>=this.selectedUserStartDateValue && commWaterTestDate < this.selectedUserEndDateValue){
+                this.filteredCommWaterTest.push(commWaterTest);
+              }                   
+          });
+          console.log(this.filteredCommWaterTest);
+
+          //group by CommunityWaterLocation name
+          this.filteredCommWaterTest.forEach(aFilteredcommWaterTest => {            
+            if (!this.groupedFilterCommWaterTest.hasOwnProperty(aFilteredcommWaterTest.CommunityWaterLocation)) {              
+              this.groupedFilterCommWaterTest[aFilteredcommWaterTest.CommunityWaterLocation] = [];
+            }
+            this.groupedFilterCommWaterTest[aFilteredcommWaterTest.CommunityWaterLocation].push(aFilteredcommWaterTest);
+          });
+          console.log(this.groupedFilterCommWaterTest);
+
+          //make CommunityWaterLocation report data
+          for (let key of Object.keys(this.groupedFilterCommWaterTest)) {
+            //this is the name of the community water test location
+            console.log("Name "+key);
+            let communityWaterTestLocation = key;
+
+            //this is an array of all water test for the community location
+            let groupedFilteredCommWaterTests = this.groupedFilterCommWaterTest[key];            
+            //get month1, month3, month6, month9, month12
+            let month1 = this.selectedUserStartDateValue;
+            let month3 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+2);
+            let month6 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+5);
+            let month9 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+8);
+            let month12 = this.selectedUserStartDateValue.setMonth(month1.getMonth()+11);
+            
+            //search for the first month
+            let month1CommunityWaterTest = {};            
+            groupedFilteredCommWaterTests.forEach(commWaterTest => {
+              let commWaterTestDate: Date = new Date(commWaterTest.date);
+              if(commWaterTestDate>=month1&&commWaterTestDate<month3){
+                month1CommunityWaterTest = commWaterTest;
+              }
+            });
+
+            let month3CommunityWaterTest = {};            
+            groupedFilteredCommWaterTests.forEach(commWaterTest => {
+              let commWaterTestDate: Date = new Date(commWaterTest.date);
+              if(commWaterTestDate>=month3&&commWaterTestDate<month6){
+                month3CommunityWaterTest = commWaterTest;
+              }
+            });
+
+            let month6CommunityWaterTest = {};            
+            groupedFilteredCommWaterTests.forEach(commWaterTest => {
+              let commWaterTestDate: Date = new Date(commWaterTest.date);
+              if(commWaterTestDate>=month6&&commWaterTestDate<month9){
+                month6CommunityWaterTest = commWaterTest;
+              }
+            });
+
+            let month9CommunityWaterTest = {};            
+            groupedFilteredCommWaterTests.forEach(commWaterTest => {
+              let commWaterTestDate: Date = new Date(commWaterTest.date);
+              if(commWaterTestDate>=month9&&commWaterTestDate<month12){
+                month9CommunityWaterTest = commWaterTest;
+              }
+            });
+
+            let month12CommunityWaterTest = {};            
+            groupedFilteredCommWaterTests.forEach(commWaterTest => {
+              let commWaterTestDate: Date = new Date(commWaterTest.date);
+              if(commWaterTestDate>=month12&&commWaterTestDate<this.selectedUserEndDateValue){
+                month12CommunityWaterTest = commWaterTest;
+              }
+            });
+            
+            //create water quality indicator structure
+            let aWaterIndicatorReport: WaterIndicatorReport = {
+              Name: communityWaterTestLocation,
+              ColilertScoreMonth1: convertColilertTestResult(month1CommunityWaterTest),              
+              ColilertScoreMonth6: convertColilertTestResult(month6CommunityWaterTest),              
+              ColilertScoreMonth12: convertColilertTestResult(month12CommunityWaterTest),
+              PetrifilmScoreMonth1: convertPetrifilmTestResult(month1CommunityWaterTest),
+              PetrifilmScoreMonth6: convertPetrifilmTestResult(month6CommunityWaterTest),              
+              PetrifilmScoreMonth12: convertPetrifilmTestResult(month12CommunityWaterTest),
+            };
+            
+          }
+         
+          
+        })
+        .catch(e=>{
+            console.log("error could not load communityWaterTestWithCommFilter", e);
+        }); 
+    }
+    
     
   }.bind(this);
 
