@@ -15,6 +15,27 @@
           "additionalAuthenticationProviders": []
         }
       }
+    },
+    "AdminQueries": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "bwfsurveybetadevb027108a",
+          "attributes": [
+            "UserPoolId"
+          ]
+        },
+        {
+          "category": "function",
+          "resourceName": "AdminQueries58ac4aa1",
+          "attributes": [
+            "Arn",
+            "Name"
+          ]
+        }
+      ]
     }
   },
   "auth": {
@@ -23,6 +44,22 @@
       "providerPlugin": "awscloudformation",
       "dependsOn": [],
       "customAuth": false
+    },
+    "userPoolGroups": {
+      "service": "Cognito-UserPool-Groups",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "bwfsurveybetadevb027108a",
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ]
+        }
+      ]
     }
   },
   "hosting": {
@@ -44,6 +81,20 @@
           "attributes": [
             "GraphQLAPIIdOutput",
             "GraphQLAPIEndpointOutput"
+          ]
+        }
+      ]
+    },
+    "AdminQueries58ac4aa1": {
+      "service": "Lambda",
+      "providerPlugin": "awscloudformation",
+      "build": true,
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "bwfsurveybetadevb027108a",
+          "attributes": [
+            "UserPoolId"
           ]
         }
       ]

@@ -1,8 +1,10 @@
 import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
+import { API, Auth } from "aws-amplify";
 
 
 export async function getInitialSurvey(api: APIService):Promise<any>{
+    
     let initialSurveys: any = [];
     let promiseInitialSurveysDone = await loadInitialSurveys(null,api);
     initialSurveys.push(...promiseInitialSurveysDone.items);    
@@ -10,6 +12,14 @@ export async function getInitialSurvey(api: APIService):Promise<any>{
     while(promiseInitialSurveysDone.nextToken){ 
         promiseInitialSurveysDone = await loadInitialSurveys(promiseInitialSurveysDone.nextToken,api);
         initialSurveys.push(...promiseInitialSurveysDone.items);
+    }
+    
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let initailSurvey of initialSurveys){        
+        initailSurvey["FullNameSwe"]=cognitoUsers[initailSurvey["Namebwe"]];        
+      }
     }
 
     return <any>(initialSurveys);
@@ -1977,3 +1987,48 @@ export function convertPetrifilmTestResult(aFilteredcommWaterTest){
    
  return result;
 }
+
+export async function listCognitoUsers(){
+  let apiName = 'AdminQueries';
+  let path = '/listUsers';
+  let authorizationToken = (await Auth.currentSession()).getAccessToken().getJwtToken();
+  
+  let myInit = { 
+      queryStringParameters: {                
+      },
+      headers: {
+        'Content-Type' : 'application/json',
+        'Authorization': authorizationToken
+      }
+  }
+  const { NextToken, ...rest } =  await API.get(apiName, path, myInit);
+
+  
+  if(rest!=null){
+    if(rest.Users!=null){    
+      let cognitoUsers = {};        
+      for (let cognitoUser of rest.Users) {
+        if(cognitoUser.Attributes!=null){
+          let email,firstName,lastname;
+          for(let attribute of cognitoUser.Attributes){                  
+            if(attribute["Name"]=="email"){                    
+              email = attribute["Value"];
+            }   
+            if(attribute["Name"]=="family_name"){                    
+              firstName = attribute["Value"];
+            }  
+            if(attribute["Name"]=="given_name"){
+              lastname = attribute["Value"];
+            }               
+          }
+          cognitoUsers[email]=firstName+" "+lastname;                        
+        }              
+      }  
+      return cognitoUsers;
+    }
+  }
+
+  return null;
+ 
+}
+

@@ -610,6 +610,8 @@ export type CreateHouseholdWaterTestInput = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -628,6 +630,8 @@ export type ModelHouseholdWaterTestConditionInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -649,6 +653,8 @@ export type UpdateHouseholdWaterTestInput = {
   PetrifilmDateTested?: string | null;
   PetrifilmDateRead?: string | null;
   PetrifilmTestResult?: string | null;
+  ChlorineDateTested?: string | null;
+  ChlorineTestResult?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -860,6 +866,8 @@ export type CreateVolunteerHouseholdWaterTestInput = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -880,6 +888,8 @@ export type ModelVolunteerHouseholdWaterTestConditionInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -903,6 +913,8 @@ export type UpdateVolunteerHouseholdWaterTestInput = {
   PetrifilmDateTested?: string | null;
   PetrifilmDateRead?: string | null;
   PetrifilmTestResult?: string | null;
+  ChlorineDateTested?: string | null;
+  ChlorineTestResult?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -1281,6 +1293,8 @@ export type ModelHouseholdWaterTestFilterInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -1365,6 +1379,8 @@ export type ModelVolunteerHouseholdWaterTestFilterInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -2013,6 +2029,8 @@ export type CreateHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2037,6 +2055,8 @@ export type UpdateHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2061,6 +2081,8 @@ export type DeleteHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2309,6 +2331,8 @@ export type CreateVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2335,6 +2359,8 @@ export type UpdateVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2361,6 +2387,8 @@ export type DeleteVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -3186,6 +3214,8 @@ export type SyncHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -3213,6 +3243,8 @@ export type GetHouseholdWaterTestQuery = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -3239,6 +3271,8 @@ export type ListHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -3532,6 +3566,8 @@ export type SyncVolunteerHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -3561,6 +3597,8 @@ export type GetVolunteerHouseholdWaterTestQuery = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -3589,6 +3627,8 @@ export type ListVolunteerHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -4405,6 +4445,8 @@ export type OnCreateHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4429,6 +4471,8 @@ export type OnUpdateHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4453,6 +4497,8 @@ export type OnDeleteHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4701,6 +4747,8 @@ export type OnCreateVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4727,6 +4775,8 @@ export type OnUpdateVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4753,6 +4803,8 @@ export type OnDeleteVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -5749,6 +5801,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -5791,6 +5845,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -5833,6 +5889,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6303,6 +6361,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6347,6 +6407,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6391,6 +6453,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -7616,6 +7680,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -7663,6 +7729,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -7703,6 +7771,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8242,6 +8312,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8295,6 +8367,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -8339,6 +8413,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -9449,6 +9525,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9481,6 +9559,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9513,6 +9593,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9865,6 +9947,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9901,6 +9985,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9937,6 +10023,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
