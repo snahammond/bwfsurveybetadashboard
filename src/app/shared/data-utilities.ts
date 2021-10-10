@@ -45,6 +45,14 @@ export async function getFollowupSurvey(api: APIService):Promise<any>{
         followupSurveys.push(...promiseFollowupSurveysDone.items);
     }
 
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let followupSurvey of followupSurveys){        
+        followupSurvey["FullNameSwe"]=cognitoUsers[followupSurvey["Namebwe"]];        
+      }
+    }
+
     return <any>(followupSurveys);
 }
 
@@ -66,6 +74,14 @@ export async function getCommunityWaterTest(api: APIService):Promise<any>{
     while(promiseCommunityWaterTestDone.nextToken){ 
         promiseCommunityWaterTestDone = await loadCommunityWaterTests(promiseCommunityWaterTestDone.nextToken,api);
         communityWaterTests.push(...promiseCommunityWaterTestDone.items);
+    }
+
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let communityWaterTest of communityWaterTests){        
+        communityWaterTest["FullNameSwe"]=cognitoUsers[communityWaterTest["Namebwe"]];        
+      }
     }
 
     return <any>(communityWaterTests);
@@ -91,6 +107,14 @@ export async function getHouseholdWaterTestSWE(api: APIService):Promise<any>{
         householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);
     }
 
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let householdWaterTestSWE of householdWaterTestsSWE){        
+        householdWaterTestSWE["FullNameSwe"]=cognitoUsers[householdWaterTestSWE["Namebwe"]];        
+      }
+    }
+
     return <any>(householdWaterTestsSWE);
 }
 
@@ -112,6 +136,14 @@ export async function getHouseholdWaterTestsVol(api: APIService):Promise<any>{
     while(promiseHouseholdWaterTestsVolDone.nextToken){ 
         promiseHouseholdWaterTestsVolDone = await loadHouseholdWaterTestsVol(promiseHouseholdWaterTestsVolDone.nextToken,api);
         householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);
+    }
+
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let householdWaterTestVol of householdWaterTestsVol){        
+        householdWaterTestVol["FullNameSwe"]=cognitoUsers[householdWaterTestVol["Namebwe"]];        
+      }
     }
 
     return <any>(householdWaterTestsVol);
@@ -137,6 +169,14 @@ export async function getHealthSurveys(api: APIService):Promise<any>{
         healthSurveys.push(...promiseHealthSurveysDone.items);
     }
 
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let healthSurvey of healthSurveys){        
+        healthSurvey["FullNameSwe"]=cognitoUsers[healthSurvey["Namebwe"]];        
+      }
+    }
+
     return <any>(healthSurveys);
 }
 
@@ -160,6 +200,14 @@ export async function getSWEMonthlyActivities(api: APIService):Promise<any>{
         SWEMonthlyActivities.push(...promiseSWEMonthlyActivitiesDone.items);
     }
 
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let SWEMonthlyActivity of SWEMonthlyActivities){        
+        SWEMonthlyActivity["FullNameSwe"]=cognitoUsers[SWEMonthlyActivity["Namebwe"]];        
+      }
+    }
+
     return <any>(SWEMonthlyActivities);
 }
 
@@ -181,6 +229,14 @@ export async function getVolMonthlyActivities(api: APIService):Promise<any>{
     while(promiseVolMonthlyActivitiesDone.nextToken){ 
         promiseVolMonthlyActivitiesDone = await loadVolMonthlyActivities(promiseVolMonthlyActivitiesDone.nextToken,api);
         VolMonthlyActivities.push(...promiseVolMonthlyActivitiesDone.items);
+    }
+
+    //add name of SWE
+    let cognitoUsers = await listCognitoUsers();
+    if(cognitoUsers!=null){      
+      for(let VolMonthlyActivity of VolMonthlyActivities){        
+        VolMonthlyActivity["FullNameSwe"]=cognitoUsers[VolMonthlyActivity["Namebwe"]];        
+      }
     }
 
     return <any>(VolMonthlyActivities);

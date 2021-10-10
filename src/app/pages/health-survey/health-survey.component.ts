@@ -12,9 +12,7 @@ export class HealthSurveyComponent implements OnInit {
 
   healthSurveys: any = [];
 
-  constructor(private api: APIService) { }
-
-  ngOnInit(): void {
+  constructor(private api: APIService) {
     getHealthSurveys(this.api)
       .then((healthSurveysFromUtils)=>{     
         this.healthSurveys = healthSurveysFromUtils;
@@ -22,7 +20,11 @@ export class HealthSurveyComponent implements OnInit {
       })
       .catch(e=>{
           console.log("error could not load healthSurveys", e);
-      }); 
+      });
+   }
+
+  ngOnInit(): void {
+     
   }
 
   getHeadHouseholdSexDescription(rowData){       

@@ -11,9 +11,7 @@ export class HouseholdWaterTestSweComponent implements OnInit {
 
   householdWaterTestsSWE: any = [];
 
-  constructor(private api: APIService) { }
-
-  ngOnInit(): void {
+  constructor(private api: APIService) { 
     getHouseholdWaterTestSWE(this.api)
       .then((householdWaterTestFromUtils)=>{     
         this.householdWaterTestsSWE = householdWaterTestFromUtils;
@@ -22,6 +20,10 @@ export class HouseholdWaterTestSweComponent implements OnInit {
       .catch(e=>{
           console.log("error could not load householdWaterTestsSWE", e);
       }); 
+  }
+
+  ngOnInit(): void {
+    
   }
 
   getColilertTestResultDescription(rowData){       

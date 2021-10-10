@@ -11,9 +11,7 @@ export class CommunityWaterTestComponent implements OnInit {
 
   communityWaterTests: any = [];
 
-  constructor(private api: APIService) { }
-
-  ngOnInit(): void {
+  constructor(private api: APIService) { 
     getCommunityWaterTest(this.api)
       .then((communityWaterTestFromUtils)=>{     
         this.communityWaterTests = communityWaterTestFromUtils;
@@ -22,6 +20,10 @@ export class CommunityWaterTestComponent implements OnInit {
       .catch(e=>{
           console.log("error could not load communityWaterTests", e);
       }); 
+  }
+
+  ngOnInit(): void {
+    
   }
 
   getColilertTestResultDescription(rowData){       

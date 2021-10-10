@@ -11,9 +11,7 @@ export class MonthlyActivityComponent implements OnInit {
 
   monthlyActivitiesSWE: any = [];
 
-  constructor(private api: APIService) { }
-
-  ngOnInit(): void {
+  constructor(private api: APIService) { 
     getSWEMonthlyActivities(this.api)
       .then((monthlyActivitiesSWEFromUtils)=>{     
         this.monthlyActivitiesSWE = monthlyActivitiesSWEFromUtils;
@@ -22,6 +20,10 @@ export class MonthlyActivityComponent implements OnInit {
       .catch(e=>{
           console.log("error could not load monthlyActivitiesSWE", e);
       });
+  }
+
+  ngOnInit(): void {
+    
   }
 
 }

@@ -1,65 +1,84 @@
 <h2 class="content-block">Volunteer Monthly Activity Report</h2>
-<dx-data-grid id="gridContainer"
-    class="dx-card wide-card"
-    [dataSource]="monthlyActivitiesVol"
-    [remoteOperations]="false"
-    [allowColumnReordering]="true"
-    [rowAlternationEnabled]="true"
-    [showBorders]="true"
-    [columnAutoWidth]="true"
-    [allowColumnResizing]="true"
-    [showColumnLines]="true">
+<div style="padding-left: 3%;padding-right: 3%;">
+    <dx-data-grid id="gridContainer"
+        class="dx-card wide-card"
+        [dataSource]="monthlyActivitiesVol"
+        [remoteOperations]="false"
+        [allowColumnReordering]="true"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        [allowColumnResizing]="true"
+        [showColumnLines]="true"
+        height='550'>
+        <dxo-load-panel
+            [enabled]="true"
+            [height]="100"
+            [width]="250">
+        </dxo-load-panel>
 
-    <dxo-paging [pageSize]="5"></dxo-paging>
-    <dxo-pager
-        [showPageSizeSelector]="true"
-        [allowedPageSizes]="[5,10, 25, 50, 100]"
-    ></dxo-pager>
+        <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
 
-    <dxo-group-panel
-        [visible]="true"
-    ></dxo-group-panel>
-    <dxo-grouping
-        [autoExpandAll]="false"
-    ></dxo-grouping>
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 50, 100]"
+        ></dxo-pager>
 
-    <dxo-filter-panel [visible]="true"></dxo-filter-panel>
-    <dxo-filter-row [visible]="true"></dxo-filter-row>
-    <dxo-selection        
-        mode="multiple"
-    ></dxo-selection>
+        <dxo-group-panel
+            [visible]="true"
+        ></dxo-group-panel>
+        <dxo-grouping
+            [autoExpandAll]="false"
+        ></dxo-grouping>
 
-    <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="monthlyActivityVolReport"></dxo-export>
-    
-    <dxo-search-panel
-        [visible]="true"
-        [highlightCaseSensitive]="true"
-    ></dxo-search-panel>    
-    
-    <dxi-column dataField="id" dataType="string" ></dxi-column>
-    <dxi-column dataField="Namebwe" dataType="string" caption="Email BWE"></dxi-column>
-    <dxi-column dataField="Namevol" dataType="string" caption="Name Volunteer"></dxi-column>
-    <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>
-    <dxi-column dataField="NoWaterSampleTaken" dataType="number" caption="Number of water samples taken"></dxi-column>
-    
-    <dxi-column dataField="NoLsn1TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 1 (Is My Water Safe) taught as primary instructor this month"></dxi-column>
-    <dxi-column dataField="NoLsn1TaughtAssistingSWE" dataType="number" caption="Number of Lesson 1 (Is My Water Safe) attended, assisting SWE this month"></dxi-column>
-    <dxi-column dataField="NoPersonsTaughtLesson1ByVol" dataType="number" caption="How many total persons were taught Lesson 1 as primary instructor?"></dxi-column>
-    <dxi-column dataField="NoLsn2TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 2 (Testing and Treating Water) taught as primary instructor this month?"></dxi-column>
-    <dxi-column dataField="NoLsn2TaughtAssistingSWE" dataType="number" caption="Number of Lesson 2 (Testing and Treating Water) attended, assisting SWE this month?"></dxi-column>
-    <dxi-column dataField="NoPersonsTaughtLesson2ByVol" dataType="number" caption="How many total persons were taught Lesson 2 as primary instructor?"></dxi-column>
-    <dxi-column dataField="NoLsn3TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 3 (Washing Hands) taught as primary instructor this month?"></dxi-column>
-    <dxi-column dataField="NoLsn3TaughtAssistingSWE" dataType="number" caption="Number of Lesson 3 (Washing Hands) attended, assisting SWE this month?"></dxi-column>
-    <dxi-column dataField="NoPersonsTaughtLesson3ByVol" dataType="number" caption="How many total persons were taught Lesson 3 as primary instructor?"></dxi-column>
-    <dxi-column dataField="NoLsn4TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 4 (Benefits of Safe Water) taught as primary instructor this month?"></dxi-column>
-    <dxi-column dataField="NoLsn4TaughtAssistingSWE" dataType="number" caption="Number of Lesson 4 (Benefits of Safe Water) attended, assisting SWE this month?"></dxi-column>    
-    <dxi-column dataField="NoPersonsTaughtLesson4ByVol" dataType="number" caption="How many total persons were taught Lesson 4 as primary instructor?"></dxi-column>
-    <dxi-column dataField="NoPersonsTaughtByVol" dataType="number" caption="Total number of persons taught by volunteer as primary instructor this month"></dxi-column>
-    
-    <dxi-column dataField="Completed" dataType="number" ></dxi-column>
-    <dxi-column dataField="Lat" dataType="string" caption="Latitude"></dxi-column>
-    <dxi-column dataField="Lng" dataType="string" caption="Longitude"></dxi-column>
+        <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-selection        
+            mode="multiple"
+        ></dxo-selection>
+
+        <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="monthlyActivityVolReport"></dxo-export>
+        
+        <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+        ></dxo-search-panel>    
+        
+        <dxi-column dataField="id" dataType="string" ></dxi-column>
+        <dxi-column dataField="FullNameSwe" dataType="string" caption="SWE fullname" ></dxi-column>
+        <dxi-column dataField="Namebwe" dataType="string" caption="Email BWE"></dxi-column>
+        <dxi-column dataField="Namevol" dataType="string" caption="Name Volunteer"></dxi-column>
+        <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>
+        <dxi-column dataField="NoWaterSampleTaken" dataType="number" caption="Number of water samples taken"></dxi-column>
+        
+        <dxi-column dataField="NoLsn1TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 1 (Is My Water Safe) taught as primary instructor this month"></dxi-column>
+        <dxi-column dataField="NoLsn1TaughtAssistingSWE" dataType="number" caption="Number of Lesson 1 (Is My Water Safe) attended, assisting SWE this month"></dxi-column>
+        <dxi-column dataField="NoPersonsTaughtLesson1ByVol" dataType="number" caption="How many total persons were taught Lesson 1 as primary instructor?"></dxi-column>
+        <dxi-column dataField="NoLsn2TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 2 (Testing and Treating Water) taught as primary instructor this month?"></dxi-column>
+        <dxi-column dataField="NoLsn2TaughtAssistingSWE" dataType="number" caption="Number of Lesson 2 (Testing and Treating Water) attended, assisting SWE this month?"></dxi-column>
+        <dxi-column dataField="NoPersonsTaughtLesson2ByVol" dataType="number" caption="How many total persons were taught Lesson 2 as primary instructor?"></dxi-column>
+        <dxi-column dataField="NoLsn3TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 3 (Washing Hands) taught as primary instructor this month?"></dxi-column>
+        <dxi-column dataField="NoLsn3TaughtAssistingSWE" dataType="number" caption="Number of Lesson 3 (Washing Hands) attended, assisting SWE this month?"></dxi-column>
+        <dxi-column dataField="NoPersonsTaughtLesson3ByVol" dataType="number" caption="How many total persons were taught Lesson 3 as primary instructor?"></dxi-column>
+        <dxi-column dataField="NoLsn4TaughtAsPrimaryInstr" dataType="number" caption="Number of Lesson 4 (Benefits of Safe Water) taught as primary instructor this month?"></dxi-column>
+        <dxi-column dataField="NoLsn4TaughtAssistingSWE" dataType="number" caption="Number of Lesson 4 (Benefits of Safe Water) attended, assisting SWE this month?"></dxi-column>    
+        <dxi-column dataField="NoPersonsTaughtLesson4ByVol" dataType="number" caption="How many total persons were taught Lesson 4 as primary instructor?"></dxi-column>
+        <dxi-column dataField="NoPersonsTaughtByVol" dataType="number" caption="Total number of persons taught by volunteer as primary instructor this month"></dxi-column>
+        
+        <dxi-column dataField="Completed" dataType="number" ></dxi-column>
+        <dxi-column dataField="Lat" dataType="string" caption="Latitude"></dxi-column>
+        <dxi-column dataField="Lng" dataType="string" caption="Longitude"></dxi-column>
+        
+        <dxo-summary>
+            <dxi-total-item
+                column="id"
+                summaryType="count">
+            </dxi-total-item>
             
+        </dxo-summary>
 
-</dx-data-grid>
+    </dx-data-grid>
+</div>
+
 

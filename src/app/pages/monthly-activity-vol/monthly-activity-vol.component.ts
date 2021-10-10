@@ -11,9 +11,7 @@ export class MonthlyActivityVolComponent implements OnInit {
 
   monthlyActivitiesVol: any = [];
 
-  constructor(private api: APIService) { }
-
-  ngOnInit(): void {
+  constructor(private api: APIService) {
     getVolMonthlyActivities(this.api)
       .then((monthlyActivitiesVolFromUtils)=>{     
         this.monthlyActivitiesVol = monthlyActivitiesVolFromUtils;
@@ -22,6 +20,10 @@ export class MonthlyActivityVolComponent implements OnInit {
       .catch(e=>{
           console.log("error could not load monthlyActivitiesVol", e);
       });
+   }
+
+  ngOnInit(): void {
+    
   }
 
 }

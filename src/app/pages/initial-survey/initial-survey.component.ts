@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { getCausesOfChildrenDeathDescription, getChildrenDiedAfterBeingBornAliveDescription, getCommonIllnessAffectingAllChildrenInHouseholdDescription, getContainerCarryWaterDescription, getDidSickChildrenGoToHospitalDescription, getDidSickChildrenGoToHospitalYesDescription, getFrequencyWaterTreatmentDescription, getHeadHouseholdEducationDescription, getHeadHouseholdMaritalStatusDescription, getHeadHouseholdOccupationDescription, getHeadHouseholdSexDescription, getHealthChangeFamilyInAYearDescription, getHealthChangeInAYearDescription, getHouseholdDefecationMethodDescription, getHouseholdFrequencyAtWaterSourceDescription, getHowDifficultToObtainChlorine, getHowLongUsingWaterTreatmentDescription, getInitialSurvey, getLastTimeTreatedHouseholdWaterWithChlorine, getMainReasonNoWaterTreatmentBeforeDrinkingDescription, getMainSourceDrinkingWaterDescription, getMainSourceOtherPurposeWaterDescription, getOutcomeMostRecentVomiting_DiarrheaAtHospitalDescription, getPersonBeingInterviewedDescription, getReasonNoSchoolChildren5_17YearDescription, getRubbishDisposalDescription, getSickChildrenBreastfeedingDescription, getTakingWaterFromStorageDescription, getUsualHouseholdWaterFetcherDescription, getWashedHandsIn24HoursDescription, getWasteDisposalYoungestChildDescription, getWaterStorageAtHomeDescription, getWaterStorageContainerHaveLidDescription, getWaterTreatmentBeforeDrinkingDescription, getWaterTreatmentMethodDescription, getWhatUsedToWashYourHandsDescription, getWhenWashedHandsIn24HoursDescription, getWhereDidYouGetChlorineToTreatHouseholdWater } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
+import { DxDataGridModule, DxDataGridComponent } from "devextreme-angular";
 
 
 @Component({
@@ -9,24 +10,27 @@ import { APIService } from 'src/app/shared/services/api.service';
   styleUrls: ['./initial-survey.component.scss']
 })
 export class InitialSurveyComponent {
-  initialSurveys: any = [];
-  cognitoUsers = {};
-
-  constructor(private api: APIService) {    
-  }
-
-  ngOnInit() {  
+  initialSurveys: any = [];  
+  
+  constructor(private api: APIService) { 
+    //this.dataGrid.instance.beginCustomLoading("Loading");
     getInitialSurvey(this.api)
         .then((initialSurveysFromUtils)=>{
-          this.initialSurveys = initialSurveysFromUtils;
+          //this.dataGrid.instance.endCustomLoading();
+          this.initialSurveys = initialSurveysFromUtils;          
           console.log("done loading loadInitialSurveys "+ this.initialSurveys.length);            
         })
         .catch(e=>{
+            //this.dataGrid.instance.endCustomLoading();
             console.log("error could not load loadInitialSurveys", e);
-        });
-    
+        });   
+  }
+
+  ngOnInit() {
   }
   
+ 
+
   getHeadHouseholdSexDescription(rowData){       
      return getHeadHouseholdSexDescription(rowData);
   }
@@ -176,8 +180,4 @@ export class InitialSurveyComponent {
     return getHowDifficultToObtainChlorine(rowData);
   }
 
-  
-  getBWEName = (function(rowData) {
-    return this.cognitoUsers[rowData.Namebwe];
-  }).bind(this);
 }

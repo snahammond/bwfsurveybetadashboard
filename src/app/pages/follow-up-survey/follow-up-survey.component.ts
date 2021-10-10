@@ -13,10 +13,6 @@ export class FollowUpSurveyComponent implements OnInit {
   followupSurveys: any = [];
 
   constructor(private api: APIService) { 
-
-  }
-
-  ngOnInit() {
     getFollowupSurvey(this.api)
       .then((followupSurveysFromUtils)=>{     
         this.followupSurveys = followupSurveysFromUtils;
@@ -25,6 +21,10 @@ export class FollowUpSurveyComponent implements OnInit {
       .catch(e=>{
           console.log("error could not load followupSurveys", e);
       }); 
+  }
+
+  ngOnInit() {
+    
   }
 
   getHeadHouseholdSexDescription(rowData){       
