@@ -10,7 +10,7 @@
         [columnAutoWidth]="true"
         [allowColumnResizing]="true"
         [showColumnLines]="true"
-        height='550'>
+        height='calc(100vh - 150px)'>
         <dxo-load-panel
             [enabled]="true"
             [height]="100"
@@ -58,7 +58,9 @@
         <dxi-column dataField="ColilertTestResult" dataType="string" [calculateDisplayValue]="getColilertTestResultDescription"></dxi-column>
         <dxi-column dataField="PetrifilmDateTested" dataType="date" ></dxi-column>
         <dxi-column dataField="PetrifilmDateRead" dataType="date" ></dxi-column>
-        <dxi-column dataField="PetrifilmTestResult" dataType="string" [calculateDisplayValue]="getPetrifilmTestResultDescription"v></dxi-column>
+        <dxi-column dataField="PetrifilmTestResult" dataType="string" [calculateDisplayValue]="getPetrifilmTestResultDescription"></dxi-column>
+        <dxi-column dataField="ChlorineDateTested" dataType="date" ></dxi-column>
+        <dxi-column dataField="ChlorineTestResult" dataType="string" ></dxi-column>        
         <dxi-column dataField="Completed" dataType="number" ></dxi-column>
         <dxi-column dataField="Lat" dataType="string" caption="Latitude"></dxi-column>
         <dxi-column dataField="Lng" dataType="string" caption="Longitude"></dxi-column>   

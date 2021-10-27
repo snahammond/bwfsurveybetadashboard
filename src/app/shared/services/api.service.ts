@@ -199,6 +199,80 @@ export type ModelIntInput = {
   attributeType?: ModelAttributeTypes | null;
 };
 
+export type InitialSurvey = {
+  __typename: "InitialSurvey";
+  id?: string;
+  Namebwe?: string;
+  Country?: string;
+  Community?: string;
+  SurveyId?: number;
+  date?: string | null;
+  HeadHouseholdName?: string;
+  HeadHouseholdPhoneNumber?: string;
+  HeadHouseholdSex?: string;
+  HeadHouseholdMaritalStatus?: string;
+  HeadHouseholdAge?: number;
+  HeadHouseholdOccupation?: string;
+  HeadHouseholdEducation?: string;
+  PersonBeingInterviewed?: string;
+  TotalNoPeopleHousehold?: number;
+  NoHouseholdMale0_1Year?: number;
+  NoHouseholdFemale0_1Year?: number;
+  NoHouseholdMale1_5Year?: number;
+  NoHouseholdFemale1_5Year?: number;
+  NoHouseholdMale5_12Year?: number;
+  NoHouseholdFemale5_12Year?: number;
+  NoHouseholdMale13_17Year?: number;
+  NoHouseholdFemale13_17Year?: number;
+  NoHouseholdMale18_Year?: number;
+  NoHouseholdFemale18_Year?: number;
+  ReasonNoSchoolChildren5_17Year?: string;
+  MainSourceDrinkingWater?: string;
+  MainSourceOtherPurposeWater?: string;
+  TimeToWaterSourceGetReturn?: number;
+  HouseholdFrequencyAtWaterSource?: string;
+  UsualHouseholdWaterFetcher?: string;
+  ContainerCarryWater?: string;
+  WaterTreatmentBeforeDrinking?: string;
+  MainReasonNoWaterTreatmentBeforeDrinking?: string;
+  WaterTreatmentMethod?: string;
+  FrequencyWaterTreatment?: string;
+  LastTimeTreatedHouseholdWaterWithChlorine?: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: string;
+  AmountSpendPerWeekForChlorineToTreatWater?: number;
+  HowDifficultToObtainChlorine?: string;
+  TakingWaterFromStorage?: string;
+  RubbishDisposal?: string;
+  HouseholdDefecationMethod?: string;
+  WasteDisposalYoungestChild?: string;
+  WashedHandsIn24Hours?: string;
+  WhenWashedHandsIn24Hours?: string;
+  WhatUsedToWashYourHands?: string;
+  CommonIllnessAffectingAllChildrenInHousehold?: string;
+  NoChildrenWithVomitingOrDiarrheaIn14days?: number;
+  NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek?: number;
+  NoChildrenWithVomitingOrDiarrheaIn7days?: number;
+  DidSickChildrenGoToHospital?: string;
+  DidSickChildrenGoToHospitalYes?: string;
+  SickChildrenBreastfeeding?: string;
+  OutcomeMostRecentVomiting_DiarrheaAtHospital?: string;
+  NoDaysNoWorkBecauseOfOwnIllness?: number;
+  NoDaysNoWorkBecauseOfIllnessFamilyMembers?: number;
+  MoneySpentMedicalTreatmentLast4weeks?: number;
+  HealthChangeInAYear?: string;
+  HealthChangeFamilyInAYear?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  ChildrenDiedAfterBeingBornAlive?: string;
+  CausesOfChildrenDeath?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateInitialSurveyInput = {
   id: string;
   Namebwe?: string | null;
@@ -354,6 +428,51 @@ export type ModelFollowUpSurveyConditionInput = {
   not?: ModelFollowUpSurveyConditionInput | null;
 };
 
+export type FollowUpSurvey = {
+  __typename: "FollowUpSurvey";
+  id?: string;
+  Namebwe?: string;
+  Country?: string;
+  Community?: string;
+  SurveyId?: number;
+  date?: string | null;
+  HeadHouseholdName?: string;
+  PersonBeingInterviewed?: string;
+  WaterTreatmentBeforeDrinking?: string;
+  MainReasonNoWaterTreatmentBeforeDrinking?: string;
+  WaterTreatmentMethod?: string;
+  FrequencyWaterTreatment?: string;
+  LastTimeTreatedHouseholdWaterWithChlorine?: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: string;
+  AmountSpendPerWeekForChlorineToTreatWater?: number;
+  HowDifficultToObtainChlorine?: string;
+  TakingWaterFromStorage?: string;
+  WhenWashedHandsIn24Hours?: string;
+  WhatUsedToWashYourHands?: string;
+  CommonIllnessAffectingAllChildrenInHousehold?: string;
+  NoChildrenWithVomitingOrDiarrheaIn14days?: number;
+  NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek?: number;
+  NoChildrenWithVomitingOrDiarrheaIn7days?: number;
+  DidSickChildrenGoToHospital?: string;
+  DidSickChildrenGoToHospitalYes?: string;
+  SickChildrenBreastfeeding?: string;
+  OutcomeMostRecentVomiting_DiarrheaAtHospital?: string;
+  NoDaysNoWorkBecauseOfOwnIllness?: number;
+  NoDaysNoWorkBecauseOfIllnessFamilyMembers?: number;
+  MoneySpentMedicalTreatmentLast4weeks?: number;
+  HealthChangeInAYear?: string;
+  HealthChangeFamilyInAYear?: string;
+  BenefitSWP?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateFollowUpSurveyInput = {
   id: string;
   Namebwe?: string | null;
@@ -466,6 +585,44 @@ export type ModelHealthCheckSurveyConditionInput = {
   not?: ModelHealthCheckSurveyConditionInput | null;
 };
 
+export type HealthCheckSurvey = {
+  __typename: "HealthCheckSurvey";
+  id?: string;
+  Namebwe?: string;
+  Country?: string;
+  Community?: string;
+  SurveyId?: number;
+  date?: string | null;
+  HeadHouseholdName?: string;
+  PersonBeingInterviewed?: string;
+  LastTimeTreatedHouseholdWaterWithChlorine?: string;
+  WhereDidYouGetChlorineToTreatHouseholdWater?: string;
+  AmountSpendPerWeekForChlorineToTreatWater?: number;
+  HowDifficultToObtainChlorine?: string;
+  WasteDisposalYoungestChild?: string;
+  WashedHandsIn24Hours?: string;
+  WhenWashedHandsIn24Hours?: string;
+  WhatUsedToWashYourHands?: string;
+  NoChildrenWithVomitingOrDiarrheaIn14days?: number;
+  NoTotalSchoolDaysMissedBySchoolAgeChildrenIn2LastWeek?: number;
+  NoChildrenWithVomitingOrDiarrheaIn7days?: number;
+  DidSickChildrenGoToHospital?: string;
+  DidSickChildrenGoToHospitalYes?: string;
+  SickChildrenBreastfeeding?: string;
+  OutcomeMostRecentVomiting_DiarrheaAtHospital?: string;
+  NoDaysNoWorkBecauseOfOwnIllness?: number;
+  NoDaysNoWorkBecauseOfIllnessFamilyMembers?: number;
+  MoneySpentMedicalTreatmentLast4weeks?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateHealthCheckSurveyInput = {
   id: string;
   Namebwe?: string | null;
@@ -563,6 +720,40 @@ export type ModelSWEMonthlySummaryConditionInput = {
   not?: ModelSWEMonthlySummaryConditionInput | null;
 };
 
+export type SWEMonthlySummary = {
+  __typename: "SWEMonthlySummary";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  SWEPosition?: string;
+  NoWaterSampleTaken?: number;
+  NoSurveysCompleted?: number;
+  NoHealthCheck?: number;
+  NoLsn1Taught?: number;
+  NoPersonsTaughtLesson1?: number;
+  NoLsn2Taught?: number;
+  NoPersonsTaughtLesson2?: number;
+  NoLsn3Taught?: number;
+  NoPersonsTaughtLesson3?: number;
+  NoLsn4Taught?: number;
+  NoPersonsTaughtLesson4?: number;
+  NoPersonsTaught?: number;
+  NoHouseholdReceivingChlorineSupplies?: number;
+  NoLiquidChlorineDistributed?: number;
+  NoChlorineTabletsDistributed?: number;
+  NoWaterStorageContainersDistributed?: number;
+  NoSchoolVisits?: number;
+  NoPublicServiceMessagesAired?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateSWEMonthlySummaryInput = {
   id: string;
   Namebwe?: string | null;
@@ -610,8 +801,6 @@ export type CreateHouseholdWaterTestInput = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -630,14 +819,36 @@ export type ModelHouseholdWaterTestConditionInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
-  ChlorineDateTested?: ModelStringInput | null;
-  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
   and?: Array<ModelHouseholdWaterTestConditionInput | null> | null;
   or?: Array<ModelHouseholdWaterTestConditionInput | null> | null;
   not?: ModelHouseholdWaterTestConditionInput | null;
+};
+
+export type HouseholdWaterTest = {
+  __typename: "HouseholdWaterTest";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  Country?: string;
+  Community?: string;
+  HeadHouseholdName?: string;
+  ColilertDateTested?: string;
+  ColilertDateRead?: string;
+  ColilertTestResult?: string;
+  PetrifilmDateTested?: string;
+  PetrifilmDateRead?: string;
+  PetrifilmTestResult?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type UpdateHouseholdWaterTestInput = {
@@ -653,8 +864,6 @@ export type UpdateHouseholdWaterTestInput = {
   PetrifilmDateTested?: string | null;
   PetrifilmDateRead?: string | null;
   PetrifilmTestResult?: string | null;
-  ChlorineDateTested?: string | null;
-  ChlorineTestResult?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -703,6 +912,30 @@ export type ModelCommunityWaterTestConditionInput = {
   and?: Array<ModelCommunityWaterTestConditionInput | null> | null;
   or?: Array<ModelCommunityWaterTestConditionInput | null> | null;
   not?: ModelCommunityWaterTestConditionInput | null;
+};
+
+export type CommunityWaterTest = {
+  __typename: "CommunityWaterTest";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  Country?: string;
+  Community?: string;
+  CommunityWaterLocation?: string;
+  ColilertDateTested?: string;
+  ColilertDateRead?: string;
+  ColilertTestResult?: string;
+  PetrifilmDateTested?: string;
+  PetrifilmDateRead?: string;
+  PetrifilmTestResult?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type UpdateCommunityWaterTestInput = {
@@ -756,6 +989,24 @@ export type ModelCommunityWaterConditionInput = {
   not?: ModelCommunityWaterConditionInput | null;
 };
 
+export type CommunityWater = {
+  __typename: "CommunityWater";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  Country?: string;
+  Community?: string;
+  CommunityWaterLocation?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateCommunityWaterInput = {
   id: string;
   Namebwe?: string | null;
@@ -805,6 +1056,26 @@ export type ModelConfigDefinitionsConditionInput = {
   not?: ModelConfigDefinitionsConditionInput | null;
 };
 
+export type ConfigDefinitions = {
+  __typename: "ConfigDefinitions";
+  id?: string;
+  type?: string;
+  name?: string;
+  value?: string;
+  desc?: string;
+  childname?: string;
+  childvalue?: string;
+  childdesc?: string;
+  parentname?: string;
+  parentvalue?: string;
+  parentdesc?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateConfigDefinitionsInput = {
   id: string;
   type?: string | null;
@@ -840,6 +1111,18 @@ export type ModelBWFSURVEYTOTALSConditionInput = {
   not?: ModelBWFSURVEYTOTALSConditionInput | null;
 };
 
+export type BWFSURVEYTOTALS = {
+  __typename: "BWFSURVEYTOTALS";
+  id?: string;
+  surveyName?: string;
+  total?: number;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateBWFSURVEYTOTALSInput = {
   surveyName?: string | null;
   total?: number | null;
@@ -866,8 +1149,6 @@ export type CreateVolunteerHouseholdWaterTestInput = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -888,14 +1169,38 @@ export type ModelVolunteerHouseholdWaterTestConditionInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
-  ChlorineDateTested?: ModelStringInput | null;
-  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
   and?: Array<ModelVolunteerHouseholdWaterTestConditionInput | null> | null;
   or?: Array<ModelVolunteerHouseholdWaterTestConditionInput | null> | null;
   not?: ModelVolunteerHouseholdWaterTestConditionInput | null;
+};
+
+export type VolunteerHouseholdWaterTest = {
+  __typename: "VolunteerHouseholdWaterTest";
+  id?: string;
+  Namebwe?: string;
+  Namevol?: string;
+  date?: string | null;
+  Country?: string;
+  Community?: string;
+  HeadHouseholdName?: string;
+  HouseholdLocation?: string;
+  ColilertDateTested?: string;
+  ColilertDateRead?: string;
+  ColilertTestResult?: string;
+  PetrifilmDateTested?: string;
+  PetrifilmDateRead?: string;
+  PetrifilmTestResult?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type UpdateVolunteerHouseholdWaterTestInput = {
@@ -913,8 +1218,6 @@ export type UpdateVolunteerHouseholdWaterTestInput = {
   PetrifilmDateTested?: string | null;
   PetrifilmDateRead?: string | null;
   PetrifilmTestResult?: string | null;
-  ChlorineDateTested?: string | null;
-  ChlorineTestResult?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -957,6 +1260,26 @@ export type ModelVolunteerHouseholdConditionInput = {
   not?: ModelVolunteerHouseholdConditionInput | null;
 };
 
+export type VolunteerHousehold = {
+  __typename: "VolunteerHousehold";
+  id?: string;
+  Namebwe?: string;
+  Namevol?: string;
+  date?: string | null;
+  Country?: string;
+  Community?: string;
+  HeadHouseholdName?: string;
+  HouseholdLocation?: string;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
 export type UpdateVolunteerHouseholdInput = {
   id: string;
   Namebwe?: string | null;
@@ -990,6 +1313,18 @@ export type ModelVolunteerConditionInput = {
   and?: Array<ModelVolunteerConditionInput | null> | null;
   or?: Array<ModelVolunteerConditionInput | null> | null;
   not?: ModelVolunteerConditionInput | null;
+};
+
+export type Volunteer = {
+  __typename: "Volunteer";
+  id?: string;
+  Namebwe?: string;
+  Namevol?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type UpdateVolunteerInput = {
@@ -1053,6 +1388,36 @@ export type ModelVolunteerMonthlySummaryConditionInput = {
   and?: Array<ModelVolunteerMonthlySummaryConditionInput | null> | null;
   or?: Array<ModelVolunteerMonthlySummaryConditionInput | null> | null;
   not?: ModelVolunteerMonthlySummaryConditionInput | null;
+};
+
+export type VolunteerMonthlySummary = {
+  __typename: "VolunteerMonthlySummary";
+  id?: string;
+  Namebwe?: string;
+  Namevol?: string;
+  date?: string | null;
+  NoWaterSampleTaken?: number;
+  NoLsn1TaughtAsPrimaryInstr?: number;
+  NoLsn1TaughtAssistingSWE?: number;
+  NoPersonsTaughtLesson1ByVol?: number;
+  NoLsn2TaughtAsPrimaryInstr?: number;
+  NoLsn2TaughtAssistingSWE?: number;
+  NoPersonsTaughtLesson2ByVol?: number;
+  NoLsn3TaughtAsPrimaryInstr?: number;
+  NoLsn3TaughtAssistingSWE?: number;
+  NoPersonsTaughtLesson3ByVol?: number;
+  NoLsn4TaughtAsPrimaryInstr?: number;
+  NoLsn4TaughtAssistingSWE?: number;
+  NoPersonsTaughtLesson4ByVol?: number;
+  NoPersonsTaughtByVol?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
 };
 
 export type UpdateVolunteerMonthlySummaryInput = {
@@ -1172,6 +1537,13 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null;
 };
 
+export type ModelInitialSurveyConnection = {
+  __typename: "ModelInitialSurveyConnection";
+  items?: Array<InitialSurvey | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelFollowUpSurveyFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1214,6 +1586,13 @@ export type ModelFollowUpSurveyFilterInput = {
   not?: ModelFollowUpSurveyFilterInput | null;
 };
 
+export type ModelFollowUpSurveyConnection = {
+  __typename: "ModelFollowUpSurveyConnection";
+  items?: Array<FollowUpSurvey | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelHealthCheckSurveyFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1249,6 +1628,13 @@ export type ModelHealthCheckSurveyFilterInput = {
   not?: ModelHealthCheckSurveyFilterInput | null;
 };
 
+export type ModelHealthCheckSurveyConnection = {
+  __typename: "ModelHealthCheckSurveyConnection";
+  items?: Array<HealthCheckSurvey | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelSWEMonthlySummaryFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1280,6 +1666,13 @@ export type ModelSWEMonthlySummaryFilterInput = {
   not?: ModelSWEMonthlySummaryFilterInput | null;
 };
 
+export type ModelSWEMonthlySummaryConnection = {
+  __typename: "ModelSWEMonthlySummaryConnection";
+  items?: Array<SWEMonthlySummary | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelHouseholdWaterTestFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1293,14 +1686,19 @@ export type ModelHouseholdWaterTestFilterInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
-  ChlorineDateTested?: ModelStringInput | null;
-  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
   and?: Array<ModelHouseholdWaterTestFilterInput | null> | null;
   or?: Array<ModelHouseholdWaterTestFilterInput | null> | null;
   not?: ModelHouseholdWaterTestFilterInput | null;
+};
+
+export type ModelHouseholdWaterTestConnection = {
+  __typename: "ModelHouseholdWaterTestConnection";
+  items?: Array<HouseholdWaterTest | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type ModelCommunityWaterTestFilterInput = {
@@ -1324,6 +1722,13 @@ export type ModelCommunityWaterTestFilterInput = {
   not?: ModelCommunityWaterTestFilterInput | null;
 };
 
+export type ModelCommunityWaterTestConnection = {
+  __typename: "ModelCommunityWaterTestConnection";
+  items?: Array<CommunityWaterTest | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelCommunityWaterFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1337,6 +1742,13 @@ export type ModelCommunityWaterFilterInput = {
   and?: Array<ModelCommunityWaterFilterInput | null> | null;
   or?: Array<ModelCommunityWaterFilterInput | null> | null;
   not?: ModelCommunityWaterFilterInput | null;
+};
+
+export type ModelCommunityWaterConnection = {
+  __typename: "ModelCommunityWaterConnection";
+  items?: Array<CommunityWater | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type ModelConfigDefinitionsFilterInput = {
@@ -1356,12 +1768,26 @@ export type ModelConfigDefinitionsFilterInput = {
   not?: ModelConfigDefinitionsFilterInput | null;
 };
 
+export type ModelConfigDefinitionsConnection = {
+  __typename: "ModelConfigDefinitionsConnection";
+  items?: Array<ConfigDefinitions | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelBWFSURVEYTOTALSFilterInput = {
   surveyName?: ModelStringInput | null;
   total?: ModelIntInput | null;
   and?: Array<ModelBWFSURVEYTOTALSFilterInput | null> | null;
   or?: Array<ModelBWFSURVEYTOTALSFilterInput | null> | null;
   not?: ModelBWFSURVEYTOTALSFilterInput | null;
+};
+
+export type ModelBWFSURVEYTOTALSConnection = {
+  __typename: "ModelBWFSURVEYTOTALSConnection";
+  items?: Array<BWFSURVEYTOTALS | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type ModelVolunteerHouseholdWaterTestFilterInput = {
@@ -1379,14 +1805,19 @@ export type ModelVolunteerHouseholdWaterTestFilterInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
-  ChlorineDateTested?: ModelStringInput | null;
-  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
   and?: Array<ModelVolunteerHouseholdWaterTestFilterInput | null> | null;
   or?: Array<ModelVolunteerHouseholdWaterTestFilterInput | null> | null;
   not?: ModelVolunteerHouseholdWaterTestFilterInput | null;
+};
+
+export type ModelVolunteerHouseholdWaterTestConnection = {
+  __typename: "ModelVolunteerHouseholdWaterTestConnection";
+  items?: Array<VolunteerHouseholdWaterTest | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type ModelVolunteerHouseholdFilterInput = {
@@ -1406,6 +1837,13 @@ export type ModelVolunteerHouseholdFilterInput = {
   not?: ModelVolunteerHouseholdFilterInput | null;
 };
 
+export type ModelVolunteerHouseholdConnection = {
+  __typename: "ModelVolunteerHouseholdConnection";
+  items?: Array<VolunteerHousehold | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type ModelVolunteerFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1413,6 +1851,13 @@ export type ModelVolunteerFilterInput = {
   and?: Array<ModelVolunteerFilterInput | null> | null;
   or?: Array<ModelVolunteerFilterInput | null> | null;
   not?: ModelVolunteerFilterInput | null;
+};
+
+export type ModelVolunteerConnection = {
+  __typename: "ModelVolunteerConnection";
+  items?: Array<Volunteer | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type ModelVolunteerMonthlySummaryFilterInput = {
@@ -1442,6 +1887,13 @@ export type ModelVolunteerMonthlySummaryFilterInput = {
   not?: ModelVolunteerMonthlySummaryFilterInput | null;
 };
 
+export type ModelVolunteerMonthlySummaryConnection = {
+  __typename: "ModelVolunteerMonthlySummaryConnection";
+  items?: Array<VolunteerMonthlySummary | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type CreateInitialSurveyMutation = {
   __typename: "InitialSurvey";
   id: string;
@@ -1449,7 +1901,7 @@ export type CreateInitialSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -1510,7 +1962,7 @@ export type CreateInitialSurveyMutation = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1523,7 +1975,7 @@ export type UpdateInitialSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -1584,7 +2036,7 @@ export type UpdateInitialSurveyMutation = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1597,7 +2049,7 @@ export type DeleteInitialSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -1658,7 +2110,7 @@ export type DeleteInitialSurveyMutation = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1671,7 +2123,7 @@ export type CreateFollowUpSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -1703,7 +2155,7 @@ export type CreateFollowUpSurveyMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1716,7 +2168,7 @@ export type UpdateFollowUpSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -1748,7 +2200,7 @@ export type UpdateFollowUpSurveyMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1761,7 +2213,7 @@ export type DeleteFollowUpSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -1793,7 +2245,7 @@ export type DeleteFollowUpSurveyMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1806,7 +2258,7 @@ export type CreateHealthCheckSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -1831,7 +2283,7 @@ export type CreateHealthCheckSurveyMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1844,7 +2296,7 @@ export type UpdateHealthCheckSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -1869,7 +2321,7 @@ export type UpdateHealthCheckSurveyMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1882,7 +2334,7 @@ export type DeleteHealthCheckSurveyMutation = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -1907,7 +2359,7 @@ export type DeleteHealthCheckSurveyMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1917,7 +2369,7 @@ export type CreateSweMonthlySummaryMutation = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -1941,7 +2393,7 @@ export type CreateSweMonthlySummaryMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1951,7 +2403,7 @@ export type UpdateSweMonthlySummaryMutation = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -1975,7 +2427,7 @@ export type UpdateSweMonthlySummaryMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -1985,7 +2437,7 @@ export type DeleteSweMonthlySummaryMutation = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -2009,7 +2461,7 @@ export type DeleteSweMonthlySummaryMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2019,7 +2471,7 @@ export type CreateHouseholdWaterTestMutation = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2029,13 +2481,11 @@ export type CreateHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2045,7 +2495,7 @@ export type UpdateHouseholdWaterTestMutation = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2055,13 +2505,11 @@ export type UpdateHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2071,7 +2519,7 @@ export type DeleteHouseholdWaterTestMutation = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2081,13 +2529,11 @@ export type DeleteHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2097,7 +2543,7 @@ export type CreateCommunityWaterTestMutation = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -2111,7 +2557,7 @@ export type CreateCommunityWaterTestMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2121,7 +2567,7 @@ export type UpdateCommunityWaterTestMutation = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -2135,7 +2581,7 @@ export type UpdateCommunityWaterTestMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2145,7 +2591,7 @@ export type DeleteCommunityWaterTestMutation = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -2159,7 +2605,7 @@ export type DeleteCommunityWaterTestMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2169,7 +2615,7 @@ export type CreateCommunityWaterMutation = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -2177,7 +2623,7 @@ export type CreateCommunityWaterMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2187,7 +2633,7 @@ export type UpdateCommunityWaterMutation = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -2195,7 +2641,7 @@ export type UpdateCommunityWaterMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2205,7 +2651,7 @@ export type DeleteCommunityWaterMutation = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -2213,7 +2659,7 @@ export type DeleteCommunityWaterMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2233,7 +2679,7 @@ export type CreateConfigDefinitionsMutation = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2253,7 +2699,7 @@ export type UpdateConfigDefinitionsMutation = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2273,7 +2719,7 @@ export type DeleteConfigDefinitionsMutation = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2285,7 +2731,7 @@ export type CreateBwfsurveytotalsMutation = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2297,7 +2743,7 @@ export type UpdateBwfsurveytotalsMutation = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2309,7 +2755,7 @@ export type DeleteBwfsurveytotalsMutation = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2320,7 +2766,7 @@ export type CreateVolunteerHouseholdWaterTestMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2331,13 +2777,11 @@ export type CreateVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2348,7 +2792,7 @@ export type UpdateVolunteerHouseholdWaterTestMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2359,13 +2803,11 @@ export type UpdateVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2376,7 +2818,7 @@ export type DeleteVolunteerHouseholdWaterTestMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2387,13 +2829,11 @@ export type DeleteVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2404,7 +2844,7 @@ export type CreateVolunteerHouseholdMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2413,7 +2853,7 @@ export type CreateVolunteerHouseholdMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2424,7 +2864,7 @@ export type UpdateVolunteerHouseholdMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2433,7 +2873,7 @@ export type UpdateVolunteerHouseholdMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2444,7 +2884,7 @@ export type DeleteVolunteerHouseholdMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -2453,7 +2893,7 @@ export type DeleteVolunteerHouseholdMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2465,7 +2905,7 @@ export type CreateVolunteerMutation = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2477,7 +2917,7 @@ export type UpdateVolunteerMutation = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2489,7 +2929,7 @@ export type DeleteVolunteerMutation = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2500,7 +2940,7 @@ export type CreateVolunteerMonthlySummaryMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -2519,7 +2959,7 @@ export type CreateVolunteerMonthlySummaryMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2530,7 +2970,7 @@ export type UpdateVolunteerMonthlySummaryMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -2549,7 +2989,7 @@ export type UpdateVolunteerMonthlySummaryMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2560,7 +3000,7 @@ export type DeleteVolunteerMonthlySummaryMutation = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -2579,7 +3019,7 @@ export type DeleteVolunteerMonthlySummaryMutation = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2587,14 +3027,14 @@ export type DeleteVolunteerMonthlySummaryMutation = {
 
 export type SyncInitialSurveysQuery = {
   __typename: "ModelInitialSurveyConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "InitialSurvey";
     id: string;
     Namebwe: string;
     Country: string;
     Community: string;
     SurveyId: number;
-    date: string | null;
+    date?: string | null;
     HeadHouseholdName: string;
     HeadHouseholdPhoneNumber: string;
     HeadHouseholdSex: string;
@@ -2655,13 +3095,13 @@ export type SyncInitialSurveysQuery = {
     ChildrenDiedAfterBeingBornAlive: string;
     CausesOfChildrenDeath: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetInitialSurveyQuery = {
@@ -2671,7 +3111,7 @@ export type GetInitialSurveyQuery = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -2732,7 +3172,7 @@ export type GetInitialSurveyQuery = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2740,14 +3180,14 @@ export type GetInitialSurveyQuery = {
 
 export type ListInitialSurveysQuery = {
   __typename: "ModelInitialSurveyConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "InitialSurvey";
     id: string;
     Namebwe: string;
     Country: string;
     Community: string;
     SurveyId: number;
-    date: string | null;
+    date?: string | null;
     HeadHouseholdName: string;
     HeadHouseholdPhoneNumber: string;
     HeadHouseholdSex: string;
@@ -2808,25 +3248,25 @@ export type ListInitialSurveysQuery = {
     ChildrenDiedAfterBeingBornAlive: string;
     CausesOfChildrenDeath: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncFollowUpSurveysQuery = {
   __typename: "ModelFollowUpSurveyConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "FollowUpSurvey";
     id: string;
     Namebwe: string;
     Country: string;
     Community: string;
     SurveyId: number;
-    date: string | null;
+    date?: string | null;
     HeadHouseholdName: string;
     PersonBeingInterviewed: string;
     WaterTreatmentBeforeDrinking: string;
@@ -2858,13 +3298,13 @@ export type SyncFollowUpSurveysQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetFollowUpSurveyQuery = {
@@ -2874,7 +3314,7 @@ export type GetFollowUpSurveyQuery = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -2906,7 +3346,7 @@ export type GetFollowUpSurveyQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -2914,14 +3354,14 @@ export type GetFollowUpSurveyQuery = {
 
 export type ListFollowUpSurveysQuery = {
   __typename: "ModelFollowUpSurveyConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "FollowUpSurvey";
     id: string;
     Namebwe: string;
     Country: string;
     Community: string;
     SurveyId: number;
-    date: string | null;
+    date?: string | null;
     HeadHouseholdName: string;
     PersonBeingInterviewed: string;
     WaterTreatmentBeforeDrinking: string;
@@ -2953,25 +3393,25 @@ export type ListFollowUpSurveysQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncHealthCheckSurveysQuery = {
   __typename: "ModelHealthCheckSurveyConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "HealthCheckSurvey";
     id: string;
     Namebwe: string;
     Country: string;
     Community: string;
     SurveyId: number;
-    date: string | null;
+    date?: string | null;
     HeadHouseholdName: string;
     PersonBeingInterviewed: string;
     LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -2996,13 +3436,13 @@ export type SyncHealthCheckSurveysQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetHealthCheckSurveyQuery = {
@@ -3012,7 +3452,7 @@ export type GetHealthCheckSurveyQuery = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -3037,7 +3477,7 @@ export type GetHealthCheckSurveyQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3045,14 +3485,14 @@ export type GetHealthCheckSurveyQuery = {
 
 export type ListHealthCheckSurveysQuery = {
   __typename: "ModelHealthCheckSurveyConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "HealthCheckSurvey";
     id: string;
     Namebwe: string;
     Country: string;
     Community: string;
     SurveyId: number;
-    date: string | null;
+    date?: string | null;
     HeadHouseholdName: string;
     PersonBeingInterviewed: string;
     LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -3077,22 +3517,22 @@ export type ListHealthCheckSurveysQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncSweMonthlySummariesQuery = {
   __typename: "ModelSWEMonthlySummaryConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "SWEMonthlySummary";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     SWEPosition: string;
     NoWaterSampleTaken: number;
     NoSurveysCompleted: number;
@@ -3116,20 +3556,20 @@ export type SyncSweMonthlySummariesQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetSweMonthlySummaryQuery = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -3153,7 +3593,7 @@ export type GetSweMonthlySummaryQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3161,11 +3601,11 @@ export type GetSweMonthlySummaryQuery = {
 
 export type ListSweMonthlySummarysQuery = {
   __typename: "ModelSWEMonthlySummaryConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "SWEMonthlySummary";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     SWEPosition: string;
     NoWaterSampleTaken: number;
     NoSurveysCompleted: number;
@@ -3189,22 +3629,22 @@ export type ListSweMonthlySummarysQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncHouseholdWaterTestsQuery = {
   __typename: "ModelHouseholdWaterTestConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "HouseholdWaterTest";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     HeadHouseholdName: string;
@@ -3214,26 +3654,24 @@ export type SyncHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
-    ChlorineDateTested: string;
-    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetHouseholdWaterTestQuery = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -3243,13 +3681,11 @@ export type GetHouseholdWaterTestQuery = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3257,11 +3693,11 @@ export type GetHouseholdWaterTestQuery = {
 
 export type ListHouseholdWaterTestsQuery = {
   __typename: "ModelHouseholdWaterTestConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "HouseholdWaterTest";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     HeadHouseholdName: string;
@@ -3271,28 +3707,26 @@ export type ListHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
-    ChlorineDateTested: string;
-    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncCommunityWaterTestsQuery = {
   __typename: "ModelCommunityWaterTestConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "CommunityWaterTest";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     CommunityWaterLocation: string;
@@ -3306,20 +3740,20 @@ export type SyncCommunityWaterTestsQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetCommunityWaterTestQuery = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -3333,7 +3767,7 @@ export type GetCommunityWaterTestQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3341,11 +3775,11 @@ export type GetCommunityWaterTestQuery = {
 
 export type ListCommunityWaterTestsQuery = {
   __typename: "ModelCommunityWaterTestConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "CommunityWaterTest";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     CommunityWaterLocation: string;
@@ -3359,22 +3793,22 @@ export type ListCommunityWaterTestsQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncCommunityWatersQuery = {
   __typename: "ModelCommunityWaterConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "CommunityWater";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     CommunityWaterLocation: string;
@@ -3382,20 +3816,20 @@ export type SyncCommunityWatersQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetCommunityWaterQuery = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -3403,7 +3837,7 @@ export type GetCommunityWaterQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3411,11 +3845,11 @@ export type GetCommunityWaterQuery = {
 
 export type ListCommunityWatersQuery = {
   __typename: "ModelCommunityWaterConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "CommunityWater";
     id: string;
     Namebwe: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     CommunityWaterLocation: string;
@@ -3423,18 +3857,18 @@ export type ListCommunityWatersQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncConfigDefinitionsQuery = {
   __typename: "ModelConfigDefinitionsConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "ConfigDefinitions";
     id: string;
     type: string;
@@ -3448,13 +3882,13 @@ export type SyncConfigDefinitionsQuery = {
     parentvalue: string;
     parentdesc: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetConfigDefinitionsQuery = {
@@ -3471,7 +3905,7 @@ export type GetConfigDefinitionsQuery = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3479,7 +3913,7 @@ export type GetConfigDefinitionsQuery = {
 
 export type ListConfigDefinitionssQuery = {
   __typename: "ModelConfigDefinitionsConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "ConfigDefinitions";
     id: string;
     type: string;
@@ -3493,30 +3927,30 @@ export type ListConfigDefinitionssQuery = {
     parentvalue: string;
     parentdesc: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncBwfsurveytotalsQuery = {
   __typename: "ModelBWFSURVEYTOTALSConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "BWFSURVEYTOTALS";
     id: string;
     surveyName: string;
     total: number;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetBwfsurveytotalsQuery = {
@@ -3525,7 +3959,7 @@ export type GetBwfsurveytotalsQuery = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3533,29 +3967,29 @@ export type GetBwfsurveytotalsQuery = {
 
 export type ListBwfsurveytotalSsQuery = {
   __typename: "ModelBWFSURVEYTOTALSConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "BWFSURVEYTOTALS";
     id: string;
     surveyName: string;
     total: number;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncVolunteerHouseholdWaterTestsQuery = {
   __typename: "ModelVolunteerHouseholdWaterTestConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "VolunteerHouseholdWaterTest";
     id: string;
     Namebwe: string;
     Namevol: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     HeadHouseholdName: string;
@@ -3566,19 +4000,17 @@ export type SyncVolunteerHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
-    ChlorineDateTested: string;
-    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetVolunteerHouseholdWaterTestQuery = {
@@ -3586,7 +4018,7 @@ export type GetVolunteerHouseholdWaterTestQuery = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -3597,13 +4029,11 @@ export type GetVolunteerHouseholdWaterTestQuery = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3611,12 +4041,12 @@ export type GetVolunteerHouseholdWaterTestQuery = {
 
 export type ListVolunteerHouseholdWaterTestsQuery = {
   __typename: "ModelVolunteerHouseholdWaterTestConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "VolunteerHouseholdWaterTest";
     id: string;
     Namebwe: string;
     Namevol: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     HeadHouseholdName: string;
@@ -3627,29 +4057,27 @@ export type ListVolunteerHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
-    ChlorineDateTested: string;
-    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncVolunteerHouseholdsQuery = {
   __typename: "ModelVolunteerHouseholdConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "VolunteerHousehold";
     id: string;
     Namebwe: string;
     Namevol: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     HeadHouseholdName: string;
@@ -3658,13 +4086,13 @@ export type SyncVolunteerHouseholdsQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetVolunteerHouseholdQuery = {
@@ -3672,7 +4100,7 @@ export type GetVolunteerHouseholdQuery = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -3681,7 +4109,7 @@ export type GetVolunteerHouseholdQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3689,12 +4117,12 @@ export type GetVolunteerHouseholdQuery = {
 
 export type ListVolunteerHouseholdsQuery = {
   __typename: "ModelVolunteerHouseholdConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "VolunteerHousehold";
     id: string;
     Namebwe: string;
     Namevol: string;
-    date: string | null;
+    date?: string | null;
     Country: string;
     Community: string;
     HeadHouseholdName: string;
@@ -3703,30 +4131,30 @@ export type ListVolunteerHouseholdsQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncVolunteersQuery = {
   __typename: "ModelVolunteerConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "Volunteer";
     id: string;
     Namebwe: string;
     Namevol: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetVolunteerQuery = {
@@ -3735,7 +4163,7 @@ export type GetVolunteerQuery = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3743,29 +4171,29 @@ export type GetVolunteerQuery = {
 
 export type ListVolunteersQuery = {
   __typename: "ModelVolunteerConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "Volunteer";
     id: string;
     Namebwe: string;
     Namevol: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type SyncVolunteerMonthlySummariesQuery = {
   __typename: "ModelVolunteerMonthlySummaryConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "VolunteerMonthlySummary";
     id: string;
     Namebwe: string;
     Namevol: string;
-    date: string | null;
+    date?: string | null;
     NoWaterSampleTaken: number;
     NoLsn1TaughtAsPrimaryInstr: number;
     NoLsn1TaughtAssistingSWE: number;
@@ -3784,13 +4212,13 @@ export type SyncVolunteerMonthlySummariesQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type GetVolunteerMonthlySummaryQuery = {
@@ -3798,7 +4226,7 @@ export type GetVolunteerMonthlySummaryQuery = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -3817,7 +4245,7 @@ export type GetVolunteerMonthlySummaryQuery = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3825,12 +4253,12 @@ export type GetVolunteerMonthlySummaryQuery = {
 
 export type ListVolunteerMonthlySummarysQuery = {
   __typename: "ModelVolunteerMonthlySummaryConnection";
-  items: Array<{
+  items?: Array<{
     __typename: "VolunteerMonthlySummary";
     id: string;
     Namebwe: string;
     Namevol: string;
-    date: string | null;
+    date?: string | null;
     NoWaterSampleTaken: number;
     NoLsn1TaughtAsPrimaryInstr: number;
     NoLsn1TaughtAssistingSWE: number;
@@ -3849,13 +4277,13 @@ export type ListVolunteerMonthlySummarysQuery = {
     Lat: string;
     Lng: string;
     _version: number;
-    _deleted: boolean | null;
+    _deleted?: boolean | null;
     _lastChangedAt: number;
     createdAt: string;
     updatedAt: string;
   } | null> | null;
-  nextToken: string | null;
-  startedAt: number | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
 };
 
 export type OnCreateInitialSurveySubscription = {
@@ -3865,7 +4293,7 @@ export type OnCreateInitialSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -3926,7 +4354,7 @@ export type OnCreateInitialSurveySubscription = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -3939,7 +4367,7 @@ export type OnUpdateInitialSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -4000,7 +4428,7 @@ export type OnUpdateInitialSurveySubscription = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4013,7 +4441,7 @@ export type OnDeleteInitialSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   HeadHouseholdPhoneNumber: string;
   HeadHouseholdSex: string;
@@ -4074,7 +4502,7 @@ export type OnDeleteInitialSurveySubscription = {
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4087,7 +4515,7 @@ export type OnCreateFollowUpSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -4119,7 +4547,7 @@ export type OnCreateFollowUpSurveySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4132,7 +4560,7 @@ export type OnUpdateFollowUpSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -4164,7 +4592,7 @@ export type OnUpdateFollowUpSurveySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4177,7 +4605,7 @@ export type OnDeleteFollowUpSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   WaterTreatmentBeforeDrinking: string;
@@ -4209,7 +4637,7 @@ export type OnDeleteFollowUpSurveySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4222,7 +4650,7 @@ export type OnCreateHealthCheckSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -4247,7 +4675,7 @@ export type OnCreateHealthCheckSurveySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4260,7 +4688,7 @@ export type OnUpdateHealthCheckSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -4285,7 +4713,7 @@ export type OnUpdateHealthCheckSurveySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4298,7 +4726,7 @@ export type OnDeleteHealthCheckSurveySubscription = {
   Country: string;
   Community: string;
   SurveyId: number;
-  date: string | null;
+  date?: string | null;
   HeadHouseholdName: string;
   PersonBeingInterviewed: string;
   LastTimeTreatedHouseholdWaterWithChlorine: string;
@@ -4323,7 +4751,7 @@ export type OnDeleteHealthCheckSurveySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4333,7 +4761,7 @@ export type OnCreateSweMonthlySummarySubscription = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -4357,7 +4785,7 @@ export type OnCreateSweMonthlySummarySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4367,7 +4795,7 @@ export type OnUpdateSweMonthlySummarySubscription = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -4391,7 +4819,7 @@ export type OnUpdateSweMonthlySummarySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4401,7 +4829,7 @@ export type OnDeleteSweMonthlySummarySubscription = {
   __typename: "SWEMonthlySummary";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   SWEPosition: string;
   NoWaterSampleTaken: number;
   NoSurveysCompleted: number;
@@ -4425,7 +4853,7 @@ export type OnDeleteSweMonthlySummarySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4435,7 +4863,7 @@ export type OnCreateHouseholdWaterTestSubscription = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4445,13 +4873,11 @@ export type OnCreateHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4461,7 +4887,7 @@ export type OnUpdateHouseholdWaterTestSubscription = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4471,13 +4897,11 @@ export type OnUpdateHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4487,7 +4911,7 @@ export type OnDeleteHouseholdWaterTestSubscription = {
   __typename: "HouseholdWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4497,13 +4921,11 @@ export type OnDeleteHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4513,7 +4935,7 @@ export type OnCreateCommunityWaterTestSubscription = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -4527,7 +4949,7 @@ export type OnCreateCommunityWaterTestSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4537,7 +4959,7 @@ export type OnUpdateCommunityWaterTestSubscription = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -4551,7 +4973,7 @@ export type OnUpdateCommunityWaterTestSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4561,7 +4983,7 @@ export type OnDeleteCommunityWaterTestSubscription = {
   __typename: "CommunityWaterTest";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -4575,7 +4997,7 @@ export type OnDeleteCommunityWaterTestSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4585,7 +5007,7 @@ export type OnCreateCommunityWaterSubscription = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -4593,7 +5015,7 @@ export type OnCreateCommunityWaterSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4603,7 +5025,7 @@ export type OnUpdateCommunityWaterSubscription = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -4611,7 +5033,7 @@ export type OnUpdateCommunityWaterSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4621,7 +5043,7 @@ export type OnDeleteCommunityWaterSubscription = {
   __typename: "CommunityWater";
   id: string;
   Namebwe: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   CommunityWaterLocation: string;
@@ -4629,7 +5051,7 @@ export type OnDeleteCommunityWaterSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4649,7 +5071,7 @@ export type OnCreateConfigDefinitionsSubscription = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4669,7 +5091,7 @@ export type OnUpdateConfigDefinitionsSubscription = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4689,7 +5111,7 @@ export type OnDeleteConfigDefinitionsSubscription = {
   parentvalue: string;
   parentdesc: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4701,7 +5123,7 @@ export type OnCreateBwfsurveytotalsSubscription = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4713,7 +5135,7 @@ export type OnUpdateBwfsurveytotalsSubscription = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4725,7 +5147,7 @@ export type OnDeleteBwfsurveytotalsSubscription = {
   surveyName: string;
   total: number;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4736,7 +5158,7 @@ export type OnCreateVolunteerHouseholdWaterTestSubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4747,13 +5169,11 @@ export type OnCreateVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4764,7 +5184,7 @@ export type OnUpdateVolunteerHouseholdWaterTestSubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4775,13 +5195,11 @@ export type OnUpdateVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4792,7 +5210,7 @@ export type OnDeleteVolunteerHouseholdWaterTestSubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4803,13 +5221,11 @@ export type OnDeleteVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
-  ChlorineDateTested: string;
-  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4820,7 +5236,7 @@ export type OnCreateVolunteerHouseholdSubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4829,7 +5245,7 @@ export type OnCreateVolunteerHouseholdSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4840,7 +5256,7 @@ export type OnUpdateVolunteerHouseholdSubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4849,7 +5265,7 @@ export type OnUpdateVolunteerHouseholdSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4860,7 +5276,7 @@ export type OnDeleteVolunteerHouseholdSubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   Country: string;
   Community: string;
   HeadHouseholdName: string;
@@ -4869,7 +5285,7 @@ export type OnDeleteVolunteerHouseholdSubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4881,7 +5297,7 @@ export type OnCreateVolunteerSubscription = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4893,7 +5309,7 @@ export type OnUpdateVolunteerSubscription = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4905,7 +5321,7 @@ export type OnDeleteVolunteerSubscription = {
   Namebwe: string;
   Namevol: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4916,7 +5332,7 @@ export type OnCreateVolunteerMonthlySummarySubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -4935,7 +5351,7 @@ export type OnCreateVolunteerMonthlySummarySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4946,7 +5362,7 @@ export type OnUpdateVolunteerMonthlySummarySubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -4965,7 +5381,7 @@ export type OnUpdateVolunteerMonthlySummarySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -4976,7 +5392,7 @@ export type OnDeleteVolunteerMonthlySummarySubscription = {
   id: string;
   Namebwe: string;
   Namevol: string;
-  date: string | null;
+  date?: string | null;
   NoWaterSampleTaken: number;
   NoLsn1TaughtAsPrimaryInstr: number;
   NoLsn1TaughtAssistingSWE: number;
@@ -4995,7 +5411,7 @@ export type OnDeleteVolunteerMonthlySummarySubscription = {
   Lat: string;
   Lng: string;
   _version: number;
-  _deleted: boolean | null;
+  _deleted?: boolean | null;
   _lastChangedAt: number;
   createdAt: string;
   updatedAt: string;
@@ -5801,8 +6217,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -5845,8 +6259,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -5889,8 +6301,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6361,8 +6771,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6407,8 +6815,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6453,8 +6859,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -7680,8 +8084,6 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
-            ChlorineDateTested
-            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -7729,8 +8131,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -7771,8 +8171,6 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
-            ChlorineDateTested
-            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8312,8 +8710,6 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
-            ChlorineDateTested
-            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8367,8 +8763,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -8413,8 +8807,6 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
-            ChlorineDateTested
-            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -9525,8 +9917,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9559,8 +9949,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9593,8 +9981,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9947,8 +10333,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9985,8 +10369,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -10023,8 +10405,6 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
-          ChlorineDateTested
-          ChlorineTestResult
           Completed
           Lat
           Lng

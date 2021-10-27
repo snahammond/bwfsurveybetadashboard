@@ -693,8 +693,6 @@ query SyncHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
-      ChlorineDateTested
-      ChlorineTestResult
       Completed
       Lat
       Lng
@@ -722,8 +720,6 @@ query GetHouseholdWaterTest($id: ID!) {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -757,8 +753,6 @@ query ListHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
-      ChlorineDateTested
-      ChlorineTestResult
       Completed
       Lat
       Lng
@@ -1117,8 +1111,6 @@ query SyncVolunteerHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
-      ChlorineDateTested
-      ChlorineTestResult
       Completed
       Lat
       Lng
@@ -1148,8 +1140,6 @@ query GetVolunteerHouseholdWaterTest($id: ID!) {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -1185,8 +1175,6 @@ query ListVolunteerHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
-      ChlorineDateTested
-      ChlorineTestResult
       Completed
       Lat
       Lng

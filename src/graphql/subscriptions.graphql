@@ -586,8 +586,6 @@ subscription OnCreateHouseholdWaterTest {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -612,8 +610,6 @@ subscription OnUpdateHouseholdWaterTest {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -638,8 +634,6 @@ subscription OnDeleteHouseholdWaterTest {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -888,8 +882,6 @@ subscription OnCreateVolunteerHouseholdWaterTest {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -916,8 +908,6 @@ subscription OnUpdateVolunteerHouseholdWaterTest {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -944,8 +934,6 @@ subscription OnDeleteVolunteerHouseholdWaterTest {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
-    ChlorineDateTested
-    ChlorineTestResult
     Completed
     Lat
     Lng
