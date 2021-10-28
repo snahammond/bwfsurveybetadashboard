@@ -243,6 +243,68 @@ query ListInitialSurveys(
     startedAt
   }
 }
+query SyncInitialSurveyDeleteControls(
+  $filter: ModelInitialSurveyDeleteControlFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncInitialSurveyDeleteControls(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Completed
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetInitialSurveyDeleteControl($id: ID!) {
+  getInitialSurveyDeleteControl(id: $id) {
+    id
+    Namebwe
+    Completed
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListInitialSurveyDeleteControls(
+  $filter: ModelInitialSurveyDeleteControlFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listInitialSurveyDeleteControls(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      Completed
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
 query SyncFollowUpSurveys(
   $filter: ModelFollowUpSurveyFilterInput
   $limit: Int
@@ -693,6 +755,8 @@ query SyncHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
+      ChlorineDateTested
+      ChlorineTestResult
       Completed
       Lat
       Lng
@@ -720,6 +784,8 @@ query GetHouseholdWaterTest($id: ID!) {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -753,6 +819,8 @@ query ListHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
+      ChlorineDateTested
+      ChlorineTestResult
       Completed
       Lat
       Lng
@@ -1111,6 +1179,8 @@ query SyncVolunteerHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
+      ChlorineDateTested
+      ChlorineTestResult
       Completed
       Lat
       Lng
@@ -1140,6 +1210,8 @@ query GetVolunteerHouseholdWaterTest($id: ID!) {
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -1175,6 +1247,8 @@ query ListVolunteerHouseholdWaterTests(
       PetrifilmDateTested
       PetrifilmDateRead
       PetrifilmTestResult
+      ChlorineDateTested
+      ChlorineTestResult
       Completed
       Lat
       Lng

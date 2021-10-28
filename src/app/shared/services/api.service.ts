@@ -343,7 +343,46 @@ export type UpdateInitialSurveyInput = {
 };
 
 export type DeleteInitialSurveyInput = {
+  id: string;
+  _version?: number | null;
+};
+
+export type CreateInitialSurveyDeleteControlInput = {
   id?: string | null;
+  Namebwe: string;
+  Completed: number;
+  _version?: number | null;
+};
+
+export type ModelInitialSurveyDeleteControlConditionInput = {
+  Namebwe?: ModelStringInput | null;
+  Completed?: ModelIntInput | null;
+  and?: Array<ModelInitialSurveyDeleteControlConditionInput | null> | null;
+  or?: Array<ModelInitialSurveyDeleteControlConditionInput | null> | null;
+  not?: ModelInitialSurveyDeleteControlConditionInput | null;
+};
+
+export type InitialSurveyDeleteControl = {
+  __typename: "InitialSurveyDeleteControl";
+  id?: string;
+  Namebwe?: string;
+  Completed?: number;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateInitialSurveyDeleteControlInput = {
+  id: string;
+  Namebwe?: string | null;
+  Completed?: number | null;
+  _version?: number | null;
+};
+
+export type DeleteInitialSurveyDeleteControlInput = {
+  id: string;
   _version?: number | null;
 };
 
@@ -514,7 +553,7 @@ export type UpdateFollowUpSurveyInput = {
 };
 
 export type DeleteFollowUpSurveyInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -657,7 +696,7 @@ export type UpdateHealthCheckSurveyInput = {
 };
 
 export type DeleteHealthCheckSurveyInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -784,7 +823,7 @@ export type UpdateSWEMonthlySummaryInput = {
 };
 
 export type DeleteSWEMonthlySummaryInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -801,6 +840,8 @@ export type CreateHouseholdWaterTestInput = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -819,6 +860,8 @@ export type ModelHouseholdWaterTestConditionInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -841,6 +884,8 @@ export type HouseholdWaterTest = {
   PetrifilmDateTested?: string;
   PetrifilmDateRead?: string;
   PetrifilmTestResult?: string;
+  ChlorineDateTested?: string;
+  ChlorineTestResult?: string;
   Completed?: number;
   Lat?: string;
   Lng?: string;
@@ -864,6 +909,8 @@ export type UpdateHouseholdWaterTestInput = {
   PetrifilmDateTested?: string | null;
   PetrifilmDateRead?: string | null;
   PetrifilmTestResult?: string | null;
+  ChlorineDateTested?: string | null;
+  ChlorineTestResult?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -871,7 +918,7 @@ export type UpdateHouseholdWaterTestInput = {
 };
 
 export type DeleteHouseholdWaterTestInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -958,7 +1005,7 @@ export type UpdateCommunityWaterTestInput = {
 };
 
 export type DeleteCommunityWaterTestInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1021,7 +1068,7 @@ export type UpdateCommunityWaterInput = {
 };
 
 export type DeleteCommunityWaterInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1092,7 +1139,7 @@ export type UpdateConfigDefinitionsInput = {
 };
 
 export type DeleteConfigDefinitionsInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1130,7 +1177,7 @@ export type UpdateBWFSURVEYTOTALSInput = {
 };
 
 export type DeleteBWFSURVEYTOTALSInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1149,6 +1196,8 @@ export type CreateVolunteerHouseholdWaterTestInput = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -1169,6 +1218,8 @@ export type ModelVolunteerHouseholdWaterTestConditionInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -1193,6 +1244,8 @@ export type VolunteerHouseholdWaterTest = {
   PetrifilmDateTested?: string;
   PetrifilmDateRead?: string;
   PetrifilmTestResult?: string;
+  ChlorineDateTested?: string;
+  ChlorineTestResult?: string;
   Completed?: number;
   Lat?: string;
   Lng?: string;
@@ -1218,6 +1271,8 @@ export type UpdateVolunteerHouseholdWaterTestInput = {
   PetrifilmDateTested?: string | null;
   PetrifilmDateRead?: string | null;
   PetrifilmTestResult?: string | null;
+  ChlorineDateTested?: string | null;
+  ChlorineTestResult?: string | null;
   Completed?: number | null;
   Lat?: string | null;
   Lng?: string | null;
@@ -1225,7 +1280,7 @@ export type UpdateVolunteerHouseholdWaterTestInput = {
 };
 
 export type DeleteVolunteerHouseholdWaterTestInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1296,7 +1351,7 @@ export type UpdateVolunteerHouseholdInput = {
 };
 
 export type DeleteVolunteerHouseholdInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1335,7 +1390,7 @@ export type UpdateVolunteerInput = {
 };
 
 export type DeleteVolunteerInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1446,7 +1501,7 @@ export type UpdateVolunteerMonthlySummaryInput = {
 };
 
 export type DeleteVolunteerMonthlySummaryInput = {
-  id?: string | null;
+  id: string;
   _version?: number | null;
 };
 
@@ -1540,6 +1595,22 @@ export type ModelIDInput = {
 export type ModelInitialSurveyConnection = {
   __typename: "ModelInitialSurveyConnection";
   items?: Array<InitialSurvey | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelInitialSurveyDeleteControlFilterInput = {
+  id?: ModelIDInput | null;
+  Namebwe?: ModelStringInput | null;
+  Completed?: ModelIntInput | null;
+  and?: Array<ModelInitialSurveyDeleteControlFilterInput | null> | null;
+  or?: Array<ModelInitialSurveyDeleteControlFilterInput | null> | null;
+  not?: ModelInitialSurveyDeleteControlFilterInput | null;
+};
+
+export type ModelInitialSurveyDeleteControlConnection = {
+  __typename: "ModelInitialSurveyDeleteControlConnection";
+  items?: Array<InitialSurveyDeleteControl | null> | null;
   nextToken?: string | null;
   startedAt?: number | null;
 };
@@ -1686,6 +1757,8 @@ export type ModelHouseholdWaterTestFilterInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -1805,6 +1878,8 @@ export type ModelVolunteerHouseholdWaterTestFilterInput = {
   PetrifilmDateTested?: ModelStringInput | null;
   PetrifilmDateRead?: ModelStringInput | null;
   PetrifilmTestResult?: ModelStringInput | null;
+  ChlorineDateTested?: ModelStringInput | null;
+  ChlorineTestResult?: ModelStringInput | null;
   Completed?: ModelIntInput | null;
   Lat?: ModelStringInput | null;
   Lng?: ModelStringInput | null;
@@ -2109,6 +2184,42 @@ export type DeleteInitialSurveyMutation = {
   Lng: string;
   ChildrenDiedAfterBeingBornAlive: string;
   CausesOfChildrenDeath: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateInitialSurveyDeleteControlMutation = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateInitialSurveyDeleteControlMutation = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteInitialSurveyDeleteControlMutation = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
   _version: number;
   _deleted?: boolean | null;
   _lastChangedAt: number;
@@ -2481,6 +2592,8 @@ export type CreateHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2505,6 +2618,8 @@ export type UpdateHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2529,6 +2644,8 @@ export type DeleteHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2777,6 +2894,8 @@ export type CreateVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2803,6 +2922,8 @@ export type UpdateVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -2829,6 +2950,8 @@ export type DeleteVolunteerHouseholdWaterTestMutation = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -3257,6 +3380,52 @@ export type ListInitialSurveysQuery = {
   startedAt?: number | null;
 };
 
+export type SyncInitialSurveyDeleteControlsQuery = {
+  __typename: "ModelInitialSurveyDeleteControlConnection";
+  items?: Array<{
+    __typename: "InitialSurveyDeleteControl";
+    id: string;
+    Namebwe: string;
+    Completed: number;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetInitialSurveyDeleteControlQuery = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListInitialSurveyDeleteControlsQuery = {
+  __typename: "ModelInitialSurveyDeleteControlConnection";
+  items?: Array<{
+    __typename: "InitialSurveyDeleteControl";
+    id: string;
+    Namebwe: string;
+    Completed: number;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type SyncFollowUpSurveysQuery = {
   __typename: "ModelFollowUpSurveyConnection";
   items?: Array<{
@@ -3654,6 +3823,8 @@ export type SyncHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -3681,6 +3852,8 @@ export type GetHouseholdWaterTestQuery = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -3707,6 +3880,8 @@ export type ListHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -4000,6 +4175,8 @@ export type SyncVolunteerHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -4029,6 +4206,8 @@ export type GetVolunteerHouseholdWaterTestQuery = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4057,6 +4236,8 @@ export type ListVolunteerHouseholdWaterTestsQuery = {
     PetrifilmDateTested: string;
     PetrifilmDateRead: string;
     PetrifilmTestResult: string;
+    ChlorineDateTested: string;
+    ChlorineTestResult: string;
     Completed: number;
     Lat: string;
     Lng: string;
@@ -4508,6 +4689,42 @@ export type OnDeleteInitialSurveySubscription = {
   updatedAt: string;
 };
 
+export type OnCreateInitialSurveyDeleteControlSubscription = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateInitialSurveyDeleteControlSubscription = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteInitialSurveyDeleteControlSubscription = {
+  __typename: "InitialSurveyDeleteControl";
+  id: string;
+  Namebwe: string;
+  Completed: number;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
 export type OnCreateFollowUpSurveySubscription = {
   __typename: "FollowUpSurvey";
   id: string;
@@ -4873,6 +5090,8 @@ export type OnCreateHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4897,6 +5116,8 @@ export type OnUpdateHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4921,6 +5142,8 @@ export type OnDeleteHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -5169,6 +5392,8 @@ export type OnCreateVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -5195,6 +5420,8 @@ export type OnUpdateVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -5221,6 +5448,8 @@ export type OnDeleteVolunteerHouseholdWaterTestSubscription = {
   PetrifilmDateTested: string;
   PetrifilmDateRead: string;
   PetrifilmTestResult: string;
+  ChlorineDateTested: string;
+  ChlorineTestResult: string;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -5690,6 +5919,96 @@ export class APIService {
       graphqlOperation(statement, gqlAPIServiceArguments)
     )) as any;
     return <DeleteInitialSurveyMutation>response.data.deleteInitialSurvey;
+  }
+  async CreateInitialSurveyDeleteControl(
+    input: CreateInitialSurveyDeleteControlInput,
+    condition?: ModelInitialSurveyDeleteControlConditionInput
+  ): Promise<CreateInitialSurveyDeleteControlMutation> {
+    const statement = `mutation CreateInitialSurveyDeleteControl($input: CreateInitialSurveyDeleteControlInput!, $condition: ModelInitialSurveyDeleteControlConditionInput) {
+        createInitialSurveyDeleteControl(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateInitialSurveyDeleteControlMutation>(
+      response.data.createInitialSurveyDeleteControl
+    );
+  }
+  async UpdateInitialSurveyDeleteControl(
+    input: UpdateInitialSurveyDeleteControlInput,
+    condition?: ModelInitialSurveyDeleteControlConditionInput
+  ): Promise<UpdateInitialSurveyDeleteControlMutation> {
+    const statement = `mutation UpdateInitialSurveyDeleteControl($input: UpdateInitialSurveyDeleteControlInput!, $condition: ModelInitialSurveyDeleteControlConditionInput) {
+        updateInitialSurveyDeleteControl(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateInitialSurveyDeleteControlMutation>(
+      response.data.updateInitialSurveyDeleteControl
+    );
+  }
+  async DeleteInitialSurveyDeleteControl(
+    input: DeleteInitialSurveyDeleteControlInput,
+    condition?: ModelInitialSurveyDeleteControlConditionInput
+  ): Promise<DeleteInitialSurveyDeleteControlMutation> {
+    const statement = `mutation DeleteInitialSurveyDeleteControl($input: DeleteInitialSurveyDeleteControlInput!, $condition: ModelInitialSurveyDeleteControlConditionInput) {
+        deleteInitialSurveyDeleteControl(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteInitialSurveyDeleteControlMutation>(
+      response.data.deleteInitialSurveyDeleteControl
+    );
   }
   async CreateFollowUpSurvey(
     input: CreateFollowUpSurveyInput,
@@ -6217,6 +6536,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6259,6 +6580,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6301,6 +6624,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6771,6 +7096,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6815,6 +7142,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -6859,6 +7188,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -7512,6 +7843,116 @@ export class APIService {
     )) as any;
     return <ListInitialSurveysQuery>response.data.listInitialSurveys;
   }
+  async SyncInitialSurveyDeleteControls(
+    filter?: ModelInitialSurveyDeleteControlFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncInitialSurveyDeleteControlsQuery> {
+    const statement = `query SyncInitialSurveyDeleteControls($filter: ModelInitialSurveyDeleteControlFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncInitialSurveyDeleteControls(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            Completed
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncInitialSurveyDeleteControlsQuery>(
+      response.data.syncInitialSurveyDeleteControls
+    );
+  }
+  async GetInitialSurveyDeleteControl(
+    id: string
+  ): Promise<GetInitialSurveyDeleteControlQuery> {
+    const statement = `query GetInitialSurveyDeleteControl($id: ID!) {
+        getInitialSurveyDeleteControl(id: $id) {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetInitialSurveyDeleteControlQuery>(
+      response.data.getInitialSurveyDeleteControl
+    );
+  }
+  async ListInitialSurveyDeleteControls(
+    filter?: ModelInitialSurveyDeleteControlFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListInitialSurveyDeleteControlsQuery> {
+    const statement = `query ListInitialSurveyDeleteControls($filter: ModelInitialSurveyDeleteControlFilterInput, $limit: Int, $nextToken: String) {
+        listInitialSurveyDeleteControls(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            Completed
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListInitialSurveyDeleteControlsQuery>(
+      response.data.listInitialSurveyDeleteControls
+    );
+  }
   async SyncFollowUpSurveys(
     filter?: ModelFollowUpSurveyFilterInput,
     limit?: number,
@@ -8084,6 +8525,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8131,6 +8574,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -8171,6 +8616,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8710,6 +9157,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -8763,6 +9212,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -8807,6 +9258,8 @@ export class APIService {
             PetrifilmDateTested
             PetrifilmDateRead
             PetrifilmTestResult
+            ChlorineDateTested
+            ChlorineTestResult
             Completed
             Lat
             Lng
@@ -9475,6 +9928,72 @@ export class APIService {
     )
   ) as Observable<SubscriptionResponse<OnDeleteInitialSurveySubscription>>;
 
+  OnCreateInitialSurveyDeleteControlListener: Observable<
+    SubscriptionResponse<OnCreateInitialSurveyDeleteControlSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateInitialSurveyDeleteControl {
+        onCreateInitialSurveyDeleteControl {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateInitialSurveyDeleteControlSubscription>
+  >;
+
+  OnUpdateInitialSurveyDeleteControlListener: Observable<
+    SubscriptionResponse<OnUpdateInitialSurveyDeleteControlSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateInitialSurveyDeleteControl {
+        onUpdateInitialSurveyDeleteControl {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateInitialSurveyDeleteControlSubscription>
+  >;
+
+  OnDeleteInitialSurveyDeleteControlListener: Observable<
+    SubscriptionResponse<OnDeleteInitialSurveyDeleteControlSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteInitialSurveyDeleteControl {
+        onDeleteInitialSurveyDeleteControl {
+          __typename
+          id
+          Namebwe
+          Completed
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteInitialSurveyDeleteControlSubscription>
+  >;
+
   OnCreateFollowUpSurveyListener: Observable<
     SubscriptionResponse<OnCreateFollowUpSurveySubscription>
   > = API.graphql(
@@ -9917,6 +10436,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9949,6 +10470,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -9981,6 +10504,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -10333,6 +10858,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -10369,6 +10896,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng
@@ -10405,6 +10934,8 @@ export class APIService {
           PetrifilmDateTested
           PetrifilmDateRead
           PetrifilmTestResult
+          ChlorineDateTested
+          ChlorineTestResult
           Completed
           Lat
           Lng

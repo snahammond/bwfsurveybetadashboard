@@ -230,6 +230,51 @@ mutation DeleteInitialSurvey(
     updatedAt
   }
 }
+mutation CreateInitialSurveyDeleteControl(
+  $input: CreateInitialSurveyDeleteControlInput!
+  $condition: ModelInitialSurveyDeleteControlConditionInput
+) {
+  createInitialSurveyDeleteControl(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Completed
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation UpdateInitialSurveyDeleteControl(
+  $input: UpdateInitialSurveyDeleteControlInput!
+  $condition: ModelInitialSurveyDeleteControlConditionInput
+) {
+  updateInitialSurveyDeleteControl(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Completed
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+mutation DeleteInitialSurveyDeleteControl(
+  $input: DeleteInitialSurveyDeleteControlInput!
+  $condition: ModelInitialSurveyDeleteControlConditionInput
+) {
+  deleteInitialSurveyDeleteControl(input: $input, condition: $condition) {
+    id
+    Namebwe
+    Completed
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
 mutation CreateFollowUpSurvey(
   $input: CreateFollowUpSurveyInput!
   $condition: ModelFollowUpSurveyConditionInput
@@ -625,6 +670,8 @@ mutation CreateHouseholdWaterTest(
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -652,6 +699,8 @@ mutation UpdateHouseholdWaterTest(
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -679,6 +728,8 @@ mutation DeleteHouseholdWaterTest(
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -966,6 +1017,8 @@ mutation CreateVolunteerHouseholdWaterTest(
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -995,6 +1048,8 @@ mutation UpdateVolunteerHouseholdWaterTest(
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng
@@ -1024,6 +1079,8 @@ mutation DeleteVolunteerHouseholdWaterTest(
     PetrifilmDateTested
     PetrifilmDateRead
     PetrifilmTestResult
+    ChlorineDateTested
+    ChlorineTestResult
     Completed
     Lat
     Lng

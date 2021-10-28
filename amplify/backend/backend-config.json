@@ -19,6 +19,7 @@
     "AdminQueries": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
       "dependsOn": [
         {
           "category": "auth",
@@ -29,7 +30,7 @@
         },
         {
           "category": "function",
-          "resourceName": "AdminQueries58ac4aa1",
+          "resourceName": "AdminQueries8e00fd77",
           "attributes": [
             "Arn",
             "Name"
@@ -85,7 +86,7 @@
         }
       ]
     },
-    "AdminQueries58ac4aa1": {
+    "AdminQueries8e00fd77": {
       "service": "Lambda",
       "providerPlugin": "awscloudformation",
       "build": true,

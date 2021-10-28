@@ -22,15 +22,15 @@
           
           
         
-          "functionAdminQueries58ac4aa1Arn": {
+          "functionAdminQueries8e00fd77Arn": {
             "Type": "String",
-            "Default": "functionAdminQueries58ac4aa1Arn"
+            "Default": "functionAdminQueries8e00fd77Arn"
           },
         
           
-          "functionAdminQueries58ac4aa1Name": {
+          "functionAdminQueries8e00fd77Name": {
             "Type": "String",
-            "Default": "functionAdminQueries58ac4aa1Name"
+            "Default": "functionAdminQueries8e00fd77Name"
           }
         
           
@@ -176,7 +176,7 @@
                                 ":lambda:path/2015-03-31/functions/",
                                 {
                                     
-                                    "Ref": "functionAdminQueries58ac4aa1Arn"
+                                    "Ref": "functionAdminQueries8e00fd77Arn"
                                 },
                                 "/invocations"
                               ]
@@ -268,7 +268,7 @@
         "Properties": {
             "FunctionName": 
                 {
-                  "Ref": "functionAdminQueries58ac4aa1Name"
+                  "Ref": "functionAdminQueries8e00fd77Name"
                 },
                 
                 "Action": "lambda:InvokeFunction",
@@ -304,6 +304,10 @@
         "ApiName": {
           "Description": "API Friendly name",
           "Value": "AdminQueries"
+        },
+        "ApiId": {
+          "Description": "AdminQueries's API ID",
+          "Value": {"Ref": "AdminQueries"}
         }
     }
   }

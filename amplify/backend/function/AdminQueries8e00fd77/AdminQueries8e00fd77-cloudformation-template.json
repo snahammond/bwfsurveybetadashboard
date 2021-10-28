@@ -8,6 +8,12 @@
     "authbwfsurveybetadevb027108aUserPoolId": {
       "Type": "String",
       "Default": "authbwfsurveybetadevb027108aUserPoolId"
+    },
+    "deploymentBucketName": {
+      "Type": "String"
+    },
+    "s3Key": {
+      "Type": "String"
     }
   },
   "Conditions": {
@@ -32,12 +38,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AdminQueries58ac4aa1",
+            "AdminQueries8e00fd77",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AdminQueries58ac4aa1",
+                  "AdminQueries8e00fd77",
                   "-",
                   {
                     "Ref": "env"
@@ -64,11 +70,15 @@
             "Arn"
           ]
         },
-        "Runtime": "nodejs10.x",
-        "Timeout": "25",
+        "Runtime": "nodejs14.x",
+        "Timeout": 25,
         "Code": {
-          "S3Bucket": "amplify-bwfsurveybetadev-dev-121946-deployment",
-          "S3Key": "amplify-builds/AdminQueries58ac4aa1-5131636c395a4c36526b-build.zip"
+          "S3Bucket": {
+            "Ref": "deploymentBucketName"
+          },
+          "S3Key": {
+            "Ref": "s3Key"
+          }
         }
       }
     },
@@ -78,12 +88,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "AdminQueries58ac4aa1LambdaRole",
+            "AdminQueries8e00fd77LambdaRole",
             {
               "Fn::Join": [
                 "",
                 [
-                  "AdminQueries58ac4aa1LambdaRole",
+                  "AdminQueries8e00fd77LambdaRole",
                   "-",
                   {
                     "Ref": "env"
