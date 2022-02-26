@@ -1,0 +1,78 @@
+<h2 class="content-block">Monthly SWE/Vol Education Summary</h2>
+<div style="padding-left: 3%;padding-right: 3%;">
+    <dx-data-grid id="gridContainer"
+        class="dx-card wide-card"
+        [dataSource]="monthlyEducationSummaries"
+        [remoteOperations]="false"
+        [allowColumnReordering]="true"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        [allowColumnResizing]="true"
+        [showColumnLines]="true"
+        height='calc(100vh - 150px)'>
+        <dxo-load-panel
+            [enabled]="true"
+            [height]="100"
+            [width]="250">
+        </dxo-load-panel>
+
+        <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 50, 100]"
+        ></dxo-pager>
+
+        <dxo-group-panel
+            [visible]="true"
+        ></dxo-group-panel>
+        <dxo-grouping
+            [autoExpandAll]="false"
+        ></dxo-grouping>
+
+        <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-selection        
+            mode="multiple"
+        ></dxo-selection>
+
+        <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="monthlyEducationSummaries"></dxo-export>
+        
+        <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+        ></dxo-search-panel>    
+
+        
+        <dxi-column dataField="id" dataType="string" ></dxi-column>
+        <dxi-column dataField="FullNameSwe" dataType="string" caption="SWE fullname" ></dxi-column>
+        <dxi-column dataField="Namebwe" dataType="string" caption="Email BWE"></dxi-column>
+        <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>        
+        <dxi-column dataField="Country" dataType="string" caption="Country"></dxi-column>
+        <dxi-column dataField="Community" dataType="string" caption="Community"></dxi-column>
+        <dxi-column dataField="Namevol" dataType="string" caption="Name of volunteer"></dxi-column>
+        <dxi-column dataField="DiscussionsTaught" dataType="string" caption="Discussions Taught"></dxi-column>
+        
+        <dxo-master-detail [enabled]="true" template="detail"></dxo-master-detail>
+        <div *dxTemplate="let meeting of 'detail'">
+            <!-- <div class="master-detail-caption">{{
+            employee.data.FirstName + " " + employee.data.LastName + "'s Tasks:"
+            }}</div> -->
+            <app-monthly-household-attending-meeting [meetingId]="meeting.data.id"></app-monthly-household-attending-meeting>
+        </div>
+
+        <dxo-summary>
+            <dxi-total-item
+                column="id"
+                summaryType="count"                
+                displayFormat="Total number of meeting: {0}">
+            </dxi-total-item>
+            
+        </dxo-summary>
+
+    </dx-data-grid>
+</div>
+
+

@@ -1,4 +1,4 @@
-import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 
@@ -250,6 +250,69 @@ export async function loadVolMonthlyActivities(nextToken: any,api: APIService):P
         promiseVolMonthlyActivities = api.ListVolunteerMonthlySummarys(null,null,null);
     }
     return promiseVolMonthlyActivities;    
+}
+
+export async function getMonthlyEducationSummaries(api: APIService):Promise<any>{
+  let monthlyEducationSummaries: any = [];
+  let promiseMonthlyActivitiesDone = await loadMonthlyEducationSummaries(null,api);
+  monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);    
+  
+  while(promiseMonthlyActivitiesDone.nextToken){ 
+    promiseMonthlyActivitiesDone = await loadMonthlyEducationSummaries(promiseMonthlyActivitiesDone.nextToken,api);
+      monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);
+  }
+
+  //add name of SWE
+  let cognitoUsers = await listCognitoUsers();
+  if(cognitoUsers!=null){      
+    for(let monthlyEducationSummary of monthlyEducationSummaries){        
+      monthlyEducationSummary["FullNameSwe"]=cognitoUsers[monthlyEducationSummary["Namebwe"]];        
+    }
+  }
+
+  return <any>(monthlyEducationSummaries);
+}
+
+export async function loadMonthlyEducationSummaries(nextToken: any, api: APIService):Promise<any>{
+  let promiseMonthlyActivities: any;
+  if(nextToken){
+    promiseMonthlyActivities = api.ListMeetings(null,null,nextToken);
+  }else{
+    promiseMonthlyActivities = api.ListMeetings(null,null,null);
+  }
+  return promiseMonthlyActivities;
+
+}
+
+export async function getMonthlyHouseholdAttendingMeeting(api: APIService,meetingId: string):Promise<any>{
+  let monthlyHouseholdAttendingMeeting: any = [];
+  let promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdAttendingMeeting(null,api,meetingId);
+  monthlyHouseholdAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);    
+  
+  while(promiseMonthlyHouseholdAtendingMeetingDone.nextToken){ 
+    promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdAttendingMeeting(promiseMonthlyHouseholdAtendingMeetingDone.nextToken,api,meetingId);
+    monthlyHouseholdAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);
+  }
+
+  return <any>(monthlyHouseholdAttendingMeeting);
+}
+
+export async function loadMonthlyHouseholdAttendingMeeting(nextToken: any, api: APIService,meetingId: string):Promise<any>{
+  let promiseMonthlyHouseholdAttendingMeeting: any;  
+  let filterHouseholdAttendingMeeting:ModelHouseholdAttendingMeetingFilterInput = null;
+  if(meetingId!=null){
+    filterHouseholdAttendingMeeting = {
+      MeetingID: {eq:meetingId}
+    };
+  }  
+
+  if(nextToken){
+    promiseMonthlyHouseholdAttendingMeeting = api.ListHouseholdAttendingMeetings(filterHouseholdAttendingMeeting,null,nextToken);
+  }else{
+    promiseMonthlyHouseholdAttendingMeeting = api.ListHouseholdAttendingMeetings(filterHouseholdAttendingMeeting,null,null);
+  }
+  return promiseMonthlyHouseholdAttendingMeeting;
+
 }
 
 export function getHeadHouseholdSexDescription(rowData){
@@ -2087,4 +2150,6 @@ export async function listCognitoUsers(){
   return null;
  
 }
+
+
 

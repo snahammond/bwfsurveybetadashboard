@@ -1522,3 +1522,313 @@ query ListVolunteerMonthlySummarys(
     startedAt
   }
 }
+query SyncMeetings(
+  $filter: ModelMeetingFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncMeetings(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Country
+      Community
+      Namebwe
+      date
+      Namevol
+      DiscussionsTaught
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetMeeting($id: ID!) {
+  getMeeting(id: $id) {
+    id
+    Country
+    Community
+    Namebwe
+    date
+    Namevol
+    DiscussionsTaught
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListMeetings(
+  $filter: ModelMeetingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMeetings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      Country
+      Community
+      Namebwe
+      date
+      Namevol
+      DiscussionsTaught
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncHouseholdAttendingMeetings(
+  $filter: ModelHouseholdAttendingMeetingFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncHouseholdAttendingMeetings(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      HeadHouseholdName
+      HeadHouseholdPhoneNumber
+      NumberOfAdults
+      CommitedToUseAquatabs
+      NumberOfAquaTabsReceived
+      MeetingID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetHouseholdAttendingMeeting($id: ID!) {
+  getHouseholdAttendingMeeting(id: $id) {
+    id
+    Namebwe
+    HeadHouseholdName
+    HeadHouseholdPhoneNumber
+    NumberOfAdults
+    CommitedToUseAquatabs
+    NumberOfAquaTabsReceived
+    MeetingID
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListHouseholdAttendingMeetings(
+  $filter: ModelHouseholdAttendingMeetingFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listHouseholdAttendingMeetings(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      HeadHouseholdName
+      HeadHouseholdPhoneNumber
+      NumberOfAdults
+      CommitedToUseAquatabs
+      NumberOfAquaTabsReceived
+      MeetingID
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncSweMonthlyTotalSummaries(
+  $filter: ModelSWEMonthlyTotalSummaryFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncSWEMonthlyTotalSummaries(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      SWEPosition
+      NoWaterSampleTaken
+      NoSurveysCompleted
+      NoHealthCheck
+      NoPublicServiceMessagesAired
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetSweMonthlyTotalSummary($id: ID!) {
+  getSWEMonthlyTotalSummary(id: $id) {
+    id
+    Namebwe
+    date
+    SWEPosition
+    NoWaterSampleTaken
+    NoSurveysCompleted
+    NoHealthCheck
+    NoPublicServiceMessagesAired
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListSweMonthlyTotalSummarys(
+  $filter: ModelSWEMonthlyTotalSummaryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listSWEMonthlyTotalSummarys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      date
+      SWEPosition
+      NoWaterSampleTaken
+      NoSurveysCompleted
+      NoHealthCheck
+      NoPublicServiceMessagesAired
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query SyncVolunteerMonthlyTotalSummaries(
+  $filter: ModelVolunteerMonthlyTotalSummaryFilterInput
+  $limit: Int
+  $nextToken: String
+  $lastSync: AWSTimestamp
+) {
+  syncVolunteerMonthlyTotalSummaries(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+    lastSync: $lastSync
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      NoWaterSampleTaken
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}
+query GetVolunteerMonthlyTotalSummary($id: ID!) {
+  getVolunteerMonthlyTotalSummary(id: $id) {
+    id
+    Namebwe
+    Namevol
+    date
+    NoWaterSampleTaken
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+query ListVolunteerMonthlyTotalSummarys(
+  $filter: ModelVolunteerMonthlyTotalSummaryFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteerMonthlyTotalSummarys(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      Namebwe
+      Namevol
+      date
+      NoWaterSampleTaken
+      Completed
+      Lat
+      Lng
+      _version
+      _deleted
+      _lastChangedAt
+      createdAt
+      updatedAt
+    }
+    nextToken
+    startedAt
+  }
+}

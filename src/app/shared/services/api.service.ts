@@ -1505,6 +1505,250 @@ export type DeleteVolunteerMonthlySummaryInput = {
   _version?: number | null;
 };
 
+export type CreateMeetingInput = {
+  id?: string | null;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version?: number | null;
+};
+
+export type ModelMeetingConditionInput = {
+  Country?: ModelStringInput | null;
+  Community?: ModelStringInput | null;
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  Namevol?: ModelStringInput | null;
+  DiscussionsTaught?: ModelStringInput | null;
+  and?: Array<ModelMeetingConditionInput | null> | null;
+  or?: Array<ModelMeetingConditionInput | null> | null;
+  not?: ModelMeetingConditionInput | null;
+};
+
+export type Meeting = {
+  __typename: "Meeting";
+  id?: string;
+  Country?: string;
+  Community?: string;
+  Namebwe?: string;
+  date?: string | null;
+  Namevol?: string;
+  DiscussionsTaught?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateMeetingInput = {
+  id: string;
+  Country?: string | null;
+  Community?: string | null;
+  Namebwe?: string | null;
+  date?: string | null;
+  Namevol?: string | null;
+  DiscussionsTaught?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteMeetingInput = {
+  id: string;
+  _version?: number | null;
+};
+
+export type CreateHouseholdAttendingMeetingInput = {
+  id?: string | null;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version?: number | null;
+};
+
+export type ModelHouseholdAttendingMeetingConditionInput = {
+  Namebwe?: ModelStringInput | null;
+  HeadHouseholdName?: ModelStringInput | null;
+  HeadHouseholdPhoneNumber?: ModelStringInput | null;
+  NumberOfAdults?: ModelIntInput | null;
+  CommitedToUseAquatabs?: ModelStringInput | null;
+  NumberOfAquaTabsReceived?: ModelIntInput | null;
+  MeetingID?: ModelStringInput | null;
+  and?: Array<ModelHouseholdAttendingMeetingConditionInput | null> | null;
+  or?: Array<ModelHouseholdAttendingMeetingConditionInput | null> | null;
+  not?: ModelHouseholdAttendingMeetingConditionInput | null;
+};
+
+export type HouseholdAttendingMeeting = {
+  __typename: "HouseholdAttendingMeeting";
+  id?: string;
+  Namebwe?: string;
+  HeadHouseholdName?: string;
+  HeadHouseholdPhoneNumber?: string;
+  NumberOfAdults?: number;
+  CommitedToUseAquatabs?: string;
+  NumberOfAquaTabsReceived?: number;
+  MeetingID?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateHouseholdAttendingMeetingInput = {
+  id: string;
+  Namebwe?: string | null;
+  HeadHouseholdName?: string | null;
+  HeadHouseholdPhoneNumber?: string | null;
+  NumberOfAdults?: number | null;
+  CommitedToUseAquatabs?: string | null;
+  NumberOfAquaTabsReceived?: number | null;
+  MeetingID?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteHouseholdAttendingMeetingInput = {
+  id: string;
+  _version?: number | null;
+};
+
+export type CreateSWEMonthlyTotalSummaryInput = {
+  id?: string | null;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version?: number | null;
+};
+
+export type ModelSWEMonthlyTotalSummaryConditionInput = {
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  SWEPosition?: ModelStringInput | null;
+  NoWaterSampleTaken?: ModelIntInput | null;
+  NoSurveysCompleted?: ModelIntInput | null;
+  NoHealthCheck?: ModelIntInput | null;
+  NoPublicServiceMessagesAired?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelSWEMonthlyTotalSummaryConditionInput | null> | null;
+  or?: Array<ModelSWEMonthlyTotalSummaryConditionInput | null> | null;
+  not?: ModelSWEMonthlyTotalSummaryConditionInput | null;
+};
+
+export type SWEMonthlyTotalSummary = {
+  __typename: "SWEMonthlyTotalSummary";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  SWEPosition?: string;
+  NoWaterSampleTaken?: number;
+  NoSurveysCompleted?: number;
+  NoHealthCheck?: number;
+  NoPublicServiceMessagesAired?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateSWEMonthlyTotalSummaryInput = {
+  id: string;
+  Namebwe?: string | null;
+  date?: string | null;
+  SWEPosition?: string | null;
+  NoWaterSampleTaken?: number | null;
+  NoSurveysCompleted?: number | null;
+  NoHealthCheck?: number | null;
+  NoPublicServiceMessagesAired?: number | null;
+  Completed?: number | null;
+  Lat?: string | null;
+  Lng?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteSWEMonthlyTotalSummaryInput = {
+  id: string;
+  _version?: number | null;
+};
+
+export type CreateVolunteerMonthlyTotalSummaryInput = {
+  id?: string | null;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version?: number | null;
+};
+
+export type ModelVolunteerMonthlyTotalSummaryConditionInput = {
+  Namebwe?: ModelStringInput | null;
+  Namevol?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  NoWaterSampleTaken?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelVolunteerMonthlyTotalSummaryConditionInput | null> | null;
+  or?: Array<ModelVolunteerMonthlyTotalSummaryConditionInput | null> | null;
+  not?: ModelVolunteerMonthlyTotalSummaryConditionInput | null;
+};
+
+export type VolunteerMonthlyTotalSummary = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id?: string;
+  Namebwe?: string;
+  Namevol?: string;
+  date?: string | null;
+  NoWaterSampleTaken?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateVolunteerMonthlyTotalSummaryInput = {
+  id: string;
+  Namebwe?: string | null;
+  Namevol?: string | null;
+  date?: string | null;
+  NoWaterSampleTaken?: number | null;
+  Completed?: number | null;
+  Lat?: string | null;
+  Lng?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteVolunteerMonthlyTotalSummaryInput = {
+  id: string;
+  _version?: number | null;
+};
+
 export type ModelInitialSurveyFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -1965,6 +2209,92 @@ export type ModelVolunteerMonthlySummaryFilterInput = {
 export type ModelVolunteerMonthlySummaryConnection = {
   __typename: "ModelVolunteerMonthlySummaryConnection";
   items?: Array<VolunteerMonthlySummary | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelMeetingFilterInput = {
+  id?: ModelIDInput | null;
+  Country?: ModelStringInput | null;
+  Community?: ModelStringInput | null;
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  Namevol?: ModelStringInput | null;
+  DiscussionsTaught?: ModelStringInput | null;
+  and?: Array<ModelMeetingFilterInput | null> | null;
+  or?: Array<ModelMeetingFilterInput | null> | null;
+  not?: ModelMeetingFilterInput | null;
+};
+
+export type ModelMeetingConnection = {
+  __typename: "ModelMeetingConnection";
+  items?: Array<Meeting | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelHouseholdAttendingMeetingFilterInput = {
+  id?: ModelIDInput | null;
+  Namebwe?: ModelStringInput | null;
+  HeadHouseholdName?: ModelStringInput | null;
+  HeadHouseholdPhoneNumber?: ModelStringInput | null;
+  NumberOfAdults?: ModelIntInput | null;
+  CommitedToUseAquatabs?: ModelStringInput | null;
+  NumberOfAquaTabsReceived?: ModelIntInput | null;
+  MeetingID?: ModelStringInput | null;
+  and?: Array<ModelHouseholdAttendingMeetingFilterInput | null> | null;
+  or?: Array<ModelHouseholdAttendingMeetingFilterInput | null> | null;
+  not?: ModelHouseholdAttendingMeetingFilterInput | null;
+};
+
+export type ModelHouseholdAttendingMeetingConnection = {
+  __typename: "ModelHouseholdAttendingMeetingConnection";
+  items?: Array<HouseholdAttendingMeeting | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelSWEMonthlyTotalSummaryFilterInput = {
+  id?: ModelIDInput | null;
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  SWEPosition?: ModelStringInput | null;
+  NoWaterSampleTaken?: ModelIntInput | null;
+  NoSurveysCompleted?: ModelIntInput | null;
+  NoHealthCheck?: ModelIntInput | null;
+  NoPublicServiceMessagesAired?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelSWEMonthlyTotalSummaryFilterInput | null> | null;
+  or?: Array<ModelSWEMonthlyTotalSummaryFilterInput | null> | null;
+  not?: ModelSWEMonthlyTotalSummaryFilterInput | null;
+};
+
+export type ModelSWEMonthlyTotalSummaryConnection = {
+  __typename: "ModelSWEMonthlyTotalSummaryConnection";
+  items?: Array<SWEMonthlyTotalSummary | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelVolunteerMonthlyTotalSummaryFilterInput = {
+  id?: ModelIDInput | null;
+  Namebwe?: ModelStringInput | null;
+  Namevol?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  NoWaterSampleTaken?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelVolunteerMonthlyTotalSummaryFilterInput | null> | null;
+  or?: Array<ModelVolunteerMonthlyTotalSummaryFilterInput | null> | null;
+  not?: ModelVolunteerMonthlyTotalSummaryFilterInput | null;
+};
+
+export type ModelVolunteerMonthlyTotalSummaryConnection = {
+  __typename: "ModelVolunteerMonthlyTotalSummaryConnection";
+  items?: Array<VolunteerMonthlyTotalSummary | null> | null;
   nextToken?: string | null;
   startedAt?: number | null;
 };
@@ -3138,6 +3468,216 @@ export type DeleteVolunteerMonthlySummaryMutation = {
   NoLsn4TaughtAssistingSWE: number;
   NoPersonsTaughtLesson4ByVol: number;
   NoPersonsTaughtByVol: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateMeetingMutation = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateMeetingMutation = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteMeetingMutation = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateHouseholdAttendingMeetingMutation = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateHouseholdAttendingMeetingMutation = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteHouseholdAttendingMeetingMutation = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateSweMonthlyTotalSummaryMutation = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateSweMonthlyTotalSummaryMutation = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteSweMonthlyTotalSummaryMutation = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateVolunteerMonthlyTotalSummaryMutation = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateVolunteerMonthlyTotalSummaryMutation = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteVolunteerMonthlyTotalSummaryMutation = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -4467,6 +5007,256 @@ export type ListVolunteerMonthlySummarysQuery = {
   startedAt?: number | null;
 };
 
+export type SyncMeetingsQuery = {
+  __typename: "ModelMeetingConnection";
+  items?: Array<{
+    __typename: "Meeting";
+    id: string;
+    Country: string;
+    Community: string;
+    Namebwe: string;
+    date?: string | null;
+    Namevol: string;
+    DiscussionsTaught: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetMeetingQuery = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListMeetingsQuery = {
+  __typename: "ModelMeetingConnection";
+  items?: Array<{
+    __typename: "Meeting";
+    id: string;
+    Country: string;
+    Community: string;
+    Namebwe: string;
+    date?: string | null;
+    Namevol: string;
+    DiscussionsTaught: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type SyncHouseholdAttendingMeetingsQuery = {
+  __typename: "ModelHouseholdAttendingMeetingConnection";
+  items?: Array<{
+    __typename: "HouseholdAttendingMeeting";
+    id: string;
+    Namebwe: string;
+    HeadHouseholdName: string;
+    HeadHouseholdPhoneNumber: string;
+    NumberOfAdults: number;
+    CommitedToUseAquatabs: string;
+    NumberOfAquaTabsReceived: number;
+    MeetingID: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetHouseholdAttendingMeetingQuery = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListHouseholdAttendingMeetingsQuery = {
+  __typename: "ModelHouseholdAttendingMeetingConnection";
+  items?: Array<{
+    __typename: "HouseholdAttendingMeeting";
+    id: string;
+    Namebwe: string;
+    HeadHouseholdName: string;
+    HeadHouseholdPhoneNumber: string;
+    NumberOfAdults: number;
+    CommitedToUseAquatabs: string;
+    NumberOfAquaTabsReceived: number;
+    MeetingID: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type SyncSweMonthlyTotalSummariesQuery = {
+  __typename: "ModelSWEMonthlyTotalSummaryConnection";
+  items?: Array<{
+    __typename: "SWEMonthlyTotalSummary";
+    id: string;
+    Namebwe: string;
+    date?: string | null;
+    SWEPosition: string;
+    NoWaterSampleTaken: number;
+    NoSurveysCompleted: number;
+    NoHealthCheck: number;
+    NoPublicServiceMessagesAired: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetSweMonthlyTotalSummaryQuery = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListSweMonthlyTotalSummarysQuery = {
+  __typename: "ModelSWEMonthlyTotalSummaryConnection";
+  items?: Array<{
+    __typename: "SWEMonthlyTotalSummary";
+    id: string;
+    Namebwe: string;
+    date?: string | null;
+    SWEPosition: string;
+    NoWaterSampleTaken: number;
+    NoSurveysCompleted: number;
+    NoHealthCheck: number;
+    NoPublicServiceMessagesAired: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type SyncVolunteerMonthlyTotalSummariesQuery = {
+  __typename: "ModelVolunteerMonthlyTotalSummaryConnection";
+  items?: Array<{
+    __typename: "VolunteerMonthlyTotalSummary";
+    id: string;
+    Namebwe: string;
+    Namevol: string;
+    date?: string | null;
+    NoWaterSampleTaken: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetVolunteerMonthlyTotalSummaryQuery = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListVolunteerMonthlyTotalSummarysQuery = {
+  __typename: "ModelVolunteerMonthlyTotalSummaryConnection";
+  items?: Array<{
+    __typename: "VolunteerMonthlyTotalSummary";
+    id: string;
+    Namebwe: string;
+    Namevol: string;
+    date?: string | null;
+    NoWaterSampleTaken: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type OnCreateInitialSurveySubscription = {
   __typename: "InitialSurvey";
   id: string;
@@ -5636,6 +6426,216 @@ export type OnDeleteVolunteerMonthlySummarySubscription = {
   NoLsn4TaughtAssistingSWE: number;
   NoPersonsTaughtLesson4ByVol: number;
   NoPersonsTaughtByVol: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateMeetingSubscription = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateMeetingSubscription = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteMeetingSubscription = {
+  __typename: "Meeting";
+  id: string;
+  Country: string;
+  Community: string;
+  Namebwe: string;
+  date?: string | null;
+  Namevol: string;
+  DiscussionsTaught: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateHouseholdAttendingMeetingSubscription = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateHouseholdAttendingMeetingSubscription = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteHouseholdAttendingMeetingSubscription = {
+  __typename: "HouseholdAttendingMeeting";
+  id: string;
+  Namebwe: string;
+  HeadHouseholdName: string;
+  HeadHouseholdPhoneNumber: string;
+  NumberOfAdults: number;
+  CommitedToUseAquatabs: string;
+  NumberOfAquaTabsReceived: number;
+  MeetingID: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateSweMonthlyTotalSummarySubscription = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateSweMonthlyTotalSummarySubscription = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteSweMonthlyTotalSummarySubscription = {
+  __typename: "SWEMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  NoWaterSampleTaken: number;
+  NoSurveysCompleted: number;
+  NoHealthCheck: number;
+  NoPublicServiceMessagesAired: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateVolunteerMonthlyTotalSummarySubscription = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateVolunteerMonthlyTotalSummarySubscription = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteVolunteerMonthlyTotalSummarySubscription = {
+  __typename: "VolunteerMonthlyTotalSummary";
+  id: string;
+  Namebwe: string;
+  Namevol: string;
+  date?: string | null;
+  NoWaterSampleTaken: number;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -7553,6 +8553,426 @@ export class APIService {
     )) as any;
     return <DeleteVolunteerMonthlySummaryMutation>(
       response.data.deleteVolunteerMonthlySummary
+    );
+  }
+  async CreateMeeting(
+    input: CreateMeetingInput,
+    condition?: ModelMeetingConditionInput
+  ): Promise<CreateMeetingMutation> {
+    const statement = `mutation CreateMeeting($input: CreateMeetingInput!, $condition: ModelMeetingConditionInput) {
+        createMeeting(input: $input, condition: $condition) {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateMeetingMutation>response.data.createMeeting;
+  }
+  async UpdateMeeting(
+    input: UpdateMeetingInput,
+    condition?: ModelMeetingConditionInput
+  ): Promise<UpdateMeetingMutation> {
+    const statement = `mutation UpdateMeeting($input: UpdateMeetingInput!, $condition: ModelMeetingConditionInput) {
+        updateMeeting(input: $input, condition: $condition) {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateMeetingMutation>response.data.updateMeeting;
+  }
+  async DeleteMeeting(
+    input: DeleteMeetingInput,
+    condition?: ModelMeetingConditionInput
+  ): Promise<DeleteMeetingMutation> {
+    const statement = `mutation DeleteMeeting($input: DeleteMeetingInput!, $condition: ModelMeetingConditionInput) {
+        deleteMeeting(input: $input, condition: $condition) {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteMeetingMutation>response.data.deleteMeeting;
+  }
+  async CreateHouseholdAttendingMeeting(
+    input: CreateHouseholdAttendingMeetingInput,
+    condition?: ModelHouseholdAttendingMeetingConditionInput
+  ): Promise<CreateHouseholdAttendingMeetingMutation> {
+    const statement = `mutation CreateHouseholdAttendingMeeting($input: CreateHouseholdAttendingMeetingInput!, $condition: ModelHouseholdAttendingMeetingConditionInput) {
+        createHouseholdAttendingMeeting(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateHouseholdAttendingMeetingMutation>(
+      response.data.createHouseholdAttendingMeeting
+    );
+  }
+  async UpdateHouseholdAttendingMeeting(
+    input: UpdateHouseholdAttendingMeetingInput,
+    condition?: ModelHouseholdAttendingMeetingConditionInput
+  ): Promise<UpdateHouseholdAttendingMeetingMutation> {
+    const statement = `mutation UpdateHouseholdAttendingMeeting($input: UpdateHouseholdAttendingMeetingInput!, $condition: ModelHouseholdAttendingMeetingConditionInput) {
+        updateHouseholdAttendingMeeting(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateHouseholdAttendingMeetingMutation>(
+      response.data.updateHouseholdAttendingMeeting
+    );
+  }
+  async DeleteHouseholdAttendingMeeting(
+    input: DeleteHouseholdAttendingMeetingInput,
+    condition?: ModelHouseholdAttendingMeetingConditionInput
+  ): Promise<DeleteHouseholdAttendingMeetingMutation> {
+    const statement = `mutation DeleteHouseholdAttendingMeeting($input: DeleteHouseholdAttendingMeetingInput!, $condition: ModelHouseholdAttendingMeetingConditionInput) {
+        deleteHouseholdAttendingMeeting(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteHouseholdAttendingMeetingMutation>(
+      response.data.deleteHouseholdAttendingMeeting
+    );
+  }
+  async CreateSweMonthlyTotalSummary(
+    input: CreateSWEMonthlyTotalSummaryInput,
+    condition?: ModelSWEMonthlyTotalSummaryConditionInput
+  ): Promise<CreateSweMonthlyTotalSummaryMutation> {
+    const statement = `mutation CreateSweMonthlyTotalSummary($input: CreateSWEMonthlyTotalSummaryInput!, $condition: ModelSWEMonthlyTotalSummaryConditionInput) {
+        createSWEMonthlyTotalSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateSweMonthlyTotalSummaryMutation>(
+      response.data.createSWEMonthlyTotalSummary
+    );
+  }
+  async UpdateSweMonthlyTotalSummary(
+    input: UpdateSWEMonthlyTotalSummaryInput,
+    condition?: ModelSWEMonthlyTotalSummaryConditionInput
+  ): Promise<UpdateSweMonthlyTotalSummaryMutation> {
+    const statement = `mutation UpdateSweMonthlyTotalSummary($input: UpdateSWEMonthlyTotalSummaryInput!, $condition: ModelSWEMonthlyTotalSummaryConditionInput) {
+        updateSWEMonthlyTotalSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateSweMonthlyTotalSummaryMutation>(
+      response.data.updateSWEMonthlyTotalSummary
+    );
+  }
+  async DeleteSweMonthlyTotalSummary(
+    input: DeleteSWEMonthlyTotalSummaryInput,
+    condition?: ModelSWEMonthlyTotalSummaryConditionInput
+  ): Promise<DeleteSweMonthlyTotalSummaryMutation> {
+    const statement = `mutation DeleteSweMonthlyTotalSummary($input: DeleteSWEMonthlyTotalSummaryInput!, $condition: ModelSWEMonthlyTotalSummaryConditionInput) {
+        deleteSWEMonthlyTotalSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteSweMonthlyTotalSummaryMutation>(
+      response.data.deleteSWEMonthlyTotalSummary
+    );
+  }
+  async CreateVolunteerMonthlyTotalSummary(
+    input: CreateVolunteerMonthlyTotalSummaryInput,
+    condition?: ModelVolunteerMonthlyTotalSummaryConditionInput
+  ): Promise<CreateVolunteerMonthlyTotalSummaryMutation> {
+    const statement = `mutation CreateVolunteerMonthlyTotalSummary($input: CreateVolunteerMonthlyTotalSummaryInput!, $condition: ModelVolunteerMonthlyTotalSummaryConditionInput) {
+        createVolunteerMonthlyTotalSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateVolunteerMonthlyTotalSummaryMutation>(
+      response.data.createVolunteerMonthlyTotalSummary
+    );
+  }
+  async UpdateVolunteerMonthlyTotalSummary(
+    input: UpdateVolunteerMonthlyTotalSummaryInput,
+    condition?: ModelVolunteerMonthlyTotalSummaryConditionInput
+  ): Promise<UpdateVolunteerMonthlyTotalSummaryMutation> {
+    const statement = `mutation UpdateVolunteerMonthlyTotalSummary($input: UpdateVolunteerMonthlyTotalSummaryInput!, $condition: ModelVolunteerMonthlyTotalSummaryConditionInput) {
+        updateVolunteerMonthlyTotalSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateVolunteerMonthlyTotalSummaryMutation>(
+      response.data.updateVolunteerMonthlyTotalSummary
+    );
+  }
+  async DeleteVolunteerMonthlyTotalSummary(
+    input: DeleteVolunteerMonthlyTotalSummaryInput,
+    condition?: ModelVolunteerMonthlyTotalSummaryConditionInput
+  ): Promise<DeleteVolunteerMonthlyTotalSummaryMutation> {
+    const statement = `mutation DeleteVolunteerMonthlyTotalSummary($input: DeleteVolunteerMonthlyTotalSummaryInput!, $condition: ModelVolunteerMonthlyTotalSummaryConditionInput) {
+        deleteVolunteerMonthlyTotalSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteVolunteerMonthlyTotalSummaryMutation>(
+      response.data.deleteVolunteerMonthlyTotalSummary
     );
   }
   async SyncInitialSurveys(
@@ -9682,6 +11102,504 @@ export class APIService {
       response.data.listVolunteerMonthlySummarys
     );
   }
+  async SyncMeetings(
+    filter?: ModelMeetingFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncMeetingsQuery> {
+    const statement = `query SyncMeetings($filter: ModelMeetingFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncMeetings(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Country
+            Community
+            Namebwe
+            date
+            Namevol
+            DiscussionsTaught
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncMeetingsQuery>response.data.syncMeetings;
+  }
+  async GetMeeting(id: string): Promise<GetMeetingQuery> {
+    const statement = `query GetMeeting($id: ID!) {
+        getMeeting(id: $id) {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetMeetingQuery>response.data.getMeeting;
+  }
+  async ListMeetings(
+    filter?: ModelMeetingFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListMeetingsQuery> {
+    const statement = `query ListMeetings($filter: ModelMeetingFilterInput, $limit: Int, $nextToken: String) {
+        listMeetings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Country
+            Community
+            Namebwe
+            date
+            Namevol
+            DiscussionsTaught
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListMeetingsQuery>response.data.listMeetings;
+  }
+  async SyncHouseholdAttendingMeetings(
+    filter?: ModelHouseholdAttendingMeetingFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncHouseholdAttendingMeetingsQuery> {
+    const statement = `query SyncHouseholdAttendingMeetings($filter: ModelHouseholdAttendingMeetingFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncHouseholdAttendingMeetings(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            HeadHouseholdName
+            HeadHouseholdPhoneNumber
+            NumberOfAdults
+            CommitedToUseAquatabs
+            NumberOfAquaTabsReceived
+            MeetingID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncHouseholdAttendingMeetingsQuery>(
+      response.data.syncHouseholdAttendingMeetings
+    );
+  }
+  async GetHouseholdAttendingMeeting(
+    id: string
+  ): Promise<GetHouseholdAttendingMeetingQuery> {
+    const statement = `query GetHouseholdAttendingMeeting($id: ID!) {
+        getHouseholdAttendingMeeting(id: $id) {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetHouseholdAttendingMeetingQuery>(
+      response.data.getHouseholdAttendingMeeting
+    );
+  }
+  async ListHouseholdAttendingMeetings(
+    filter?: ModelHouseholdAttendingMeetingFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListHouseholdAttendingMeetingsQuery> {
+    const statement = `query ListHouseholdAttendingMeetings($filter: ModelHouseholdAttendingMeetingFilterInput, $limit: Int, $nextToken: String) {
+        listHouseholdAttendingMeetings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            HeadHouseholdName
+            HeadHouseholdPhoneNumber
+            NumberOfAdults
+            CommitedToUseAquatabs
+            NumberOfAquaTabsReceived
+            MeetingID
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListHouseholdAttendingMeetingsQuery>(
+      response.data.listHouseholdAttendingMeetings
+    );
+  }
+  async SyncSweMonthlyTotalSummaries(
+    filter?: ModelSWEMonthlyTotalSummaryFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncSweMonthlyTotalSummariesQuery> {
+    const statement = `query SyncSweMonthlyTotalSummaries($filter: ModelSWEMonthlyTotalSummaryFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncSWEMonthlyTotalSummaries(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            date
+            SWEPosition
+            NoWaterSampleTaken
+            NoSurveysCompleted
+            NoHealthCheck
+            NoPublicServiceMessagesAired
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncSweMonthlyTotalSummariesQuery>(
+      response.data.syncSWEMonthlyTotalSummaries
+    );
+  }
+  async GetSweMonthlyTotalSummary(
+    id: string
+  ): Promise<GetSweMonthlyTotalSummaryQuery> {
+    const statement = `query GetSweMonthlyTotalSummary($id: ID!) {
+        getSWEMonthlyTotalSummary(id: $id) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetSweMonthlyTotalSummaryQuery>(
+      response.data.getSWEMonthlyTotalSummary
+    );
+  }
+  async ListSweMonthlyTotalSummarys(
+    filter?: ModelSWEMonthlyTotalSummaryFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListSweMonthlyTotalSummarysQuery> {
+    const statement = `query ListSweMonthlyTotalSummarys($filter: ModelSWEMonthlyTotalSummaryFilterInput, $limit: Int, $nextToken: String) {
+        listSWEMonthlyTotalSummarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            date
+            SWEPosition
+            NoWaterSampleTaken
+            NoSurveysCompleted
+            NoHealthCheck
+            NoPublicServiceMessagesAired
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListSweMonthlyTotalSummarysQuery>(
+      response.data.listSWEMonthlyTotalSummarys
+    );
+  }
+  async SyncVolunteerMonthlyTotalSummaries(
+    filter?: ModelVolunteerMonthlyTotalSummaryFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncVolunteerMonthlyTotalSummariesQuery> {
+    const statement = `query SyncVolunteerMonthlyTotalSummaries($filter: ModelVolunteerMonthlyTotalSummaryFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncVolunteerMonthlyTotalSummaries(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            Namevol
+            date
+            NoWaterSampleTaken
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncVolunteerMonthlyTotalSummariesQuery>(
+      response.data.syncVolunteerMonthlyTotalSummaries
+    );
+  }
+  async GetVolunteerMonthlyTotalSummary(
+    id: string
+  ): Promise<GetVolunteerMonthlyTotalSummaryQuery> {
+    const statement = `query GetVolunteerMonthlyTotalSummary($id: ID!) {
+        getVolunteerMonthlyTotalSummary(id: $id) {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetVolunteerMonthlyTotalSummaryQuery>(
+      response.data.getVolunteerMonthlyTotalSummary
+    );
+  }
+  async ListVolunteerMonthlyTotalSummarys(
+    filter?: ModelVolunteerMonthlyTotalSummaryFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListVolunteerMonthlyTotalSummarysQuery> {
+    const statement = `query ListVolunteerMonthlyTotalSummarys($filter: ModelVolunteerMonthlyTotalSummaryFilterInput, $limit: Int, $nextToken: String) {
+        listVolunteerMonthlyTotalSummarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            Namevol
+            date
+            NoWaterSampleTaken
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListVolunteerMonthlyTotalSummarysQuery>(
+      response.data.listVolunteerMonthlyTotalSummarys
+    );
+  }
   OnCreateInitialSurveyListener: Observable<
     SubscriptionResponse<OnCreateInitialSurveySubscription>
   > = API.graphql(
@@ -11213,5 +13131,329 @@ export class APIService {
     )
   ) as Observable<
     SubscriptionResponse<OnDeleteVolunteerMonthlySummarySubscription>
+  >;
+
+  OnCreateMeetingListener: Observable<
+    SubscriptionResponse<OnCreateMeetingSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateMeeting {
+        onCreateMeeting {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnCreateMeetingSubscription>>;
+
+  OnUpdateMeetingListener: Observable<
+    SubscriptionResponse<OnUpdateMeetingSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateMeeting {
+        onUpdateMeeting {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnUpdateMeetingSubscription>>;
+
+  OnDeleteMeetingListener: Observable<
+    SubscriptionResponse<OnDeleteMeetingSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteMeeting {
+        onDeleteMeeting {
+          __typename
+          id
+          Country
+          Community
+          Namebwe
+          date
+          Namevol
+          DiscussionsTaught
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<SubscriptionResponse<OnDeleteMeetingSubscription>>;
+
+  OnCreateHouseholdAttendingMeetingListener: Observable<
+    SubscriptionResponse<OnCreateHouseholdAttendingMeetingSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateHouseholdAttendingMeeting {
+        onCreateHouseholdAttendingMeeting {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateHouseholdAttendingMeetingSubscription>
+  >;
+
+  OnUpdateHouseholdAttendingMeetingListener: Observable<
+    SubscriptionResponse<OnUpdateHouseholdAttendingMeetingSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateHouseholdAttendingMeeting {
+        onUpdateHouseholdAttendingMeeting {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateHouseholdAttendingMeetingSubscription>
+  >;
+
+  OnDeleteHouseholdAttendingMeetingListener: Observable<
+    SubscriptionResponse<OnDeleteHouseholdAttendingMeetingSubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteHouseholdAttendingMeeting {
+        onDeleteHouseholdAttendingMeeting {
+          __typename
+          id
+          Namebwe
+          HeadHouseholdName
+          HeadHouseholdPhoneNumber
+          NumberOfAdults
+          CommitedToUseAquatabs
+          NumberOfAquaTabsReceived
+          MeetingID
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteHouseholdAttendingMeetingSubscription>
+  >;
+
+  OnCreateSweMonthlyTotalSummaryListener: Observable<
+    SubscriptionResponse<OnCreateSweMonthlyTotalSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateSweMonthlyTotalSummary {
+        onCreateSWEMonthlyTotalSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateSweMonthlyTotalSummarySubscription>
+  >;
+
+  OnUpdateSweMonthlyTotalSummaryListener: Observable<
+    SubscriptionResponse<OnUpdateSweMonthlyTotalSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateSweMonthlyTotalSummary {
+        onUpdateSWEMonthlyTotalSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateSweMonthlyTotalSummarySubscription>
+  >;
+
+  OnDeleteSweMonthlyTotalSummaryListener: Observable<
+    SubscriptionResponse<OnDeleteSweMonthlyTotalSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteSweMonthlyTotalSummary {
+        onDeleteSWEMonthlyTotalSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          NoWaterSampleTaken
+          NoSurveysCompleted
+          NoHealthCheck
+          NoPublicServiceMessagesAired
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteSweMonthlyTotalSummarySubscription>
+  >;
+
+  OnCreateVolunteerMonthlyTotalSummaryListener: Observable<
+    SubscriptionResponse<OnCreateVolunteerMonthlyTotalSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateVolunteerMonthlyTotalSummary {
+        onCreateVolunteerMonthlyTotalSummary {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateVolunteerMonthlyTotalSummarySubscription>
+  >;
+
+  OnUpdateVolunteerMonthlyTotalSummaryListener: Observable<
+    SubscriptionResponse<OnUpdateVolunteerMonthlyTotalSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateVolunteerMonthlyTotalSummary {
+        onUpdateVolunteerMonthlyTotalSummary {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateVolunteerMonthlyTotalSummarySubscription>
+  >;
+
+  OnDeleteVolunteerMonthlyTotalSummaryListener: Observable<
+    SubscriptionResponse<OnDeleteVolunteerMonthlyTotalSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteVolunteerMonthlyTotalSummary {
+        onDeleteVolunteerMonthlyTotalSummary {
+          __typename
+          id
+          Namebwe
+          Namevol
+          date
+          NoWaterSampleTaken
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteVolunteerMonthlyTotalSummarySubscription>
   >;
 }

@@ -1,0 +1,73 @@
+<h2 class="content-block">Households attending meetings</h2>
+<div style="padding-left: 3%;padding-right: 3%;">
+    <dx-data-grid 
+    class="dx-card wide-card"
+    [dataSource]="monthlyHouseholdAttendingMeeting" 
+    [showBorders]="true"
+    [columnAutoWidth]="true"
+    [allowColumnResizing]="true"
+    [showColumnLines]="true"
+    [remoteOperations]="false"
+    [allowColumnReordering]="true"
+    [rowAlternationEnabled]="true"> 
+
+    <dxo-load-panel
+            [enabled]="true"
+            [height]="100"
+            [width]="250">
+        </dxo-load-panel>
+
+        <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 50, 100]"
+        ></dxo-pager>
+
+        <dxo-group-panel
+            [visible]="true"
+        ></dxo-group-panel>
+        <dxo-grouping
+            [autoExpandAll]="false"
+        ></dxo-grouping>
+
+        <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-selection        
+            mode="multiple"
+        ></dxo-selection>
+
+        <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="monthlyHouseholdAttendingMeeting"></dxo-export>
+        
+        <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+        ></dxo-search-panel>
+
+        <dxi-column dataField="id" dataType="string" ></dxi-column>
+        <dxi-column dataField="MeetingID" dataType="string" ></dxi-column>
+        <dxi-column dataField="HeadHouseholdName" dataType="string" caption="Head of household name" ></dxi-column>
+        <dxi-column dataField="HeadHouseholdPhoneNumber" dataType="string" caption="Head of household phone number"></dxi-column>
+        <dxi-column dataField="NumberOfAdults" dataType="number" caption="Number of adults in household"></dxi-column>
+        <dxi-column dataField="CommitedToUseAquatabs" dataType="string" ></dxi-column>        
+        <dxi-column dataField="NumberOfAquaTabsReceived" dataType="number" caption="Number of aqua tabs received"></dxi-column>
+   
+        <dxo-summary>
+            <dxi-total-item
+                column="id"
+                summaryType="count"               
+                displayFormat="Total number of household: {0}">
+            </dxi-total-item>
+
+            <dxi-total-item
+                column="NumberOfAdults"
+                summaryType="sum"               
+                displayFormat="Total number of adult: {0}">
+            </dxi-total-item>
+            
+        </dxo-summary>
+
+</dx-data-grid>
+
+</div>

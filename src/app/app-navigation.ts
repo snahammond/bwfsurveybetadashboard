@@ -32,14 +32,22 @@ export const navigation = [
         text: 'Health Survey',
         path: '/health-survey'
       },
-      {
+      /*{
         text: 'Monthly Activity SWE',
         path: '/monthly-activity'
       },
       {
         text: 'Monthly Activity Volunteers',
         path: '/monthly-activity-vol'
-      }
+      }*/
+      {
+        text: 'Monthly Education Summary',
+        path: '/monthly-education-summary'
+      },
+      {
+        text: 'Household Attending meeting',
+        path: '/monthly-household-attending-meeting'
+      },
     ]
   },
   {
