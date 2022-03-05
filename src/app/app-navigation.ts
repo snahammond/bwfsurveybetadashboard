@@ -45,7 +45,7 @@ export const navigation = [
         path: '/monthly-education-summary'
       },
       {
-        text: 'Household Attending meeting',
+        text: 'Households Attending meeting',
         path: '/monthly-household-attending-meeting'
       },
     ]

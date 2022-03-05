@@ -1,7 +1,11 @@
 import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
+import DataSource from "devextreme/data/data_source";
+import ArrayStore from "devextreme/data/array_store";
 
+let cognitoUsersGlobal = null;
+let monthlyEducationMeetingGlobal = null;
 
 export async function getInitialSurvey(api: APIService):Promise<any>{
     
@@ -284,20 +288,39 @@ export async function loadMonthlyEducationSummaries(nextToken: any, api: APIServ
 
 }
 
-export async function getMonthlyHouseholdAttendingMeeting(api: APIService,meetingId: string):Promise<any>{
-  let monthlyHouseholdAttendingMeeting: any = [];
-  let promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdAttendingMeeting(null,api,meetingId);
-  monthlyHouseholdAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);    
+export async function getMonthlyHouseholdsAttendingMeeting(api: APIService,meetingId: string):Promise<any>{
+  let monthlyHouseholdsAttendingMeeting: any = [];
+  let promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdsAttendingMeeting(null,api,meetingId);
+  monthlyHouseholdsAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);    
   
   while(promiseMonthlyHouseholdAtendingMeetingDone.nextToken){ 
-    promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdAttendingMeeting(promiseMonthlyHouseholdAtendingMeetingDone.nextToken,api,meetingId);
-    monthlyHouseholdAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);
+    promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdsAttendingMeeting(promiseMonthlyHouseholdAtendingMeetingDone.nextToken,api,meetingId);
+    monthlyHouseholdsAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);
   }
 
-  return <any>(monthlyHouseholdAttendingMeeting);
+  //add name of SWE and extra meeting data   
+  let cognitoUsers = await listCognitoUsers();
+
+  if(monthlyEducationMeetingGlobal==null){
+    monthlyEducationMeetingGlobal = await getMonthlyEducationSummaries(api);    
+  }
+  
+  if(cognitoUsers!=null){      
+    for(let monthlyHouseholdAttendingMeeting of monthlyHouseholdsAttendingMeeting){        
+      monthlyHouseholdAttendingMeeting["FullNameSwe"]=cognitoUsers[monthlyHouseholdAttendingMeeting["Namebwe"]];
+      
+      if(monthlyEducationMeetingGlobal!=null){
+        let meeting = await GetEducationMeetingExtraData(monthlyHouseholdAttendingMeeting["MeetingID"]);
+        monthlyHouseholdAttendingMeeting["MeetingDate"] = meeting["date"];
+      }
+            
+    }
+  }
+
+  return <any>(monthlyHouseholdsAttendingMeeting);
 }
 
-export async function loadMonthlyHouseholdAttendingMeeting(nextToken: any, api: APIService,meetingId: string):Promise<any>{
+export async function loadMonthlyHouseholdsAttendingMeeting(nextToken: any, api: APIService,meetingId: string):Promise<any>{
   let promiseMonthlyHouseholdAttendingMeeting: any;  
   let filterHouseholdAttendingMeeting:ModelHouseholdAttendingMeetingFilterInput = null;
   if(meetingId!=null){
@@ -2108,47 +2131,55 @@ export function convertPetrifilmTestResult(aFilteredcommWaterTest){
 }
 
 export async function listCognitoUsers(){
-  let apiName = 'AdminQueries';
-  let path = '/listUsers';
-  let authorizationToken = (await Auth.currentSession()).getAccessToken().getJwtToken();
-  
-  let myInit = { 
-      queryStringParameters: {                
-      },
-      headers: {
-        'Content-Type' : 'application/json',
-        'Authorization': authorizationToken
-      }
-  }
-  const { NextToken, ...rest } =  await API.get(apiName, path, myInit);
-
-  
-  if(rest!=null){
-    if(rest.Users!=null){    
-      let cognitoUsers = {};        
-      for (let cognitoUser of rest.Users) {
-        if(cognitoUser.Attributes!=null){
-          let email,firstName,lastname;
-          for(let attribute of cognitoUser.Attributes){                  
-            if(attribute["Name"]=="email"){                    
-              email = attribute["Value"];
-            }   
-            if(attribute["Name"]=="family_name"){                    
-              firstName = attribute["Value"];
-            }  
-            if(attribute["Name"]=="given_name"){
-              lastname = attribute["Value"];
-            }               
-          }
-          cognitoUsers[email]=firstName+" "+lastname;                        
-        }              
-      }  
-      return cognitoUsers;
+  if(cognitoUsersGlobal==null){
+    let apiName = 'AdminQueries';
+    let path = '/listUsers';
+    let authorizationToken = (await Auth.currentSession()).getAccessToken().getJwtToken();
+    
+    let myInit = { 
+        queryStringParameters: {                
+        },
+        headers: {
+          'Content-Type' : 'application/json',
+          'Authorization': authorizationToken
+        }
     }
+    const { NextToken, ...rest } =  await API.get(apiName, path, myInit);
+
+    
+    if(rest!=null){
+      if(rest.Users!=null){    
+        let cognitoUsers = {};        
+        for (let cognitoUser of rest.Users) {
+          if(cognitoUser.Attributes!=null){
+            let email,firstName,lastname;
+            for(let attribute of cognitoUser.Attributes){                  
+              if(attribute["Name"]=="email"){                    
+                email = attribute["Value"];
+              }   
+              if(attribute["Name"]=="family_name"){                    
+                firstName = attribute["Value"];
+              }  
+              if(attribute["Name"]=="given_name"){
+                lastname = attribute["Value"];
+              }               
+            }
+            cognitoUsers[email]=firstName+" "+lastname;                        
+          }              
+        }
+        cognitoUsersGlobal = cognitoUsers;          
+        return cognitoUsers;
+      }
+    }
+
+    return null;
   }
 
-  return null;
- 
+  return cognitoUsersGlobal;
+}
+
+export async function GetEducationMeetingExtraData(meetingId){ 
+  return monthlyEducationMeetingGlobal.find(meeting => meeting["id"] ==meetingId);
 }
 
 

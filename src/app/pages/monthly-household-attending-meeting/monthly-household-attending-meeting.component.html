@@ -2,7 +2,7 @@
 <div style="padding-left: 3%;padding-right: 3%;">
     <dx-data-grid 
     class="dx-card wide-card"
-    [dataSource]="monthlyHouseholdAttendingMeeting" 
+    [dataSource]="monthlyHouseholdsAttendingMeeting" 
     [showBorders]="true"
     [columnAutoWidth]="true"
     [allowColumnResizing]="true"
@@ -48,6 +48,8 @@
 
         <dxi-column dataField="id" dataType="string" ></dxi-column>
         <dxi-column dataField="MeetingID" dataType="string" ></dxi-column>
+        <dxi-column dataField="FullNameSwe" dataType="string" caption="SWE fullname" ></dxi-column>
+        <dxi-column dataField="MeetingDate" dataType="date" format="shortDate"></dxi-column>        
         <dxi-column dataField="HeadHouseholdName" dataType="string" caption="Head of household name" ></dxi-column>
         <dxi-column dataField="HeadHouseholdPhoneNumber" dataType="string" caption="Head of household phone number"></dxi-column>
         <dxi-column dataField="NumberOfAdults" dataType="number" caption="Number of adults in household"></dxi-column>
