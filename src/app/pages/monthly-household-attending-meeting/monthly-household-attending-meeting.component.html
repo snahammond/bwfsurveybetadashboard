@@ -52,7 +52,7 @@
         <dxi-column dataField="MeetingDate" dataType="date" format="shortDate"></dxi-column>        
         <dxi-column dataField="HeadHouseholdName" dataType="string" caption="Head of household name" ></dxi-column>
         <dxi-column dataField="HeadHouseholdPhoneNumber" dataType="string" caption="Head of household phone number"></dxi-column>
-        <dxi-column dataField="NumberOfAdults" dataType="number" caption="Number of adults in household"></dxi-column>
+        <dxi-column dataField="NumberOfAdults" dataType="number" caption="Number of household adults attending"></dxi-column>
         <dxi-column dataField="CommitedToUseAquatabs" dataType="string" ></dxi-column>        
         <dxi-column dataField="NumberOfAquaTabsReceived" dataType="number" caption="Number of aqua tabs received"></dxi-column>
    
@@ -66,7 +66,7 @@
             <dxi-total-item
                 column="NumberOfAdults"
                 summaryType="sum"               
-                displayFormat="Total number of adult: {0}">
+                displayFormat="Total number of household adults attending: {0}">
             </dxi-total-item>
             
         </dxo-summary>
