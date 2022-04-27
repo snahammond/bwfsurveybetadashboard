@@ -1,8 +1,6 @@
 import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
-import DataSource from "devextreme/data/data_source";
-import ArrayStore from "devextreme/data/array_store";
 
 let cognitoUsersGlobal = null;
 let monthlyEducationMeetingGlobal = null;
@@ -2132,50 +2130,79 @@ export function convertPetrifilmTestResult(aFilteredcommWaterTest){
 
 export async function listCognitoUsers(){
   if(cognitoUsersGlobal==null){
-    let apiName = 'AdminQueries';
-    let path = '/listUsers';
-    let authorizationToken = (await Auth.currentSession()).getAccessToken().getJwtToken();
     
-    let myInit = { 
-        queryStringParameters: {                
-        },
-        headers: {
-          'Content-Type' : 'application/json',
-          'Authorization': authorizationToken
-        }
-    }
-    const { NextToken, ...rest } =  await API.get(apiName, path, myInit);
+    //const { NextToken, ...rest } =  await API.get(apiName, path, myInit);
+    let restResponseUsers : any = [];
+    
+    let restResponse = await loadCognitoUsers(null);
+    
+    if(restResponse){ 
+      if(restResponse.Users){
+        restResponseUsers.push(...restResponse.Users);
+      }
 
-    
-    if(rest!=null){
-      if(rest.Users!=null){    
-        let cognitoUsers = {};        
-        for (let cognitoUser of rest.Users) {
-          if(cognitoUser.Attributes!=null){
-            let email,firstName,lastname;
-            for(let attribute of cognitoUser.Attributes){                  
-              if(attribute["Name"]=="email"){                    
-                email = attribute["Value"];
-              }   
-              if(attribute["Name"]=="family_name"){                    
-                firstName = attribute["Value"];
-              }  
-              if(attribute["Name"]=="given_name"){
-                lastname = attribute["Value"];
-              }               
-            }
-            cognitoUsers[email]=firstName+" "+lastname;                        
-          }              
+      let nextToken = restResponse.NextToken;
+      while(nextToken){         
+        let restResponse = await loadCognitoUsers(nextToken);
+        if(restResponse.Users){
+          restResponseUsers.push(...restResponse.Users);
         }
-        cognitoUsersGlobal = cognitoUsers;          
-        return cognitoUsers;
+        nextToken = restResponse.NextToken;
       }
     }
+    
+    if(restResponseUsers!=null){    
+      let cognitoUsers = {};        
+      for (let cognitoUser of restResponseUsers) {
+        if(cognitoUser.Attributes!=null){
+          let email,firstName,lastname;
+          for(let attribute of cognitoUser.Attributes){                  
+            if(attribute["Name"]=="email"){                    
+              email = attribute["Value"];
+            }   
+            if(attribute["Name"]=="family_name"){                    
+              firstName = attribute["Value"];
+            }  
+            if(attribute["Name"]=="given_name"){
+              lastname = attribute["Value"];
+            }               
+          }
+          cognitoUsers[email]=firstName+" "+lastname;                        
+        }              
+      }
+      cognitoUsersGlobal = cognitoUsers;          
+      return cognitoUsers;
+    }
+    
 
     return null;
   }
 
   return cognitoUsersGlobal;
+}
+
+export async function loadCognitoUsers(nextToken){
+  let apiName = 'AdminQueries';
+  let path = '/listUsers';
+  let authorizationToken = (await Auth.currentSession()).getAccessToken().getJwtToken();
+  
+  let paginationToken = '';
+
+  if(nextToken!=null)
+    paginationToken = nextToken;
+
+  let myInit = { 
+      queryStringParameters: {
+        "token": paginationToken  
+      },
+      headers: {
+        'Content-Type' : 'application/json',
+        'Authorization': authorizationToken
+      },
+      PaginationToken: paginationToken
+  }
+
+  return API.get(apiName, path, myInit);
 }
 
 export async function GetEducationMeetingExtraData(meetingId){ 
