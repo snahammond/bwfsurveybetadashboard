@@ -1,6 +1,7 @@
-import { APIService, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, DeleteInitialSurveyInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
+import { InitialSurvey } from "src/models";
 
 let cognitoUsersGlobal = null;
 let monthlyEducationMeetingGlobal = null;
@@ -9,11 +10,23 @@ export async function getInitialSurvey(api: APIService):Promise<any>{
     
     let initialSurveys: any = [];
     let promiseInitialSurveysDone = await loadInitialSurveys(null,api);
-    initialSurveys.push(...promiseInitialSurveysDone.items);    
+    if(promiseInitialSurveysDone.items!=null){
+      for(let initialSurvey of promiseInitialSurveysDone.items){
+        if(!initialSurvey._deleted)
+          initialSurveys.push(initialSurvey);
+      }
+    }   
+    //initialSurveys.push(...promiseInitialSurveysDone.items);    
     
     while(promiseInitialSurveysDone.nextToken){ 
         promiseInitialSurveysDone = await loadInitialSurveys(promiseInitialSurveysDone.nextToken,api);
-        initialSurveys.push(...promiseInitialSurveysDone.items);
+        if(promiseInitialSurveysDone.items!=null){
+          for(let initialSurvey of promiseInitialSurveysDone.items){
+            if(!initialSurvey._deleted)
+              initialSurveys.push(initialSurvey);
+          }
+        } 
+        //initialSurveys.push(...promiseInitialSurveysDone.items);
     }
     
     //add name of SWE
@@ -25,6 +38,20 @@ export async function getInitialSurvey(api: APIService):Promise<any>{
     }
 
     return <any>(initialSurveys);
+}
+
+export async function deleteInitialSurvey(api: APIService, id: string, _version: number): Promise<any>{
+
+  let input:DeleteInitialSurveyInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteInitialSurvey(
+                        input
+                      );
+
+  return promiseDelete;
 }
 
 export async function loadInitialSurveys(nextToken: any,api: APIService):Promise<any>{    
