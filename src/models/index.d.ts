@@ -82,14 +82,6 @@ export declare class InitialSurvey {
   static copyOf(source: InitialSurvey, mutator: (draft: MutableModel<InitialSurvey>) => MutableModel<InitialSurvey> | void): InitialSurvey;
 }
 
-export declare class InitialSurveyDeleteControl {
-  readonly id: string;
-  readonly Namebwe: string;
-  readonly Completed: number;
-  constructor(init: ModelInit<InitialSurveyDeleteControl>);
-  static copyOf(source: InitialSurveyDeleteControl, mutator: (draft: MutableModel<InitialSurveyDeleteControl>) => MutableModel<InitialSurveyDeleteControl> | void): InitialSurveyDeleteControl;
-}
-
 export declare class FollowUpSurvey {
   readonly id: string;
   readonly Namebwe: string;

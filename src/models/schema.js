@@ -485,57 +485,6 @@ export const schema = {
                 }
             ]
         },
-        "InitialSurveyDeleteControl": {
-            "name": "InitialSurveyDeleteControl",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "Namebwe": {
-                    "name": "Namebwe",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "Completed": {
-                    "name": "Completed",
-                    "isArray": false,
-                    "type": "Int",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            },
-            "syncable": true,
-            "pluralName": "InitialSurveyDeleteControls",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "auth",
-                    "properties": {
-                        "rules": [
-                            {
-                                "allow": "public",
-                                "provider": "apiKey",
-                                "operations": [
-                                    "create",
-                                    "update",
-                                    "delete",
-                                    "read"
-                                ]
-                            }
-                        ]
-                    }
-                }
-            ]
-        },
         "FollowUpSurvey": {
             "name": "FollowUpSurvey",
             "fields": {
@@ -2663,5 +2612,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "bc51a5e9956904e48779282f6539be77"
+    "version": "d0574b2c09f1c1266bd4dd309ee7e3f6"
 };

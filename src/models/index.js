@@ -12,11 +12,10 @@ const AnswerType = {
   "DATEVALUE": "DATEVALUE"
 };
 
-const { InitialSurvey, InitialSurveyDeleteControl, FollowUpSurvey, HealthCheckSurvey, SWEMonthlySummary, HouseholdWaterTest, CommunityWaterTest, CommunityWater, ConfigDefinitions, BWFSURVEYTOTALS, VolunteerHouseholdWaterTest, VolunteerHousehold, Volunteer, VolunteerMonthlySummary, Meeting, HouseholdAttendingMeeting, SWEMonthlyTotalSummary, VolunteerMonthlyTotalSummary } = initSchema(schema);
+const { InitialSurvey, FollowUpSurvey, HealthCheckSurvey, SWEMonthlySummary, HouseholdWaterTest, CommunityWaterTest, CommunityWater, ConfigDefinitions, BWFSURVEYTOTALS, VolunteerHouseholdWaterTest, VolunteerHousehold, Volunteer, VolunteerMonthlySummary, Meeting, HouseholdAttendingMeeting, SWEMonthlyTotalSummary, VolunteerMonthlyTotalSummary } = initSchema(schema);
 
 export {
   InitialSurvey,
-  InitialSurveyDeleteControl,
   FollowUpSurvey,
   HealthCheckSurvey,
   SWEMonthlySummary,

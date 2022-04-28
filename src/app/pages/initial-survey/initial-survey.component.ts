@@ -31,12 +31,14 @@ export class InitialSurveyComponent {
 
   removingRow(event){    
     console.log(event.data);
-    deleteInitialSurvey(this.api, event.data.id, event.data._version)
+    let initialSurveyToDelete = event.data;
+
+    deleteInitialSurvey(this.api, initialSurveyToDelete.id, initialSurveyToDelete._version)
       .then((initialSurveyDeleted)=>{
         console.log("done deleting InitialSurveys "+ initialSurveyDeleted); 
       })
       .catch(e=>{
-        console.log( e); 
+        console.log(e); 
       });
   }
 

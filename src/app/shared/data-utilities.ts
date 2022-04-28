@@ -1,4 +1,4 @@
-import { APIService, DeleteInitialSurveyInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, DeleteFollowUpSurveyInput, DeleteInitialSurveyInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 import { InitialSurvey } from "src/models";
@@ -47,9 +47,7 @@ export async function deleteInitialSurvey(api: APIService, id: string, _version:
     _version : _version
   }
 
-  let promiseDelete = api.DeleteInitialSurvey(
-                        input
-                      );
+  let promiseDelete = api.DeleteInitialSurvey(input);
 
   return promiseDelete;
 }
@@ -67,11 +65,23 @@ export async function loadInitialSurveys(nextToken: any,api: APIService):Promise
 export async function getFollowupSurvey(api: APIService):Promise<any>{
     let followupSurveys: any = [];
     let promiseFollowupSurveysDone = await loadFollowupSurveys(null,api);
-    followupSurveys.push(...promiseFollowupSurveysDone.items);    
+    if(promiseFollowupSurveysDone.items!=null){
+      for(let followupSurvey of promiseFollowupSurveysDone.items){
+        if(!followupSurvey._deleted)
+        followupSurveys.push(followupSurvey);
+      }
+    }
+    //followupSurveys.push(...promiseFollowupSurveysDone.items);    
     
     while(promiseFollowupSurveysDone.nextToken){ 
         promiseFollowupSurveysDone = await loadFollowupSurveys(promiseFollowupSurveysDone.nextToken,api);
-        followupSurveys.push(...promiseFollowupSurveysDone.items);
+        if(promiseFollowupSurveysDone.items!=null){
+          for(let followupSurvey of promiseFollowupSurveysDone.items){
+            if(!followupSurvey._deleted)
+            followupSurveys.push(followupSurvey);
+          }
+        }
+        //followupSurveys.push(...promiseFollowupSurveysDone.items);
     }
 
     //add name of SWE
@@ -83,6 +93,18 @@ export async function getFollowupSurvey(api: APIService):Promise<any>{
     }
 
     return <any>(followupSurveys);
+}
+
+export async function deleteFollowUpSurvey(api: APIService, id: string, _version: number): Promise<any>{
+
+  let input:DeleteFollowUpSurveyInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteFollowUpSurvey(input);
+
+  return promiseDelete;
 }
 
 export async function loadFollowupSurveys(nextToken: any,api: APIService):Promise<any>{    
