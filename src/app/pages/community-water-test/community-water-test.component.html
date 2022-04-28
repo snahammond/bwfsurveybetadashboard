@@ -10,7 +10,16 @@
         [columnAutoWidth]="true"
         [allowColumnResizing]="true"
         [showColumnLines]="true"
-        height='calc(100vh - 150px)'>
+        height='calc(100vh - 150px)'
+        (onRowRemoving)="removingRow($event)"
+        (onRowRemoved)="removedRow($event)">
+        <dxo-editing
+            [allowUpdating]="false"
+            [allowAdding]="false"
+            [allowDeleting]="true"
+            [confirmDelete]="true"
+            mode="popup"> <!-- 'row'| 'batch' | 'cell' | 'form' | 'popup' -->
+        </dxo-editing>
         <dxo-load-panel
             [enabled]="true"
             [height]="100"

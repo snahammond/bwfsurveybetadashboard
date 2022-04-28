@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getBenefitSWPDescription, getCausesOfChildrenDeathDescription, getChildrenDiedAfterBeingBornAliveDescription, getCommonIllnessAffectingAllChildrenInHouseholdDescription, getContainerCarryWaterDescription, getDidSickChildrenGoToHospitalDescription, getDidSickChildrenGoToHospitalYesDescription, getFrequencyWaterTreatmentDescription, getHeadHouseholdEducationDescription, getHeadHouseholdMaritalStatusDescription, getHeadHouseholdOccupationDescription, getHeadHouseholdSexDescription, getHealthChangeFamilyInAYearDescription, getHealthChangeInAYearDescription, getHouseholdDefecationMethodDescription, getHouseholdFrequencyAtWaterSourceDescription, getHowDifficultToObtainChlorine, getHowLongUsingWaterTreatmentDescription, getInitialSurvey, getLastTimeTreatedHouseholdWaterWithChlorine, getMainReasonNoWaterTreatment24HourDescription, getMainReasonNoWaterTreatmentBeforeDrinkingDescription, getMainSourceDrinkingWaterDescription, getMainSourceOtherPurposeWaterDescription, getOutcomeMostRecentVomiting_DiarrheaAtHospitalDescription, getPersonBeingInterviewedDescription, getReasonNoSchoolChildren5_17YearDescription, getRubbishDisposalDescription, getSickChildrenBreastfeedingDescription, getTakingWaterFromStorageDescription, getUsualHouseholdWaterFetcherDescription, getWashedHandsIn24HoursDescription, getWasteDisposalYoungestChildDescription, getWaterStorageAtHomeDescription, getWaterStorageContainerHaveLidDescription, getWaterTreatment24HourMethodDescription, getWaterTreatment24HoursDescription, getWaterTreatmentBeforeDrinkingDescription, getWaterTreatmentMethodDescription, getWhatUsedToWashYourHandsDescription, getWhenWashedHandsIn24HoursDescription, getWhereDidYouGetChlorineToTreatHouseholdWater } from 'src/app/shared/data-utilities';
+import { deleteHealthSurvey, getBenefitSWPDescription, getCausesOfChildrenDeathDescription, getChildrenDiedAfterBeingBornAliveDescription, getCommonIllnessAffectingAllChildrenInHouseholdDescription, getContainerCarryWaterDescription, getDidSickChildrenGoToHospitalDescription, getDidSickChildrenGoToHospitalYesDescription, getFrequencyWaterTreatmentDescription, getHeadHouseholdEducationDescription, getHeadHouseholdMaritalStatusDescription, getHeadHouseholdOccupationDescription, getHeadHouseholdSexDescription, getHealthChangeFamilyInAYearDescription, getHealthChangeInAYearDescription, getHouseholdDefecationMethodDescription, getHouseholdFrequencyAtWaterSourceDescription, getHowDifficultToObtainChlorine, getHowLongUsingWaterTreatmentDescription, getInitialSurvey, getLastTimeTreatedHouseholdWaterWithChlorine, getMainReasonNoWaterTreatment24HourDescription, getMainReasonNoWaterTreatmentBeforeDrinkingDescription, getMainSourceDrinkingWaterDescription, getMainSourceOtherPurposeWaterDescription, getOutcomeMostRecentVomiting_DiarrheaAtHospitalDescription, getPersonBeingInterviewedDescription, getReasonNoSchoolChildren5_17YearDescription, getRubbishDisposalDescription, getSickChildrenBreastfeedingDescription, getTakingWaterFromStorageDescription, getUsualHouseholdWaterFetcherDescription, getWashedHandsIn24HoursDescription, getWasteDisposalYoungestChildDescription, getWaterStorageAtHomeDescription, getWaterStorageContainerHaveLidDescription, getWaterTreatment24HourMethodDescription, getWaterTreatment24HoursDescription, getWaterTreatmentBeforeDrinkingDescription, getWaterTreatmentMethodDescription, getWhatUsedToWashYourHandsDescription, getWhenWashedHandsIn24HoursDescription, getWhereDidYouGetChlorineToTreatHouseholdWater } from 'src/app/shared/data-utilities';
 import { getHealthSurveys } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 
@@ -25,6 +25,23 @@ export class HealthSurveyComponent implements OnInit {
 
   ngOnInit(): void {
      
+  }
+
+  removingRow(event){    
+    console.log(event.data);
+    let healthSurveyToDelete = event.data;
+
+    deleteHealthSurvey(this.api, healthSurveyToDelete.id, healthSurveyToDelete._version)
+      .then((healthSurveyDeleted)=>{
+        
+        console.log("done deleting health survey "+ healthSurveyDeleted); 
+      })
+      .catch(e=>{
+        console.log(e); 
+      });
+  }
+
+  removedRow(event){
   }
 
   getHeadHouseholdSexDescription(rowData){       

@@ -1,4 +1,4 @@
-import { APIService, DeleteFollowUpSurveyInput, DeleteInitialSurveyInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 import { InitialSurvey } from "src/models";
@@ -120,11 +120,23 @@ export async function loadFollowupSurveys(nextToken: any,api: APIService):Promis
 export async function getCommunityWaterTest(api: APIService):Promise<any>{
     let communityWaterTests: any = [];
     let promiseCommunityWaterTestDone = await loadCommunityWaterTests(null,api);
-    communityWaterTests.push(...promiseCommunityWaterTestDone.items);    
+    if(promiseCommunityWaterTestDone.items!=null){
+      for(let communityWaterTest of promiseCommunityWaterTestDone.items){
+        if(!communityWaterTest._deleted)
+        communityWaterTests.push(communityWaterTest);
+      }
+    }
+    //communityWaterTests.push(...promiseCommunityWaterTestDone.items);    
     
     while(promiseCommunityWaterTestDone.nextToken){ 
         promiseCommunityWaterTestDone = await loadCommunityWaterTests(promiseCommunityWaterTestDone.nextToken,api);
-        communityWaterTests.push(...promiseCommunityWaterTestDone.items);
+        if(promiseCommunityWaterTestDone.items!=null){
+          for(let communityWaterTest of promiseCommunityWaterTestDone.items){
+            if(!communityWaterTest._deleted)
+            communityWaterTests.push(communityWaterTest);
+          }
+        }
+        //communityWaterTests.push(...promiseCommunityWaterTestDone.items);
     }
 
     //add name of SWE
@@ -136,6 +148,18 @@ export async function getCommunityWaterTest(api: APIService):Promise<any>{
     }
 
     return <any>(communityWaterTests);
+}
+
+export async function deleteCommunityWaterTest(api: APIService, id: string, _version: number): Promise<any>{
+
+  let input:DeleteCommunityWaterTestInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteCommunityWaterTest(input);
+
+  return promiseDelete;
 }
 
 export async function loadCommunityWaterTests(nextToken: any,api: APIService):Promise<any>{    
@@ -151,11 +175,23 @@ export async function loadCommunityWaterTests(nextToken: any,api: APIService):Pr
 export async function getHouseholdWaterTestSWE(api: APIService):Promise<any>{
     let householdWaterTestsSWE: any = [];
     let promiseHouseholdWaterTestsSWEDone = await loadHouseholdWaterTestsSWE(null,api);
-    householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);    
+    if(promiseHouseholdWaterTestsSWEDone.items!=null){
+      for(let householdWaterTestSWE of promiseHouseholdWaterTestsSWEDone.items){
+        if(!householdWaterTestSWE._deleted)
+          householdWaterTestsSWE.push(householdWaterTestSWE);
+      }
+    }
+    //householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);    
     
     while(promiseHouseholdWaterTestsSWEDone.nextToken){ 
         promiseHouseholdWaterTestsSWEDone = await loadHouseholdWaterTestsSWE(promiseHouseholdWaterTestsSWEDone.nextToken,api);
-        householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);
+        if(promiseHouseholdWaterTestsSWEDone.items!=null){
+          for(let householdWaterTestSWE of promiseHouseholdWaterTestsSWEDone.items){
+            if(!householdWaterTestSWE._deleted)
+              householdWaterTestsSWE.push(householdWaterTestSWE);
+          }
+        }
+        //householdWaterTestsSWE.push(...promiseHouseholdWaterTestsSWEDone.items);
     }
 
     //add name of SWE
@@ -167,6 +203,18 @@ export async function getHouseholdWaterTestSWE(api: APIService):Promise<any>{
     }
 
     return <any>(householdWaterTestsSWE);
+}
+
+export async function deleteHouseholdWaterTestSWE(api: APIService, id: string, _version: number): Promise<any>{
+
+  let input:DeleteHouseholdWaterTestInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteHouseholdWaterTest(input);
+
+  return promiseDelete;
 }
 
 export async function loadHouseholdWaterTestsSWE(nextToken: any,api: APIService):Promise<any>{    
@@ -182,11 +230,23 @@ export async function loadHouseholdWaterTestsSWE(nextToken: any,api: APIService)
 export async function getHouseholdWaterTestsVol(api: APIService):Promise<any>{
     let householdWaterTestsVol: any = [];
     let promiseHouseholdWaterTestsVolDone = await loadHouseholdWaterTestsVol(null,api);
-    householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);    
+    if(promiseHouseholdWaterTestsVolDone.items!=null){
+      for(let householdWaterTestVol of promiseHouseholdWaterTestsVolDone.items){
+        if(!householdWaterTestVol._deleted)
+        householdWaterTestsVol.push(householdWaterTestVol);
+      }
+    }
+    //householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);    
     
     while(promiseHouseholdWaterTestsVolDone.nextToken){ 
         promiseHouseholdWaterTestsVolDone = await loadHouseholdWaterTestsVol(promiseHouseholdWaterTestsVolDone.nextToken,api);
-        householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);
+        if(promiseHouseholdWaterTestsVolDone.items!=null){
+          for(let householdWaterTestVol of promiseHouseholdWaterTestsVolDone.items){
+            if(!householdWaterTestVol._deleted)
+            householdWaterTestsVol.push(householdWaterTestVol);
+          }
+        }
+        //householdWaterTestsVol.push(...promiseHouseholdWaterTestsVolDone.items);
     }
 
     //add name of SWE
@@ -198,6 +258,18 @@ export async function getHouseholdWaterTestsVol(api: APIService):Promise<any>{
     }
 
     return <any>(householdWaterTestsVol);
+}
+
+export async function deleteHouseholdWaterTestVol(api: APIService, id: string, _version: number): Promise<any>{
+
+  let input:DeleteVolunteerHouseholdWaterTestInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteVolunteerHouseholdWaterTest(input);
+
+  return promiseDelete;
 }
 
 export async function loadHouseholdWaterTestsVol(nextToken: any,api: APIService):Promise<any>{    
@@ -213,11 +285,23 @@ export async function loadHouseholdWaterTestsVol(nextToken: any,api: APIService)
 export async function getHealthSurveys(api: APIService):Promise<any>{
     let healthSurveys: any = [];
     let promiseHealthSurveysDone = await loadHealthSurveys(null,api);
-    healthSurveys.push(...promiseHealthSurveysDone.items);    
+    if(promiseHealthSurveysDone.items!=null){
+      for(let healthSurvey of promiseHealthSurveysDone.items){
+        if(!healthSurvey._deleted)
+        healthSurveys.push(healthSurvey);
+      }
+    }
+    //healthSurveys.push(...promiseHealthSurveysDone.items);    
     
     while(promiseHealthSurveysDone.nextToken){ 
         promiseHealthSurveysDone = await loadHealthSurveys(promiseHealthSurveysDone.nextToken,api);
-        healthSurveys.push(...promiseHealthSurveysDone.items);
+        if(promiseHealthSurveysDone.items!=null){
+          for(let healthSurvey of promiseHealthSurveysDone.items){
+            if(!healthSurvey._deleted)
+            healthSurveys.push(healthSurvey);
+          }
+        }
+        //healthSurveys.push(...promiseHealthSurveysDone.items);
     }
 
     //add name of SWE
@@ -229,6 +313,18 @@ export async function getHealthSurveys(api: APIService):Promise<any>{
     }
 
     return <any>(healthSurveys);
+}
+
+export async function deleteHealthSurvey(api: APIService, id: string, _version: number): Promise<any>{
+
+  let input:DeleteHealthCheckSurveyInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteHealthCheckSurvey(input);
+
+  return promiseDelete;
 }
 
 export async function loadHealthSurveys(nextToken: any,api: APIService):Promise<any>{    

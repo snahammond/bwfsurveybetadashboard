@@ -35,16 +35,6 @@ export class FollowUpSurveyComponent implements OnInit {
       .then((followUpSurveyDeleted)=>{
         
         console.log("done deleting Follow up survey "+ followUpSurveyDeleted); 
-        /*
-        //insert into delete control
-        createInitialSurveyDeleteControl(this.api,initialSurveyToDelete)
-          .then((resultCreateInitialSurveyDeleteControl)=>{
-            console.log("done inserting into initial survey delete control "+resultCreateInitialSurveyDeleteControl);
-          })
-          .catch(ed=>{
-            console.log(ed);    
-          })*/
-
       })
       .catch(e=>{
         console.log(e); 
@@ -54,6 +44,7 @@ export class FollowUpSurveyComponent implements OnInit {
   removedRow(event){
     
   }
+  
   getHeadHouseholdSexDescription(rowData){       
     return getHeadHouseholdSexDescription(rowData);
  }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { getColilertTestResultDescription, getHouseholdWaterTestsVol, getPetrifilmTestResultDescription } from 'src/app/shared/data-utilities';
+import { deleteHouseholdWaterTestVol, getColilertTestResultDescription, getHouseholdWaterTestsVol, getPetrifilmTestResultDescription } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 
 @Component({
@@ -24,6 +24,23 @@ export class HouseholdWaterTestVolunteersComponent implements OnInit {
 
   ngOnInit(): void {
     
+  }
+
+  removingRow(event){    
+    console.log(event.data);
+    let householdWaterTestVolToDelete = event.data;
+
+    deleteHouseholdWaterTestVol(this.api, householdWaterTestVolToDelete.id, householdWaterTestVolToDelete._version)
+      .then((householdWaterTestVolDeleted)=>{
+        
+        console.log("done deleting household water test volunteer "+ householdWaterTestVolDeleted); 
+      })
+      .catch(e=>{
+        console.log(e); 
+      });
+  }
+
+  removedRow(event){
   }
 
   getColilertTestResultDescription(rowData){       
