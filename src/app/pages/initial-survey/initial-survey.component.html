@@ -13,13 +13,51 @@
     height= 'calc(100vh - 150px)'
     (onRowRemoving)="removingRow($event)"
     (onRowRemoved)="removedRow($event)">
+    
     <dxo-editing
         [allowUpdating]="false"
         [allowAdding]="false"
         [allowDeleting]="true"
         [confirmDelete]="true"
         mode="popup"> <!-- 'row'| 'batch' | 'cell' | 'form' | 'popup' -->
+    <!--
+      <dxo-popup
+        title="Initial Survey"
+        [showTitle]="true"
+        [width]="700"
+        [height]="525"
+      >
+      </dxo-popup>
+      <dxo-form>
+        <dxi-item itemType="group" [colCount]="2" [colSpan]="2">
+          <dxi-item dataField="FirstName"></dxi-item>
+          <dxi-item dataField="LastName"></dxi-item>
+          <dxi-item dataField="Prefix"></dxi-item>
+          <dxi-item dataField="BirthDate"></dxi-item>
+          <dxi-item dataField="Position"></dxi-item>
+          <dxi-item dataField="HireDate"></dxi-item>
+          <dxi-item
+            dataField="Notes"
+            editorType="dxTextArea"
+            [colSpan]="2"
+            [editorOptions]="{ height: 100 }"
+          >
+          </dxi-item>
+        </dxi-item>
+
+        <dxi-item
+          itemType="group"
+          caption="Home Address"
+          [colCount]="2"
+          [colSpan]="2"
+        >
+          <dxi-item dataField="StateID"></dxi-item>
+          <dxi-item dataField="Address"></dxi-item>
+        </dxi-item>
+      </dxo-form>-->
+
     </dxo-editing>
+
     <dxo-load-panel
         [enabled]="true"
         [height]="100"
@@ -52,8 +90,7 @@
     <dxo-search-panel
         [visible]="true"
         [highlightCaseSensitive]="true"
-    ></dxo-search-panel>    
-    
+    ></dxo-search-panel>   
     
     <dxi-column dataField="id" dataType="string" ></dxi-column>
     <dxi-column dataField="FullNameSwe" dataType="string" caption="SWE fullname" ></dxi-column>

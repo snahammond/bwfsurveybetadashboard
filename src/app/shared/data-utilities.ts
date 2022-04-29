@@ -482,7 +482,7 @@ export async function loadMonthlyHouseholdsAttendingMeeting(nextToken: any, api:
 }
 
 export function getHeadHouseholdSexDescription(rowData){
-    var result:string = "";
+    let result:string = "";
     switch(rowData.HeadHouseholdSex) { 
       case "MALE": { 
         result = "Male"; 
@@ -501,7 +501,7 @@ export function getHeadHouseholdSexDescription(rowData){
 }
 
 export function getHeadHouseholdMaritalStatusDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HeadHouseholdMaritalStatus) { 
     case "MARRIED": { 
       result = "Married"; 
@@ -532,7 +532,7 @@ export function getHeadHouseholdMaritalStatusDescription(rowData){
 }
 
 export function getHeadHouseholdOccupationDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HeadHouseholdOccupation) { 
     case "FARMER": { 
       result = "Farmer"; 
@@ -571,7 +571,7 @@ export function getHeadHouseholdOccupationDescription(rowData){
 }
 
 export function getHeadHouseholdEducationDescription(rowData) {    
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HeadHouseholdEducation) { 
     case "NOFORMALEDUCATION": { 
       result = "No formal education"; 
@@ -614,7 +614,7 @@ export function getHeadHouseholdEducationDescription(rowData) {
 }
 
 export function getPersonBeingInterviewedDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.PersonBeingInterviewed) { 
     case "FATHER": { 
       result = "Father"; 
@@ -669,55 +669,58 @@ export function getPersonBeingInterviewedDescription(rowData){
 }
 
 export function getReasonNoSchoolChildren5_17YearDescription(rowData){    
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedReasonNoSchoolChildren5_17Year:string[] = rowData.ReasonNoSchoolChildren5_17Year.split(",");
+  let resultBuilder = new StringBuilder();    
+  if(rowData.ReasonNoSchoolChildren5_17Year){
+    let allSelectedReasonNoSchoolChildren5_17Year:string[] = rowData.ReasonNoSchoolChildren5_17Year.split(",");
   
-  allSelectedReasonNoSchoolChildren5_17Year.forEach(element => {
-    switch(element) { 
-      case "DAILYLABOR": { 
-        resultBuilder.Append("Daily labor,"); 
-        break; 
-      } 
-      case "NOTENOUGHFUNDSSCHOOLMATERIALSCLOTHES": { 
-        resultBuilder.Append("Not enough funds for school materials/clothes,");  
-        break; 
-      } 
-      case "SCHOOLTOOFARAWAY": { 
-        resultBuilder.Append("School too far away,"); 
-        break; 
-      } 
-      case "SUPPORTFAMILYWITHLABOR": { 
-        resultBuilder.Append("Support family with labor,");  
-        break; 
+    allSelectedReasonNoSchoolChildren5_17Year.forEach(element => {
+      switch(element) { 
+        case "DAILYLABOR": { 
+          resultBuilder.Append("Daily labor,"); 
+          break; 
+        } 
+        case "NOTENOUGHFUNDSSCHOOLMATERIALSCLOTHES": { 
+          resultBuilder.Append("Not enough funds for school materials/clothes,");  
+          break; 
+        } 
+        case "SCHOOLTOOFARAWAY": { 
+          resultBuilder.Append("School too far away,"); 
+          break; 
+        } 
+        case "SUPPORTFAMILYWITHLABOR": { 
+          resultBuilder.Append("Support family with labor,");  
+          break; 
+        }
+        case "FETCHINGWATER": { 
+          resultBuilder.Append("Fetching water,");  
+          break; 
+        } 
+        case "FINISHEDJRHIGHSCHOOL": { 
+          resultBuilder.Append("Finished Jr. High School,"); 
+          break; 
+        } 
+        case "MARRIAGEANDORPREGNANCY": { 
+          resultBuilder.Append("Marriage and/or pregnancy,");  
+          break; 
+        }
+        case "DISABLEDCRIPPLEDBLINDMENTALRETARDATION": { 
+          resultBuilder.Append("Disabled (Crippled, blind, mental retardation),");  
+          break; 
+        } 
+        case "NOTAPPLICABLE": { 
+          resultBuilder.Append("Not applicable"); 
+          break; 
+        }
+        default: { 
+          resultBuilder.Append(""); 
+          break; 
+        } 
       }
-      case "FETCHINGWATER": { 
-        resultBuilder.Append("Fetching water,");  
-        break; 
-      } 
-      case "FINISHEDJRHIGHSCHOOL": { 
-        resultBuilder.Append("Finished Jr. High School,"); 
-        break; 
-      } 
-      case "MARRIAGEANDORPREGNANCY": { 
-        resultBuilder.Append("Marriage and/or pregnancy,");  
-        break; 
-      }
-      case "DISABLEDCRIPPLEDBLINDMENTALRETARDATION": { 
-        resultBuilder.Append("Disabled (Crippled, blind, mental retardation),");  
-        break; 
-      } 
-      case "NOTAPPLICABLE": { 
-        resultBuilder.Append("Not applicable"); 
-        break; 
-      }
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    });
+  }
+  
 
   result = resultBuilder.ToString();
    
@@ -725,7 +728,7 @@ export function getReasonNoSchoolChildren5_17YearDescription(rowData){
 }
 
 export function getMainSourceDrinkingWaterDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.MainSourceDrinkingWater) { 
     case "PIPEDWATER": { 
       result = "Piped water to house/yard"; 
@@ -768,7 +771,7 @@ export function getMainSourceDrinkingWaterDescription(rowData){
 }
 
 export function getMainSourceOtherPurposeWaterDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.MainSourceOtherPurposeWater) { 
     case "PIPEDWATER": { 
       result = "Piped water to house/yard"; 
@@ -811,7 +814,7 @@ export function getMainSourceOtherPurposeWaterDescription(rowData){
 }
 
 export function getHouseholdFrequencyAtWaterSourceDescription(rowData){    
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HouseholdFrequencyAtWaterSource) { 
     case "2ORMORETIMEPERDAY": { 
       result = "2 or more times per day"; 
@@ -842,7 +845,7 @@ export function getHouseholdFrequencyAtWaterSourceDescription(rowData){
 }
 
 export function getUsualHouseholdWaterFetcherDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.UsualHouseholdWaterFetcher) { 
     case "ADULTWOMAN": { 
       result = "Female > 15 years"; 
@@ -873,7 +876,7 @@ export function getUsualHouseholdWaterFetcherDescription(rowData){
 }
 
 export function getContainerCarryWaterDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.ContainerCarryWater) { 
     case "PLASTICBOWLWITHCOVER": { 
       result = "Plastic bowl with cover"; 
@@ -916,7 +919,7 @@ export function getContainerCarryWaterDescription(rowData){
 }
 
 export function getWaterTreatmentBeforeDrinkingDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WaterTreatmentBeforeDrinking) { 
     case "YES": { 
       result = "Yes"; 
@@ -935,51 +938,54 @@ export function getWaterTreatmentBeforeDrinkingDescription(rowData){
 }
 
 export function getMainReasonNoWaterTreatmentBeforeDrinkingDescription(rowData){
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedMainReasonNoWaterTreatmentBeforeDrinking:string[] = rowData.MainReasonNoWaterTreatmentBeforeDrinking.split(",");
+  let resultBuilder = new StringBuilder();    
+  if(rowData.MainReasonNoWaterTreatmentBeforeDrinking ){
+    let allSelectedMainReasonNoWaterTreatmentBeforeDrinking:string[] = rowData.MainReasonNoWaterTreatmentBeforeDrinking.split(",");
   
-  allSelectedMainReasonNoWaterTreatmentBeforeDrinking.forEach(element => {
-    switch(element) { 
-      case "WATERISCONSIDEREDSAFE": { 
-        resultBuilder.Append("Water is considered safe,"); 
-        break; 
-      } 
-      case "TREATMENTPRODUCTSNOTAVAILABLE": { 
-        resultBuilder.Append("Treatment products are not available,");  
-        break; 
-      } 
-      case "FIREWOODISSCARCEFORBOILING": { 
-        resultBuilder.Append("Firewood is scarce for boiling,"); 
-        break; 
-      } 
-      case "TOOEXPENSIVETOTREATWATER": { 
-        resultBuilder.Append("Too expensive to treat water,");  
-        break; 
+    allSelectedMainReasonNoWaterTreatmentBeforeDrinking.forEach(element => {
+      switch(element) { 
+        case "WATERISCONSIDEREDSAFE": { 
+          resultBuilder.Append("Water is considered safe,"); 
+          break; 
+        } 
+        case "TREATMENTPRODUCTSNOTAVAILABLE": { 
+          resultBuilder.Append("Treatment products are not available,");  
+          break; 
+        } 
+        case "FIREWOODISSCARCEFORBOILING": { 
+          resultBuilder.Append("Firewood is scarce for boiling,"); 
+          break; 
+        } 
+        case "TOOEXPENSIVETOTREATWATER": { 
+          resultBuilder.Append("Too expensive to treat water,");  
+          break; 
+        }
+        case "TAKESTOOMUCHTIME": { 
+          resultBuilder.Append("Takes too much time,");  
+          break; 
+        } 
+        case "LAZINESS": { 
+          resultBuilder.Append("Laziness,"); 
+          break; 
+        } 
+        case "DONTKNOW": { 
+          resultBuilder.Append("Don't  know,");  
+          break; 
+        }
+        case "NOTAPPLICABLE": { 
+          resultBuilder.Append("Not applicable"); 
+          break; 
+        }
+        default: { 
+          resultBuilder.Append(""); 
+          break; 
+        } 
       }
-      case "TAKESTOOMUCHTIME": { 
-        resultBuilder.Append("Takes too much time,");  
-        break; 
-      } 
-      case "LAZINESS": { 
-        resultBuilder.Append("Laziness,"); 
-        break; 
-      } 
-      case "DONTKNOW": { 
-        resultBuilder.Append("Don't  know,");  
-        break; 
-      }
-      case "NOTAPPLICABLE": { 
-        resultBuilder.Append("Not applicable"); 
-        break; 
-      }
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    });
+  }
+  
 
   result = resultBuilder.ToString();
    
@@ -987,7 +993,7 @@ export function getMainReasonNoWaterTreatmentBeforeDrinkingDescription(rowData){
 }
 
 export function getWaterTreatmentMethodDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WaterTreatmentMethod) { 
     case "LETSTANDANDSETTLESTRAINTHRUCLOTHANDBOIL": { 
       result = "Let stand and settle, strain thru a cloth and Boil"; 
@@ -1034,7 +1040,7 @@ export function getWaterTreatmentMethodDescription(rowData){
 }
 
 export function getHowLongUsingWaterTreatmentDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HowLongUsingWaterTreatment) { 
     case "LESSTHAN3MONTHS": { 
       result = "Less than 3 months"; 
@@ -1069,7 +1075,7 @@ export function getHowLongUsingWaterTreatmentDescription(rowData){
 }
 
 export function getFrequencyWaterTreatmentDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.FrequencyWaterTreatment) { 
     case "ALWAYS": { 
       result = "Always"; 
@@ -1096,7 +1102,7 @@ export function getFrequencyWaterTreatmentDescription(rowData){
 }
 
 export function getWaterStorageAtHomeDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WaterStorageAtHome) { 
     case "WIDEMOUTHEDCERAMICJAR": { 
       result = "Wide mouthed ceramic jar"; 
@@ -1131,7 +1137,7 @@ export function getWaterStorageAtHomeDescription(rowData){
 }
 
 export function getWaterStorageContainerHaveLidDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WaterStorageContainerHaveLid) { 
     case "YES": { 
       result = "Yes"; 
@@ -1150,7 +1156,7 @@ export function getWaterStorageContainerHaveLidDescription(rowData){
 }
 
 export function getTakingWaterFromStorageDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.TakingWaterFromStorage) { 
     case "EACHPERSONUSESOWNCUP": { 
       result = "Each person uses their own cup or their hands to take water from the storage container"; 
@@ -1160,7 +1166,7 @@ export function getTakingWaterFromStorageDescription(rowData){
       result = "The same cup/dipper is used by all members for taking water for drinking";  
       break; 
     } 
-    case "VARIETYWAYSUSED": { 
+    case "letIETYWAYSUSED": { 
       result = "Several ways are used for taking water from the storage container"; 
       break; 
     } 
@@ -1185,35 +1191,38 @@ export function getTakingWaterFromStorageDescription(rowData){
 }
 
 export function getRubbishDisposalDescription(rowData){
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedRubbishDisposal:string[] = rowData.RubbishDisposal.split(",");
+  let resultBuilder = new StringBuilder();    
+  if(rowData.RubbishDisposal ){
+    let allSelectedRubbishDisposal:string[] = rowData.RubbishDisposal.split(",");
   
-  allSelectedRubbishDisposal.forEach(element => {
-    switch(element) { 
-      case "RABBISHPITORGARBAGEPAIL": { 
-        resultBuilder.Append("Household Rubbish pit or garbage pail,"); 
-        break; 
-      } 
-      case "COMPOST_GARDEN_GIVETOANIMALS": { 
-        resultBuilder.Append("Compost/in garden/give to animals,");  
-        break; 
-      } 
-      case "COMMUNITYGARBAGEPIT": { 
-        resultBuilder.Append("Community garbage pit,"); 
-        break; 
-      } 
-      case "SCATTER_LITTERONTHERGROUND": { 
-        resultBuilder.Append("Scatter/littered on the ground,");  
-        break; 
+    allSelectedRubbishDisposal.forEach(element => {
+      switch(element) { 
+        case "RABBISHPITORGARBAGEPAIL": { 
+          resultBuilder.Append("Household Rubbish pit or garbage pail,"); 
+          break; 
+        } 
+        case "COMPOST_GARDEN_GIVETOANIMALS": { 
+          resultBuilder.Append("Compost/in garden/give to animals,");  
+          break; 
+        } 
+        case "COMMUNITYGARBAGEPIT": { 
+          resultBuilder.Append("Community garbage pit,"); 
+          break; 
+        } 
+        case "SCATTER_LITTERONTHERGROUND": { 
+          resultBuilder.Append("Scatter/littered on the ground,");  
+          break; 
+        }
+        default: { 
+          resultBuilder.Append(""); 
+          break; 
+        } 
       }
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    });
+  }
+  
 
   result = resultBuilder.ToString();
    
@@ -1221,7 +1230,7 @@ export function getRubbishDisposalDescription(rowData){
 }
 
 export function getHouseholdDefecationMethodDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HouseholdDefecationMethod) { 
     case "TOILETINHOME": { 
       result = "Toilet in home"; 
@@ -1248,7 +1257,7 @@ export function getHouseholdDefecationMethodDescription(rowData){
 }
 
 export function getWasteDisposalYoungestChildDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WasteDisposalYoungestChild) { 
     case "CHILDUSEDTOILET_LATRINE": { 
       result = "Child used toilet/latrine"; 
@@ -1295,7 +1304,7 @@ export function getWasteDisposalYoungestChildDescription(rowData){
 }
 
 export function getWashedHandsIn24HoursDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WashedHandsIn24Hours) { 
     case "YES": { 
       result = "Yes"; 
@@ -1318,7 +1327,7 @@ export function getWashedHandsIn24HoursDescription(rowData){
 }
 
 export function getWhenWashedHandsIn24HoursDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WhenWashedHandsIn24Hours) { 
     case "AFTERDEFECATION": { 
       result = "After defecation/using latrine"; 
@@ -1369,7 +1378,7 @@ export function getWhenWashedHandsIn24HoursDescription(rowData){
 }
 
 export function getWhatUsedToWashYourHandsDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WhatUsedToWashYourHands) { 
     case "HOTWATERANDSOAP": { 
       result = "Hot water and soap"; 
@@ -1404,63 +1413,66 @@ export function getWhatUsedToWashYourHandsDescription(rowData){
 }
 
 export function getCommonIllnessAffectingAllChildrenInHouseholdDescription(rowData){
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedCommonIllnessAffectingAllChildrenInHousehold:string[] = rowData.CommonIllnessAffectingAllChildrenInHousehold.split(",");
+  let resultBuilder = new StringBuilder();   
+  if(rowData.CommonIllnessAffectingAllChildrenInHousehold){
+    let allSelectedCommonIllnessAffectingAllChildrenInHousehold:string[] = rowData.CommonIllnessAffectingAllChildrenInHousehold.split(",");
   
-  allSelectedCommonIllnessAffectingAllChildrenInHousehold.forEach(element => {
-    switch(element) { 
-      case "MALARIA": { 
-        resultBuilder.Append("Malaria,"); 
-        break; 
-      } 
-      case "SICKLECELLANEMIA": { 
-        resultBuilder.Append("Sickle cell anemia,");  
-        break; 
-      } 
-      case "DIARRHEA": { 
-        resultBuilder.Append("Diarrhea,"); 
-        break; 
-      } 
-      case "STOMACHPAIN": { 
-        resultBuilder.Append("Stomach pain,");  
-        break; 
+    allSelectedCommonIllnessAffectingAllChildrenInHousehold.forEach(element => {
+      switch(element) { 
+        case "MALARIA": { 
+          resultBuilder.Append("Malaria,"); 
+          break; 
+        } 
+        case "SICKLECELLANEMIA": { 
+          resultBuilder.Append("Sickle cell anemia,");  
+          break; 
+        } 
+        case "DIARRHEA": { 
+          resultBuilder.Append("Diarrhea,"); 
+          break; 
+        } 
+        case "STOMACHPAIN": { 
+          resultBuilder.Append("Stomach pain,");  
+          break; 
+        }
+        case "RESPIRATORYINFECTION": { 
+          resultBuilder.Append("Respiratory infection (Cold/flu),"); 
+          break; 
+        } 
+        case "SKINDISEASE_SCABIES": { 
+          resultBuilder.Append("Skin disease/Scabies,");  
+          break; 
+        } 
+        case "EYEINFECTIONS_TRACHOMA": { 
+          resultBuilder.Append("Eye infections/trachoma,"); 
+          break; 
+        } 
+        case "HIV_AIDS": { 
+          resultBuilder.Append("HIV/AIDS,");  
+          break; 
+        }
+        case "TUBERCULOSIS": { 
+          resultBuilder.Append("Tuberculosis,"); 
+          break; 
+        } 
+        case "OTHER": { 
+          resultBuilder.Append("Other,");  
+          break; 
+        } 
+        case "NOTAPPLICABLE": { 
+          resultBuilder.Append("Not applicable,"); 
+          break; 
+        }
+        default: { 
+          resultBuilder.Append(""); 
+          break; 
+        } 
       }
-      case "RESPIRATORYINFECTION": { 
-        resultBuilder.Append("Respiratory infection (Cold/flu),"); 
-        break; 
-      } 
-      case "SKINDISEASE_SCABIES": { 
-        resultBuilder.Append("Skin disease/Scabies,");  
-        break; 
-      } 
-      case "EYEINFECTIONS_TRACHOMA": { 
-        resultBuilder.Append("Eye infections/trachoma,"); 
-        break; 
-      } 
-      case "HIV_AIDS": { 
-        resultBuilder.Append("HIV/AIDS,");  
-        break; 
-      }
-      case "TUBERCULOSIS": { 
-        resultBuilder.Append("Tuberculosis,"); 
-        break; 
-      } 
-      case "OTHER": { 
-        resultBuilder.Append("Other,");  
-        break; 
-      } 
-      case "NOTAPPLICABLE": { 
-        resultBuilder.Append("Not applicable,"); 
-        break; 
-      }
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    });
+  } 
+  
 
   result = resultBuilder.ToString();
    
@@ -1468,7 +1480,7 @@ export function getCommonIllnessAffectingAllChildrenInHouseholdDescription(rowDa
 }
 
 export function getDidSickChildrenGoToHospitalDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.DidSickChildrenGoToHospital) { 
     case "YES": { 
       result = "Yes"; 
@@ -1492,43 +1504,45 @@ export function getDidSickChildrenGoToHospitalDescription(rowData){
 }
 
 export function getDidSickChildrenGoToHospitalYesDescription(rowData){
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedDidSickChildrenGoToHospitalYes:string[] = rowData.DidSickChildrenGoToHospitalYes.split(",");
+  let resultBuilder = new StringBuilder();    
+  if(rowData.DidSickChildrenGoToHospitalYes ){
+    let allSelectedDidSickChildrenGoToHospitalYes:string[] = rowData.DidSickChildrenGoToHospitalYes.split(",");
   
-  allSelectedDidSickChildrenGoToHospitalYes.forEach(element => {
-    switch(element) { 
-      case "ORALREHYDRATIONSALTS": { 
-        resultBuilder.Append("Oral rehydration Salts (ORS),"); 
-        break; 
-      } 
-      case "ANTIBIOTIC": { 
-        resultBuilder.Append("Antibiotics,");  
-        break; 
-      } 
-      case "PAINKILLER": { 
-        resultBuilder.Append("Pain killer,"); 
-        break; 
-      } 
-      case "INTRAVENOUSFLUID": { 
-        resultBuilder.Append("Intravenous (IV) Fluid,");  
-        break; 
-      }
-      case "DONTKNOW": { 
-        resultBuilder.Append("Don't know,"); 
-        break; 
-      } 
-      case "NOTAPPLICABLE": { 
-        resultBuilder.Append("Not applicable,");  
-        break; 
-      } 
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    allSelectedDidSickChildrenGoToHospitalYes.forEach(element => {
+      switch(element) { 
+        case "ORALREHYDRATIONSALTS": { 
+          resultBuilder.Append("Oral rehydration Salts (ORS),"); 
+          break; 
+        } 
+        case "ANTIBIOTIC": { 
+          resultBuilder.Append("Antibiotics,");  
+          break; 
+        } 
+        case "PAINKILLER": { 
+          resultBuilder.Append("Pain killer,"); 
+          break; 
+        } 
+        case "INTRAVENOUSFLUID": { 
+          resultBuilder.Append("Intravenous (IV) Fluid,");  
+          break; 
+        }
+        case "DONTKNOW": { 
+          resultBuilder.Append("Don't know,"); 
+          break; 
+        } 
+        case "NOTAPPLICABLE": { 
+          resultBuilder.Append("Not applicable,");  
+          break; 
+        } 
+        default: { 
+          resultBuilder.Append(""); 
+          break; 
+        } 
+    }
+    });
+  }
 
   result = resultBuilder.ToString();
    
@@ -1536,7 +1550,7 @@ export function getDidSickChildrenGoToHospitalYesDescription(rowData){
 }
 
 export function getSickChildrenBreastfeedingDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.SickChildrenBreastfeeding) { 
     case "YES": { 
       result = "Yes"; 
@@ -1559,7 +1573,7 @@ export function getSickChildrenBreastfeedingDescription(rowData){
 }
 
 export function getOutcomeMostRecentVomiting_DiarrheaAtHospitalDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.OutcomeMostRecentVomiting_DiarrheaAtHospital) {       
     case "TREATEDANDDISCHARGED": { 
       result = "Treated and Discharged";  
@@ -1586,7 +1600,7 @@ export function getOutcomeMostRecentVomiting_DiarrheaAtHospitalDescription(rowDa
 }
 
 export function getHealthChangeInAYearDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HealthChangeInAYear) { 
     case "IMPROVED": { 
       result = "Improved since last year"; 
@@ -1613,7 +1627,7 @@ export function getHealthChangeInAYearDescription(rowData){
 }
 
 export function getHealthChangeFamilyInAYearDescription(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HealthChangeFamilyInAYear) { 
     case "IMPROVED": { 
       result = "Improved since last year"; 
@@ -1640,47 +1654,49 @@ export function getHealthChangeFamilyInAYearDescription(rowData){
 }
 
 export function getChildrenDiedAfterBeingBornAliveDescription(rowData){
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedChildrenDiedAfterBeingBornAlive:string[] = rowData.ChildrenDiedAfterBeingBornAlive.split(",");
+  let resultBuilder = new StringBuilder(); 
   
-  allSelectedChildrenDiedAfterBeingBornAlive.forEach(element => {
-    switch(element) { 
-      case "NOCHILDRENDIEDAFTERBEINGBORNALIVE": { 
-        resultBuilder.Append("No children have died after being born alive ,"); 
-        break; 
-      } 
-      case "CHILDUNDER5YEARSDIED": { 
-        resultBuilder.Append("Child under 5 years died,");  
-        break; 
-      } 
-      case "MORETHANONECHILDUNDER5YEARSDIED": { 
-        resultBuilder.Append("More than one child under 5 years died,"); 
-        break; 
-      } 
-      case "CHILD5_14YEARSDIED": { 
-        resultBuilder.Append("Child 5-14 years died,");  
-        break; 
+  if(rowData.ChildrenDiedAfterBeingBornAlive){      
+    let allSelectedChildrenDiedAfterBeingBornAlive:string[] = rowData.ChildrenDiedAfterBeingBornAlive.split(",");    
+    allSelectedChildrenDiedAfterBeingBornAlive.forEach(element => {
+        switch(element) { 
+          case "NOCHILDRENDIEDAFTERBEINGBORNALIVE": { 
+            resultBuilder.Append("No children have died after being born alive,"); 
+            break; 
+          } 
+          case "CHILDUNDER5YEARSDIED": { 
+            resultBuilder.Append("Child under 5 years died,");  
+            break; 
+          } 
+          case "MORETHANONECHILDUNDER5YEARSDIED": { 
+            resultBuilder.Append("More than one child under 5 years died,"); 
+            break; 
+          } 
+          case "CHILD5_14YEARSDIED": { 
+            resultBuilder.Append("Child 5-14 years died,");  
+            break; 
+          }
+          case "MORETHANONECHILD5_14YEARSDIED": { 
+            resultBuilder.Append("More than one child 5-14 years died,"); 
+            break; 
+          } 
+          case "AFAMILYMEMBEROLDERTHAN15YEARSDIED": { 
+            resultBuilder.Append("A family member older than 15 years died,");  
+            break; 
+          } 
+          case "MORETHANONEFAMILYMEMBEROLDERTHAN15YEARSDIED": { 
+            resultBuilder.Append("More than one family member older than 15 years died,");  
+            break; 
+          } 
+          default: { 
+            resultBuilder.Append(""); 
+            break; 
+          } 
       }
-      case "MORETHANONECHILD5_14YEARSDIED": { 
-        resultBuilder.Append("More than one child 5-14 years died,"); 
-        break; 
-      } 
-      case "AFAMILYMEMBEROLDERTHAN15YEARSDIED": { 
-        resultBuilder.Append("A family member older than 15 years died,");  
-        break; 
-      } 
-      case "MORETHANONEFAMILYMEMBEROLDERTHAN15YEARSDIED": { 
-        resultBuilder.Append("More than one family member older than 15 years died,");  
-        break; 
-      } 
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    });
+  }
 
   result = resultBuilder.ToString();
    
@@ -1688,71 +1704,74 @@ export function getChildrenDiedAfterBeingBornAliveDescription(rowData){
 }
 
 export function getCausesOfChildrenDeathDescription(rowData){
-  var result:string = "";
+  let result:string = "";
 
-  var resultBuilder = new StringBuilder();    
-  var allSelectedCausesOfChildrenDeath:string[] = rowData.CausesOfChildrenDeath.split(",");
+  let resultBuilder = new StringBuilder();   
+  if(rowData.CausesOfChildrenDeath){ 
+    let allSelectedCausesOfChildrenDeath:string[] = rowData.CausesOfChildrenDeath.split(",");
   
-  allSelectedCausesOfChildrenDeath.forEach(element => {
-    switch(element) { 
-      case "MALARIA": { 
-        resultBuilder.Append("Malaria,"); 
-        break; 
-      } 
-      case "SICKLECELLANEMIA": { 
-        resultBuilder.Append("Sickle cell anemia,");  
-        break; 
-      } 
-      case "DIARRHEA_VOMITING": { 
-        resultBuilder.Append("Diarrhea/Vomiting,"); 
-        break; 
-      } 
-      case "STOMACHPAIN": { 
-        resultBuilder.Append("Stomach pain,");  
-        break; 
+    allSelectedCausesOfChildrenDeath.forEach(element => {
+      switch(element) { 
+        case "MALARIA": { 
+          resultBuilder.Append("Malaria,"); 
+          break; 
+        } 
+        case "SICKLECELLANEMIA": { 
+          resultBuilder.Append("Sickle cell anemia,");  
+          break; 
+        } 
+        case "DIARRHEA_VOMITING": { 
+          resultBuilder.Append("Diarrhea/Vomiting,"); 
+          break; 
+        } 
+        case "STOMACHPAIN": { 
+          resultBuilder.Append("Stomach pain,");  
+          break; 
+        }
+        case "RESPIRATORYINFECTION": { 
+          resultBuilder.Append("Respiratory infection (Cold/flu),"); 
+          break; 
+        } 
+        case "SKINDISEASE_SCABIES": { 
+          resultBuilder.Append("Skin disease/Scabies,");  
+          break; 
+        } 
+        case "EYEINFECTIONS_TRACHOMA": { 
+          resultBuilder.Append("Eye infections/trachoma,");  
+          break; 
+        } 
+        case "HIV_AIDS": { 
+          resultBuilder.Append("HIV/AIDS,"); 
+          break; 
+        } 
+        case "TUBERCULOSIS": { 
+          resultBuilder.Append("Tuberculosis,");  
+          break; 
+        } 
+        case "BIRTHDEFECT": { 
+          resultBuilder.Append("Birth defect,"); 
+          break; 
+        } 
+        case "ACCIDENT": { 
+          resultBuilder.Append("Accident,");  
+          break; 
+        }
+        case "OTHER": { 
+          resultBuilder.Append("Other,"); 
+          break; 
+        } 
+        case "NOTAPPLICABLE": { 
+          resultBuilder.Append("Not applicable,");  
+          break; 
+        } 
+        default: { 
+          resultBuilder.Append(""); 
+          break; 
+        } 
       }
-      case "RESPIRATORYINFECTION": { 
-        resultBuilder.Append("Respiratory infection (Cold/flu),"); 
-        break; 
-      } 
-      case "SKINDISEASE_SCABIES": { 
-        resultBuilder.Append("Skin disease/Scabies,");  
-        break; 
-      } 
-      case "EYEINFECTIONS_TRACHOMA": { 
-        resultBuilder.Append("Eye infections/trachoma,");  
-        break; 
-      } 
-      case "HIV_AIDS": { 
-        resultBuilder.Append("HIV/AIDS,"); 
-        break; 
-      } 
-      case "TUBERCULOSIS": { 
-        resultBuilder.Append("Tuberculosis,");  
-        break; 
-      } 
-      case "BIRTHDEFECT": { 
-        resultBuilder.Append("Birth defect,"); 
-        break; 
-      } 
-      case "ACCIDENT": { 
-        resultBuilder.Append("Accident,");  
-        break; 
-      }
-      case "OTHER": { 
-        resultBuilder.Append("Other,"); 
-        break; 
-      } 
-      case "NOTAPPLICABLE": { 
-        resultBuilder.Append("Not applicable,");  
-        break; 
-      } 
-      default: { 
-        resultBuilder.Append(""); 
-         break; 
-      } 
-   }
-  });
+    });
+  }
+  
 
   result = resultBuilder.ToString();
    
@@ -1760,7 +1779,7 @@ export function getCausesOfChildrenDeathDescription(rowData){
 }
 
 export function getColilertTestResultDescription(rowData){
-    var result:string = "";
+    let result:string = "";
     switch(rowData.ColilertTestResult) { 
       case "CLEAR": { 
         result = "Clear"; 
@@ -1783,7 +1802,7 @@ export function getColilertTestResultDescription(rowData){
 }
 
 export function getBenefitSWPDescription(rowData){
-    var result:string = "";
+    let result:string = "";
     switch(rowData.BenefitSWP) { 
       case "GREATBENEFIT": { 
         result = "Great benefit"; 
@@ -1810,7 +1829,7 @@ export function getBenefitSWPDescription(rowData){
 }
 
   export function getPetrifilmTestResultDescription(rowData){
-    var result:string = "";
+    let result:string = "";
     switch(rowData.PetrifilmTestResult) { 
       case "NONE": { 
         result = "None"; 
@@ -1833,7 +1852,7 @@ export function getBenefitSWPDescription(rowData){
 }
 
 export function getWaterTreatment24HoursDescription(rowData){
-    var result:string = "";
+    let result:string = "";
     switch(rowData.WaterTreatment24Hours) { 
       case "YES": { 
         result = "Yes"; 
@@ -1856,51 +1875,53 @@ export function getWaterTreatment24HoursDescription(rowData){
 }
 
 export function getMainReasonNoWaterTreatment24HourDescription(rowData){
-    var result:string = "";
+    let result:string = "";
   
-    var resultBuilder = new StringBuilder();    
-    var allSelectedMainReasonNoWaterTreatment24Hour:string[] = rowData.MainReasonNoWaterTreatment24Hour.split(",");
+    let resultBuilder = new StringBuilder();   
+    if(rowData.MainReasonNoWaterTreatment24Hour){ 
+      let allSelectedMainReasonNoWaterTreatment24Hour:string[] = rowData.MainReasonNoWaterTreatment24Hour.split(",");
     
-    allSelectedMainReasonNoWaterTreatment24Hour.forEach(element => {
-      switch(element) { 
-        case "WATERISCONSIDEREDSAFE": { 
-          resultBuilder.Append("Water is considered safe,"); 
-          break; 
-        } 
-        case "TREATMENTPRODUCTSARENOTAVAILABLE": { 
-          resultBuilder.Append("Treatment products are not availablea,");  
-          break; 
-        } 
-        case "FIREWOODISSCARCEFORBOILING": { 
-          resultBuilder.Append("Firewood is scarce for boiling,"); 
-          break; 
-        } 
-        case "TOOEXPENSIVETOTREATWATER": { 
-          resultBuilder.Append("Too expensive to treat water,");  
-          break; 
+      allSelectedMainReasonNoWaterTreatment24Hour.forEach(element => {
+        switch(element) { 
+          case "WATERISCONSIDEREDSAFE": { 
+            resultBuilder.Append("Water is considered safe,"); 
+            break; 
+          } 
+          case "TREATMENTPRODUCTSARENOTAVAILABLE": { 
+            resultBuilder.Append("Treatment products are not availablea,");  
+            break; 
+          } 
+          case "FIREWOODISSCARCEFORBOILING": { 
+            resultBuilder.Append("Firewood is scarce for boiling,"); 
+            break; 
+          } 
+          case "TOOEXPENSIVETOTREATWATER": { 
+            resultBuilder.Append("Too expensive to treat water,");  
+            break; 
+          }
+          case "TAKESTOOMUCHTIME": { 
+            resultBuilder.Append("Takes too much time,"); 
+            break; 
+          } 
+          case "LAZINESS": { 
+            resultBuilder.Append("Laziness,");  
+            break; 
+          } 
+          case "DONTKNOW": { 
+            resultBuilder.Append("Don't know,");  
+            break; 
+          } 
+          case "NOTAPPLICABLE": { 
+            resultBuilder.Append("Not applicable,"); 
+            break; 
+          }      
+          default: { 
+            resultBuilder.Append(""); 
+            break; 
+          } 
         }
-        case "TAKESTOOMUCHTIME": { 
-          resultBuilder.Append("Takes too much time,"); 
-          break; 
-        } 
-        case "LAZINESS": { 
-          resultBuilder.Append("Laziness,");  
-          break; 
-        } 
-        case "DONTKNOW": { 
-          resultBuilder.Append("Don't know,");  
-          break; 
-        } 
-        case "NOTAPPLICABLE": { 
-          resultBuilder.Append("Not applicable,"); 
-          break; 
-        }      
-        default: { 
-          resultBuilder.Append(""); 
-           break; 
-        } 
-     }
-    });
+      });
+    }
   
     result = resultBuilder.ToString();
      
@@ -1908,7 +1929,7 @@ export function getMainReasonNoWaterTreatment24HourDescription(rowData){
 }
   
 export function getWaterTreatment24HourMethodDescription(rowData){
-    var result:string = "";
+    let result:string = "";
     switch(rowData.WaterTreatment24HourMethod) { 
       case "LETSTANDANDSETTLESTRAINTHRUACLOTHANDBOIL": { 
         result = "Let stand and settle, strain thru a cloth and Boil"; 
@@ -1951,7 +1972,7 @@ export function getWaterTreatment24HourMethodDescription(rowData){
 }
 
 export function getLastTimeTreatedHouseholdWaterWithChlorine(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.LastTimeTreatedHouseholdWaterWithChlorine) { 
     case "0_3DAYSAGO": { 
       result = "0-3 days ago"; 
@@ -1987,7 +2008,7 @@ export function getLastTimeTreatedHouseholdWaterWithChlorine(rowData){
 }
 
 export function getWhereDidYouGetChlorineToTreatHouseholdWater(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.WhereDidYouGetChlorineToTreatHouseholdWater) { 
     case "RECEIVEDFREEFROMLOCALORGANIZATION": { 
       result = "Received free from local organization"; 
@@ -2027,7 +2048,7 @@ export function getWhereDidYouGetChlorineToTreatHouseholdWater(rowData){
 }
 
 export function getHowDifficultToObtainChlorine(rowData){
-  var result:string = "";
+  let result:string = "";
   switch(rowData.HowDifficultToObtainChlorine) { 
     case "CHLORINEISREADILYAVAILABLEANDDOESNTCOSTMUCH": { 
       result = "Chlorine is readily available and doesn’t cost much"; 
