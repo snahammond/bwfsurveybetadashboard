@@ -74,7 +74,7 @@ const routes: Routes = [
     component: WaterQualityIndicatorsComponent,
     canActivate: [ AuthGuardService ]
   },
-  {
+  /*{
     path: 'tasks',
     component: TasksComponent,
     canActivate: [ AuthGuardService ]
@@ -83,7 +83,7 @@ const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
     canActivate: [ AuthGuardService ]
-  },
+  },*/
   {
     path: 'home',
     component: HomeComponent,

@@ -15,10 +15,91 @@
         (onRowRemoved)="removedRow($event)">
         <dxo-editing
             [allowUpdating]="false"
-            [allowAdding]="false"
+            [allowAdding]="true"
             [allowDeleting]="true"
             [confirmDelete]="true"
             mode="popup"> <!-- 'row'| 'batch' | 'cell' | 'form' | 'popup' -->
+            <dxo-popup
+                title="Household Water Test"
+                [showTitle]="true"
+                [width]="700"
+                [height]="525"
+            >
+            </dxo-popup>
+
+            <dxo-form
+                [colCount]="3"
+                >
+                <dxi-item                     
+                    dataField="Country"
+                    [colCount]="1"
+                    editorType="dxSelectBox"
+                    [editorOptions]="{ items: countries, searchEnabled: true, value: '', onValueChanged: resetCommunities }"
+                    >
+                </dxi-item>
+                <dxi-item 
+                    dataField="Community"
+                    [colCount]="1"
+                    editorType="dxSelectBox"
+                    [editorOptions]="{ items: communities, searchEnabled: true, value: '', onFocusIn: redrawCommunities }"
+                >
+                </dxi-item>
+                <dxi-item
+                    dataField="date"
+                    [colCount]="1"
+                    editorType="dxDateBox"
+                >
+                </dxi-item>
+                <dxi-item 
+                    dataField="HeadHouseholdName"
+                    [colCount]="3"
+                    [colSpan] = "3"
+                    editorType="dxSelectBox"
+                    [editorOptions]="{ items: headHouseholdNames, searchEnabled: true, value: '' }"
+                >
+                </dxi-item>
+                <dxi-item
+                    itemType="group"
+                    caption="Colilert"
+                    [colCount]="3"
+                    [colSpan] = "3"
+                    >
+                    <dxi-item dataField="ColilertDateTested"></dxi-item>
+                    <dxi-item dataField="ColilertDateRead"></dxi-item>
+                    <dxi-item 
+                        dataField="ColilertTestResult"
+                        editorType="dxSelectBox"
+                        [editorOptions]="{ items: colilertTestResults, searchEnabled: true, value: ''}"
+                    ></dxi-item>
+                </dxi-item>
+                <dxi-item
+                    itemType="group"
+                    caption="Petrifilm"
+                    [colCount]="3"
+                    [colSpan] = "3"
+                    >
+                    <dxi-item dataField="PetrifilmDateTested"></dxi-item>
+                    <dxi-item dataField="PetrifilmDateRead"></dxi-item>
+                    <dxi-item 
+                        dataField="PetrifilmTestResult"
+                        editorType="dxSelectBox"
+                        [editorOptions]="{ items: petrifilmTestResults, searchEnabled: true, value: ''}"
+                    ></dxi-item>
+                </dxi-item>
+                <dxi-item
+                    itemType="group"
+                    caption="Chlorine"
+                    [colCount]="2"
+                    [colSpan] = "2"
+                    >
+                    <dxi-item dataField="ChlorineDateTested"></dxi-item>
+                    <dxi-item 
+                        dataField="ChlorineTestResult"
+                        editorType="dxSelectBox"
+                        [editorOptions]="{ items: chlorineTestResults, searchEnabled: true, value: ''}"
+                    ></dxi-item>
+                </dxi-item>
+            </dxo-form>
         </dxo-editing>
 
         <dxo-load-panel

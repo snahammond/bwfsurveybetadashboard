@@ -2375,5 +2375,34 @@ export async function GetEducationMeetingExtraData(meetingId){
   return monthlyEducationMeetingGlobal.find(meeting => meeting["id"] ==meetingId);
 }
 
+export async function getHeadHouseholdNames(api: APIService):Promise<any>{
+  let headHouseholdNames: string[] = [];
 
+  let initialSurveys: any = [];
+  let promiseInitialSurveysDone = await loadInitialSurveys(null,api);
+  if(promiseInitialSurveysDone.items!=null){
+    for(let initialSurvey of promiseInitialSurveysDone.items){
+      if(!initialSurvey._deleted)
+        initialSurveys.push(initialSurvey);
+    }
+  }   
+  //initialSurveys.push(...promiseInitialSurveysDone.items);    
+  
+  while(promiseInitialSurveysDone.nextToken){ 
+      promiseInitialSurveysDone = await loadInitialSurveys(promiseInitialSurveysDone.nextToken,api);
+      if(promiseInitialSurveysDone.items!=null){
+        for(let initialSurvey of promiseInitialSurveysDone.items){
+          if(!initialSurvey._deleted)
+            initialSurveys.push(initialSurvey);
+        }
+      } 
+      //initialSurveys.push(...promiseInitialSurveysDone.items);
+  }
+
+  for(let initailSurvey of initialSurveys){         
+    headHouseholdNames.push(initailSurvey.HeadHouseholdName);      
+  }
+
+  return <any>(headHouseholdNames);
+}
 

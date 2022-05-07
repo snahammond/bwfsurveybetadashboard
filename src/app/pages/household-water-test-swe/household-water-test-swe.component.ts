@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { deleteHouseholdWaterTestSWE, getColilertTestResultDescription, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription } from 'src/app/shared/data-utilities';
+import { deleteHouseholdWaterTestSWE, getColilertTestResultDescription, getCountriesAndCommunities, getHeadHouseholdNames, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 
 @Component({
@@ -10,6 +10,14 @@ import { APIService } from 'src/app/shared/services/api.service';
 export class HouseholdWaterTestSweComponent implements OnInit {
 
   householdWaterTestsSWE: any = [];
+  countries = [];
+  communities = [];
+  countriesAndCommunities = [];
+  communitiesChanged = false;
+  headHouseholdNames = [];
+  colilertTestResults = [];
+  petrifilmTestResults = [];
+  chlorineTestResults = [];
 
   constructor(private api: APIService) { 
     getHouseholdWaterTestSWE(this.api)
@@ -19,7 +27,38 @@ export class HouseholdWaterTestSweComponent implements OnInit {
       })
       .catch(e=>{
           console.log("error could not load householdWaterTestsSWE", e);
-      }); 
+      });
+
+    getCountriesAndCommunities(this.api)
+      .then((gridDataSourceCountriesComm)=>{
+        for (let entry of gridDataSourceCountriesComm) {
+          if(entry.desc&&entry.childvalue){
+            let country = entry.desc; 
+            this.countries.push(country);
+            let subStringComm = entry.childvalue.replace(/["\[\]]/g,'');
+            let arrayComm = subStringComm.split(",");   
+            let idCounter = 0;        
+            for(let comm of arrayComm){
+              idCounter = idCounter+1;
+              let obj = {ID:idCounter,Country:country,Community:comm}            
+              this.countriesAndCommunities.push(obj);
+            } 
+          }          
+        }   
+        console.log(this.countriesAndCommunities);          
+      })
+      .catch(e=>{
+        console.log("error could not load countries and communities", e);
+      });
+
+      getHeadHouseholdNames(this.api)
+        .then((headHouseholdNames)=>{          
+          this.headHouseholdNames = headHouseholdNames;          
+          console.log("done loading headHouseholdNames "+ this.headHouseholdNames.length);            
+        })
+        .catch(e=>{
+            console.log("error could not load headHouseholdNames", e);
+        });  
   }
 
   ngOnInit(): void {
@@ -43,6 +82,31 @@ export class HouseholdWaterTestSweComponent implements OnInit {
   removedRow(event){
   }
 
+  resetCommunities = (e) =>  {
+
+    while(this.communities.length > 0) {
+      this.communities.pop();
+    }
+
+    this.communitiesChanged = true;
+
+    for(let countryComm in this.countriesAndCommunities){
+      if(this.countriesAndCommunities[countryComm].Country === e.value){
+         this.communities.push(this.countriesAndCommunities[countryComm].Community);
+      }
+    }
+
+  };
+
+  redrawCommunities = (e) => {
+    if(this.communitiesChanged){
+      let communityDatasource = e.component.getDataSource();
+      communityDatasource.reload();
+      e.component.repaint();
+    }
+    this.communitiesChanged = false;
+  }
+
   getColilertTestResultDescription(rowData){       
     return getColilertTestResultDescription(rowData);
   }
@@ -53,3 +117,5 @@ export class HouseholdWaterTestSweComponent implements OnInit {
 
 
 }
+
+
