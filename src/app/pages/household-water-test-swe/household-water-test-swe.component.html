@@ -12,7 +12,8 @@
         [showColumnLines]="true"
         height='calc(100vh - 150px)'
         (onRowRemoving)="removingRow($event)"
-        (onRowRemoved)="removedRow($event)">
+        (onRowRemoved)="removedRow($event)"
+        (onRowInserting)="addingRow($event)">
         <dxo-editing
             [allowUpdating]="false"
             [allowAdding]="true"
@@ -34,7 +35,7 @@
                     dataField="Country"
                     [colCount]="1"
                     editorType="dxSelectBox"
-                    [editorOptions]="{ items: countries, searchEnabled: true, value: '', onValueChanged: resetCommunities }"
+                    [editorOptions]="{ items: countries, searchEnabled: true, value: '', onValueChanged: setCountryAndResetCommunities }"
                     >
                 </dxi-item>
                 <dxi-item 

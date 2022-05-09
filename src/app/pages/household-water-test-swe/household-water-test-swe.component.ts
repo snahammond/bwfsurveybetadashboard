@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { deleteHouseholdWaterTestSWE, getChlorineTestResults, getColilertTestResultDescription, getColilertTestResults, getCountriesAndCommunities, getHeadHouseholdNames, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription, getPetrifilmTestResults } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-household-water-test-swe',
@@ -11,6 +12,7 @@ export class HouseholdWaterTestSweComponent implements OnInit {
 
   householdWaterTestsSWE: any = [];
   countries = [];
+  selectedCountry = null;
   communities = [];
   countriesAndCommunities = [];
   communitiesChanged = false;
@@ -18,8 +20,9 @@ export class HouseholdWaterTestSweComponent implements OnInit {
   colilertTestResults = [];
   petrifilmTestResults = [];
   chlorineTestResults = [];
+  _user = null;
 
-  constructor(private api: APIService) { 
+  constructor(private api: APIService, private cookieService: CookieService) { 
     getHouseholdWaterTestSWE(this.api)
       .then((householdWaterTestFromUtils)=>{     
         this.householdWaterTestsSWE = householdWaterTestFromUtils;
@@ -109,7 +112,25 @@ export class HouseholdWaterTestSweComponent implements OnInit {
   removedRow(event){
   }
 
-  resetCommunities = (e) =>  {
+  addingRow(event){
+    //let newHouseholdWaterTest = event.data;
+    event.data.Country = this.selectedCountry;
+
+    let user_data: string = this.cookieService.get('user');
+    if(user_data){           
+      this._user = JSON.parse(user_data);
+
+      event.data.Namebwe = this._user.email;  
+      event.data.FullNameSwe = this._user.family_name + " " + this._user.given_name;
+    }
+
+    event.data.Completed = "1";
+
+    console.log(event.data);
+  }
+
+  setCountryAndResetCommunities = (e) =>  {
+    this.selectedCountry = e.value;
 
     while(this.communities.length > 0) {
       this.communities.pop();
@@ -118,7 +139,7 @@ export class HouseholdWaterTestSweComponent implements OnInit {
     this.communitiesChanged = true;
 
     for(let countryComm in this.countriesAndCommunities){
-      if(this.countriesAndCommunities[countryComm].Country === e.value){
+      if(this.countriesAndCommunities[countryComm].Country === this.selectedCountry){
          this.communities.push(this.countriesAndCommunities[countryComm].Community);
       }
     }
