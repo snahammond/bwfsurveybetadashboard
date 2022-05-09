@@ -1,4 +1,4 @@
-import { APIService, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 import { InitialSurvey } from "src/models";
@@ -2512,4 +2512,29 @@ export async function loadChlorineTestResults(nextToken: any,api: APIService):Pr
     promiseChlorineTestResults = api.ListConfigDefinitionss(filterChlorineTestResult,null,null);
   }
   return promiseChlorineTestResults;    
+}
+
+export async function addHouseholdWaterTestSWE(api: APIService, newHouseholdWaterTestSWE: any):Promise<any>{
+  let input: CreateHouseholdWaterTestInput = {
+    id: newHouseholdWaterTestSWE.id,
+    Namebwe: newHouseholdWaterTestSWE.Namebwe,
+    date: newHouseholdWaterTestSWE.date,
+    Country: newHouseholdWaterTestSWE.Country,
+    Community: newHouseholdWaterTestSWE.Community,
+    HeadHouseholdName: newHouseholdWaterTestSWE.HeadHouseholdName,
+    ColilertDateTested: newHouseholdWaterTestSWE.ColilertDateTested,
+    ColilertDateRead: newHouseholdWaterTestSWE.ColilertDateRead,
+    ColilertTestResult: newHouseholdWaterTestSWE.ColilertTestResult,
+    PetrifilmDateTested: newHouseholdWaterTestSWE.PetrifilmDateTested,
+    PetrifilmDateRead: newHouseholdWaterTestSWE.PetrifilmDateRead,
+    PetrifilmTestResult: newHouseholdWaterTestSWE.PetrifilmTestResult,
+    ChlorineDateTested: newHouseholdWaterTestSWE.ChlorineDateTested,
+    ChlorineTestResult: newHouseholdWaterTestSWE.ChlorineTestResult,
+    Completed: newHouseholdWaterTestSWE.Completed,
+    Lat: '',
+    Lng: ''
+  };
+  let promiseCreatedHouseholdWaterTestSWE = api.CreateHouseholdWaterTest(input);
+
+  return promiseCreatedHouseholdWaterTestSWE;
 }

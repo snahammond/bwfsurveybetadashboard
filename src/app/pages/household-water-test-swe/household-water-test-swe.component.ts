@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { deleteHouseholdWaterTestSWE, getChlorineTestResults, getColilertTestResultDescription, getColilertTestResults, getCountriesAndCommunities, getHeadHouseholdNames, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription, getPetrifilmTestResults } from 'src/app/shared/data-utilities';
+import { addHouseholdWaterTestSWE, deleteHouseholdWaterTestSWE, getChlorineTestResults, getColilertTestResultDescription, getColilertTestResults, getCountriesAndCommunities, getHeadHouseholdNames, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription, getPetrifilmTestResults } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -113,7 +113,9 @@ export class HouseholdWaterTestSweComponent implements OnInit {
   }
 
   addingRow(event){
-    //let newHouseholdWaterTest = event.data;
+    
+    event.data.id = event.data.__KEY__;
+    
     event.data.Country = this.selectedCountry;
 
     let user_data: string = this.cookieService.get('user');
@@ -125,6 +127,17 @@ export class HouseholdWaterTestSweComponent implements OnInit {
     }
 
     event.data.Completed = "1";
+
+    let newHouseholdWaterTestSWE = event.data;
+
+    addHouseholdWaterTestSWE(this.api, newHouseholdWaterTestSWE)
+      .then((householdWaterTestSWEAdded)=>{
+        
+        console.log("done adding household water test swe "+ householdWaterTestSWEAdded); 
+      })
+      .catch(e=>{
+        console.log(e); 
+      });
 
     console.log(event.data);
   }
