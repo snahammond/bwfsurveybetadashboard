@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { deleteHouseholdWaterTestSWE, getColilertTestResultDescription, getCountriesAndCommunities, getHeadHouseholdNames, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription } from 'src/app/shared/data-utilities';
+import { deleteHouseholdWaterTestSWE, getChlorineTestResults, getColilertTestResultDescription, getColilertTestResults, getCountriesAndCommunities, getHeadHouseholdNames, getHouseholdWaterTestSWE, getPetrifilmTestResultDescription, getPetrifilmTestResults } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 
 @Component({
@@ -58,6 +58,33 @@ export class HouseholdWaterTestSweComponent implements OnInit {
         })
         .catch(e=>{
             console.log("error could not load headHouseholdNames", e);
+        }); 
+        
+      getColilertTestResults(this.api)
+        .then((colilertTestResults)=>{          
+          this.colilertTestResults = colilertTestResults;          
+          console.log("done loading colilertTestResults "+ this.colilertTestResults.length);            
+        })
+        .catch(e=>{
+            console.log("error could not load colilertTestResults", e);
+        }); 
+
+      getPetrifilmTestResults(this.api)
+        .then((petrifilmTestResults)=>{          
+          this.petrifilmTestResults = petrifilmTestResults;          
+          console.log("done loading petrifilmTestResults "+ this.petrifilmTestResults.length);            
+        })
+        .catch(e=>{
+            console.log("error could not load petrifilmTestResults", e);
+        }); 
+      
+      getChlorineTestResults(this.api)
+        .then((chlorineTestResults)=>{          
+          this.chlorineTestResults = chlorineTestResults;          
+          console.log("done loading chlorineTestResults "+ this.chlorineTestResults.length);            
+        })
+        .catch(e=>{
+            console.log("error could not load chlorineTestResults", e);
         });  
   }
 
@@ -103,8 +130,9 @@ export class HouseholdWaterTestSweComponent implements OnInit {
       let communityDatasource = e.component.getDataSource();
       communityDatasource.reload();
       e.component.repaint();
+      e.component.reset();
+      this.communitiesChanged = false;
     }
-    this.communitiesChanged = false;
   }
 
   getColilertTestResultDescription(rowData){       

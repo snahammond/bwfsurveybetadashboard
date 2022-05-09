@@ -22,7 +22,7 @@
             <dxo-popup
                 title="Household Water Test"
                 [showTitle]="true"
-                [width]="700"
+                [width]="750"
                 [height]="525"
             >
             </dxo-popup>
@@ -69,7 +69,7 @@
                     <dxi-item 
                         dataField="ColilertTestResult"
                         editorType="dxSelectBox"
-                        [editorOptions]="{ items: colilertTestResults, searchEnabled: true, value: ''}"
+                        [editorOptions]="{ items: colilertTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
                     ></dxi-item>
                 </dxi-item>
                 <dxi-item
@@ -83,7 +83,7 @@
                     <dxi-item 
                         dataField="PetrifilmTestResult"
                         editorType="dxSelectBox"
-                        [editorOptions]="{ items: petrifilmTestResults, searchEnabled: true, value: ''}"
+                        [editorOptions]="{ items: petrifilmTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
                     ></dxi-item>
                 </dxi-item>
                 <dxi-item
@@ -96,7 +96,7 @@
                     <dxi-item 
                         dataField="ChlorineTestResult"
                         editorType="dxSelectBox"
-                        [editorOptions]="{ items: chlorineTestResults, searchEnabled: true, value: ''}"
+                        [editorOptions]="{ items: chlorineTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
                     ></dxi-item>
                 </dxi-item>
             </dxo-form>

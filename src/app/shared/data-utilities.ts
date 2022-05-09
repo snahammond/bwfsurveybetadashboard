@@ -2406,3 +2406,110 @@ export async function getHeadHouseholdNames(api: APIService):Promise<any>{
   return <any>(headHouseholdNames);
 }
 
+export async function getColilertTestResults(api: APIService):Promise<any>{
+  let colilertTestResultsDesc: any = [];
+  let colilertTestResults = [];
+  let promiseColilertTestResultsDone = await loadColilertTestResults(null,api);
+  colilertTestResults.push(...promiseColilertTestResultsDone.items);    
+  
+  while(promiseColilertTestResultsDone.nextToken){ 
+    promiseColilertTestResultsDone = await loadColilertTestResults(promiseColilertTestResultsDone.nextToken,api);
+    colilertTestResults.push(...promiseColilertTestResultsDone.items);
+  }
+
+  //get only the description
+  for(let colilertConfigDef of colilertTestResults){         
+    colilertTestResultsDesc.push({desc:colilertConfigDef.desc,value:colilertConfigDef.value,position:colilertConfigDef.childvalue});      
+  }
+
+  colilertTestResultsDesc.sort((a,b) => a.position.localeCompare(b.position));
+
+  return <any>(colilertTestResultsDesc);
+}
+
+export async function loadColilertTestResults(nextToken: any,api: APIService):Promise<any>{    
+  let promiseColilertTestResults: any;
+  let filterColilertTestResults: ModelConfigDefinitionsFilterInput = {
+    type: {eq: "AV"},
+    name: {eq: "ColilertTestResult"}
+  };
+  
+  if(nextToken){
+    promiseColilertTestResults = api.ListConfigDefinitionss(filterColilertTestResults,null,nextToken);
+  }else{
+    promiseColilertTestResults = api.ListConfigDefinitionss(filterColilertTestResults,null,null);
+  }
+  return promiseColilertTestResults;    
+}
+
+export async function getPetrifilmTestResults(api: APIService):Promise<any>{
+  let petrifilmTestResultsDesc: any = [];
+  let petrifilmTestResults = [];
+  let promisePetrifilmTestResultsDone = await loadPetrifilmTestResults(null,api);
+  petrifilmTestResults.push(...promisePetrifilmTestResultsDone.items);    
+  
+  while(promisePetrifilmTestResultsDone.nextToken){ 
+    promisePetrifilmTestResultsDone = await loadPetrifilmTestResults(promisePetrifilmTestResultsDone.nextToken,api);
+    petrifilmTestResults.push(...promisePetrifilmTestResultsDone.items);
+  }
+
+  //get only the description
+  for(let petrifilmConfigDef of petrifilmTestResults){         
+    petrifilmTestResultsDesc.push({desc:petrifilmConfigDef.desc, value:petrifilmConfigDef.value, position: petrifilmConfigDef.childvalue});      
+  }
+
+  petrifilmTestResultsDesc.sort((a,b) => a.position.localeCompare(b.position));
+
+  return <any>(petrifilmTestResultsDesc);
+}
+
+export async function loadPetrifilmTestResults(nextToken: any,api: APIService):Promise<any>{    
+  let promisePetrifilmTestResults: any;
+  let filterPetrifilmTestResult: ModelConfigDefinitionsFilterInput = {
+    type: {eq: "AV"},
+    name: {eq: "PetrifilmTestResult"}
+  };
+  
+  if(nextToken){
+    promisePetrifilmTestResults = api.ListConfigDefinitionss(filterPetrifilmTestResult,null,nextToken);
+  }else{
+    promisePetrifilmTestResults = api.ListConfigDefinitionss(filterPetrifilmTestResult,null,null);
+  }
+  return promisePetrifilmTestResults;    
+}
+
+export async function getChlorineTestResults(api: APIService):Promise<any>{
+  let chlorineTestResultsDesc: any = [];
+  let chlorineTestResults = [];
+  let promiseChlorineTestResultsDone = await loadChlorineTestResults(null,api);
+  chlorineTestResults.push(...promiseChlorineTestResultsDone.items);    
+  
+  while(promiseChlorineTestResultsDone.nextToken){ 
+    promiseChlorineTestResultsDone = await loadChlorineTestResults(promiseChlorineTestResultsDone.nextToken,api);
+    chlorineTestResults.push(...promiseChlorineTestResultsDone.items);
+  }
+
+  //get only the description
+  for(let chlorineConfigDef of chlorineTestResults){         
+    chlorineTestResultsDesc.push({desc:chlorineConfigDef.desc, value:chlorineConfigDef.value, position: chlorineConfigDef.childvalue});      
+  }
+
+  chlorineTestResultsDesc.sort((a,b) => a.position.localeCompare(b.position));
+
+  return <any>(chlorineTestResultsDesc);
+}
+
+export async function loadChlorineTestResults(nextToken: any,api: APIService):Promise<any>{    
+  let promiseChlorineTestResults: any;
+  let filterChlorineTestResult: ModelConfigDefinitionsFilterInput = {
+    type: {eq: "AV"},
+    name: {eq: "ChlorineTestResult"}
+  };
+  
+  if(nextToken){
+    promiseChlorineTestResults = api.ListConfigDefinitionss(filterChlorineTestResult,null,nextToken);
+  }else{
+    promiseChlorineTestResults = api.ListConfigDefinitionss(filterChlorineTestResult,null,null);
+  }
+  return promiseChlorineTestResults;    
+}
