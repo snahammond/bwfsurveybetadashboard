@@ -131,15 +131,13 @@ export class HouseholdWaterTestSweComponent implements OnInit {
     let newHouseholdWaterTestSWE = event.data;
 
     addHouseholdWaterTestSWE(this.api, newHouseholdWaterTestSWE)
-      .then((householdWaterTestSWEAdded)=>{
-        
+      .then((householdWaterTestSWEAdded)=>{        
         console.log("done adding household water test swe "+ householdWaterTestSWEAdded); 
       })
       .catch(e=>{
         console.log(e); 
       });
-
-    console.log(event.data);
+    
   }
 
   setCountryAndResetCommunities = (e) =>  {

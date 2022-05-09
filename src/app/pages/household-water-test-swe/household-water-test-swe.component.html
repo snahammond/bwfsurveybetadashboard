@@ -37,19 +37,25 @@
                     editorType="dxSelectBox"
                     [editorOptions]="{ items: countries, searchEnabled: true, value: '', onValueChanged: setCountryAndResetCommunities }"
                     >
+                    <dxi-validation-rule type="required" message="Country is required">
+                    </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item 
                     dataField="Community"
                     [colCount]="1"
                     editorType="dxSelectBox"
                     [editorOptions]="{ items: communities, searchEnabled: true, value: '', onFocusIn: redrawCommunities }"
-                >
+                    >
+                    <dxi-validation-rule type="required" message="Community is required">
+                    </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item
                     dataField="date"
                     [colCount]="1"
                     editorType="dxDateBox"
-                >
+                    >
+                    <dxi-validation-rule type="required" message="date is required">
+                    </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item 
                     dataField="HeadHouseholdName"
@@ -57,7 +63,9 @@
                     [colSpan] = "3"
                     editorType="dxSelectBox"
                     [editorOptions]="{ items: headHouseholdNames, searchEnabled: true, value: '' }"
-                >
+                    >
+                    <dxi-validation-rule type="required" message="Head of household name is required">
+                    </dxi-validation-rule>
                 </dxi-item>
                 <dxi-item
                     itemType="group"
@@ -65,13 +73,22 @@
                     [colCount]="3"
                     [colSpan] = "3"
                     >
-                    <dxi-item dataField="ColilertDateTested"></dxi-item>
-                    <dxi-item dataField="ColilertDateRead"></dxi-item>
+                    <dxi-item dataField="ColilertDateTested">
+                        <dxi-validation-rule type="required" message="Colilert date tested is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item dataField="ColilertDateRead">
+                        <dxi-validation-rule type="required" message="Colilert date read is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
                     <dxi-item 
                         dataField="ColilertTestResult"
                         editorType="dxSelectBox"
                         [editorOptions]="{ items: colilertTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
-                    ></dxi-item>
+                        >
+                        <dxi-validation-rule type="required" message="Colilert test result is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
                 </dxi-item>
                 <dxi-item
                     itemType="group"
@@ -79,13 +96,22 @@
                     [colCount]="3"
                     [colSpan] = "3"
                     >
-                    <dxi-item dataField="PetrifilmDateTested"></dxi-item>
-                    <dxi-item dataField="PetrifilmDateRead"></dxi-item>
+                    <dxi-item dataField="PetrifilmDateTested">
+                        <dxi-validation-rule type="required" message="Petrifilm date tested is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item dataField="PetrifilmDateRead">
+                        <dxi-validation-rule type="required" message="Petrifilm date read is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
                     <dxi-item 
                         dataField="PetrifilmTestResult"
                         editorType="dxSelectBox"
                         [editorOptions]="{ items: petrifilmTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
-                    ></dxi-item>
+                        >
+                        <dxi-validation-rule type="required" message="Petrifilm test result is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
                 </dxi-item>
                 <dxi-item
                     itemType="group"
@@ -93,12 +119,18 @@
                     [colCount]="2"
                     [colSpan] = "2"
                     >
-                    <dxi-item dataField="ChlorineDateTested"></dxi-item>
+                    <dxi-item dataField="ChlorineDateTested">
+                        <dxi-validation-rule type="required" message="Chlorine date tested is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
                     <dxi-item 
                         dataField="ChlorineTestResult"
                         editorType="dxSelectBox"
                         [editorOptions]="{ items: chlorineTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
-                    ></dxi-item>
+                        >
+                        <dxi-validation-rule type="required" message="Chlorine test results is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
                 </dxi-item>
             </dxo-form>
         </dxo-editing>
