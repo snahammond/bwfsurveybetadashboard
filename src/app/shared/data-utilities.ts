@@ -1,4 +1,4 @@
-import { APIService, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, CreateCommunityWaterTestInput, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 import { InitialSurvey } from "src/models";
@@ -2537,4 +2537,66 @@ export async function addHouseholdWaterTestSWE(api: APIService, newHouseholdWate
   let promiseCreatedHouseholdWaterTestSWE = api.CreateHouseholdWaterTest(input);
 
   return promiseCreatedHouseholdWaterTestSWE;
+}
+
+export async function getCommunityWaterLocations(api: APIService):Promise<any>{
+  let communityWaterLocations: string[] = [];
+
+  let communityWaters: any = [];
+  let promiseCommunityWatersDone = await loadCommunityWaters(null,api);
+  if(promiseCommunityWatersDone.items!=null){
+    for(let communityWater of promiseCommunityWatersDone.items){
+      if(!communityWater._deleted)
+        communityWaters.push(communityWater);
+    }
+  } 
+  
+  while(promiseCommunityWatersDone.nextToken){ 
+    promiseCommunityWatersDone = await loadCommunityWaters(promiseCommunityWatersDone.nextToken,api);
+    if(promiseCommunityWatersDone.items!=null){
+      for(let communityWater of promiseCommunityWatersDone.items){
+        if(!communityWater._deleted)
+        communityWaters.push(communityWater);
+      }
+    } 
+  }
+
+  for(let communityWater of communityWaters){         
+    communityWaterLocations.push(communityWater.CommunityWaterLocation);      
+  }
+
+  return <any>(communityWaterLocations);
+}
+
+export async function loadCommunityWaters(nextToken: any,api: APIService):Promise<any>{    
+  let promiseCommunityWaterLocations: any;
+  if(nextToken){
+    promiseCommunityWaterLocations = api.ListCommunityWaters(null,null,nextToken);
+  }else{
+    promiseCommunityWaterLocations = api.ListCommunityWaters(null,null,null);
+  }
+  return promiseCommunityWaterLocations;    
+}
+
+export async function addCommunityWaterTest(api: APIService, newCommunityWaterTest: any):Promise<any>{
+  let input: CreateCommunityWaterTestInput = {
+    id: newCommunityWaterTest.id,
+    Namebwe: newCommunityWaterTest.Namebwe,
+    date: newCommunityWaterTest.date,
+    Country: newCommunityWaterTest.Country,
+    Community: newCommunityWaterTest.Community,
+    CommunityWaterLocation: newCommunityWaterTest.CommunityWaterLocation,
+    ColilertDateTested: newCommunityWaterTest.ColilertDateTested,
+    ColilertDateRead: newCommunityWaterTest.ColilertDateRead,
+    ColilertTestResult: newCommunityWaterTest.ColilertTestResult,
+    PetrifilmDateTested: newCommunityWaterTest.PetrifilmDateTested,
+    PetrifilmDateRead: newCommunityWaterTest.PetrifilmDateRead,
+    PetrifilmTestResult: newCommunityWaterTest.PetrifilmTestResult,
+    Completed: newCommunityWaterTest.Completed,
+    Lat: '',
+    Lng: ''
+  };
+  let promiseCreatedCommunityWater = api.CreateCommunityWaterTest(input);
+
+  return promiseCreatedCommunityWater;
 }

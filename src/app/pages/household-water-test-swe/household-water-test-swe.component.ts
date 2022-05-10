@@ -54,41 +54,41 @@ export class HouseholdWaterTestSweComponent implements OnInit {
         console.log("error could not load countries and communities", e);
       });
 
-      getHeadHouseholdNames(this.api)
-        .then((headHouseholdNames)=>{          
-          this.headHouseholdNames = headHouseholdNames;          
-          console.log("done loading headHouseholdNames "+ this.headHouseholdNames.length);            
-        })
-        .catch(e=>{
-            console.log("error could not load headHouseholdNames", e);
-        }); 
-        
-      getColilertTestResults(this.api)
-        .then((colilertTestResults)=>{          
-          this.colilertTestResults = colilertTestResults;          
-          console.log("done loading colilertTestResults "+ this.colilertTestResults.length);            
-        })
-        .catch(e=>{
-            console.log("error could not load colilertTestResults", e);
-        }); 
-
-      getPetrifilmTestResults(this.api)
-        .then((petrifilmTestResults)=>{          
-          this.petrifilmTestResults = petrifilmTestResults;          
-          console.log("done loading petrifilmTestResults "+ this.petrifilmTestResults.length);            
-        })
-        .catch(e=>{
-            console.log("error could not load petrifilmTestResults", e);
-        }); 
+    getHeadHouseholdNames(this.api)
+      .then((headHouseholdNames)=>{          
+        this.headHouseholdNames = headHouseholdNames;          
+        console.log("done loading headHouseholdNames "+ this.headHouseholdNames.length);            
+      })
+      .catch(e=>{
+          console.log("error could not load headHouseholdNames", e);
+      }); 
       
-      getChlorineTestResults(this.api)
-        .then((chlorineTestResults)=>{          
-          this.chlorineTestResults = chlorineTestResults;          
-          console.log("done loading chlorineTestResults "+ this.chlorineTestResults.length);            
-        })
-        .catch(e=>{
-            console.log("error could not load chlorineTestResults", e);
-        });  
+    getColilertTestResults(this.api)
+      .then((colilertTestResults)=>{          
+        this.colilertTestResults = colilertTestResults;          
+        console.log("done loading colilertTestResults "+ this.colilertTestResults.length);            
+      })
+      .catch(e=>{
+          console.log("error could not load colilertTestResults", e);
+      }); 
+
+    getPetrifilmTestResults(this.api)
+      .then((petrifilmTestResults)=>{          
+        this.petrifilmTestResults = petrifilmTestResults;          
+        console.log("done loading petrifilmTestResults "+ this.petrifilmTestResults.length);            
+      })
+      .catch(e=>{
+          console.log("error could not load petrifilmTestResults", e);
+      }); 
+    
+    getChlorineTestResults(this.api)
+      .then((chlorineTestResults)=>{          
+        this.chlorineTestResults = chlorineTestResults;          
+        console.log("done loading chlorineTestResults "+ this.chlorineTestResults.length);            
+      })
+      .catch(e=>{
+          console.log("error could not load chlorineTestResults", e);
+      });  
   }
 
   ngOnInit(): void {

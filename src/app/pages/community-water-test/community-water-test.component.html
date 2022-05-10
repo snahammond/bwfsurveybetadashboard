@@ -12,14 +12,114 @@
         [showColumnLines]="true"
         height='calc(100vh - 150px)'
         (onRowRemoving)="removingRow($event)"
-        (onRowRemoved)="removedRow($event)">
+        (onRowRemoved)="removedRow($event)"
+        (onRowInserting)="addingRow($event)">
+
         <dxo-editing
             [allowUpdating]="false"
-            [allowAdding]="false"
+            [allowAdding]="true"
             [allowDeleting]="true"
             [confirmDelete]="true"
             mode="popup"> <!-- 'row'| 'batch' | 'cell' | 'form' | 'popup' -->
+
+            <dxo-popup
+                title="Community Water Test"
+                [showTitle]="true"
+                [width]="750"
+                [height]="525"
+            >
+            </dxo-popup>
+
+            <dxo-form
+                [colCount]="3"
+                >
+                <dxi-item                     
+                    dataField="Country"
+                    [colCount]="1"
+                    editorType="dxSelectBox"
+                    [editorOptions]="{ items: countries, searchEnabled: true, value: '', onValueChanged: setCountryAndResetCommunities }"
+                    >
+                    <dxi-validation-rule type="required" message="Country is required">
+                    </dxi-validation-rule>
+                </dxi-item>
+                <dxi-item 
+                    dataField="Community"
+                    [colCount]="1"
+                    editorType="dxSelectBox"
+                    [editorOptions]="{ items: communities, searchEnabled: true, value: '', onFocusIn: redrawCommunities }"
+                    >
+                    <dxi-validation-rule type="required" message="Community is required">
+                    </dxi-validation-rule>
+                </dxi-item>
+                <dxi-item
+                    dataField="date"
+                    [colCount]="1"
+                    editorType="dxDateBox"
+                    >
+                    <dxi-validation-rule type="required" message="date is required">
+                    </dxi-validation-rule>
+                </dxi-item>
+                <dxi-item 
+                    dataField="CommunityWaterLocation"
+                    [colCount]="3"
+                    [colSpan] = "3"
+                    editorType="dxSelectBox"
+                    [editorOptions]="{ items: communityWaterLocations, searchEnabled: true, value: '' }"
+                    >
+                    <dxi-validation-rule type="required" message="Community water location name is required">
+                    </dxi-validation-rule>
+                </dxi-item>
+                <dxi-item
+                    itemType="group"
+                    caption="Colilert"
+                    [colCount]="3"
+                    [colSpan] = "3"
+                    >
+                    <dxi-item dataField="ColilertDateTested">
+                        <dxi-validation-rule type="required" message="Colilert date tested is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item dataField="ColilertDateRead">
+                        <dxi-validation-rule type="required" message="Colilert date read is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item 
+                        dataField="ColilertTestResult"
+                        editorType="dxSelectBox"
+                        [editorOptions]="{ items: colilertTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
+                        >
+                        <dxi-validation-rule type="required" message="Colilert test result is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                </dxi-item>
+                <dxi-item
+                    itemType="group"
+                    caption="Petrifilm"
+                    [colCount]="3"
+                    [colSpan] = "3"
+                    >
+                    <dxi-item dataField="PetrifilmDateTested">
+                        <dxi-validation-rule type="required" message="Petrifilm date tested is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item dataField="PetrifilmDateRead">
+                        <dxi-validation-rule type="required" message="Petrifilm date read is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                    <dxi-item 
+                        dataField="PetrifilmTestResult"
+                        editorType="dxSelectBox"
+                        [editorOptions]="{ items: petrifilmTestResults, displayExpr:'desc', valueExpr:'value', searchEnabled: true, value: ''}"
+                        >
+                        <dxi-validation-rule type="required" message="Petrifilm test result is required">
+                        </dxi-validation-rule>
+                    </dxi-item>
+                </dxi-item>
+                
+            </dxo-form>
+
         </dxo-editing>
+
         <dxo-load-panel
             [enabled]="true"
             [height]="100"
