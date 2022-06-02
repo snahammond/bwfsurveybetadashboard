@@ -1,4 +1,4 @@
-import { APIService, CreateCommunityWaterTestInput, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, CreateCommunityWaterTestInput, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdAttendingMeetingInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteMeetingInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 import { InitialSurvey } from "src/models";
@@ -402,11 +402,23 @@ export async function loadVolMonthlyActivities(nextToken: any,api: APIService):P
 export async function getMonthlyEducationSummaries(api: APIService):Promise<any>{
   let monthlyEducationSummaries: any = [];
   let promiseMonthlyActivitiesDone = await loadMonthlyEducationSummaries(null,api);
-  monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);    
+  if(promiseMonthlyActivitiesDone.items!=null){
+    for(let monthlyEducationSummary of promiseMonthlyActivitiesDone.items){
+      if(!monthlyEducationSummary._deleted)
+      monthlyEducationSummaries.push(monthlyEducationSummary);
+    }
+  }
+  //monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);    
   
   while(promiseMonthlyActivitiesDone.nextToken){ 
     promiseMonthlyActivitiesDone = await loadMonthlyEducationSummaries(promiseMonthlyActivitiesDone.nextToken,api);
-      monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);
+    if(promiseMonthlyActivitiesDone.items!=null){
+      for(let monthlyEducationSummary of promiseMonthlyActivitiesDone.items){
+        if(!monthlyEducationSummary._deleted)
+        monthlyEducationSummaries.push(monthlyEducationSummary);
+      }
+    }
+    //monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);
   }
 
   //add name of SWE
@@ -431,14 +443,39 @@ export async function loadMonthlyEducationSummaries(nextToken: any, api: APIServ
 
 }
 
+export async function deleteMonthlyEducationSummary(api: APIService, id: string, _version: number): Promise<any>{
+  let input:DeleteMeetingInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteMeeting(input);
+
+  monthlyEducationMeetingGlobal = null;
+
+  return promiseDelete;
+}
+
 export async function getMonthlyHouseholdsAttendingMeeting(api: APIService,meetingId: string):Promise<any>{
   let monthlyHouseholdsAttendingMeeting: any = [];
   let promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdsAttendingMeeting(null,api,meetingId);
-  monthlyHouseholdsAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);    
+  if(promiseMonthlyHouseholdAtendingMeetingDone.items!=null){
+    for(let monthlyHouseholdAttendingMeeting of promiseMonthlyHouseholdAtendingMeetingDone.items){
+      if(!monthlyHouseholdAttendingMeeting._deleted)
+      monthlyHouseholdsAttendingMeeting.push(monthlyHouseholdAttendingMeeting);
+    }
+  }
+  //monthlyHouseholdsAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);    
   
   while(promiseMonthlyHouseholdAtendingMeetingDone.nextToken){ 
     promiseMonthlyHouseholdAtendingMeetingDone = await loadMonthlyHouseholdsAttendingMeeting(promiseMonthlyHouseholdAtendingMeetingDone.nextToken,api,meetingId);
-    monthlyHouseholdsAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);
+    if(promiseMonthlyHouseholdAtendingMeetingDone.items!=null){
+      for(let monthlyHouseholdAttendingMeeting of promiseMonthlyHouseholdAtendingMeetingDone.items){
+        if(!monthlyHouseholdAttendingMeeting._deleted)
+        monthlyHouseholdsAttendingMeeting.push(monthlyHouseholdAttendingMeeting);
+      }
+    }
+    //monthlyHouseholdsAttendingMeeting.push(...promiseMonthlyHouseholdAtendingMeetingDone.items);
   }
 
   //add name of SWE and extra meeting data   
@@ -454,7 +491,8 @@ export async function getMonthlyHouseholdsAttendingMeeting(api: APIService,meeti
       
       if(monthlyEducationMeetingGlobal!=null){
         let meeting = await GetEducationMeetingExtraData(monthlyHouseholdAttendingMeeting["MeetingID"]);
-        monthlyHouseholdAttendingMeeting["MeetingDate"] = meeting["date"];
+        if(meeting!=null)
+          monthlyHouseholdAttendingMeeting["MeetingDate"] = meeting["date"];
       }
             
     }
@@ -479,6 +517,17 @@ export async function loadMonthlyHouseholdsAttendingMeeting(nextToken: any, api:
   }
   return promiseMonthlyHouseholdAttendingMeeting;
 
+}
+
+export async function deleteHouseholdAttendingMeeting(api: APIService, id: string, _version: number): Promise<any>{
+  let input:DeleteHouseholdAttendingMeetingInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteHouseholdAttendingMeeting(input);
+
+  return promiseDelete;
 }
 
 export function getHeadHouseholdSexDescription(rowData){

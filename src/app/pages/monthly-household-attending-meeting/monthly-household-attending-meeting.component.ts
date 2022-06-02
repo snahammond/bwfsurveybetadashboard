@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
-import { getMonthlyHouseholdsAttendingMeeting } from 'src/app/shared/data-utilities';
+import { deleteHouseholdAttendingMeeting, getMonthlyHouseholdsAttendingMeeting } from 'src/app/shared/data-utilities';
 import { APIService } from 'src/app/shared/services/api.service';
 import DataSource from 'devextreme/data/data_source';
 import ArrayStore from 'devextreme/data/array_store';
@@ -31,5 +31,22 @@ export class MonthlyHouseholdAttendingMeetingComponent implements AfterViewInit 
       });
   }
   
+  removingRow(event){    
+    console.log(event.data);
+    let householdAttendingMeetingToDelete = event.data;
+
+    deleteHouseholdAttendingMeeting(this.api, householdAttendingMeetingToDelete.id, householdAttendingMeetingToDelete._version)
+      .then((householdAttendingMeetingDeleted)=>{
+        
+        console.log("done deleting household attending "+ householdAttendingMeetingDeleted); 
+      })
+      .catch(e=>{
+        console.log(e); 
+      });
+  }
+
+  removedRow(event){
+    
+  }
 
 }
