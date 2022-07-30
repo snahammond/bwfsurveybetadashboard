@@ -48,6 +48,14 @@ export const navigation = [
         text: 'Households Attending meeting',
         path: '/monthly-household-attending-meeting'
       },
+      {
+        text: 'Monthly School Report',
+        path: '/monthly-school-report'
+      },
+      {
+        text: 'Monthly Health Clinic Report',
+        path: '/monthly-health-clinic-report'
+      }
     ]
   },
   {

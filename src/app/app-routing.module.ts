@@ -17,6 +17,8 @@ import { MonthlyActivityVolComponent } from './pages/monthly-activity-vol/monthl
 import { WaterQualityIndicatorsComponent } from './pages/water-quality-indicators/water-quality-indicators.component';
 import { MonthlyEducationSummaryComponent } from './pages/monthly-education-summary/monthly-education-summary.component';
 import { MonthlyHouseholdAttendingMeetingComponent } from './pages/monthly-household-attending-meeting/monthly-household-attending-meeting.component';
+import { MonthlySchoolReportComponent } from './pages/monthly-school-report/monthly-school-report.component';
+import { MonthlyHealthClinicReportComponent } from './pages/monthly-health-clinic-report/monthly-health-clinic-report.component';
 
 const routes: Routes = [
   {
@@ -74,6 +76,16 @@ const routes: Routes = [
     component: WaterQualityIndicatorsComponent,
     canActivate: [ AuthGuardService ]
   },
+  {
+    path: 'monthly-school-report',
+    component: MonthlySchoolReportComponent,
+    canActivate: [ AuthGuardService ]
+  },
+  {
+    path: 'monthly-health-clinic-report',
+    component: MonthlyHealthClinicReportComponent,
+    canActivate: [ AuthGuardService ]
+  },
   /*{
     path: 'tasks',
     component: TasksComponent,
@@ -119,6 +131,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes), DxDataGridModule, DxFormModule,DxDropDownBoxModule,DxButtonModule,DxRangeSelectorModule],
   providers: [AuthGuardService],
   exports: [RouterModule],
-  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent, HouseholdWaterTestVolunteersComponent, HealthSurveyComponent, MonthlyActivityComponent, MonthlyActivityVolComponent, WaterQualityIndicatorsComponent, MonthlyEducationSummaryComponent, MonthlyHouseholdAttendingMeetingComponent]
+  declarations: [HomeComponent, ProfileComponent, TasksComponent, InitialSurveyComponent, FollowUpSurveyComponent, CommunityWaterTestComponent, HouseholdWaterTestSweComponent, HouseholdWaterTestVolunteersComponent, HealthSurveyComponent, MonthlyActivityComponent, MonthlyActivityVolComponent, WaterQualityIndicatorsComponent, MonthlyEducationSummaryComponent, MonthlyHouseholdAttendingMeetingComponent, MonthlySchoolReportComponent, MonthlyHealthClinicReportComponent]
 })
 export class AppRoutingModule { }

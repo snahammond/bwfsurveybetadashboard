@@ -1352,3 +1352,153 @@ subscription OnDeleteVolunteerMonthlyTotalSummary {
     updatedAt
   }
 }
+subscription OnCreateSweMonthlySchoolSummary {
+  onCreateSWEMonthlySchoolSummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    Country
+    Community
+    School
+    NoTabletUsedAtDrinkingStation1
+    NoTabletUsedAtDrinkingStation2
+    NoTabletUsedAtDrinkingStation3
+    NoStudentsTaughtSafeWaterPrinciples
+    NoEnrolledInSchoolHealthClub
+    NoHealthClubMeetingHeld
+    NoHealthClubLessonsTaught
+    DoHealthClubManageStations
+    NoHealthClubCleanUpProject
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSweMonthlySchoolSummary {
+  onUpdateSWEMonthlySchoolSummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    Country
+    Community
+    School
+    NoTabletUsedAtDrinkingStation1
+    NoTabletUsedAtDrinkingStation2
+    NoTabletUsedAtDrinkingStation3
+    NoStudentsTaughtSafeWaterPrinciples
+    NoEnrolledInSchoolHealthClub
+    NoHealthClubMeetingHeld
+    NoHealthClubLessonsTaught
+    DoHealthClubManageStations
+    NoHealthClubCleanUpProject
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSweMonthlySchoolSummary {
+  onDeleteSWEMonthlySchoolSummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    Country
+    Community
+    School
+    NoTabletUsedAtDrinkingStation1
+    NoTabletUsedAtDrinkingStation2
+    NoTabletUsedAtDrinkingStation3
+    NoStudentsTaughtSafeWaterPrinciples
+    NoEnrolledInSchoolHealthClub
+    NoHealthClubMeetingHeld
+    NoHealthClubLessonsTaught
+    DoHealthClubManageStations
+    NoHealthClubCleanUpProject
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnCreateSweMonthlyClinicSummary {
+  onCreateSWEMonthlyClinicSummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    Country
+    Community
+    Clinic
+    NoTabletUsedAtDrinkingStation1
+    NoTabletUsedAtDrinkingStation2
+    NoTabletUsedAtDrinkingStation3
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnUpdateSweMonthlyClinicSummary {
+  onUpdateSWEMonthlyClinicSummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    Country
+    Community
+    Clinic
+    NoTabletUsedAtDrinkingStation1
+    NoTabletUsedAtDrinkingStation2
+    NoTabletUsedAtDrinkingStation3
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}
+subscription OnDeleteSweMonthlyClinicSummary {
+  onDeleteSWEMonthlyClinicSummary {
+    id
+    Namebwe
+    date
+    SWEPosition
+    Country
+    Community
+    Clinic
+    NoTabletUsedAtDrinkingStation1
+    NoTabletUsedAtDrinkingStation2
+    NoTabletUsedAtDrinkingStation3
+    Completed
+    Lat
+    Lng
+    _version
+    _deleted
+    _lastChangedAt
+    createdAt
+    updatedAt
+  }
+}

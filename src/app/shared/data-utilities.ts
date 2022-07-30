@@ -1,4 +1,4 @@
-import { APIService, CreateCommunityWaterTestInput, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdAttendingMeetingInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteMeetingInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
+import { APIService, CreateCommunityWaterTestInput, CreateHouseholdWaterTestInput, DeleteCommunityWaterTestInput, DeleteFollowUpSurveyInput, DeleteHealthCheckSurveyInput, DeleteHouseholdAttendingMeetingInput, DeleteHouseholdWaterTestInput, DeleteInitialSurveyInput, DeleteMeetingInput, DeleteSWEMonthlyClinicSummaryInput, DeleteSweMonthlyClinicSummaryMutation, DeleteSWEMonthlySchoolSummaryInput, DeleteVolunteerHouseholdWaterTestInput, ModelCommunityWaterTestFilterInput, ModelConfigDefinitionsFilterInput, ModelHouseholdAttendingMeetingFilterInput, ModelStringInput } from "./services/api.service";
 import { StringBuilder } from 'typescript-string-operations';
 import { API, Auth } from "aws-amplify";
 import { InitialSurvey } from "src/models";
@@ -452,6 +452,116 @@ export async function deleteMonthlyEducationSummary(api: APIService, id: string,
   let promiseDelete = api.DeleteMeeting(input);
 
   monthlyEducationMeetingGlobal = null;
+
+  return promiseDelete;
+}
+
+export async function getMonthlySchoolSummaries(api: APIService):Promise<any>{
+  let monthlySchoolSummaries: any = [];
+  let promiseMonthlyActivitiesDone = await loadMonthlySchoolSummaries(null,api);
+  if(promiseMonthlyActivitiesDone.items!=null){
+    for(let monthlySchoolSummary of promiseMonthlyActivitiesDone.items){
+      if(!monthlySchoolSummary._deleted)
+      monthlySchoolSummaries.push(monthlySchoolSummary);
+    }
+  }
+  //monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);    
+  
+  while(promiseMonthlyActivitiesDone.nextToken){ 
+    promiseMonthlyActivitiesDone = await loadMonthlySchoolSummaries(promiseMonthlyActivitiesDone.nextToken,api);
+    if(promiseMonthlyActivitiesDone.items!=null){
+      for(let monthlySchoolSummary of promiseMonthlyActivitiesDone.items){
+        if(!monthlySchoolSummary._deleted)
+        monthlySchoolSummaries.push(monthlySchoolSummary);
+      }
+    }
+    //monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);
+  }
+
+  //add name of SWE
+  let cognitoUsers = await listCognitoUsers();
+  if(cognitoUsers!=null){      
+    for(let monthlySchoolSummary of monthlySchoolSummaries){        
+      monthlySchoolSummary["FullNameSwe"]=cognitoUsers[monthlySchoolSummary["Namebwe"]];        
+    }
+  }
+
+  return <any>(monthlySchoolSummaries);
+}
+
+export async function loadMonthlySchoolSummaries(nextToken: any, api: APIService):Promise<any>{
+  let promiseMonthlyActivities: any;
+  if(nextToken){
+    promiseMonthlyActivities = api.ListSweMonthlySchoolSummarys(null,null,nextToken);
+  }else{
+    promiseMonthlyActivities = api.ListSweMonthlySchoolSummarys(null,null,null);
+  }
+  return promiseMonthlyActivities;
+
+}
+
+export async function deleteMonthlySchoolSummary(api: APIService, id: string, _version: number): Promise<any>{
+  let input:DeleteSWEMonthlySchoolSummaryInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteSweMonthlySchoolSummary(input);
+
+  return promiseDelete;
+}
+
+export async function getMonthlyHealthClinicSummaries(api: APIService):Promise<any>{
+  let monthlyHealthClinicSummaries: any = [];
+  let promiseMonthlyActivitiesDone = await loadMonthlyHealthClinicSummaries(null,api);
+  if(promiseMonthlyActivitiesDone.items!=null){
+    for(let monthlyHealthClinicSummary of promiseMonthlyActivitiesDone.items){
+      if(!monthlyHealthClinicSummary._deleted)
+      monthlyHealthClinicSummaries.push(monthlyHealthClinicSummary);
+    }
+  }
+  //monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);    
+  
+  while(promiseMonthlyActivitiesDone.nextToken){ 
+    promiseMonthlyActivitiesDone = await loadMonthlyHealthClinicSummaries(promiseMonthlyActivitiesDone.nextToken,api);
+    if(promiseMonthlyActivitiesDone.items!=null){
+      for(let monthlyHealthClinicSummary of promiseMonthlyActivitiesDone.items){
+        if(!monthlyHealthClinicSummary._deleted)
+        monthlyHealthClinicSummaries.push(monthlyHealthClinicSummary);
+      }
+    }
+    //monthlyEducationSummaries.push(...promiseMonthlyActivitiesDone.items);
+  }
+
+  //add name of SWE
+  let cognitoUsers = await listCognitoUsers();
+  if(cognitoUsers!=null){      
+    for(let monthlyHealthClinicSummary of monthlyHealthClinicSummaries){        
+      monthlyHealthClinicSummary["FullNameSwe"]=cognitoUsers[monthlyHealthClinicSummary["Namebwe"]];        
+    }
+  }
+
+  return <any>(monthlyHealthClinicSummaries);
+}
+
+export async function loadMonthlyHealthClinicSummaries(nextToken: any, api: APIService):Promise<any>{
+  let promiseMonthlyActivities: any;
+  if(nextToken){
+    promiseMonthlyActivities = api.ListSweMonthlyClinicSummarys(null,null,nextToken);
+  }else{
+    promiseMonthlyActivities = api.ListSweMonthlyClinicSummarys(null,null,null);
+  }
+  return promiseMonthlyActivities;
+
+}
+
+export async function deleteMonthlyHealthClinicSummary(api: APIService, id: string, _version: number): Promise<any>{
+  let input:DeleteSWEMonthlyClinicSummaryInput = {
+    id: id,
+    _version : _version
+  }
+
+  let promiseDelete = api.DeleteSweMonthlyClinicSummary(input);
 
   return promiseDelete;
 }

@@ -1,0 +1,88 @@
+<h2 class="content-block">Monthly School Report</h2>
+<div style="padding-left: 3%;padding-right: 3%;">
+    <dx-data-grid id="gridContainer"
+        class="dx-card wide-card"
+        [dataSource]="monthlySchoolSummaries"
+        [remoteOperations]="false"
+        [allowColumnReordering]="true"
+        [rowAlternationEnabled]="true"
+        [showBorders]="true"
+        [columnAutoWidth]="true"
+        [allowColumnResizing]="true"
+        [showColumnLines]="true"
+        height='calc(100vh - 150px)'
+        (onRowRemoving)="removingRow($event)"
+        (onRowRemoved)="removedRow($event)">
+
+        <dxo-editing
+            [allowUpdating]="false"
+            [allowAdding]="false"
+            [allowDeleting]="true"
+            [confirmDelete]="true"
+            mode="popup"> <!-- 'row'| 'batch' | 'cell' | 'form' | 'popup' -->
+        </dxo-editing>
+
+        <dxo-load-panel
+            [enabled]="true"
+            [height]="100"
+            [width]="250">
+        </dxo-load-panel>
+
+        <dxo-column-fixing [enabled]="true"></dxo-column-fixing>
+
+        <dxo-paging [pageSize]="10"></dxo-paging>
+        <dxo-pager
+            [showPageSizeSelector]="true"
+            [allowedPageSizes]="[10, 50, 100]"
+        ></dxo-pager>
+
+        <dxo-group-panel
+            [visible]="true"
+        ></dxo-group-panel>
+        <dxo-grouping
+            [autoExpandAll]="false"
+        ></dxo-grouping>
+
+        <dxo-filter-panel [visible]="true"></dxo-filter-panel>
+        <dxo-filter-row [visible]="true"></dxo-filter-row>
+        <dxo-selection        
+            mode="multiple"
+        ></dxo-selection>
+
+        <dxo-export [enabled]="true" [allowExportSelectedData]="true" fileName="monthlySchoolSummaries"></dxo-export>
+        
+        <dxo-search-panel
+            [visible]="true"
+            [highlightCaseSensitive]="true"
+        ></dxo-search-panel>    
+
+        
+        <dxi-column dataField="id" dataType="string" ></dxi-column>
+        <dxi-column dataField="FullNameSwe" dataType="string" caption="SWE fullname" ></dxi-column>
+        <dxi-column dataField="Namebwe" dataType="string" caption="Email BWE"></dxi-column>
+        <dxi-column dataField="date" dataType="date" format="shortDate"></dxi-column>        
+        <dxi-column dataField="Country" dataType="string" caption="Country"></dxi-column>
+        <dxi-column dataField="Community" dataType="string" caption="Community"></dxi-column>
+        <dxi-column dataField="School" dataType="string" caption="School"></dxi-column>
+        <dxi-column dataField="NoTabletUsedAtDrinkingStation1" dataType="number" caption="Number of tablets used at drinking station 1"></dxi-column>
+        <dxi-column dataField="NoTabletUsedAtDrinkingStation2" dataType="number" caption="Number of tablets used at drinking station 2"></dxi-column>
+        <dxi-column dataField="NoTabletUsedAtDrinkingStation3" dataType="number" caption="Number of tablets used at drinking station 3"></dxi-column>
+        <dxi-column dataField="NoStudentsTaughtSafeWaterPrinciples" dataType="number" caption="Number of students taught safe water principles"></dxi-column>
+        <dxi-column dataField="NoEnrolledInSchoolHealthClub" dataType="number" caption="Number of students enrolled in scholl health club"></dxi-column>
+        <dxi-column dataField="NoHealthClubMeetingHeld" dataType="number" caption="Number of health club meeting held"></dxi-column>
+        <dxi-column dataField="NoHealthClubLessonsTaught" dataType="number" caption="Number of club lessons taught"></dxi-column>
+        <dxi-column dataField="DoHealthClubManageStations" dataType="string" caption="Do health club manage drinking stations"></dxi-column>
+        <dxi-column dataField="NoHealthClubCleanUpProject" dataType="number" caption="Number of club clean up project held"></dxi-column>
+        
+
+        <dxo-summary>
+            <dxi-total-item
+                column="id"
+                summaryType="count"                
+                displayFormat="Total number of school summaries: {0}">
+            </dxi-total-item>
+            
+        </dxo-summary>
+
+    </dx-data-grid>
+</div>

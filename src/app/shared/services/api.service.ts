@@ -1710,6 +1710,188 @@ export type DeleteVolunteerMonthlyTotalSummaryInput = {
   _version?: number | null;
 };
 
+export type CreateSWEMonthlySchoolSummaryInput = {
+  id?: string | null;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version?: number | null;
+};
+
+export type ModelSWEMonthlySchoolSummaryConditionInput = {
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  SWEPosition?: ModelStringInput | null;
+  Country?: ModelStringInput | null;
+  Community?: ModelStringInput | null;
+  School?: ModelStringInput | null;
+  NoTabletUsedAtDrinkingStation1?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation2?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation3?: ModelIntInput | null;
+  NoStudentsTaughtSafeWaterPrinciples?: ModelIntInput | null;
+  NoEnrolledInSchoolHealthClub?: ModelIntInput | null;
+  NoHealthClubMeetingHeld?: ModelIntInput | null;
+  NoHealthClubLessonsTaught?: ModelIntInput | null;
+  DoHealthClubManageStations?: ModelStringInput | null;
+  NoHealthClubCleanUpProject?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelSWEMonthlySchoolSummaryConditionInput | null> | null;
+  or?: Array<ModelSWEMonthlySchoolSummaryConditionInput | null> | null;
+  not?: ModelSWEMonthlySchoolSummaryConditionInput | null;
+};
+
+export type SWEMonthlySchoolSummary = {
+  __typename: "SWEMonthlySchoolSummary";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  SWEPosition?: string;
+  Country?: string;
+  Community?: string;
+  School?: string;
+  NoTabletUsedAtDrinkingStation1?: number;
+  NoTabletUsedAtDrinkingStation2?: number;
+  NoTabletUsedAtDrinkingStation3?: number;
+  NoStudentsTaughtSafeWaterPrinciples?: number;
+  NoEnrolledInSchoolHealthClub?: number;
+  NoHealthClubMeetingHeld?: number;
+  NoHealthClubLessonsTaught?: number;
+  DoHealthClubManageStations?: string;
+  NoHealthClubCleanUpProject?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateSWEMonthlySchoolSummaryInput = {
+  id: string;
+  Namebwe?: string | null;
+  date?: string | null;
+  SWEPosition?: string | null;
+  Country?: string | null;
+  Community?: string | null;
+  School?: string | null;
+  NoTabletUsedAtDrinkingStation1?: number | null;
+  NoTabletUsedAtDrinkingStation2?: number | null;
+  NoTabletUsedAtDrinkingStation3?: number | null;
+  NoStudentsTaughtSafeWaterPrinciples?: number | null;
+  NoEnrolledInSchoolHealthClub?: number | null;
+  NoHealthClubMeetingHeld?: number | null;
+  NoHealthClubLessonsTaught?: number | null;
+  DoHealthClubManageStations?: string | null;
+  NoHealthClubCleanUpProject?: number | null;
+  Completed?: number | null;
+  Lat?: string | null;
+  Lng?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteSWEMonthlySchoolSummaryInput = {
+  id: string;
+  _version?: number | null;
+};
+
+export type CreateSWEMonthlyClinicSummaryInput = {
+  id?: string | null;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version?: number | null;
+};
+
+export type ModelSWEMonthlyClinicSummaryConditionInput = {
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  SWEPosition?: ModelStringInput | null;
+  Country?: ModelStringInput | null;
+  Community?: ModelStringInput | null;
+  Clinic?: ModelStringInput | null;
+  NoTabletUsedAtDrinkingStation1?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation2?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation3?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelSWEMonthlyClinicSummaryConditionInput | null> | null;
+  or?: Array<ModelSWEMonthlyClinicSummaryConditionInput | null> | null;
+  not?: ModelSWEMonthlyClinicSummaryConditionInput | null;
+};
+
+export type SWEMonthlyClinicSummary = {
+  __typename: "SWEMonthlyClinicSummary";
+  id?: string;
+  Namebwe?: string;
+  date?: string | null;
+  SWEPosition?: string;
+  Country?: string;
+  Community?: string;
+  Clinic?: string;
+  NoTabletUsedAtDrinkingStation1?: number;
+  NoTabletUsedAtDrinkingStation2?: number;
+  NoTabletUsedAtDrinkingStation3?: number;
+  Completed?: number;
+  Lat?: string;
+  Lng?: string;
+  _version?: number;
+  _deleted?: boolean | null;
+  _lastChangedAt?: number;
+  createdAt?: string;
+  updatedAt?: string;
+};
+
+export type UpdateSWEMonthlyClinicSummaryInput = {
+  id: string;
+  Namebwe?: string | null;
+  date?: string | null;
+  SWEPosition?: string | null;
+  Country?: string | null;
+  Community?: string | null;
+  Clinic?: string | null;
+  NoTabletUsedAtDrinkingStation1?: number | null;
+  NoTabletUsedAtDrinkingStation2?: number | null;
+  NoTabletUsedAtDrinkingStation3?: number | null;
+  Completed?: number | null;
+  Lat?: string | null;
+  Lng?: string | null;
+  _version?: number | null;
+};
+
+export type DeleteSWEMonthlyClinicSummaryInput = {
+  id: string;
+  _version?: number | null;
+};
+
 export type ModelInitialSurveyFilterInput = {
   id?: ModelIDInput | null;
   Namebwe?: ModelStringInput | null;
@@ -2240,6 +2422,64 @@ export type ModelVolunteerMonthlyTotalSummaryFilterInput = {
 export type ModelVolunteerMonthlyTotalSummaryConnection = {
   __typename: "ModelVolunteerMonthlyTotalSummaryConnection";
   items?: Array<VolunteerMonthlyTotalSummary | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelSWEMonthlySchoolSummaryFilterInput = {
+  id?: ModelIDInput | null;
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  SWEPosition?: ModelStringInput | null;
+  Country?: ModelStringInput | null;
+  Community?: ModelStringInput | null;
+  School?: ModelStringInput | null;
+  NoTabletUsedAtDrinkingStation1?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation2?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation3?: ModelIntInput | null;
+  NoStudentsTaughtSafeWaterPrinciples?: ModelIntInput | null;
+  NoEnrolledInSchoolHealthClub?: ModelIntInput | null;
+  NoHealthClubMeetingHeld?: ModelIntInput | null;
+  NoHealthClubLessonsTaught?: ModelIntInput | null;
+  DoHealthClubManageStations?: ModelStringInput | null;
+  NoHealthClubCleanUpProject?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelSWEMonthlySchoolSummaryFilterInput | null> | null;
+  or?: Array<ModelSWEMonthlySchoolSummaryFilterInput | null> | null;
+  not?: ModelSWEMonthlySchoolSummaryFilterInput | null;
+};
+
+export type ModelSWEMonthlySchoolSummaryConnection = {
+  __typename: "ModelSWEMonthlySchoolSummaryConnection";
+  items?: Array<SWEMonthlySchoolSummary | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type ModelSWEMonthlyClinicSummaryFilterInput = {
+  id?: ModelIDInput | null;
+  Namebwe?: ModelStringInput | null;
+  date?: ModelStringInput | null;
+  SWEPosition?: ModelStringInput | null;
+  Country?: ModelStringInput | null;
+  Community?: ModelStringInput | null;
+  Clinic?: ModelStringInput | null;
+  NoTabletUsedAtDrinkingStation1?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation2?: ModelIntInput | null;
+  NoTabletUsedAtDrinkingStation3?: ModelIntInput | null;
+  Completed?: ModelIntInput | null;
+  Lat?: ModelStringInput | null;
+  Lng?: ModelStringInput | null;
+  and?: Array<ModelSWEMonthlyClinicSummaryFilterInput | null> | null;
+  or?: Array<ModelSWEMonthlyClinicSummaryFilterInput | null> | null;
+  not?: ModelSWEMonthlyClinicSummaryFilterInput | null;
+};
+
+export type ModelSWEMonthlyClinicSummaryConnection = {
+  __typename: "ModelSWEMonthlyClinicSummaryConnection";
+  items?: Array<SWEMonthlyClinicSummary | null> | null;
   nextToken?: string | null;
   startedAt?: number | null;
 };
@@ -3587,6 +3827,156 @@ export type DeleteVolunteerMonthlyTotalSummaryMutation = {
   Namevol: string;
   date?: string | null;
   NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateSweMonthlySchoolSummaryMutation = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateSweMonthlySchoolSummaryMutation = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteSweMonthlySchoolSummaryMutation = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type CreateSweMonthlyClinicSummaryMutation = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type UpdateSweMonthlyClinicSummaryMutation = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type DeleteSweMonthlyClinicSummaryMutation = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -5120,6 +5510,176 @@ export type ListVolunteerMonthlyTotalSummarysQuery = {
   startedAt?: number | null;
 };
 
+export type SyncSweMonthlySchoolSummariesQuery = {
+  __typename: "ModelSWEMonthlySchoolSummaryConnection";
+  items?: Array<{
+    __typename: "SWEMonthlySchoolSummary";
+    id: string;
+    Namebwe: string;
+    date?: string | null;
+    SWEPosition: string;
+    Country: string;
+    Community: string;
+    School: string;
+    NoTabletUsedAtDrinkingStation1: number;
+    NoTabletUsedAtDrinkingStation2: number;
+    NoTabletUsedAtDrinkingStation3: number;
+    NoStudentsTaughtSafeWaterPrinciples: number;
+    NoEnrolledInSchoolHealthClub: number;
+    NoHealthClubMeetingHeld: number;
+    NoHealthClubLessonsTaught: number;
+    DoHealthClubManageStations: string;
+    NoHealthClubCleanUpProject: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetSweMonthlySchoolSummaryQuery = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListSweMonthlySchoolSummarysQuery = {
+  __typename: "ModelSWEMonthlySchoolSummaryConnection";
+  items?: Array<{
+    __typename: "SWEMonthlySchoolSummary";
+    id: string;
+    Namebwe: string;
+    date?: string | null;
+    SWEPosition: string;
+    Country: string;
+    Community: string;
+    School: string;
+    NoTabletUsedAtDrinkingStation1: number;
+    NoTabletUsedAtDrinkingStation2: number;
+    NoTabletUsedAtDrinkingStation3: number;
+    NoStudentsTaughtSafeWaterPrinciples: number;
+    NoEnrolledInSchoolHealthClub: number;
+    NoHealthClubMeetingHeld: number;
+    NoHealthClubLessonsTaught: number;
+    DoHealthClubManageStations: string;
+    NoHealthClubCleanUpProject: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type SyncSweMonthlyClinicSummariesQuery = {
+  __typename: "ModelSWEMonthlyClinicSummaryConnection";
+  items?: Array<{
+    __typename: "SWEMonthlyClinicSummary";
+    id: string;
+    Namebwe: string;
+    date?: string | null;
+    SWEPosition: string;
+    Country: string;
+    Community: string;
+    Clinic: string;
+    NoTabletUsedAtDrinkingStation1: number;
+    NoTabletUsedAtDrinkingStation2: number;
+    NoTabletUsedAtDrinkingStation3: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
+export type GetSweMonthlyClinicSummaryQuery = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ListSweMonthlyClinicSummarysQuery = {
+  __typename: "ModelSWEMonthlyClinicSummaryConnection";
+  items?: Array<{
+    __typename: "SWEMonthlyClinicSummary";
+    id: string;
+    Namebwe: string;
+    date?: string | null;
+    SWEPosition: string;
+    Country: string;
+    Community: string;
+    Clinic: string;
+    NoTabletUsedAtDrinkingStation1: number;
+    NoTabletUsedAtDrinkingStation2: number;
+    NoTabletUsedAtDrinkingStation3: number;
+    Completed: number;
+    Lat: string;
+    Lng: string;
+    _version: number;
+    _deleted?: boolean | null;
+    _lastChangedAt: number;
+    createdAt: string;
+    updatedAt: string;
+  } | null> | null;
+  nextToken?: string | null;
+  startedAt?: number | null;
+};
+
 export type OnCreateInitialSurveySubscription = {
   __typename: "InitialSurvey";
   id: string;
@@ -6463,6 +7023,156 @@ export type OnDeleteVolunteerMonthlyTotalSummarySubscription = {
   Namevol: string;
   date?: string | null;
   NoWaterSampleTaken: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateSweMonthlySchoolSummarySubscription = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateSweMonthlySchoolSummarySubscription = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteSweMonthlySchoolSummarySubscription = {
+  __typename: "SWEMonthlySchoolSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  School: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  NoStudentsTaughtSafeWaterPrinciples: number;
+  NoEnrolledInSchoolHealthClub: number;
+  NoHealthClubMeetingHeld: number;
+  NoHealthClubLessonsTaught: number;
+  DoHealthClubManageStations: string;
+  NoHealthClubCleanUpProject: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnCreateSweMonthlyClinicSummarySubscription = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnUpdateSweMonthlyClinicSummarySubscription = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
+  Completed: number;
+  Lat: string;
+  Lng: string;
+  _version: number;
+  _deleted?: boolean | null;
+  _lastChangedAt: number;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type OnDeleteSweMonthlyClinicSummarySubscription = {
+  __typename: "SWEMonthlyClinicSummary";
+  id: string;
+  Namebwe: string;
+  date?: string | null;
+  SWEPosition: string;
+  Country: string;
+  Community: string;
+  Clinic: string;
+  NoTabletUsedAtDrinkingStation1: number;
+  NoTabletUsedAtDrinkingStation2: number;
+  NoTabletUsedAtDrinkingStation3: number;
   Completed: number;
   Lat: string;
   Lng: string;
@@ -8710,6 +9420,264 @@ export class APIService {
     )) as any;
     return <DeleteVolunteerMonthlyTotalSummaryMutation>(
       response.data.deleteVolunteerMonthlyTotalSummary
+    );
+  }
+  async CreateSweMonthlySchoolSummary(
+    input: CreateSWEMonthlySchoolSummaryInput,
+    condition?: ModelSWEMonthlySchoolSummaryConditionInput
+  ): Promise<CreateSweMonthlySchoolSummaryMutation> {
+    const statement = `mutation CreateSweMonthlySchoolSummary($input: CreateSWEMonthlySchoolSummaryInput!, $condition: ModelSWEMonthlySchoolSummaryConditionInput) {
+        createSWEMonthlySchoolSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateSweMonthlySchoolSummaryMutation>(
+      response.data.createSWEMonthlySchoolSummary
+    );
+  }
+  async UpdateSweMonthlySchoolSummary(
+    input: UpdateSWEMonthlySchoolSummaryInput,
+    condition?: ModelSWEMonthlySchoolSummaryConditionInput
+  ): Promise<UpdateSweMonthlySchoolSummaryMutation> {
+    const statement = `mutation UpdateSweMonthlySchoolSummary($input: UpdateSWEMonthlySchoolSummaryInput!, $condition: ModelSWEMonthlySchoolSummaryConditionInput) {
+        updateSWEMonthlySchoolSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateSweMonthlySchoolSummaryMutation>(
+      response.data.updateSWEMonthlySchoolSummary
+    );
+  }
+  async DeleteSweMonthlySchoolSummary(
+    input: DeleteSWEMonthlySchoolSummaryInput,
+    condition?: ModelSWEMonthlySchoolSummaryConditionInput
+  ): Promise<DeleteSweMonthlySchoolSummaryMutation> {
+    const statement = `mutation DeleteSweMonthlySchoolSummary($input: DeleteSWEMonthlySchoolSummaryInput!, $condition: ModelSWEMonthlySchoolSummaryConditionInput) {
+        deleteSWEMonthlySchoolSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteSweMonthlySchoolSummaryMutation>(
+      response.data.deleteSWEMonthlySchoolSummary
+    );
+  }
+  async CreateSweMonthlyClinicSummary(
+    input: CreateSWEMonthlyClinicSummaryInput,
+    condition?: ModelSWEMonthlyClinicSummaryConditionInput
+  ): Promise<CreateSweMonthlyClinicSummaryMutation> {
+    const statement = `mutation CreateSweMonthlyClinicSummary($input: CreateSWEMonthlyClinicSummaryInput!, $condition: ModelSWEMonthlyClinicSummaryConditionInput) {
+        createSWEMonthlyClinicSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <CreateSweMonthlyClinicSummaryMutation>(
+      response.data.createSWEMonthlyClinicSummary
+    );
+  }
+  async UpdateSweMonthlyClinicSummary(
+    input: UpdateSWEMonthlyClinicSummaryInput,
+    condition?: ModelSWEMonthlyClinicSummaryConditionInput
+  ): Promise<UpdateSweMonthlyClinicSummaryMutation> {
+    const statement = `mutation UpdateSweMonthlyClinicSummary($input: UpdateSWEMonthlyClinicSummaryInput!, $condition: ModelSWEMonthlyClinicSummaryConditionInput) {
+        updateSWEMonthlyClinicSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <UpdateSweMonthlyClinicSummaryMutation>(
+      response.data.updateSWEMonthlyClinicSummary
+    );
+  }
+  async DeleteSweMonthlyClinicSummary(
+    input: DeleteSWEMonthlyClinicSummaryInput,
+    condition?: ModelSWEMonthlyClinicSummaryConditionInput
+  ): Promise<DeleteSweMonthlyClinicSummaryMutation> {
+    const statement = `mutation DeleteSweMonthlyClinicSummary($input: DeleteSWEMonthlyClinicSummaryInput!, $condition: ModelSWEMonthlyClinicSummaryConditionInput) {
+        deleteSWEMonthlyClinicSummary(input: $input, condition: $condition) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      input
+    };
+    if (condition) {
+      gqlAPIServiceArguments.condition = condition;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <DeleteSweMonthlyClinicSummaryMutation>(
+      response.data.deleteSWEMonthlyClinicSummary
     );
   }
   async SyncInitialSurveys(
@@ -11227,6 +12195,304 @@ export class APIService {
       response.data.listVolunteerMonthlyTotalSummarys
     );
   }
+  async SyncSweMonthlySchoolSummaries(
+    filter?: ModelSWEMonthlySchoolSummaryFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncSweMonthlySchoolSummariesQuery> {
+    const statement = `query SyncSweMonthlySchoolSummaries($filter: ModelSWEMonthlySchoolSummaryFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncSWEMonthlySchoolSummaries(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            date
+            SWEPosition
+            Country
+            Community
+            School
+            NoTabletUsedAtDrinkingStation1
+            NoTabletUsedAtDrinkingStation2
+            NoTabletUsedAtDrinkingStation3
+            NoStudentsTaughtSafeWaterPrinciples
+            NoEnrolledInSchoolHealthClub
+            NoHealthClubMeetingHeld
+            NoHealthClubLessonsTaught
+            DoHealthClubManageStations
+            NoHealthClubCleanUpProject
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncSweMonthlySchoolSummariesQuery>(
+      response.data.syncSWEMonthlySchoolSummaries
+    );
+  }
+  async GetSweMonthlySchoolSummary(
+    id: string
+  ): Promise<GetSweMonthlySchoolSummaryQuery> {
+    const statement = `query GetSweMonthlySchoolSummary($id: ID!) {
+        getSWEMonthlySchoolSummary(id: $id) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetSweMonthlySchoolSummaryQuery>(
+      response.data.getSWEMonthlySchoolSummary
+    );
+  }
+  async ListSweMonthlySchoolSummarys(
+    filter?: ModelSWEMonthlySchoolSummaryFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListSweMonthlySchoolSummarysQuery> {
+    const statement = `query ListSweMonthlySchoolSummarys($filter: ModelSWEMonthlySchoolSummaryFilterInput, $limit: Int, $nextToken: String) {
+        listSWEMonthlySchoolSummarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            date
+            SWEPosition
+            Country
+            Community
+            School
+            NoTabletUsedAtDrinkingStation1
+            NoTabletUsedAtDrinkingStation2
+            NoTabletUsedAtDrinkingStation3
+            NoStudentsTaughtSafeWaterPrinciples
+            NoEnrolledInSchoolHealthClub
+            NoHealthClubMeetingHeld
+            NoHealthClubLessonsTaught
+            DoHealthClubManageStations
+            NoHealthClubCleanUpProject
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListSweMonthlySchoolSummarysQuery>(
+      response.data.listSWEMonthlySchoolSummarys
+    );
+  }
+  async SyncSweMonthlyClinicSummaries(
+    filter?: ModelSWEMonthlyClinicSummaryFilterInput,
+    limit?: number,
+    nextToken?: string,
+    lastSync?: number
+  ): Promise<SyncSweMonthlyClinicSummariesQuery> {
+    const statement = `query SyncSweMonthlyClinicSummaries($filter: ModelSWEMonthlyClinicSummaryFilterInput, $limit: Int, $nextToken: String, $lastSync: AWSTimestamp) {
+        syncSWEMonthlyClinicSummaries(filter: $filter, limit: $limit, nextToken: $nextToken, lastSync: $lastSync) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            date
+            SWEPosition
+            Country
+            Community
+            Clinic
+            NoTabletUsedAtDrinkingStation1
+            NoTabletUsedAtDrinkingStation2
+            NoTabletUsedAtDrinkingStation3
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    if (lastSync) {
+      gqlAPIServiceArguments.lastSync = lastSync;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <SyncSweMonthlyClinicSummariesQuery>(
+      response.data.syncSWEMonthlyClinicSummaries
+    );
+  }
+  async GetSweMonthlyClinicSummary(
+    id: string
+  ): Promise<GetSweMonthlyClinicSummaryQuery> {
+    const statement = `query GetSweMonthlyClinicSummary($id: ID!) {
+        getSWEMonthlyClinicSummary(id: $id) {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {
+      id
+    };
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <GetSweMonthlyClinicSummaryQuery>(
+      response.data.getSWEMonthlyClinicSummary
+    );
+  }
+  async ListSweMonthlyClinicSummarys(
+    filter?: ModelSWEMonthlyClinicSummaryFilterInput,
+    limit?: number,
+    nextToken?: string
+  ): Promise<ListSweMonthlyClinicSummarysQuery> {
+    const statement = `query ListSweMonthlyClinicSummarys($filter: ModelSWEMonthlyClinicSummaryFilterInput, $limit: Int, $nextToken: String) {
+        listSWEMonthlyClinicSummarys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+          __typename
+          items {
+            __typename
+            id
+            Namebwe
+            date
+            SWEPosition
+            Country
+            Community
+            Clinic
+            NoTabletUsedAtDrinkingStation1
+            NoTabletUsedAtDrinkingStation2
+            NoTabletUsedAtDrinkingStation3
+            Completed
+            Lat
+            Lng
+            _version
+            _deleted
+            _lastChangedAt
+            createdAt
+            updatedAt
+          }
+          nextToken
+          startedAt
+        }
+      }`;
+    const gqlAPIServiceArguments: any = {};
+    if (filter) {
+      gqlAPIServiceArguments.filter = filter;
+    }
+    if (limit) {
+      gqlAPIServiceArguments.limit = limit;
+    }
+    if (nextToken) {
+      gqlAPIServiceArguments.nextToken = nextToken;
+    }
+    const response = (await API.graphql(
+      graphqlOperation(statement, gqlAPIServiceArguments)
+    )) as any;
+    return <ListSweMonthlyClinicSummarysQuery>(
+      response.data.listSWEMonthlyClinicSummarys
+    );
+  }
   OnCreateInitialSurveyListener: Observable<
     SubscriptionResponse<OnCreateInitialSurveySubscription>
   > = API.graphql(
@@ -13016,5 +14282,215 @@ export class APIService {
     )
   ) as Observable<
     SubscriptionResponse<OnDeleteVolunteerMonthlyTotalSummarySubscription>
+  >;
+
+  OnCreateSweMonthlySchoolSummaryListener: Observable<
+    SubscriptionResponse<OnCreateSweMonthlySchoolSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateSweMonthlySchoolSummary {
+        onCreateSWEMonthlySchoolSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateSweMonthlySchoolSummarySubscription>
+  >;
+
+  OnUpdateSweMonthlySchoolSummaryListener: Observable<
+    SubscriptionResponse<OnUpdateSweMonthlySchoolSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateSweMonthlySchoolSummary {
+        onUpdateSWEMonthlySchoolSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateSweMonthlySchoolSummarySubscription>
+  >;
+
+  OnDeleteSweMonthlySchoolSummaryListener: Observable<
+    SubscriptionResponse<OnDeleteSweMonthlySchoolSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteSweMonthlySchoolSummary {
+        onDeleteSWEMonthlySchoolSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          School
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          NoStudentsTaughtSafeWaterPrinciples
+          NoEnrolledInSchoolHealthClub
+          NoHealthClubMeetingHeld
+          NoHealthClubLessonsTaught
+          DoHealthClubManageStations
+          NoHealthClubCleanUpProject
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteSweMonthlySchoolSummarySubscription>
+  >;
+
+  OnCreateSweMonthlyClinicSummaryListener: Observable<
+    SubscriptionResponse<OnCreateSweMonthlyClinicSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnCreateSweMonthlyClinicSummary {
+        onCreateSWEMonthlyClinicSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnCreateSweMonthlyClinicSummarySubscription>
+  >;
+
+  OnUpdateSweMonthlyClinicSummaryListener: Observable<
+    SubscriptionResponse<OnUpdateSweMonthlyClinicSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnUpdateSweMonthlyClinicSummary {
+        onUpdateSWEMonthlyClinicSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnUpdateSweMonthlyClinicSummarySubscription>
+  >;
+
+  OnDeleteSweMonthlyClinicSummaryListener: Observable<
+    SubscriptionResponse<OnDeleteSweMonthlyClinicSummarySubscription>
+  > = API.graphql(
+    graphqlOperation(
+      `subscription OnDeleteSweMonthlyClinicSummary {
+        onDeleteSWEMonthlyClinicSummary {
+          __typename
+          id
+          Namebwe
+          date
+          SWEPosition
+          Country
+          Community
+          Clinic
+          NoTabletUsedAtDrinkingStation1
+          NoTabletUsedAtDrinkingStation2
+          NoTabletUsedAtDrinkingStation3
+          Completed
+          Lat
+          Lng
+          _version
+          _deleted
+          _lastChangedAt
+          createdAt
+          updatedAt
+        }
+      }`
+    )
+  ) as Observable<
+    SubscriptionResponse<OnDeleteSweMonthlyClinicSummarySubscription>
   >;
 }
