@@ -2595,6 +2595,290 @@ export const schema = {
                     }
                 }
             ]
+        },
+        "SWEMonthlySchoolSummary": {
+            "name": "SWEMonthlySchoolSummary",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Namebwe": {
+                    "name": "Namebwe",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "SWEPosition": {
+                    "name": "SWEPosition",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Country": {
+                    "name": "Country",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Community": {
+                    "name": "Community",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "School": {
+                    "name": "School",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoTabletUsedAtDrinkingStation1": {
+                    "name": "NoTabletUsedAtDrinkingStation1",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoTabletUsedAtDrinkingStation2": {
+                    "name": "NoTabletUsedAtDrinkingStation2",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoTabletUsedAtDrinkingStation3": {
+                    "name": "NoTabletUsedAtDrinkingStation3",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoStudentsTaughtSafeWaterPrinciples": {
+                    "name": "NoStudentsTaughtSafeWaterPrinciples",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoEnrolledInSchoolHealthClub": {
+                    "name": "NoEnrolledInSchoolHealthClub",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoHealthClubMeetingHeld": {
+                    "name": "NoHealthClubMeetingHeld",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoHealthClubLessonsTaught": {
+                    "name": "NoHealthClubLessonsTaught",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "DoHealthClubManageStations": {
+                    "name": "DoHealthClubManageStations",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoHealthClubCleanUpProject": {
+                    "name": "NoHealthClubCleanUpProject",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Completed": {
+                    "name": "Completed",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Lat": {
+                    "name": "Lat",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Lng": {
+                    "name": "Lng",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "SWEMonthlySchoolSummaries",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "provider": "apiKey",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
+        },
+        "SWEMonthlyClinicSummary": {
+            "name": "SWEMonthlyClinicSummary",
+            "fields": {
+                "id": {
+                    "name": "id",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Namebwe": {
+                    "name": "Namebwe",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "date": {
+                    "name": "date",
+                    "isArray": false,
+                    "type": "AWSDate",
+                    "isRequired": false,
+                    "attributes": []
+                },
+                "SWEPosition": {
+                    "name": "SWEPosition",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Country": {
+                    "name": "Country",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Community": {
+                    "name": "Community",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Clinic": {
+                    "name": "Clinic",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoTabletUsedAtDrinkingStation1": {
+                    "name": "NoTabletUsedAtDrinkingStation1",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoTabletUsedAtDrinkingStation2": {
+                    "name": "NoTabletUsedAtDrinkingStation2",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "NoTabletUsedAtDrinkingStation3": {
+                    "name": "NoTabletUsedAtDrinkingStation3",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Completed": {
+                    "name": "Completed",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Lat": {
+                    "name": "Lat",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "Lng": {
+                    "name": "Lng",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            },
+            "syncable": true,
+            "pluralName": "SWEMonthlyClinicSummaries",
+            "attributes": [
+                {
+                    "type": "model",
+                    "properties": {}
+                },
+                {
+                    "type": "auth",
+                    "properties": {
+                        "rules": [
+                            {
+                                "allow": "public",
+                                "provider": "apiKey",
+                                "operations": [
+                                    "create",
+                                    "update",
+                                    "delete",
+                                    "read"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            ]
         }
     },
     "enums": {
@@ -2612,5 +2896,5 @@ export const schema = {
         }
     },
     "nonModels": {},
-    "version": "d0574b2c09f1c1266bd4dd309ee7e3f6"
+    "version": "e17d04295e673f400d88fd44a2f0c401"
 };

@@ -394,3 +394,45 @@ export declare class VolunteerMonthlyTotalSummary {
   constructor(init: ModelInit<VolunteerMonthlyTotalSummary>);
   static copyOf(source: VolunteerMonthlyTotalSummary, mutator: (draft: MutableModel<VolunteerMonthlyTotalSummary>) => MutableModel<VolunteerMonthlyTotalSummary> | void): VolunteerMonthlyTotalSummary;
 }
+
+export declare class SWEMonthlySchoolSummary {
+  readonly id: string;
+  readonly Namebwe: string;
+  readonly date?: string;
+  readonly SWEPosition: string;
+  readonly Country: string;
+  readonly Community: string;
+  readonly School: string;
+  readonly NoTabletUsedAtDrinkingStation1: number;
+  readonly NoTabletUsedAtDrinkingStation2: number;
+  readonly NoTabletUsedAtDrinkingStation3: number;
+  readonly NoStudentsTaughtSafeWaterPrinciples: number;
+  readonly NoEnrolledInSchoolHealthClub: number;
+  readonly NoHealthClubMeetingHeld: number;
+  readonly NoHealthClubLessonsTaught: number;
+  readonly DoHealthClubManageStations: string;
+  readonly NoHealthClubCleanUpProject: number;
+  readonly Completed: number;
+  readonly Lat: string;
+  readonly Lng: string;
+  constructor(init: ModelInit<SWEMonthlySchoolSummary>);
+  static copyOf(source: SWEMonthlySchoolSummary, mutator: (draft: MutableModel<SWEMonthlySchoolSummary>) => MutableModel<SWEMonthlySchoolSummary> | void): SWEMonthlySchoolSummary;
+}
+
+export declare class SWEMonthlyClinicSummary {
+  readonly id: string;
+  readonly Namebwe: string;
+  readonly date?: string;
+  readonly SWEPosition: string;
+  readonly Country: string;
+  readonly Community: string;
+  readonly Clinic: string;
+  readonly NoTabletUsedAtDrinkingStation1: number;
+  readonly NoTabletUsedAtDrinkingStation2: number;
+  readonly NoTabletUsedAtDrinkingStation3: number;
+  readonly Completed: number;
+  readonly Lat: string;
+  readonly Lng: string;
+  constructor(init: ModelInit<SWEMonthlyClinicSummary>);
+  static copyOf(source: SWEMonthlyClinicSummary, mutator: (draft: MutableModel<SWEMonthlyClinicSummary>) => MutableModel<SWEMonthlyClinicSummary> | void): SWEMonthlyClinicSummary;
+}
